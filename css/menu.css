@@ -50,10 +50,21 @@ body{
 
 }
 
+#main {
+    display: grid;
+    grid-row: 50vh 40vh 10vh;
+    grid-template-areas: "nav header" "nav section" "footer footer" ;
+}
+
+.menu { grid-area: nav;
+        
+        
+}
+
 .menu {
     min-height:650px;
     width: 320px;
-    height: 100vh;
+    height: 96vh;
     padding: 5px 25px 5px 25px;
     background-color: #3B3B3B;
     border-radius: 0 25px 25px 0;
@@ -68,7 +79,7 @@ body{
 }
 
 .menu div .img{
-    background-image: url("../img/logo/Logo-menu.svg");
+    background-image: url("../img/logo/logo-menu.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -187,7 +198,7 @@ body{
 .footer {
     position: fixed;
     width: 100%;
-    height: 50px;
+    height: 4vh;
     bottom: 0;
     background-color: black;
     z-index: 1;
@@ -198,8 +209,10 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50px;
+    height: 4vh;
     text-align: center;
+    font-family: Lato-Regular;
+    color: #C4C4C4;
 }
 
 .footer .footer-div .icon-footer {
@@ -335,14 +348,80 @@ body{
         font-family: Lato-Regular;
         font-size: 16px;
         display: inline-flex;
+        color: #C4C4C4;
     }
 
     .menu .menu-dois .menu-dois-ul {
-        padding: 68px 0 0 0;
+        padding: 70px 0 0 0;
+    }
+
+    .menu .menu-dois .principal-menu a,
+    .menu .menu-dois .principal-menu
+    {
+        font-family: Montserrat-Light;
+        text-transform: uppercase;
+        font-size: 16px;
+        color: #C4C4C4;
+        list-style-type: none;
+        text-decoration: none;
+        padding: 0px;
+    }
+
+    .menu .menu-dois .principal-menu ul{
+        padding: 0px 0 0 10px;
+    }
+
+    .menu .menu-dois .principal-menu .li-a {
+        padding-left: 40px;
+    }
+
+    .menu .menu-dois .principal-menu svg{
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top:-3px;    
+    }
+
+    .menu .menu-dois .principal-menu label:after {
+        content:'\203A';
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        margin-bottom: 5px;
+        transform: rotate(90deg);
+        position: absolute;
+        bottom: 0px;
+    }
+    
+    .menu .menu-dois .principal-menu input[type="checkbox"]:checked ~ label:after {
+        content: '\2039';
+        font-size: 25px;
+        font-weight: bold;
+        position: relative;;
+        top: -6px;
+        right: 25px;
+    }
+
+    .menu-function {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .menu-function .menu-function-image {
+        position: absolute;
+        width: 100%;
+        height: 50px;
+        background-image: url("../img/icon/configuracoes2.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     .footer {
         display: none;
     }
+
 
 }

@@ -1,0 +1,54 @@
+*{ padding: 0; margin: 0;}
+
+@media screen and (min-width: 2560px){
+
+    body{
+        background-color: white;
+    }
+        #bodys{
+        display: grid;
+        grid-template-rows: 1080px;
+        grid-template-columns: 300px 1920px 0px;
+        grid-template-areas: "body-one" "body-main" "body-three";
+    
+    }
+    #main {
+        display: grid;
+        grid-template-rows: 15vh 10vh 72vh 2vh;
+        grid-template-columns: 16.5% 83.5%;
+        grid-template-areas: "article header" "article nav" "article aside" "footer footer";
+    }
+
+    .menu {
+        min-height:650px;
+        width: 320px;
+        height: 96vh;
+        padding: 5px 25px 5px 25px;
+        background-color: #3B3B3B;
+        border-radius: 0 25px 25px 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    @media screen and (min-width: 1920px){
+
+        #main {
+            display: grid;
+            grid-template-rows: 15vh 10vh 73vh 2vh;
+            grid-template-columns: 16.7%  83.3%;
+            grid-template-areas: "nav header" "nav div" "nav aside" "footer footer";
+        }
+
+
+        .mainheader{ grid-area: header; background-color: aqua;}
+        .mainDiv{ grid-area: div; background-color: rgb(255, 251, 0);}
+        .mainNav{ grid-area: nav; background-color: rgb(17, 0, 255);}
+        .mainaside{ grid-area: aside; background-color: rgb(7, 114, 21);}
+        .mainfooter{ grid-area: footer; background-color: rgb(255, 0, 119);}
+
+
+        }
+}
+        
+        
+        

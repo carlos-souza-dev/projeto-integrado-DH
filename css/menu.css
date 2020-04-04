@@ -50,16 +50,27 @@ body{
 
 }
 
-#main {
+@media (max-width: 2560px){
+
+    #main {
+        display: grid;
+        grid-template-rows: 20vh 10vh 66vh 4vh;
+        grid-template-columns: "nav header" "nav div" "nav section" "footer footer";
+    }
+    
+    .menu {grid-area: nav; background-color: blue;}
+    .main-header {grid-area: header; background-color: rgb(217, 255, 0);}
+    .main-div {grid-area: div; background-color: rgb(51, 255, 0);}
+    .main-section {grid-area: section; background-color: rgb(183, 0, 255);}
+    .main-footer {grid-area: footer; background-color: rgb(255, 0, 0);}  
+    
+}
+
+/* #main {
     display: grid;
     grid-row: 50vh 40vh 10vh;
     grid-template-areas: "nav header" "nav section" "footer footer" ;
-}
-
-.menu { grid-area: nav;
-        
-        
-}
+} */
 
 .menu {
     min-height:650px;
@@ -192,6 +203,73 @@ body{
     padding: 15px;
     position: absolute;
 }
+
+/* Início do estilo do main */
+
+.main {
+    position: relative;
+    width: 100%;
+}
+
+.resumo-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main .resumo-section div {
+    width: 100%;
+    height: 216px;
+    top: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main .resumo-section .resumo {
+    width: 45%;
+    height: 190px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
+
+}
+
+.main .resumo-comunicados {
+    width: 95%;
+    height: 190px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
+}
+
+.main .resumo-section .resumo-tema {
+    font-family: Roboto-Regular;
+    text-transform: uppercase;
+    font-weight: bold;
+    justify-content: start;
+    color: #3B3B3B;
+    width: 95%;
+    height: 30px;
+    margin: 10px 16px 0;
+    border-bottom: 1px solid #3B3B3B;
+}
+
+.main .resumo-section .resumo-tema-comunicados {
+    font-family: Roboto-Regular;
+    text-transform: uppercase;
+    font-weight: bold;
+    justify-content: start;
+    color: #3B3B3B;
+    width: 98%;
+    height: 30px;
+    margin: 10px 16px 0;
+    border-bottom: 1px solid #3B3B3B;
+}
+
 
 /* início da folha de estilos do footer */
 

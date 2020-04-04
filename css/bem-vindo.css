@@ -2,22 +2,24 @@
 
 @media screen and (min-width: 2560px){
 
-    body{
-        background-color: white;
-    }
-        #bodys{
+    #bodys{
         display: grid;
-        grid-template-rows: 1080px;
         grid-template-columns: 300px 1920px 0px;
         grid-template-areas: "body-one" "body-main" "body-three";
-    
     }
-    #main {
+    #bodys #main {
         display: grid;
-        grid-template-rows: 15vh 10vh 72vh 2vh;
-        grid-template-columns: 16.5% 83.5%;
-        grid-template-areas: "article header" "article nav" "article aside" "footer footer";
+        grid-template-rows: 15vh 10vh 73vh 2vh;
+        grid-template-columns: 16.7%  83.3%;
+        grid-template-areas: "nav header" "nav div" "nav aside" "footer footer";
     }
+
+    .mainHeader{ grid-area: header; background-color: rgb(0, 255, 170);}
+    .mainDiv{ grid-area: div; background-color: rgb(0, 17, 255);}
+    .mainNav{ grid-area: nav; background-color: rgb(11, 42, 128);}
+    .mainAside{ grid-area: aside; background-color: rgb(5, 19, 97);}
+    .mainFooter{ grid-area: footer; background-color: rgb(6, 7, 85);}
+   
 
     .menu {
         min-height:650px;
@@ -30,9 +32,11 @@
         z-index: 1;
     }
 
-    @media screen and (min-width: 1920px){
+}
 
-        #main {
+    @media screen and (max-width: 1920px){
+
+        #body-main #main {
             display: grid;
             grid-template-rows: 15vh 10vh 73vh 2vh;
             grid-template-columns: 16.7%  83.3%;
@@ -40,15 +44,15 @@
         }
 
 
-        .mainheader{ grid-area: header; background-color: aqua;}
+        .mainHeader{ grid-area: header; background-color: aqua;}
         .mainDiv{ grid-area: div; background-color: rgb(255, 251, 0);}
         .mainNav{ grid-area: nav; background-color: rgb(17, 0, 255);}
-        .mainaside{ grid-area: aside; background-color: rgb(7, 114, 21);}
-        .mainfooter{ grid-area: footer; background-color: rgb(255, 0, 119);}
+        .mainAside{ grid-area: aside; background-color: rgb(7, 114, 21);}
+        .mainFooter{ grid-area: footer; background-color: rgb(255, 0, 119);}
 
 
-        }
-}
+    }
+
         
         
         

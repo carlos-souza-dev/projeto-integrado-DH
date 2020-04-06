@@ -11,19 +11,24 @@
 .mainFooter{ grid-area: footer; background-color: rgb(255, 255, 255);}
 
 
-.div-main .div-sub-class {
+.div-main {
     width: 94%;
+    margin: 0 50px;
+    border-top: none;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+
+.div-main .div-sub-class {
+    width: 100%;
     height: 5vh;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end;
-    margin: 0 50px;
-    border-bottom: 1px solid #C4C4C4;
 }
 
 .div-main .div-sub-class div {
     padding-top:12px;
-    border-bottom: 4px solid rgb(255, 255, 255);
     background-color: rgb(255, 255, 255);
 }
 
@@ -35,9 +40,19 @@
     padding: 0 44px;
 }
 
-.div-main .div-sub-class div:hover {
-    border-bottom: 4px solid rgb(0, 0, 0);
+.div-main .div-sub-class #div-sub-moradores {
+        padding-top:12px;
+        border-bottom: 4px solid rgb(0, 0, 0);
 }
+
+.div-main .div-sub-class div:hover {
+    transition-duration: 0.5s;
+    background-color: rgba(196, 196, 196, 0.753);
+    border-bottom: 0px solid rgba(196, 196, 196, 0.753);
+    border-radius: 10px 10px 0 0;
+}
+
+
 
 .mc-main {
 position: relative;

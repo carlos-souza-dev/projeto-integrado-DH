@@ -14,22 +14,19 @@
 
 
 .mainHeader{
+    height: 15vh;
     display: flex;
-    flex-direction: row;
-    padding-left: 40px;
-    padding-right: 40px;
-    flex-wrap: wrap;
+    padding: 0 40px;
     /* height: 23vh; */
         
 }
 
 .mainHeader>div{
-
     width: 50%;
     display: flex;
     align-items: center;
     padding-bottom: 20px;
-    
+    margin-bottom: 1px solid #C4C4C4;
 }
 
 .avatar{
@@ -69,5 +66,4 @@
     height: 60px;
     border: 4px solid #878787;
 }
-
 /* fim da folha de estilo header */

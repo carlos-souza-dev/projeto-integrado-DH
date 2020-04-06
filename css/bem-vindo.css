@@ -16,11 +16,11 @@
         grid-template-areas: "nav header" "nav div" "nav aside" "footer footer";
     }
 
-    .mainHeader{ grid-area: header; background-color: rgb(0, 255, 170);}
-    .mainDiv{ grid-area: div; background-color: rgb(0, 17, 255);}
-    .mainNav{ grid-area: nav; background-color: rgb(11, 42, 128);}
-    .mainAside{ grid-area: aside; background-color: rgb(5, 19, 97);}
-    .mainFooter{ grid-area: footer; background-color: rgb(6, 7, 85);}
+    .mainHeader{ grid-area: header; background-color: rgb(255, 255, 255);}
+    .mainDiv{ grid-area: div; background-color: rgb(255, 255, 255);}
+    .mainNav{ grid-area: nav; background-color: rgb(255, 255, 255);}
+    .mainAside{ grid-area: aside; background-color: rgb(255, 255, 255);}
+    .mainFooter{ grid-area: footer; background-color: rgb(255, 255, 255);}
    
 
     .menu {
@@ -33,6 +33,11 @@
         position: absolute;
         z-index: 1;
     }
+    .mainDiv .div-main {
+    margin: 0 40px;
+    width: 95%;
+    border-top: 1px solid #C4C4C4;
+}
 
 }
 
@@ -52,8 +57,8 @@
         .mainAside{ grid-area: aside; background-color: rgb(255, 255, 255);}
         .mainFooter{ grid-area: footer; background-color: rgb(255, 255, 255);}
 
-
     }
+
 
         
         

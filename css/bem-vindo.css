@@ -33,13 +33,20 @@
         position: absolute;
         z-index: 1;
     }
-    .mainDiv .div-main {
-    margin: 0 40px;
-    width: 95%;
-    border-top: 1px solid #C4C4C4;
-}
+
+    .div-main {
+        width: 94%;
+        height: 5vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        margin: 0 50px;
+        border-top: 1px solid #C4C4C4;
+    }
 
 }
+
+
 
     @media screen and (max-width: 1920px){
 
@@ -57,6 +64,15 @@
         .mainAside{ grid-area: aside; background-color: rgb(255, 255, 255);}
         .mainFooter{ grid-area: footer; background-color: rgb(255, 255, 255);}
 
+        .div-main {
+            width: 94%;
+            height: 5vh;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            margin: 0 50px;
+            border-top: 1px solid #C4C4C4;
+        }
     }
 
 

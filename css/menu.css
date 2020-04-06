@@ -57,6 +57,7 @@ body{
     border-radius: 0 25px 25px 0;
     position: absolute;
     z-index: 1;
+    position: fixed;
 }
 
 .menu .logo-tipo{

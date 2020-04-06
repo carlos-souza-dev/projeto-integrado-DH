@@ -46,11 +46,11 @@
         }
 
 
-        .mainHeader{ grid-area: header; background-color: aqua;}
-        .mainDiv{ grid-area: div; background-color: rgb(255, 251, 0);}
-        .mainNav{ grid-area: nav; background-color: rgb(17, 0, 255);}
-        .mainAside{ grid-area: aside; background-color: rgb(7, 114, 21);}
-        .mainFooter{ grid-area: footer; background-color: rgb(255, 0, 119);}
+        .mainHeader{ grid-area: header; background-color: rgb(255, 255, 255);}
+        .mainDiv{ grid-area: div; background-color: rgb(255, 255, 255);}
+        .mainNav{ grid-area: nav; background-color: rgb(255, 255, 255);}
+        .mainAside{ grid-area: aside; background-color: rgb(255, 255, 255);}
+        .mainFooter{ grid-area: footer; background-color: rgb(255, 255, 255);}
 
 
     }

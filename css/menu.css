@@ -54,6 +54,24 @@ body{
 
 }
 
+/* Estilo do botão geral */
+
+#button-geral a {
+    /* position: absolute; */
+    /* top: 64px;
+    right: 40px; */
+    padding: 12px 40px;
+    font-size: 16px;
+    border-radius: 25px;
+    color: #C4C4C4;
+    text-decoration: none;
+    font-family: Montserrat-Medium;
+    text-transform: uppercase;
+    background-color: #3B3B3B;
+}
+
+/* Estilo do menu */
+
 .menu {
     min-height:650px;
     width: 320px;
@@ -215,9 +233,7 @@ body{
     width: 44%;
     height: 190px;
     border-radius: 20px;
-    -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
-    -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
-    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 
 }
 
@@ -225,9 +241,7 @@ body{
     width: 94%;
     height: 190px;
     border-radius: 20px;
-    -webkit-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
-    -moz-box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
-    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
 .main .resumo-section .resumo-tema {
@@ -326,20 +340,12 @@ body{
 }
 
 .mainAside .main .classificados-section .classificados-stage{
-    width: 100%;
-    height: 200px;
-    margin-bottom: 32px;
-    border-radius: 25px;
-    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
-}
-
-.main .classificados-section section {
     position: relative;
     width: 100%;
-    top: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    height: 200px;
+    margin-bottom: 5px;
+    border-radius: 25px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
 .main .classificados-section .classificados-stage .classificados-title {
@@ -353,6 +359,104 @@ body{
     border-bottom: 1px solid #878787;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
+
+.mainAside .main .classificados-section .classificados-stage .classificados-filter {
+    position: relative;
+    width: 100%;
+    height: 8vh;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.mainAside .main .classificados-section .classificados-stage .classificados-filter div {
+    width: 66%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.mainAside .main .classificados-section .classificados-stage .classificados-filter #search {
+    width: 33%;
+    height: 8vh;
+}
+
+.mainAside .main .classificados-section .classificados-stage .classificados-filter div #filter {
+    width: 85%;
+    height: 32px;
+    font-family: Roboto-Regular;
+    font-size: 14px;
+    padding-left: 10px;
+    border: 1px solid #3B3B3B;
+    background-color: rgb(255, 255, 255);
+}
+
+.classificados-stage .classificados-filter .boxer {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.classificados-stage .classificados-filter .boxer .box {
+    width: 50%;
+    height: 8vh;
+    margin-left: 20px;
+    transform: translate(-0%, -0%);
+
+}
+
+.classificados-stage .classificados-filter .boxer .box:before {
+    content: '';
+    position: absolute;
+    top: 27px;
+    right: 35px;
+    width: 50px;
+    height: 28px;
+    background-color: rgb(216, 215, 215);
+    background-image: url("../img/icon/filter-black.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: unset;
+    border: 1px solid #3B3B3B;
+    border-left: none;
+}
+
+.classificados-stage .classificados-filter .boxer .box:hover:before {
+    background-color: #3B3B3B;
+    background-image: url("../img/icon/filter-white.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: unset;
+}
+
+.mainAside .main .classificados-section .classificados-stage .classificados-filter #pesquisa {
+    width: 85%;
+    height: 32px;
+    font-family: Roboto-Regular;
+    font-size: 14px;
+    border: 1px solid #3B3B3B;
+}
+
+.mainAside .main .classificados-bottom {
+    position: absolute;
+    right: 32px;
+    bottom: 23px;
+    margin-bottom: 8px;
+    background-color: khaki;
+}
+
+.main .classificados-section section {
+    position: relative;
+    width: 100%;
+    top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 .main .classificados-section .classificados-stage .classificados-title div{
     margin: 40px;
@@ -423,6 +527,7 @@ body{
 .footer {
     position: fixed;
     width: 100%;
+    max-width: 1920px;
     height: 4vh;
     bottom: 0;
     background-color: black;

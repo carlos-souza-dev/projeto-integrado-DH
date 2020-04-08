@@ -1,15 +1,21 @@
 
 *{ padding: 0; margin: 0;}
 
-
 @media screen and (min-width: 2560px){
+
+    body{
+        position: relative;
+    }
 
     #bodys{
         display: grid;
         grid-template-columns: 320px 1920px 320px;
-        grid-template-areas: "body-one" "body-main" "body-three";
+        grid-template-areas: "body-one body-main body-three" "body-one body-main body-three" "body-one body-main body-three";
     }
     #bodys #main {
+        position: absolute;
+        width: 1920px;
+        left: 320px;
         display: grid;
         grid-template-rows: 15vh 10vh 73vh 2vh;
         grid-template-columns: 16.7%  83.3%;
@@ -23,16 +29,20 @@
     .mainFooter{ grid-area: footer; background-color: rgb(255, 255, 255);}
    
     #body-one {
-        width: 100%;
+        position: fixed;
+        width: 320px;
+        right: 0;
         height: 1080px;
         background-image: url("../img/home/esquerda.jpg");
-        background-position: center;
+        background-position: fixed;
         background-size: cover;
         background-repeat: no-repeat;
     }
 
     #bodys #body-three {
-        width: 100%;
+        position: fixed;
+        bottom: 0;
+        width: 320px;
         height: 1080px;
         background-image: url("../img/home/direita.jpg");
         background-position: unset;

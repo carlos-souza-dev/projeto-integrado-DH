@@ -207,9 +207,10 @@ body{
 
 /* Início do estilo do main (bem-vindo) */
 
-.main {
+#moradores {
     position: relative;
     width: 100%;
+    height: 68vh;
 }
 
 .resumo-section {
@@ -217,7 +218,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: white;
+    height: 60vh;
 }
 
 .main .resumo-section div {

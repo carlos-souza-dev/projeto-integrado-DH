@@ -67,3 +67,42 @@ body {
   background-color: #3B3B3B;
 }
 
+
+.border-botton {
+  padding: 1px 0;
+  margin: 0 25px;
+  border-bottom: 1px solid black !important;
+}
+
+.border-botton i {
+  margin-right: 10px;
+}
+
+.form-signin input[type="email"] {
+  border-radius: 5px;
+}
+
+.form-signin input[type="password"] {
+  border-radius: 5px;
+}
+
+.border-botton-2 {
+  height: 32px;
+  padding: 1px 0;
+  margin: 10px 25px 10px 25px;
+  border-bottom: 1px solid black !important;
+}
+
+.border-botton-2 i {
+  margin-right: 10px;
+}
+
+#inputEmail {
+  width: 88%;
+  height: 30px;
+}
+
+#inputPassword {
+  width: 88%;
+  height: 30px;
+}

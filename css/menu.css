@@ -385,30 +385,31 @@ body{
 }
 
 .mainAside .main .classificados-section .classificados-stage .classificados-filter #search #pesquisa {
-    padding-left: 10px;
+    padding-left: 3%;
 }
 
 .mainAside .main .classificados-section .classificados-stage .classificados-filter div #filter {
     width: 85%;
-    height: 32px;
+    height: 3vh;
     font-family: Roboto-Regular;
     font-size: 14px;
-    padding-left: 10px;
+    padding-left: 3%;
     border: 1px solid #878787;
     background-color: rgb(255, 255, 255);
 }
 
 .classificados-stage .classificados-filter .boxer {
     width: 100%;
-    padding: 5px;
+    padding: 2%;
     display: flex;
     justify-content: space-between;
+    background-color: khaki;
 }
 
 .classificados-stage .classificados-filter .boxer .box {
     width: 50%;
     height: 8vh;
-    margin-left: 20px;
+    margin-left: 3%;
     transform: translate(-0%, -0%);
 
 }
@@ -416,10 +417,10 @@ body{
 .classificados-stage .classificados-filter .boxer .box:before {
     content: '';
     position: absolute;
-    top: 27px;
-    right: 35px;
-    width: 50px;
-    height: 28px;
+    top: 33%;
+    right: 7%;
+    width: 12%;
+    height: 2.6vh;
     background-color: rgb(216, 215, 215);
     background-image: url("../img/icon/filter-black.png");
     background-position: center;
@@ -440,8 +441,8 @@ body{
 }
 
 .mainAside .main .classificados-section .classificados-stage .classificados-filter #pesquisa {
-    width: 85%;
-    height: 32px;
+    width: 75%;
+    height: 2.7vh;
     font-family: Roboto-Regular;
     font-size: 14px;
     border: 1px solid #878787;

@@ -68,7 +68,7 @@
     }
 
 
-    /* Primeria div girar para virar um X quadno clicado */
+    /* Primeria div girar para virar X quadno clicado */
     #check-menu:checked + .menu-label .menu-icon-mobile:first-child{
         position: absolute;
         transform: rotate(135deg);

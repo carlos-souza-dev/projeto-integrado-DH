@@ -471,7 +471,7 @@ body{
 
 .mainAside .main section .classificados-rows {
     width: 100%;
-    height: 383px;
+    height: 420px;
     display: flex;
     margin-bottom: 23px;
     justify-content: space-between;
@@ -479,8 +479,8 @@ body{
 
 
 .mainAside .main section .classificados-rows .classificados {
-    width: 18%;
-    height: 383px;
+    width: 23%;
+    height: 410px;
     display: flex;
     justify-content: center;
     border-radius: 4px;
@@ -489,7 +489,7 @@ body{
 
 .mainAside .main section .classificados-rows .classificados .classificados-conteudo {
     width: 95%;
-    height: 370px;
+    height: 398px;
     margin-top: 7px;
 }
 
@@ -523,9 +523,14 @@ body{
     text-align: center;
 }
 
+.mainAside .main section .classificados-rows .classificados .classificados-conteudo #texto {
+height: 70px;
+font-size: 18px;
+}
+
 .mainAside .main section .classificados-rows img {
     width: 100%;
-    height: 225px;
+    height: 255px;
 }
 
 
@@ -562,203 +567,7 @@ body{
     background-size: cover;
 }
 
-/* Início do estilo para mobile */
-
-@media(max-width: 768px){
-
-    .menu {
-        width: 320px;
-        height: 100vh;
-        left: -322px;
-        padding: 5px 25px 5px 25px;
-        background-color: #3B3B3B;
-        position: relative;
-        transition: all 0.7s;
-        border-radius: 0 0 25px 0;
-    }
-
-    #check-menu[type="checkbox"]{
-        display: none;
-        transition: all 0.7s;
-    }
-
-    #check-menu[type="checkbox"]:checked ~ .menu {
-        transform: translateX(320px);
-        transition: all 0.7s;
-        position: relative;
-    }
-
-    #check-menu:checked + .menu-label {
-        left: 280px;
-        transition: all 0.7s;
-        width: 90px;
-        height: 80px;
-        z-index: -0;
-    }
-    
-    .menu-label {
-        left: -17px;
-        width: 100px;
-        height: 80px;
-        padding-left: 32px;
-        background-color: #3B3B3B;
-        transition: all 0.7s;
-        border-radius: 0 0 35px;
-    }
-
-     .menu-label .hamburger {
-        width: 50px;
-        height: 50px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        /* Icone menu girar anti-horario 360g quando for clicado */
-        transform: rotate(-180deg);
-        transition: all 0.7s;
-    }
-
-     .menu-icon-mobile {
-        width: 90%;
-        height: 6px;
-        background-color: #C4C4C4;
-        border-radius: 50px;
-        
-    }
-
-    /* Icone menu girar horário 360g quando for clicado */
-    #check-menu:checked + .menu-label .hamburger {
-        transform: rotate(180deg);
-        transition: all 0.7s;
-    }
 
 
-    /* Primeria div girar para virar um X quadno clicado */
-    #check-menu:checked + .menu-label .menu-icon-mobile:first-child{
-        position: absolute;
-        transform: rotate(135deg);
-    }
-
-    /* Sumir com a div central */
-    #check-menu:checked + .menu-label #icon-midle {
-        background-color: #3B3B3B;
-        transition: 0.5s;
-    }
-
-    /* Aparecer com a div central */
-    #menu-label #icon-midle {
-        transition: 0.7s;
-        background-color: #C4C4C4;
-    }
-
-    /* Última div girar para virar um X quadno clicado */
-    #check-menu:checked + .menu-label .menu-icon-mobile:last-child{
-        position: absolute;
-        transform: rotate(-135deg);
-    }
-
-    .menu .logo-tipo{
-        width: 100%;
-        height: 112px;
-        display: flex;
-        justify-content: space-between;
-        margin-top: 0px;
-        border-bottom: 1px solid #C4C4C4;
-    }
-    
-    .menu div .img{
-        background-image: url("../img/logo/user.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 25%;        
-        border: 3px solid #C4C4C4;
-        text-align: center;
-        width: 25%;
-        height: 75px;
-        margin: auto 0 auto 0;
-        
-    }
-
-    .menu div .user-name {
-        width: 70%;
-        margin: auto 0 auto 0;
-        font-family: Lato-Regular;
-        font-size: 16px;
-        display: inline-flex;
-        color: #C4C4C4;
-    }
-
-    .menu .menu-dois .menu-dois-ul {
-        padding: 70px 0 0 0;
-    }
-
-    .menu .menu-dois .principal-menu a,
-    .menu .menu-dois .principal-menu
-    {
-        font-family: Montserrat-Light;
-        text-transform: uppercase;
-        font-size: 16px;
-        color: #C4C4C4;
-        list-style-type: none;
-        text-decoration: none;
-        padding: 0px;
-    }
-
-    .menu .menu-dois .principal-menu ul{
-        padding: 0px 0 0 10px;
-    }
-
-    .menu .menu-dois .principal-menu .li-a {
-        padding-left: 40px;
-    }
-
-    .menu .menu-dois .principal-menu svg{
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        top:-3px;    
-    }
-
-    .menu .menu-dois .principal-menu label:after {
-        content:'\203A';
-        font-size: 25px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-weight: bold;
-        margin-bottom: 5px;
-        transform: rotate(90deg);
-        position: absolute;
-        bottom: 0px;
-    }
-    
-    .menu .menu-dois .principal-menu input[type="checkbox"]:checked ~ label:after {
-        content: '\2039';
-        font-size: 25px;
-        font-weight: bold;
-        position: relative;;
-        top: -6px;
-        right: 25px;
-    }
-
-    .menu-function {
-        position: absolute;
-        right: 10px;
-        bottom: 10px;
-        width: 50px;
-        height: 50px;
-    }
-
-    .menu-function .menu-function-image {
-        position: absolute;
-        width: 100%;
-        height: 50px;
-        background-image: url("../img/icon/configuracoes2.svg");
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .footer {
-        display: none;
-    }
 
 
-}

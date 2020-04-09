@@ -23,7 +23,7 @@
     }
 
     .mainHeader{ grid-area: header; background-color: rgb(255, 255, 255);}
-    .mainDiv{ grid-area: div; background-color: rgb(255, 255, 255);}
+    .mainDiv{ grid-area: div; background-color: rgb(158, 70, 70);}
     .mainNav{ grid-area: nav; background-color: rgb(255, 255, 255);}
     .mainAside{ grid-area: aside; background-color: rgb(255, 255, 255);}
     .mainFooter{ grid-area: footer; background-color: rgb(255, 255, 255);}
@@ -75,7 +75,7 @@
 
 
 
-    @media screen and (max-width: 1920px){
+    @media screen and (min-width: 1920px){
 
         #body-main #main {
             display: grid;

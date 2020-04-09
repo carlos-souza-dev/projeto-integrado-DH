@@ -403,7 +403,6 @@ body{
     padding: 2%;
     display: flex;
     justify-content: space-between;
-    background-color: khaki;
 }
 
 .classificados-stage .classificados-filter .boxer .box {
@@ -417,7 +416,7 @@ body{
 .classificados-stage .classificados-filter .boxer .box:before {
     content: '';
     position: absolute;
-    top: 33%;
+    top: 32%;
     right: 7%;
     width: 12%;
     height: 2.6vh;

@@ -214,7 +214,6 @@
         bottom: 5%;
         width: 18%;
         height: 6vh;
-        background-color: khaki;
     }
 
     .menu-function .menu-function-image {
@@ -310,8 +309,7 @@
     .div-main .div-sub-class #div-sub-moradores {
             padding-top:12px;
             border-bottom: 4px solid rgb(0, 0, 0);
-    }
-    
+    }    
     
     .div-main .div-sub-class div:hover {
         transition-duration: 0.5s;
@@ -337,7 +335,7 @@
     .mc-main .mc-morador-section .mc-resumo {
         position: absolute;
         width: 100%;
-        height: 94vh;
+        height: 80vh;
     }
 
     .mc-main .mc-morador-section .mc-morador-rows {
@@ -397,7 +395,7 @@
     .classificados-stage .classificados-filter .boxer .box:before {
         content: '';
         position: absolute;
-        top: 33%;
+        top: 32%;
         right: 7%;
         width: 12%;
         height: 2.6vh;

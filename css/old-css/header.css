@@ -12,6 +12,10 @@
     font-weight: normal;
 }
 
+body {
+    padding: 0;
+    margin: 0;
+}
 
 .mainHeader {
     height: 15vh;
@@ -24,20 +28,23 @@
 
 .mainHeader .head-main {
     width: 100%;
+    min-width: 980px;
     display: flex;
 }
 
-.mainHeader .head-main .titulo, .mainHeader .head-main .avatar {
-    width: 50%;
+.mainHeader .head-main .titulo {
+    width: 67%;
     display: flex;
     align-items: center;
+    margin: 0 3%;
 }
 
 .mainHeader .head-main .avatar:last-child{
-    width: 50%;
+    width: 37.5%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-right: 2.5%;
 }
 
 /* #tit {
@@ -62,10 +69,17 @@
 }
 
 .nomePag{
+    width: 50%;
+    min-width: 390px;
+    height: 10vh;
+    line-height: 10vh;
+}
+
+.nomePag p {
     text-transform: uppercase;
     color: #3B3B3B;
     font-family: 'Montserrat-Ligth';
-    font-size: 40px;
+    font-size: 2.5em;
     font-weight: bold;
 }
 
@@ -73,7 +87,8 @@
     font-family: 'Lato-Ligth';
     color: #878787;
     font-size: 20px;
-    padding-left: 20px;
+    padding-left: 2%;
+    width: 100%;
 }
 
 .nameUser{
@@ -92,15 +107,14 @@
     border: 4px solid #878787;
 }
 
-.mainHeader .logo-ipad {
+/* .mainHeader .logo-ipad {
     position: absolute;
     width: 0px;
     height: 0px;
     right: 0;
-    /* display: none; */
-}
+} */
 
-@media (min-width:769px){
+/* @media (min-width:769px){
     .mainHeader{
         padding-left: 40px;
     }
@@ -118,13 +132,8 @@
         flex-direction: column;
         position:relative;
         padding-top: 20px;
-        /* align-items: center; */
         
     }
-    
-    /* #tit>div{
-        align-items: center;
-    } */
     
     #avat{
         display: none;
@@ -138,7 +147,6 @@
 @media only screen and (max-width: 500px) {
     #tit>.nomePag{
         font-size: 25px;
-        /* padding-top: 20px; */
 
     }
 }
@@ -147,5 +155,5 @@
     .mainHeader{
         padding-right: 40px;
     }
-}
+} */
 /* fim da folha de estilo header */

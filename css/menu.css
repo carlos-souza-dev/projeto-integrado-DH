@@ -38,6 +38,19 @@
     font-weight: normal;
 }
 
+@font-face {
+    src: url(fonts/Montserrat/Montserrat-Light.ttf);
+    font-family: 'Montserrat-Ligth';    
+    font-weight: normal;
+}
+
+
+@font-face {
+    src: url(fonts/Lato/Lato-Light.ttf);
+    font-family: 'Lato-Ligth';    
+    font-weight: normal;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -51,15 +64,12 @@ body{
     height: 100vh;
     background-color: white;
     position: absolute;
-
+    font-size: 16px;
 }
 
 /* Estilo do botão geral */
 
 #button-geral a {
-    /* position: absolute; */
-    /* top: 64px;
-    right: 40px; */
     padding: 12px 40px;
     font-size: 16px;
     border-radius: 25px;
@@ -70,11 +80,154 @@ body{
     background-color: #3B3B3B;
 }
 
+/* Estilo do grid principal */
+
+#body-main #main {
+    display: grid;
+    grid-template-rows: 15vh 10vh 71vh 4vh;
+    grid-template-columns: 300px 84%;
+    grid-template-areas: "nav header" "nav div" "nav aside" "footer footer";
+}
+
+
+.mainHeader{ grid-area: header; background-color: #ffffff;}
+.mainDiv{ grid-area: div; background-color: rgb(255, 255, 255); min-width: 1135px; display: flex; justify-content: center;}
+.mainAside{ grid-area: aside; background-color: rgb(255, 255, 255);}
+.mainFooter{ grid-area: footer; background-color: rgb(255, 255, 255); position: absolute;}
+
+/* Estilo do header */
+
+.mainHeader {
+    height: 15vh;
+    display: flex;        
+}
+
+.mainHeader .head-main {
+    width: 100%;
+    min-width: 980px;
+    display: flex;
+}
+
+.mainHeader .head-main .titulo {
+    width: 67%;
+    display: flex;
+    align-items: center;
+    margin: 0 3%;
+}
+
+.mainHeader .head-main .avatar:last-child{
+    width: 37.5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 2.5%;
+}
+
+.avatar{
+    font-family: 'Lato-Ligth' ;
+    font-size: 20px;
+}
+
+#avat {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nomePag{
+    width: 50%;
+    min-width: 390px;
+    height: 10vh;
+    line-height: 10vh;
+}
+
+.nomePag p {
+    text-transform: uppercase;
+    color: #3B3B3B;
+    font-family: 'Montserrat-Ligth';
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.finalidPag{
+    font-family: 'Lato-Ligth';
+    color: #878787;
+    font-size: 20px;
+    padding-left: 2%;
+    width: 100%;
+}
+
+.nameUser{
+    color:#3B3B3B;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.avatarUser{
+    
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    border: 4px solid #878787;
+}
+
+/* Estilo da div */
+
+.div-main {
+    width: 94%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+   
+}
+
+.div-main {
+    width: 94%;
+    border-top: none;
+    border-bottom: 1px solid #C4C4C4;
+}
+
+
+.div-main .div-sub-class {
+    width: 100%;
+    min-width: 1090px;
+    height: 5vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+.div-main .div-sub-class div {
+    padding-top:12px;
+    background-color: rgb(255, 255, 255);
+}
+
+.div-main .div-sub-class div a {
+    text-decoration: none;
+    font-family: Roboto-Regular;
+    color: #3B3B3B;
+    font-size: 24px;
+    padding: 0 44px;
+}
+
+.div-main .div-sub-class #div-sub-moradores {
+    padding-top:12px;
+    border-bottom: 4px solid rgb(0, 0, 0);
+}
+
+.div-main .div-sub-class div:hover {
+    transition-duration: 0.5s;
+    background-color: rgba(196, 196, 196, 0.753);
+    border-bottom: 0px solid rgba(196, 196, 196, 0.753);
+    border-radius: 10px 10px 0 0;
+}
+
 /* Estilo do menu */
 
 .menu {
-    min-height:650px;
-    width: 320px;
+    width: 300px;
     height: 96vh;
     padding: 5px 25px 5px 25px;
     background-color: #3B3B3B;
@@ -86,8 +239,8 @@ body{
 
 .menu .logo-tipo{
     width: 100%;
-    height: 160px;
-    margin-top: 48px;
+    height: 18vh;
+    margin-top: 16%;
 }
 
 .menu div .img{
@@ -97,8 +250,8 @@ body{
     background-size: cover;
     text-align: center;
     width: 100%;
-    height: 90px;
-    
+    height: 10vh;
+    max-height: 125px;    
 }
 
 .menu div .user-name {
@@ -131,14 +284,15 @@ body{
 }
 
 .menu .menu-dois .principal-menu .li-a {
-    padding-left: 50px;
+    padding-left: 20%;
 }
 
 .menu .menu-dois .principal-menu {
     position: relative;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 5%;
 }
+
 .menu .menu-dois .principal-menu svg{
     position: absolute;
     width: 30px;
@@ -149,14 +303,15 @@ body{
 }
 
 .menu .menu-dois .principal-menu .second-menu {
-    padding: 10px 0 8px 30px;
+    padding: 5% 0 2% 30px;
 
 }
 
 .menu .menu-dois .principal-menu  ul{
-    width: 261px;
-    /* height: 165px; */
-    padding: 15px 0 0px 20px;
+    min-width: 224px;
+    max-width: 320px;
+    width: 15%;
+    padding: 15px 0 0px 5%;
     list-style-type: none;
 }
 
@@ -191,8 +346,8 @@ body{
     left: 0;
     z-index: 0;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
+    width: 1%;
+    height: 1%;
     opacity: 0;
 }
 
@@ -203,6 +358,7 @@ body{
 .menu-label{
     padding: 15px;
     position: absolute;
+    border-radius: 50%;
 }
 
 /* Início do estilo do main (bem-vindo) */
@@ -217,14 +373,15 @@ body{
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    height: 60vh;
+    height: 65vh;
 }
 
-.main .resumo-section div {
+.main .resumo-section .resumo-section-div {
     width: 100%;
-    height: 216px;
-    top: 40px;
+    height: 22vh;
+    min-height: 165px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -232,15 +389,17 @@ body{
 
 .main .resumo-section .resumo {
     width: 44%;
-    height: 190px;
+    height: 18vh;
+    min-height: 150px;
     border-radius: 20px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 
 }
 
-.main .resumo-comunicados {
+.main #resumo-comunicados {
     width: 94%;
-    height: 190px;
+    height: 18vh;
+    min-height: 146px;
     border-radius: 20px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
@@ -269,11 +428,261 @@ body{
     border-bottom: 1px solid #3B3B3B;
 }
 
+/* estilo da página morador */
+
+.mc-main {
+    width: 100%;
+    height: 71vh;
+    display: flex;
+justify-content: center;
+}
+
+.mc-main .mc-main-div {
+    width: 100%;
+}
+.mc-morador {
+    width: 100%;
+}
+
+/* .mc-morador-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 71vh;
+} */
+
+.mc-main .mc-morador .mc-morador-rows {
+    position: relative;
+    width: 100%;
+    min-width: 790px;
+    height: 232px;
+    top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mc-main  .mc-morador-rows .mc-morador-buttom {
+    margin-bottom: 8px;
+    width: 94%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mc-main  .mc-morador-rows:first-child{
+    height: 11vh;
+    margin-bottom: -22px;
+    width: 100%;
+    min-height: 86px;
+    min-width: 790px;
+    position: relative;
+}
+
+.mc-main  .mc-morador-rows .mc-morador {
+    width: 46%;
+    min-width: 370px;
+    height: 190px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mc-main  .mc-morador-rows .mc-morador .mc-morador-icon-photo img {
+   width: 100%;
+    height: 144px;
+    border-radius: 50%;
+}
+
+.mc-main  .mc-morador-rows .mc-morador .mc-morador-icon {
+    width: 22%;
+    height: 144px;
+}
+
+.mc-main  .mc-morador-rows .mc-morador .mc-morado-data {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 170px;
+}
+
+.mc-main .mc-morador-rows .mc-morador .mc-morado-data .mc-morador-block1 {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #3B3B3B;
+}
+
+.mc-morado-data .mc-morador-block1 .mc-morador-name p{
+    position: absolute;
+    bottom: 2px;
+    font-family: Roboto-Regular;
+    font-weight: bold;
+    color: #3B3B3B;
+    font-size: 18px;
+}
+
+.mc-morador .mc-morado-data .mc-morador-icon-edit {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 50px;
+    background-image: url("../img/icon/edit.svg");
+    background-position: center;
+    background-size: cover;
+}
+
+.mc-morador .mc-morado-data .mc-morador-icon-trash {
+    position: absolute;
+    width: 20px;
+    height: 25px;
+    right: 0;
+    background-image: url("../img/icon/trash.svg");
+    background-position: center;
+    background-size: cover;
+}
+
+.mc-morador-rows .mc-morador .mc-morado-data .mc-morador-block2 {
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    align-items: center;
+}
+.mc-morador-rows .mc-morador .mc-morado-data .mc-morador-block2 div {
+    margin-top: 11px;
+    font-size: 14px;
+    font-family: Roboto-Regular;
+    color: #3B3B3B;
+    font-size: 18px; 
+}
+
+/* estilo da página prestadores de serviço */
+
+
+.mc-main-servicos {
+    position: relative;
+        width: 100%;
+        height: 71vh;
+    }
+    
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows {
+        position: relative;
+        width: 100%;
+        height: 232px;
+        top: 40px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center; 
+    }
+    
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos-buttom {
+        position: absolute;
+        right: 40px;
+        bottom: 20px;
+        margin-bottom: 8px;
+    }
+    
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows:first-child{
+        height:11vh;
+        margin-bottom: 8px;
+    }
+    
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos {
+        width: 46%;
+        height: 190px;
+        border-radius: 20px;
+        box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos .mc-servicos-icon-photo img {
+       width: 100%;
+        height: 144px;
+        border-radius: 50%;
+    }
+    
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos .mc-servicos-icon {
+        width: 22%;
+        height: 144px;
+    }
+    
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos .mc-morado-data {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 170px;
+    }
+    
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos .mc-morado-data .mc-servicos-block1 {
+        position: relative;
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #3B3B3B;
+    }
+    
+    .mc-morado-data .mc-servicos-block1 .mc-servicos-name p{
+        position: absolute;
+        bottom: 2px;
+        font-family: Roboto-Regular;
+        font-weight: bold;
+        color: #3B3B3B;
+        font-size: 18px;
+    }
+    
+    .mc-servicos .mc-morado-data .mc-servicos-icon-edit {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: 50px;
+        background-image: url("../img/icon/edit.svg");
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .mc-servicos .mc-morado-data .mc-servicos-icon-trash {
+        position: absolute;
+        width: 20px;
+        height: 25px;
+        right: 0;
+        background-image: url("../img/icon/trash.svg");
+        background-position: center;
+        background-size: cover;
+    }
+    
+    .mc-servicos-rows .mc-servicos .mc-morado-data .mc-servicos-block2 {
+        width: 100%;
+        height: 100px;
+        margin-top: 10px;
+        align-items: center;
+    }
+    .mc-servicos-rows .mc-servicos .mc-morado-data .mc-servicos-block2 div {
+        margin-top: 11px;
+        font-size: 14px;
+        font-family: Roboto-Regular;
+        color: #3B3B3B;
+        font-size: 18px; 
+    }
+    
+    .mc-main-servicos .mc-servicos-section .mc-resumo {
+        position: absolute;
+        width: 100%;
+        height: 40vh;
+        
+    }
+
 /* estilo da página correspondência */
 
 
 .mainAside .aside-main .correspondencia-section{
     width: 94%;
+    min-width: 1054px;
     height: 450px;
     margin: 40px 45px 0; 
     border-radius: 25px;
@@ -326,30 +735,34 @@ body{
     border-bottom: 4px solid rgb(0, 0, 0);
 }
 
-.mainAside .main {
+.mainAside .aside-main-classificados {
     width: 100%;
-    height: 1150px;
+    height: 100vh;
+    min-width: 1094px;
     margin-top: 40px;
     display: flex;
     justify-content: center;
     
 }
 
-.mainAside .main .classificados-section{
-    width: 94%;
-    height: 90vh;
+.mainAside .aside-main-classificados .classificados-section{
+    width: 100%;
+    height: 100vh;
+    min-width: 1094px;
+    background-color: rgb(255, 255, 255);
 }
 
-.mainAside .main .classificados-section .classificados-stage{
+.mainAside .aside-main-classificados .classificados-section .classificados-stage{
     position: relative;
-    width: 100%;
+    width: 94%;
     height: 200px;
-    margin-bottom: 5px;
+    margin: 0 auto;
+    margin-bottom: 35px;
     border-radius: 25px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
-.main .classificados-section .classificados-stage .classificados-title {
+.aside-main-classificados .classificados-section .classificados-stage .classificados-title {
     width: 100%;
     height: 53px;
     font-family: Roboto-Regular;
@@ -361,7 +774,7 @@ body{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
-.mainAside .main .classificados-section .classificados-stage .classificados-filter {
+.mainAside .aside-main-classificados .classificados-section .classificados-stage .classificados-filter {
     position: relative;
     width: 100%;
     height: 8vh;
@@ -371,7 +784,7 @@ body{
     justify-content: space-around;
 }
 
-.mainAside .main .classificados-section .classificados-stage .classificados-filter div {
+.mainAside .aside-main-classificados .classificados-section .classificados-stage .classificados-filter div {
     width: 66%;
     height: 8vh;
     display: flex;
@@ -379,16 +792,16 @@ body{
     align-items: center;
 }
 
-.mainAside .main .classificados-section .classificados-stage .classificados-filter #search {
+.mainAside ..aside-main-classificados .classificados-section .classificados-stage .classificados-filter #search {
     width: 33%;
     height: 8vh;
 }
 
-.mainAside .main .classificados-section .classificados-stage .classificados-filter #search #pesquisa {
+.mainAside .aside-main-classificados .classificados-section .classificados-stage .classificados-filter #search #pesquisa {
     padding-left: 3%;
 }
 
-.mainAside .main .classificados-section .classificados-stage .classificados-filter div #filter {
+.mainAside .aside-main-classificados .classificados-section .classificados-stage .classificados-filter div #filter {
     width: 85%;
     height: 3vh;
     font-family: Roboto-Regular;
@@ -416,7 +829,7 @@ body{
 .classificados-stage .classificados-filter .boxer .box:before {
     content: '';
     position: absolute;
-    top: 32%;
+    top: 32.2%;
     right: 7%;
     width: 12%;
     height: 2.6vh;
@@ -439,7 +852,7 @@ body{
     transition: 0.5s;
 }
 
-.mainAside .main .classificados-section .classificados-stage .classificados-filter #pesquisa {
+.mainAside .aside-main-classificados .classificados-section .classificados-stage .classificados-filter #pesquisa {
     width: 75%;
     height: 2.7vh;
     font-family: Roboto-Regular;
@@ -447,30 +860,31 @@ body{
     border: 1px solid #878787;
 }
 
-.mainAside .main .classificados-bottom {
+.mainAside .aside-main-classificados .classificados-bottom {
     position: absolute;
     right: 32px;
     bottom: 23px;
     margin-bottom: 8px;
-    background-color: khaki;
 }
 
-.main .classificados-section section {
-    position: relative;
-    width: 100%;
+.aside-main-classificados .classificados-section section {
+    width: 94%;
+    height: 1000px;
     top: 32px;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 
-.main .classificados-section .classificados-stage .classificados-title div{
+.aside-main-classificados .classificados-section .classificados-stage .classificados-title div{
     margin: 40px;
 }
 
-.mainAside .main section .classificados-rows {
+.mainAside .aside-main-classificados section .classificados-rows {
     width: 100%;
+    min-width: 1094;
     height: 420px;
     display: flex;
     margin-bottom: 23px;
@@ -478,7 +892,7 @@ body{
 }
 
 
-.mainAside .main section .classificados-rows .classificados {
+.mainAside .aside-main-classificados section .classificados-rows .classificados {
     width: 23%;
     height: 410px;
     display: flex;
@@ -487,13 +901,13 @@ body{
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
-.mainAside .main section .classificados-rows .classificados .classificados-conteudo {
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo {
     width: 95%;
     height: 398px;
     margin-top: 7px;
 }
 
-.mainAside .main section .classificados-rows .classificados .classificados-conteudo .classificados-titulo {
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo .classificados-titulo {
     width: 100%;
     padding: 7.5px 0;
     font-family: Roboto-Regular;
@@ -502,7 +916,7 @@ body{
     font-weight: bold;
 }
 
-.mainAside .main section .classificados-rows .classificados .classificados-conteudo .classificados-referencia {
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo .classificados-referencia {
     width: 100%;
     padding-bottom: 7.5px;
     font-family: Roboto-Regular;
@@ -510,7 +924,7 @@ body{
     font-size: 16px;
 }
 
-.mainAside .main section .classificados-rows .classificados .classificados-conteudo .classificados-resumo {
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo .classificados-resumo {
     width: 92%;
     margin-left: 4%;
     font-style: unset;
@@ -519,18 +933,22 @@ body{
     font-size: 16px;
 }
 
-.mainAside .main section .classificados-rows .classificados .classificados-conteudo p{
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo p{
     text-align: center;
 }
 
-.mainAside .main section .classificados-rows .classificados .classificados-conteudo #texto {
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo #texto {
 height: 70px;
 font-size: 18px;
 }
 
-.mainAside .main section .classificados-rows img {
+.mainAside .aside-main-classificados section .classificados-rows img {
     width: 100%;
     height: 255px;
+}
+
+.logo-ipad {
+    display: none;
 }
 
 
@@ -539,7 +957,6 @@ font-size: 18px;
 .footer {
     position: fixed;
     width: 100%;
-    max-width: 1920px;
     height: 4vh;
     bottom: 0;
     background-color: black;

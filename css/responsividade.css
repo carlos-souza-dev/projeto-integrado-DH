@@ -1,5 +1,72 @@
 /* Início do estilo para mobile */
 
+
+@media screen and (min-width: 2500px){
+
+    body{
+        position: relative;
+    }
+
+    #bodys{
+        display: grid;
+        grid-template-columns: 320px 1920px 320px;
+        grid-template-areas: "body-one body-main body-three";
+    }
+    #bodys #main {
+        position: absolute;
+        width: 1920px;
+        left: 320px;
+        display: grid;
+        grid-template-rows: 15vh 10vh 71vh 4vh;
+        grid-template-columns: 300px  84%;
+        grid-template-areas: "nav header" "nav div" "nav aside" "footer footer";
+    }
+
+    .mainHeader{ grid-area: header; background-color: rgb(255, 255, 255);}
+    .mainDiv{ grid-area: div; background-color: rgb(255, 255, 255);}
+    .mainNav{ grid-area: nav; background-color: rgb(255, 255, 255);}
+    .mainAside{ grid-area: aside; background-color: rgb(255, 255, 255);}
+    .mainFooter{ grid-area: footer; background-color: rgb(255, 255, 255);}
+   
+    #body-one {
+        position: fixed;
+        width: 360px;
+        right: 0;
+        height: 100vh;
+        background-image: url("../img/home/direita.jpg");
+        background-position: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #bodys #body-three {
+        position: fixed;
+        bottom: 0;
+        width: 360px;
+        height: 100vh;
+        background-image: url("../img/home/esquerda.jpg");
+        background-position: fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    .div-main {
+        width: 94%;
+        height: 5vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        margin: 0 50px;
+    }
+
+    .footer {
+        width: 1920px;
+    }
+
+}
+
+
+
 /* ipad */
 @media(max-width: 768px){
 

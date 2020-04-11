@@ -1,0 +1,130 @@
+@font-face {
+  src: url(https://fonts.google.com/specimen/Roboto?selection.family=Roboto&sidebar.open);
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.bloco1 {
+    position: relative;
+    width: 650px;
+    margin: 0 auto;
+    height: 440px;
+    background-color: white;
+    border-radius: 15px;
+    border: thin silver solid;
+
+}
+
+h1{
+  right: 55%;  
+  color: black;
+  text-align:left;
+  position: absolute;
+  margin-top: 1%;
+}
+
+#dog{
+    width:200px;
+    height:170px;
+    position: absolute;
+    bottom:45%;
+    right: 60%;
+    left: 10%;
+ }
+ 
+
+ h2{
+  font-size: 16px;   
+  color:black;
+  text-align:left;
+  position: relative;
+  margin-bottom:140px;
+  margin-top: 200px;
+  margin-left:50px;
+   
+}
+
+ 
+figure{
+  float: left;
+  width: 40%;
+  text-align: center;
+  font-style: italic;
+  text-indent: 0;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+.linha-vertical {
+    height: 350px;/*Altura da linha*/
+    border-left: 2px solid;/* Adiciona borda esquerda na div como ser fosse uma linha.*/
+    left: 50%;
+    top: 16%;
+    bottom: 80%;
+    color: rgb(172, 164, 164);
+    position: absolute;
+}
+
+/*segunda parte da div*/
+
+ #user{
+   border-radius: 50%;
+   position: absolute;
+    bottom:70%;
+    right: 10%;
+    left: 55%;
+    width:70px;
+    height:60px;
+    border-color: black;
+ }
+ 
+
+
+h3{
+  font-size: 18px;   
+  color:black;
+  position: absolute;
+  top: 15%;
+  left:70%;
+  
+}
+
+hr{
+  width: 160px;
+}
+
+h4{
+  color:rgb(172, 164, 164) ;
+  font-size: 12px;
+  position: absolute;
+  left:70%;
+  top: 23%;
+}
+h5{
+ font-size: 14px; 
+ position:absolute;
+left:52%;
+bottom: 45%;
+}
+
+button{
+  padding: px;
+  font-size: 12px;
+  border: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  color: black;
+  background-color: rgb(155, 158, 163);
+  width: auto;
+  height: auto;
+}  
+
+h6{
+  position: absolute;
+  font-size: 14px;
+  text-align: left;
+  left:52%;
+  bottom: 5%;
+  
+}
+

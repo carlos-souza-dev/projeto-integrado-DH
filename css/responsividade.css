@@ -73,22 +73,26 @@
     body{
         padding: 0;
         margin: 0;
+        position: relative;
     }
 
-    #main {
+    /* #main {
         height: 1024px;
         display: grid;
         grid-template-rows: 10vh 7vh 79vh 4vh;
-        grid-template-columns: 100%;
+        grid-template-columns:  0 100%;
         grid-template-areas: "header" "div" "aside" "footer";
+    } */
+
+    #bodys #main {
+        position: relative;
+        width: 768px;
+        display: grid;
+        grid-template-rows: 10vh 5vh 81vh 4vh;
+        grid-template-columns: 0%  100%;
+        grid-template-areas: "nav header" "nav div" "nav aside" "footer footer";
     }
-    
-    .mainHeader{ grid-area: header; background-color: aqua;}
-    .mainDiv{ grid-area: div; background-color: rgb(255, 251, 0);}
-    .mainNav{position: absolute; grid-area: nav; background-color: rgb(17, 0, 255);}
-    .mainAside{ grid-area: aside; background-color: rgb(225, 0, 255);}
-    .mainFooter{ grid-area: footer; background-color: rgb(255, 0, 119);}
-    
+
     .mainNav {
         width: 0;
     }
@@ -96,13 +100,12 @@
     /* Menu */
 
     .menu {
-        position: absolute;
+        position: a;
         width: 320px;
         height: 100vh;
         left: -322px;
         padding: 5px 25px 5px 25px;
         background-color: #3B3B3B;
-        position: relative;
         transition: all 0.7s;
         border-radius: 0 0 25px 0;
     }
@@ -294,52 +297,70 @@
     }
 
     /* header */
+
     #body-main {
         position: relative;
     }
+
     .mainHeader {
         position: absolute;
         width: 100%;
-        height: 11vh;
-        top: 0;
         border-bottom: 1px solid #C4C4C4;
         background-color: white;
     }
 
-    .nomePag {
-        text-transform: uppercase;
-        color: #3B3B3B;
-        font-family: 'Montserrat-Ligth';
-        font-size: 20px;
-        font-weight: bold;
-    }
-    .titulo {
-        left: 100px;
-        position: absolute;
-        height: 10vh;
-        width: 580px !important;
+    .mainHeader .head-main {
+        min-width: 280px;
     }
 
-    .avatar {
-        opacity: 0;
+    .nomePag {
+        width: 50%;
+        min-width: 246px;
+    }
+
+    .mainHeader .head-main .nomePag p{
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 24px;
+    }
+    
+    .mainHeader .head-main .titulo {        
+        position: absolute;
+        width: 87% !important;
+        margin: 0 0 0 95px;
+    }
+
+    .finalidPag {
+        position: relative;
+        width: 100%;
+        min-width: 175px;
+        height: 10vh;
+        line-height: 10vh;
+    }
+
+    .finalidPag p{
+        position: absolute;
+        right: 0;
+    }
+
+    .mainHeader .head-main .avatar:last-child {
         display: none;
     }
 
     .logo-ipad {
-        width: 5%;
-        height: 10vh;        
+        display: block;
+        height: 8vh;        
     }
 
     .logo-ipad img {
-        width: 90px;
-        height: 10vh;
-        position: absolute;
-        right: 0;
+        height: 9vh;
     }
 
     /* Div */
 
     .mainDiv {
+        width: 100%;
+        min-width: 600px;
         background-color: rgb(255, 255, 255);
     }
 
@@ -388,8 +409,14 @@
     /* Aside */
 
     .mainAside {
-        background-color: white;
+        width: 100%;    
     }
+
+    /* bem-bindo */
+
+
+
+    /* morador */
 
     .mc-morador-section {
         display: flex;
@@ -440,8 +467,9 @@
     }
 
     /* Aside - classificados */
-    .mainAside .main {
-        height: 954px;
+    .mainAside .aside-main-classificados {
+        position: absolute;
+        min-width: 500px;
     }
 
     .classificados-stage .classificados-filter .boxer {
@@ -474,6 +502,10 @@
         border: 1px solid #878787;
         border-left: none;
     }
+
+    .mainAside .aside-main-classificados .classificados-section {
+        min-width: 500px;
+    }
     
     /* .classificados-stage .classificados-filter .boxer .box:hover:before {
         background-color: #3B3B3B;
@@ -485,22 +517,22 @@
         transition: 0.5s;
     } */
 
-    .mainAside .main section .classificados-rows {
+    .mainAside .aside-main-classificados .classificados-section .classificados-rows {
         height: 320px;
     }
 
-    .mainAside .main section .classificados-rows .classificados {
+    .mainAside .aside-main-classificados .classificados-section .classificados-rows .classificados {
         width: 24%;
         height: 310px;
     }
     
-    .mainAside .main section .classificados-rows .classificados .classificados-conteudo {
+    .mainAside .aside-main-classificados .classificados-section .classificados-rows .classificados .classificados-conteudo {
         width: 94%;
         height: 290px;
         margin-top: 7px;
     }
     
-    .mainAside .main section .classificados-rows .classificados .classificados-conteudo .classificados-titulo {
+    .mainAside .aside-main-classificados .classificados-section .classificados-rows .classificados .classificados-conteudo .classificados-titulo {
         width: 100%;
         padding: 2px 0;
         font-family: Roboto-Regular;
@@ -509,7 +541,7 @@
         font-weight: bold;
     }
     
-    .mainAside .main section .classificados-rows .classificados .classificados-conteudo .classificados-referencia {
+    .mainAside .aside-main-classificados .classificados-section .classificados-rows .classificados .classificados-conteudo .classificados-referencia {
         width: 100%;
         padding-bottom: 2px 0;
         font-family: Roboto-Regular;
@@ -517,7 +549,7 @@
         font-size: 12px;
     }
     
-    .mainAside .main section .classificados-rows .classificados .classificados-conteudo .classificados-resumo {
+    .mainAside .aside-main-classificados .classificados-section .classificados-rows .classificados .classificados-conteudo .classificados-resumo {
         width: 92%;
         /* margin-left:4%; */
         font-style: unset;
@@ -526,30 +558,34 @@
         font-size: 6px;
     }
     
-    .mainAside .main section .classificados-rows .classificados .classificados-conteudo p{
+    .mainAside .aside-main-classificados .classificados-section .classificados-rows .classificados .classificados-conteudo p{
         text-align: center;
     }
     
-    .mainAside .main section .classificados-rows .classificados .classificados-conteudo #texto {
+    .mainAside .aside-main-classificados .classificados-section .classificados-rows .classificados .classificados-conteudo #texto {
         display: flex;
         align-items: center;
         height: 94px;
         font-size:12px;
     }
     
-    .mainAside .main section .classificados-rows img {
+    .mainAside .aside-main-classificados .classificados-section .classificados-rows img {
         width: 100%;
         height: 155px;
     }
 
+    /* Footer */
+
     .mainFooter {
         position: absolute;
         bottom: 0;
+        width: 100%;
     }
 
     .footer {
-        bottom: 0;
+        position: relative;
         width: 100%;
+        min-width: 570px;
         height: 40px;
     }
 
@@ -564,4 +600,10 @@
         margin: 0 10px;
     }
 
+    /* .mainHeader{ grid-area: header; background-color: aqua;}
+    .mainDiv{ grid-area: div; background-color: rgb(255, 251, 0);}
+    .mainNav{position: absolute; grid-area: nav; background-color: rgb(17, 0, 255);}
+    .mainAside{ grid-area: aside; background-color: rgb(225, 0, 255);}
+    .mainFooter{ grid-area: footer; background-color: rgb(255, 0, 119);} */
+    
 }

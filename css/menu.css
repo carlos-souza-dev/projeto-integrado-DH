@@ -378,7 +378,7 @@ body{
     height: 65vh;
 }
 
-.main .resumo-section .resumo-section-div {
+.main-morador .resumo-section .resumo-section-div {
     width: 100%;
     height: 22vh;
     min-height: 165px;
@@ -387,7 +387,7 @@ body{
     align-items: center;
 }
 
-.main .resumo-section .resumo {
+.main-morador .resumo-section .resumo {
     width: 44%;
     height: 18vh;
     min-height: 150px;
@@ -396,7 +396,7 @@ body{
 
 }
 
-.main #resumo-comunicados {
+.main-morador #resumo-comunicados {
     width: 94%;
     height: 18vh;
     min-height: 146px;
@@ -404,7 +404,7 @@ body{
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
-.main .resumo-section .resumo-tema {
+.main-morador .resumo-section .resumo-tema {
     font-family: Roboto-Regular;
     text-transform: uppercase;
     font-weight: bold;
@@ -416,7 +416,7 @@ body{
     border-bottom: 1px solid #3B3B3B;
 }
 
-.main .resumo-section .resumo-tema-comunicados {
+.main-morador .resumo-section .resumo-tema-comunicados {
     font-family: Roboto-Regular;
     text-transform: uppercase;
     font-weight: bold;

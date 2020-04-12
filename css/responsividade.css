@@ -19,15 +19,15 @@
         display: grid;
         grid-template-rows: 15vh 10vh 71vh 4vh;
         grid-template-columns: 300px  84%;
-        grid-template-areas: "nav header" "nav div" "nav aside" "footer footer";
+        grid-template-areas: "main header" "main div" "main aside" "footer footer";
     }
-
+/* 
     .mainHeader{ grid-area: header; background-color: rgb(255, 255, 255);}
     .mainDiv{ grid-area: div; background-color: rgb(255, 255, 255);}
-    .mainNav{ grid-area: nav; background-color: rgb(255, 255, 255);}
+    .mainMain{ grid-area: nav; background-color: rgb(255, 255, 255);}
     .mainAside{ grid-area: aside; background-color: rgb(255, 255, 255);}
     .mainFooter{ grid-area: footer; background-color: rgb(255, 255, 255);}
-   
+    */
     #body-one {
         position: fixed;
         width: 360px;
@@ -73,27 +73,42 @@
     body{
         padding: 0;
         margin: 0;
-        position: relative;
     }
 
-    /* #main {
+    #bodys #main {
+        position: relative;
         height: 1024px;
         display: grid;
         grid-template-rows: 10vh 7vh 79vh 4vh;
-        grid-template-columns:  0 100%;
+        grid-template-columns:  100%;
         grid-template-areas: "header" "div" "aside" "footer";
-    } */
+    }
 
-    #bodys #main {
+    /* #bodys #main {
         position: relative;
         width: 768px;
         display: grid;
         grid-template-rows: 10vh 5vh 81vh 4vh;
         grid-template-columns: 0%  100%;
         grid-template-areas: "nav header" "nav div" "nav aside" "footer footer";
+    } */
+    .mainHeader{ 
+        grid-area: header; background-color: #ffffff;
     }
-
-    .mainNav {
+    .mainDiv{ 
+        grid-area: div; background-color: rgb(255, 255, 255);
+    }
+    .mainMain{ 
+        grid-area: main; background-color: rgb(90, 136, 89);
+    }
+    .mainAside{
+         grid-area: aside; background-color: rgb(255, 255, 255);
+        }
+    .mainFooter{
+         grid-area: footer; background-color: rgb(28, 51, 93);
+        }
+    
+    .mainMain {
         width: 0;
     }
 
@@ -299,14 +314,15 @@
     /* header */
 
     #body-main {
-        position: relative;
+        width: 100%;
+        min-width: 610px;
     }
 
     .mainHeader {
         position: absolute;
         width: 100%;
+        height: 10vh;
         border-bottom: 1px solid #C4C4C4;
-        background-color: white;
     }
 
     .mainHeader .head-main {
@@ -361,7 +377,6 @@
     .mainDiv {
         width: 100%;
         min-width: 600px;
-        background-color: rgb(255, 255, 255);
     }
 
     .div-main {
@@ -426,31 +441,35 @@
         height: 40vh;
     }
 
-    .mc-main .mc-morador-section .mc-resumo {
+    .mc-main .mc-morador .mc-resumo {
         position: absolute;
         width: 100%;
         height: 80vh;
     }
 
-    .mc-main .mc-morador-section .mc-morador-rows {
-        min-width: 100%;
+    .mc-main .mc-morador .mc-morador-rows {
+        width: 100%;
+        min-width: 610px;
         height: 400px;
         margin: auto 0;
         display: block;
         align-items: center;
     }
 
-    .mc-main .mc-morador-section .mc-morador-rows:first-child{
-        position: absolute;
-        height: 70px;
-        top: 0px;       
+    .mc-main .mc-morador .mc-morador-rows:first-child{
+        height: 70px;      
     }
 
-    .mc-main .mc-morador-section .mc-morador-rows:last-child {
+    .mc-main .mc-morador-rows .mc-morador-buttom {
+        height: 70px;
+        line-height: 70px;
+    }
+
+    .mc-main .mc-morador .mc-morador-rows:last-child {
         bottom: 20px;       
     }
 
-    .mc-main .mc-morador-section .mc-morador-rows .mc-morador{
+    .mc-main .mc-morador .mc-morador-rows .mc-morador{
         position: relative;
         width: 94%;
         top: 40px;
@@ -462,14 +481,17 @@
 
     .mainAside .aside-main .correspondencia-section {
         width: 94%;
+        min-width: 610px;
         height: 450px;
         margin: 50px auto 0;
     }
 
     /* Aside - classificados */
+
     .mainAside .aside-main-classificados {
         position: absolute;
         min-width: 500px;
+        height: 0;
     }
 
     .classificados-stage .classificados-filter .boxer {
@@ -505,6 +527,10 @@
 
     .mainAside .aside-main-classificados .classificados-section {
         min-width: 500px;
+    }
+
+    .aside-main-classificados .classificados-section section {
+        height: 659px;
     }
     
     /* .classificados-stage .classificados-filter .boxer .box:hover:before {
@@ -599,11 +625,5 @@
         height: 30px;
         margin: 0 10px;
     }
-
-    /* .mainHeader{ grid-area: header; background-color: aqua;}
-    .mainDiv{ grid-area: div; background-color: rgb(255, 251, 0);}
-    .mainNav{position: absolute; grid-area: nav; background-color: rgb(17, 0, 255);}
-    .mainAside{ grid-area: aside; background-color: rgb(225, 0, 255);}
-    .mainFooter{ grid-area: footer; background-color: rgb(255, 0, 119);} */
     
 }

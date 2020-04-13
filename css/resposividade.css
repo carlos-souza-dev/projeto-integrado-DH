@@ -30,13 +30,14 @@
     */
     #body-one {
         position: fixed;
-        width: 305px;
+        width: 290px;
         right: 0;
         height: 100vh;
         background-image: url("../img/home/direita.jpg");
         background-position: fixed;
         background-size: cover;
         background-repeat: no-repeat;
+        z-index: 2;
     }
 
     #bodys #body-three {
@@ -303,9 +304,6 @@
         border-bottom: 1px solid #C4C4C4;
     }
 
-    .mainHeader .head-main {
-    }
-
     .div-main .div-sub-class {
         min-width: 100%;
     }
@@ -461,6 +459,17 @@
         font-size: 14px;
     }
 
+    .aside-main-solicitacoes .mc-solicitacoes-buttom {
+        min-width: 585px;
+    }
+
+    .aside-main-solicitacoes .solicitacoes-section {
+        width: 94%;
+        min-width: 585px;
+        height: 254px;
+        margin: 40px auto;
+    }
+
     @media screen and (max-width: 416px){
 
         #bodys #main {
@@ -540,7 +549,7 @@
     
          .menu-icon-mobile {
             width: 90%;
-            height: 5px;
+            height: 6px;
             background-color: #C4C4C4;
             border-radius: 50px;
             
@@ -807,6 +816,36 @@
     .mainAside .aside-main-classificados .classificados-rows-two .classificados-conteudo #texto {
         height: 70px;
         font-size: 18px;
+    }
+
+    /*solicitações */
+
+    .aside-main-solicitacoes .mc-solicitacoes-buttom {
+        min-width: 100%;
+    }
+
+    .aside-main-solicitacoes .mc-solicitacoes-buttom #button-geral {
+        margin: 0 auto;
+    }
+
+    .aside-main-solicitacoes .solicitacoes-section {
+        min-width: 375px;
+    }
+
+    .aside-main-solicitacoes .solicitacoes-section article .codigo,
+    .aside-main-solicitacoes .solicitacoes-section article .type,
+    .aside-main-solicitacoes .solicitacoes-section article .date,
+    .aside-main-solicitacoes .solicitacoes-section article .status {
+    font-size: 14px;
+}
+
+    .aside-main-solicitacoes .solicitacoes-section .destinatario .status p {
+        width: 35px;
+        height: 35px;
+        margin: 0 auto;
+        line-height: 32px;
+        border-radius: 50%;
+        font-size: 0;
     }
 
     /* footer */

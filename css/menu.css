@@ -358,41 +358,33 @@ body{
 
 #moradores {
     position: relative;
-    width: 100%;
+    width: 94%;
     height: 68vh;
+    margin: 40px auto;
 }
 
 .resumo-section {
-    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: space-between;
-    width: 100%;
-    height: 65vh;
-}
-
-.main-morador .resumo-section .resumo-section-div {
-    width: 100%;
-    height: 22vh;
-    min-height: 165px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
 .main-morador .resumo-section .resumo {
-    width: 44%;
-    height: 18vh;
-    min-height: 150px;
+    width: 47%;
+    min-width: 364px;
+    height: 190px;
+    margin: 20px 0;
     border-radius: 20px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 
 }
 
 .main-morador #resumo-comunicados {
-    width: 94%;
-    height: 18vh;
-    min-height: 146px;
+    width: 100%;
+    min-width: 364px;
+    height: 190px;
     border-radius: 20px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
@@ -403,7 +395,7 @@ body{
     font-weight: bold;
     justify-content: start;
     color: #3B3B3B;
-    width: 95%;
+    width: 96%;
     height: 30px;
     margin: 10px 16px 0;
     border-bottom: 1px solid #3B3B3B;
@@ -456,7 +448,8 @@ body{
 .mc-main-div .mc-morador-rows-two .mc-morador {
     width: 47%;
     min-width: 364px;
-    height: 190px;
+    height: 15vh;
+    min-height: 190px;
     margin: 20px 0;
     border-radius: 20px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
@@ -466,21 +459,23 @@ body{
 }
 
 .mc-main-div .mc-morador-rows-two .mc-morador .mc-morador-icon-photo img {
-   width: 100%;
-    height: 144px;
+    width: 100%;
+    height: 12vh;
+    min-height: 150px;
     border-radius: 50%;
 }
 
 .mc-main-div .mc-morador-rows-two .mc-morador .mc-morador-icon {
     width: 22%;
-    height: 144px;
+    height: 12vh;
+    min-height: 150px;
 }
 
 .mc-main-div .mc-morador-rows-two .mc-morador .mc-morado-data {
     display: flex;
     flex-direction: column;
     width: 70%;
-    height: 170px;
+    height: 12vh;
 }
 
 .mc-main-div .mc-morador-rows-two .mc-morador .mc-morado-data .mc-morador-block1 {
@@ -506,6 +501,7 @@ body{
     width: 25px;
     height: 25px;
     right: 50px;
+    bottom: 10px;
     background-image: url("../img/icon/edit.svg");
     background-position: center;
     background-size: cover;
@@ -516,6 +512,7 @@ body{
     width: 20px;
     height: 25px;
     right: 0;
+    bottom: 10px;
     background-image: url("../img/icon/trash.svg");
     background-position: center;
     background-size: cover;
@@ -734,8 +731,8 @@ body{
 
 .mainAside .aside-main-classificados .classificados-section{
     width: 100%;
-    height: 84vh;
-    background: rgb(255, 255, 255)8);
+    height: 100vh;
+    background: rgb(255, 255, 255);
 }
 
 .mainAside .aside-main-classificados .classificados-section .classificados-rows-one{
@@ -903,6 +900,7 @@ font-size: 18px;
 .mainAside .aside-main-classificados .classificados-rows-two img {
     width: 100%;
     height: 255px;
+    border-radius: 20px 20px 0 0;
 }
 
 .logo-ipad {

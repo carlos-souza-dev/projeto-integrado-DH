@@ -85,8 +85,8 @@ body{
 #body-main #main {
     display: grid;
     grid-template-rows: 15vh 10vh 71vh 4vh;
-    grid-template-columns: 315px 84%;
-    grid-template-areas: "main header" "main div" "main aside" "footer footer";
+    grid-template-columns: 300px 84%;
+    grid-template-areas: "nav header" "nav div" "nav aside" "footer footer";
 }
 
 /* Estilo do header */
@@ -221,11 +221,12 @@ body{
 /* Estilo do menu */
 
 .menu {
-    width: 315px;
+    width: 300px;
     height: 96vh;
     padding: 5px 25px 5px 25px;
     background-color: #3B3B3B;
     border-radius: 0 25px 25px 0;
+    position: absolute;
     z-index: 1;
     position: fixed;
 }
@@ -423,41 +424,58 @@ body{
 
 /* estilo da página morador */
 
-
-.mc-main-div {
-    width: 94%;
-    margin: 0 auto;
-}
-
-.mc-main-div .mc-morador-rows-one {
+.mc-main {
     width: 100%;
-    height: 10vh;
-    min-height: 50px;
-    margin: 0 auto;
-}
-
-.mc-main-div .mc-morador-rows-one .mc-morador-buttom {
-    width: 100%;
-    height: 10vh;
+    height: 71vh;
     display: flex;
-    justify-content: flex-end;
+justify-content: center;
+}
+
+.mc-main .mc-main-div {
+    width: 100%;
+}
+.mc-morador {
+    width: 100%;
+}
+
+/* .mc-morador-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 71vh;
+} */
+
+.mc-main .mc-morador .mc-morador-rows {
+    position: relative;
+    width: 100%;
+    min-width: 790px;
+    height: 232px;
+    top: 40px;
+    display: flex;
+    justify-content: space-evenly;
     align-items: center;
 }
 
-
-.mc-main-div .mc-morador-rows-two {
-    width: 100%;
-    margin: 0 auto;
+.mc-main  .mc-morador-rows .mc-morador-buttom {
+    margin-bottom: 8px;
+    width: 94%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
-.mc-main-div .mc-morador-rows-two .mc-morador {
-    width: 47%;
-    min-width: 364px;
+.mc-main  .mc-morador-rows:first-child{
+    height: 11vh;
+    margin-bottom: -22px;
+    width: 100%;
+    min-height: 86px;
+    min-width: 790px;
+    position: relative;
+}
+
+.mc-main  .mc-morador-rows .mc-morador {
+    width: 46%;
+    min-width: 370px;
     height: 190px;
-    margin: 20px 0;
     border-radius: 20px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
     display: flex;
@@ -465,25 +483,25 @@ body{
     align-items: center;
 }
 
-.mc-main-div .mc-morador-rows-two .mc-morador .mc-morador-icon-photo img {
+.mc-main  .mc-morador-rows .mc-morador .mc-morador-icon-photo img {
    width: 100%;
     height: 144px;
     border-radius: 50%;
 }
 
-.mc-main-div .mc-morador-rows-two .mc-morador .mc-morador-icon {
+.mc-main  .mc-morador-rows .mc-morador .mc-morador-icon {
     width: 22%;
     height: 144px;
 }
 
-.mc-main-div .mc-morador-rows-two .mc-morador .mc-morado-data {
+.mc-main  .mc-morador-rows .mc-morador .mc-morado-data {
     display: flex;
     flex-direction: column;
     width: 70%;
     height: 170px;
 }
 
-.mc-main-div .mc-morador-rows-two .mc-morador .mc-morado-data .mc-morador-block1 {
+.mc-main .mc-morador-rows .mc-morador .mc-morado-data .mc-morador-block1 {
     position: relative;
     width: 100%;
     height: 50px;
@@ -521,13 +539,13 @@ body{
     background-size: cover;
 }
 
-.mc-morador-rows-two .mc-morador .mc-morado-data .mc-morador-block2 {
+.mc-morador-rows .mc-morador .mc-morado-data .mc-morador-block2 {
     width: 100%;
     height: 100px;
     margin-top: 10px;
     align-items: center;
 }
-.mc-morador-rows-two .mc-morador .mc-morado-data .mc-morador-block2 div {
+.mc-morador-rows .mc-morador .mc-morado-data .mc-morador-block2 div {
     margin-top: 11px;
     font-size: 14px;
     font-family: Roboto-Regular;
@@ -546,44 +564,29 @@ body{
     
     .mc-main-servicos .mc-servicos-section .mc-servicos-rows {
         position: relative;
-        width: 94%;
-        margin: 0 auto;
+        width: 100%;
         height: 232px;
         top: 40px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center; 
     }
     
     .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos-buttom {
         position: absolute;
-        right: 0;
+        right: 40px;
         bottom: 20px;
         margin-bottom: 8px;
     }
     
-    .mc-main-servicos .mc-servicos-section .mc-servicos-rows {
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows:first-child{
         height:11vh;
-        margin-bottom: 60px;
-    }
-
-    .mc-main-servicos .mc-servicos-section .mc-servicos-rows-two {
-        width: 94%;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        height: 294px;
-        align-items: center;
+        margin-bottom: 8px;
     }
     
-    .mc-main-servicos .mc-servicos-section .mc-servicos-rows-two .mc-servicos .mc-morado-data {
-        color: black;
-    }
-
-
-    .mc-main-servicos .mc-servicos-section .mc-servicos-rows-two .mc-servicos {
-        width: 49%;
-        min-width: 600px;
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos {
+        width: 46%;
         height: 190px;
-        margin: 20px 0;
         border-radius: 20px;
         box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
         display: flex;
@@ -591,25 +594,25 @@ body{
         align-items: center;
     }
     
-    .mc-main-servicos .mc-servicos-section .mc-servicos-rows-two .mc-servicos .mc-servicos-icon-photo img {
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos .mc-servicos-icon-photo img {
        width: 100%;
         height: 144px;
         border-radius: 50%;
     }
     
-    .mc-main-servicos .mc-servicos-section .mc-servicos-rows-two .mc-servicos .mc-servicos-icon {
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos .mc-servicos-icon {
         width: 22%;
         height: 144px;
     }
     
-    .mc-main-servicos .mc-servicos-section .mc-servicos-rows-two .mc-servicos .mc-morado-data {
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos .mc-morado-data {
         display: flex;
         flex-direction: column;
         width: 70%;
         height: 170px;
     }
     
-    .mc-main-servicos .mc-servicos-section .mc-servicos-rows-two .mc-servicos .mc-morado-data .mc-servicos-block1 {
+    .mc-main-servicos .mc-servicos-section .mc-servicos-rows .mc-servicos .mc-morado-data .mc-servicos-block1 {
         position: relative;
         width: 100%;
         height: 50px;
@@ -647,13 +650,13 @@ body{
         background-size: cover;
     }
     
-    .mc-servicos-rows-two .mc-servicos .mc-morado-data .mc-servicos-block2 {
+    .mc-servicos-rows .mc-servicos .mc-morado-data .mc-servicos-block2 {
         width: 100%;
         height: 100px;
         margin-top: 10px;
         align-items: center;
     }
-    .mc-servicos-rows-two .mc-servicos .mc-morado-data .mc-servicos-block2 div {
+    .mc-servicos-rows .mc-servicos .mc-morado-data .mc-servicos-block2 div {
         margin-top: 11px;
         font-size: 14px;
         font-family: Roboto-Regular;
@@ -721,7 +724,6 @@ body{
 
 /* Início do estilo da página classificados */
 
-
 .div-main .div-sub-class #div-sub-cassificados {
     padding-top:12px;
     border-bottom: 4px solid rgb(0, 0, 0);
@@ -729,16 +731,22 @@ body{
 
 .mainAside .aside-main-classificados {
     width: 100%;
-    height: 84vh;  
+    height: 100vh;
+    min-width: 1094px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    
 }
 
 .mainAside .aside-main-classificados .classificados-section{
     width: 100%;
-    height: 84vh;
-    background: rgb(255, 255, 255)8);
+    height: 100vh;
+    min-width: 1094px;
+    background-color: rgb(255, 255, 255);
 }
 
-.mainAside .aside-main-classificados .classificados-section .classificados-rows-one{
+.mainAside .aside-main-classificados .classificados-section .classificados-stage{
     position: relative;
     width: 94%;
     height: 200px;
@@ -748,7 +756,7 @@ body{
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
-.aside-main-classificados .classificados-section .classificados-rows-one .classificados-title {
+.aside-main-classificados .classificados-section .classificados-stage .classificados-title {
     width: 100%;
     height: 53px;
     font-family: Roboto-Regular;
@@ -760,44 +768,63 @@ body{
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
-.aside-main-classificados .classificados-section .classificados-rows-one .classificados-title div {
-    margin: 20px;
-}
-
-.mainAside .aside-main-classificados .classificados-section .classificados-rows-one .classificados-filter {
+.mainAside .aside-main-classificados .classificados-section .classificados-stage .classificados-filter {
     position: relative;
-    width: 96%;
-    margin: 20px auto;
-    height: 7vh;
+    width: 100%;
+    height: 8vh;
     top: 0;
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-.classificados-rows-one .classificados-filter .pesquisar {
-    width: 40%;
-    height: 7vh;
+.mainAside .aside-main-classificados .classificados-section .classificados-stage .classificados-filter div {
+    width: 66%;
+    height: 8vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.classificados-rows-one .classificados-filter .boxer {
-    width: 60%;
-    height: 7vh;
+.mainAside ..aside-main-classificados .classificados-section .classificados-stage .classificados-filter #search {
+    width: 33%;
+    height: 8vh;
+}
+
+.mainAside .aside-main-classificados .classificados-section .classificados-stage .classificados-filter #search #pesquisa {
+    padding-left: 3%;
+}
+
+.mainAside .aside-main-classificados .classificados-section .classificados-stage .classificados-filter div #filter {
+    width: 85%;
+    height: 3vh;
+    font-family: Roboto-Regular;
+    font-size: 14px;
+    padding-left: 3%;
+    border: 1px solid #878787;
+    background-color: rgb(255, 255, 255);
+}
+
+.classificados-stage .classificados-filter .boxer {
+    width: 100%;
+    padding: 2%;
     display: flex;
     justify-content: space-between;
 }
 
-.classificados-rows-one .classificados-filter .boxer .box {
-    width: 40%;
+.classificados-stage .classificados-filter .boxer .box {
+    width: 50%;
     height: 8vh;
     margin-left: 3%;
     transform: translate(-0%, -0%);
 
 }
 
-.classificados-rows-one .classificados-filter .boxer .box:before {
+.classificados-stage .classificados-filter .boxer .box:before {
     content: '';
     position: absolute;
-    right: 0%;
+    top: 32.2%;
+    right: 7%;
     width: 12%;
     height: 2.6vh;
     background-color: rgb(216, 215, 215);
@@ -809,7 +836,7 @@ body{
     border-left: none;
 }
 
-.classificados-rows-one .classificados-filter .boxer .box:hover:before {
+.classificados-stage .classificados-filter .boxer .box:hover:before {
     background-color: #3B3B3B;
     background-image: url("../img/icon/filter-white.png");
     background-position: center;
@@ -819,8 +846,7 @@ body{
     transition: 0.5s;
 }
 
-
-.mainAside .aside-main-classificados .classificados-section .classificados-rows-one .classificados-filter #pesquisa {
+.mainAside .aside-main-classificados .classificados-section .classificados-stage .classificados-filter #pesquisa {
     width: 75%;
     height: 2.7vh;
     font-family: Roboto-Regular;
@@ -830,41 +856,52 @@ body{
 
 .mainAside .aside-main-classificados .classificados-bottom {
     position: absolute;
-    right: 2%;
-    bottom: 16%;
+    right: 32px;
+    bottom: 23px;
+    margin-bottom: 8px;
 }
 
-.mainAside .aside-main-classificados .classificados-section .classificados-rows-one .classificados-filter div #filter {
-    width: 100%;
-    height: 3vh;
-    font-family: Roboto-Regular;
-    font-size: 14px;
-    padding-left: 3%;
-    border: 1px solid #878787;
-    background-color: rgb(255, 255, 255);
-}
-
-.aside-main-classificados .classificados-section .classificados-rows-two{
+.aside-main-classificados .classificados-section section {
     width: 94%;
+    height: 1000px;
+    top: 32px;
     margin: 0 auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.aside-main-classificados .classificados-section .classificados-stage .classificados-title div{
+    margin: 40px;
+}
+
+.mainAside .aside-main-classificados section .classificados-rows {
+    width: 100%;
+    min-width: 1094;
+    height: 420px;
+    display: flex;
+    margin-bottom: 23px;
     justify-content: space-between;
 }
 
-.mainAside .aside-main-classificados .classificados-rows-two .classificados-conteudo {
-    margin-bottom: 50px;
-}
 
-.aside-main-classificados .classificados-rows-two .classificados-conteudo .conteudo {
-    width: 350px;
-    height: 418px;
-    margin-bottom: 20px;
-    padding: 10px;
-    border-radius: 20px;
+.mainAside .aside-main-classificados section .classificados-rows .classificados {
+    width: 23%;
+    height: 410px;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
-.mainAside .aside-main-classificados .classificados-rows-two .classificados-conteudo .classificados-titulo {
+
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo {
+    width: 95%;
+    height: 398px;
+    margin-top: 7px;
+}
+
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo .classificados-titulo {
     width: 100%;
     padding: 7.5px 0;
     font-family: Roboto-Regular;
@@ -873,7 +910,7 @@ body{
     font-weight: bold;
 }
 
-.mainAside .aside-main-classificados .classificados-rows-two .classificados-conteudo .classificados-referencia {
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo .classificados-referencia {
     width: 100%;
     padding-bottom: 7.5px;
     font-family: Roboto-Regular;
@@ -881,7 +918,7 @@ body{
     font-size: 16px;
 }
 
-.mainAside .aside-main-classificados .classificados-rows-two .classificados-conteudo .classificados-resumo {
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo .classificados-resumo {
     width: 92%;
     margin-left: 4%;
     font-style: unset;
@@ -890,22 +927,18 @@ body{
     font-size: 16px;
 }
 
-.mainAside .aside-main-classificados .classificados-rows-two .classificados-conteudo p{
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo p{
     text-align: center;
 }
 
-.mainAside .aside-main-classificados .classificados-rows-two .classificados-conteudo #texto {
+.mainAside .aside-main-classificados section .classificados-rows .classificados .classificados-conteudo #texto {
 height: 70px;
 font-size: 18px;
 }
 
-.mainAside .aside-main-classificados .classificados-rows-two img {
+.mainAside .aside-main-classificados section .classificados-rows img {
     width: 100%;
     height: 255px;
-}
-
-.logo-ipad {
-    display: none;
 }
 
 .logo-ipad {
@@ -945,10 +978,9 @@ font-size: 18px;
     background-size: cover;
 }
 
-
 .mainHeader{ grid-area: header; background-color: #ffffff;}
 .mainDiv{ grid-area: div; background-color: rgb(255, 255, 255); min-width: 1135px; display: flex; justify-content: center;}
-.mainMain{ grid-area: main; background-color: rgb(255, 255, 255);}
+.mainMain{ grid-area: nav; background-color: rgb(255, 255, 255);}
 .mainAside{ grid-area: aside; background-color: rgb(255, 255, 255);}
 .mainFooter{ grid-area: footer; background-color: rgb(255, 255, 255); position: absolute;}
 

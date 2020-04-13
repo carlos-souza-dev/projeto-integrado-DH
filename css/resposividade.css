@@ -434,9 +434,13 @@
         height: 418px;
     }
 
+    .mainAside .aside-main-classificados .classificados-rows-two .classificados-conteudo {
+        margin: 5px;
+    }
+
     .mainAside .aside-main-classificados .classificados-rows-two .classificados-conteudo #texto {
         height: 70px;
         font-size: 14px;
     }
-    
+
 }

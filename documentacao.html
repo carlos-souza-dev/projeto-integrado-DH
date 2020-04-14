@@ -4,15 +4,16 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Documentação</title>
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Minha Casa</title>
+        <title>Documentação</title>
 
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <!-- css da parte interna da pagina -->
-        <link rel="stylesheet" href="./css/solicitacoes.css">
-        <link rel="stylesheet" href="./css/resposividade.css">
+        <link rel="stylesheet" href="./css/documentacao.css">
         <!-- css header, menu lateral, menu superior e footer -->
         <link rel="stylesheet" href="./css/headerMenuFooter.css">
 
@@ -48,7 +49,7 @@
                             <i class="fas fa-home"></i>
                             Página Inicial</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a
                             href="#homeSubmenu"
                             data-toggle="collapse"
@@ -80,15 +81,15 @@
                             class="dropdown-toggle">
                             <i class="fas fa-user-friends"></i>
                             Vizinhança</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="classificados.html">Classificados</a>
-                                </li>
-                                <li>
-                                    <a href="meusItens.html">Meus itens</a>
-                                </li>
-    
-                            </ul>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="classificados.html">Classificados</a>
+                            </li>
+                            <li>
+                                <a href="meusItens.html">Meus itens</a>
+                            </li>
+
+                        </ul>
                     </li>
                     <li>
                         <a href="comunicados.html">
@@ -101,7 +102,7 @@
                              Solicitações</a>
                     </li>
                     
-                    <li>
+                    <li class="active">
                         <a href="documentacao.html">
                             <i class='fas'>&#xf07b;</i>
                             Documentação</a>
@@ -121,16 +122,15 @@
                     <span>Toggle Sidebar</span>
                 </button>
             </div>
-
                 <!-- Header -->
                 <div class="mainHeader">
                     <div class="titulo" id="tit">
                         <div class="nomePag">
-                            <p>Minha Casa</p>
+                            <p>Documentação</p>
 
                         </div>
                         <div class="finalidPag">
-                            <p >Tudo sobre sua residência</p>
+                            <p>Estatuto do condomínio e muito mais!</p>
                         </div>
 
                     </div>
@@ -138,7 +138,7 @@
                     <div class="avatar" id="avat">
 
                         <div class="sininho">
-                            <img src="./img/icon/Vector.svg">"
+                            <img src="./img/icon/Vector.svg">
                         </div>
 
                         <div class="nameUser">
@@ -149,72 +149,65 @@
 
                     </div>
                 </div>
+
                 <hr class="docSepLine">
 
-               
-                <!-- botao para adicionar cadastro -->
-                <div class="areaBotaoCad">
-                    <div>
-                        <a href="#" class="btn btn-secondary btn-sm" id="botaoCadastro">
-                            Nova solicitação</a>
+                <!-- area do centro da tela -->
+                <div class="centroTelaClassificados">
 
+                <!-- div para organizar os cards -->
+                <div class="listaClassificados">
+
+                    <!-- cards dos classificados -->
+                    <div class="card classificado">
+                        <img
+                            class="card-img-top card-img-semBorda"
+                            src="./img/documentacao/estatuto.png"
+                            alt="Imagem de capa do card">
+                        <div class="card-corpo">
+                            <div class="card-titulo">Estatuto do Condomínio</div>
+                            <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
+                        </div>
+                    </div>
+                    <div class="card classificado">
+                        <img
+                            class="card-img-top"
+                            src="./img/documentacao/planta_hidraulica_colunaAB.svg"
+                            alt="Imagem de capa do card">
+                        <div class="card-corpo">
+                            <div class="card-titulo">Planta hidráulica - Colunas A/B</div>
+                            <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
+                        </div>
+                    </div>
+                    <div class="card classificado">
+                        <img
+                            class="card-img-top"
+                            src="./img/documentacao/planta_baixa_colunaAB.svg"
+                            alt="Imagem de capa do card">
+                        <div class="card-corpo">
+                            <div class="card-titulo">Planta baixa - Colunas A/B</div>
+                            <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- area do centro da tela -->
-                <div class="centroTelaSolicitacoes">
-
-                    
-
-                    <aside class="mainAside">
-                        <main class="aside-main-solicitacoes">
-                           
-                            <section class="solicitacoes-section">
-                                <article class="recebido">
-                                    <div class="solicitacoes-title">Código</div>
-                                    <div class="codigo">ABC123</div>
-                                    <div class="codigo">ABC123</div>
-                                    <div class="codigo">ABC123</div>
-                                </article>
-                                <article class="tipo">
-                                    <div class="solicitacoes-title">Tipo</div>
-                                    <div class="type">Reserva</div>
-                                    <div class="type">Serviço</div>
-                                    <div class="type">Autorização</div>
-                                </article>
-                                <article class="remetente">
-                                    <div class="solicitacoes-title">Data</div>
-                                    <div class="date">XX/xx/xxxx</div>
-                                    <div class="date">XX/xx/xxxx</div>
-                                    <div class="date">XX/xx/xxxx</div>
-                                </article>
-                                <article class="destinatario">
-                                    <div class="solicitacoes-title">Status</div>
-                                    <div class="status"><p id="grey">Em análise</p></div>
-                                    <div class="status"><p id="red">Indeferida</p></div>
-                                    <div class="status"><p id="green">Deferida</p></div>
-                                </article>
-                            </section>
-                        </main>
-                    </aside>
+          
+            <footer class="py-2 footer">
+                <div class="container text-center" id="footerText">
+                    <p class="m-0">
+                        Portal do Condomínio | ST02G3-2020
+                        <img src="imagens/favicon.png" width="30" alt=""/>
+                    </p>
                 </div>
-
-                
-       
+            </footer>       
+           
 
             </div>
             
 
         </div>
-
-        <footer class="py-2 footer">
-            <div class="container text-center" id="footerText">
-                <p class="m-0">
-                    Portal do Condomínio | ST02G3-2020
-                    <img src="imagens/favicon.png" width="30" alt=""/>
-                </p>
-            </div>
-        </footer>   
+  
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script

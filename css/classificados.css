@@ -19,6 +19,7 @@ p {
 .centroTelaClassificados {
 
     display: flex;
+    padding-bottom: 40px;
 
 }
 
@@ -189,6 +190,9 @@ p {
 @media(max-width: 767px) {
     .linha-vertical {
         display: none;
+    }
+    .listaClassificados{
+        justify-content: center;
     }
 
 }

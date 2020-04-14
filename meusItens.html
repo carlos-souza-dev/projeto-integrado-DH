@@ -4,14 +4,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>Minha Casa</title>
-       
+        <title>Vizinhanca</title>
+
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <!-- css da parte interna da pagina -->
-        <link rel="stylesheet" href="./css/correspondencias.css">
+        <link rel="stylesheet" href="./css/meusItens.css">
         <!-- css header, menu lateral, menu superior e footer -->
         <link rel="stylesheet" href="./css/headerMenuFooter.css">
 
@@ -96,8 +97,8 @@
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fas fa-file-alt"></i>
-                            Solicitações</a>
+                            <i class="fas fa-file-alt"></i> 
+                             Solicitações</a>
                     </li>
                     <li>
                         <a href="#">
@@ -114,27 +115,26 @@
             </nav>
 
             <!-- Conteudo da página -->
-            <!-- area dentro da tela, estão na mesma div do menu para empurrar tudo para a
-            direita -->
+
             <div id="content">
 
                 <!-- botão para abrir e fechar o menu -->
-                <div class="botaoAbrireFechar">
-                    <button type="button" id="sidebarCollapse" class="btn">
-                        <i class="fas fa-align-left" style="color: white;"></i>
-                        <span>Toggle Sidebar</span>
-                    </button>
-                </div>
+                <div class=botaoAbrireFechar>
+                <button type="button" id="sidebarCollapse" class="btn">
+                    <i class="fas fa-align-left" style="color: white;"></i>
+                    <span>Toggle Sidebar</span>
+                </button>
+            </div>
 
                 <!-- Header -->
                 <div class="mainHeader">
                     <div class="titulo" id="tit">
                         <div class="nomePag">
-                            <p>Minha Casa</p>
+                            <p>Vizinhança</p>
 
                         </div>
                         <div class="finalidPag">
-                            <p >Tudo sobre sua residência</p>
+                            <p >O que acontece ao seu redor</p>
                         </div>
 
                     </div>
@@ -158,97 +158,87 @@
                 <nav class="slidemenu">
 
                     <!-- Item 1 -->
-                    <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"
+                    <input
+                        type="radio"
+                        name="slideItem"
+                        id="slide-item-1"
+                        class="slide-toggle"
                         />
                     <label for="slide-item-1">
-                        <a href="minhaCasa.html">Moradores</a></label>
-
+                        <a href="classificados.html">Classificados</a></label>
+    
                     <!-- Item 2 -->
-                    <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
+                    <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle" checked="checked"/>
                     <label for="slide-item-2">
-                        <a href="prestadoresDeServico.html">Prestadores de Serviço</a></label>
-
-                    <!-- Item 3 -->
-                    <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle" checked="checked"/>
-                    <label for="slide-item-3">
-                        <a href="correspondencias.html">Correspondências</a></label>
-
-                    <!-- Item 4 -->
-                    <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle"/>
-                    <label for="slide-item-4">
-                        <a href="contatosUteis.html">Contatos Úteis</a></label>
-
+                        <a>Meus Itens</a></label>
+    
                     <div class="clear"></div>
-
+    
                     <!-- Bar -->
                     <div class="slider">
                         <div class="bar"></div>
                     </div>
                 </nav>
 
-                
+                 <!-- botao para adicionar cadastro -->
+            <div class="areaBotaoCad">
+                <div>
+                    <a href="#" class="btn btn-secondary btn-sm" id="botaoCadastro">
+                        Novo Cadastro</a>
 
-                <!-- area do centro da tela -->
-                <section class="correspondencia-section">
-                    <article>
-                        <div class="correspondencia-title">Recebido em</div>
-                        <div class="date">XX/xx/xxxx</div>
-                        <div class="date">XX/xx/xxxx</div>
-                        <div class="date">XX/xx/xxxx</div>
-                        <div class="date">XX/xx/xxxx</div>
-                        <div class="date">XX/xx/xxxx</div>
-                        <div class="date" id="last-child">XX/xx/xxxx</div>
-                    </article>
-                    <article>
-                        <div class="correspondencia-title">Tipo</div>
-                        <div class="type">Encomenda</div>
-                        <div class="type">Carta</div>
-                        <div class="type">Mala Direta</div>
-                        <div class="type">Encomenda</div>
-                        <div class="type">Mala Direta</div>
-                        <div class="type" id="last-child">Encomenda</div>
-                    </article>
-                    <article>
-                        <div class="correspondencia-title">Remetente</div>
-                        <div class="sender">Remetente A</div>
-                        <div class="sender">Remetente B</div>
-                        <div class="sender">Remetente C</div>
-                        <div class="sender">Remetente D</div>
-                        <div class="sender">Remetente E</div>
-                        <div class="sender" id="last-child">Remetente E</div>
-                    </article>
-                    <article>
-                        <div class="correspondencia-title">Destinatário</div>
-                        <div class="receiver">Destinatário A</div>
-                        <div class="receiver">Destinatário B</div>
-                        <div class="receiver">Destinatário C</div>
-                        <div class="receiver">Destinatário D</div>
-                        <div class="receiver">Destinatário E</div>
-                        <div class="receiver" id="last-child">Destinatário F</div>
-                    </article>
-                    <article>
-                        <div class="correspondencia-title">Observações</div>
-                        <div class="note">...</div>
-                        <div class="note">...</div>
-                        <div class="note">...</div>
-                        <div class="note">...</div>
-                        <div class="note">...</div>
-                        <div class="note" id="last-child">...</div>
-                    </article>
-                </section>
+                </div>
+            </div>
+              
+               <!-- area do centro da tela -->
+            <div class="centroTelaClassificados">
+
+                <!-- div para organizar os cards -->
+                <div class="listaClassificados">
+
+                    <!-- cards dos meus ítens -->
+                    <div class="card classificado">
+                        <img
+                            class="card-img-top"
+                            src="./img/classificados/aulas violão.png"
+                            alt="Imagem de capa do card">
+                        <div class="card-corpo">
+                            <div class="card-titulo">Aulas de Violão</div>
+                            <div class="card-subtitulo">Juliana B. (B-74)</div>
+                            <div class="descricaoCard">Lorem ipsum dolor sit amet, consectetur
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card classificado">
+                        <img
+                            class="card-img-top"
+                            src="./img/classificados/assistência.png"
+                            alt="Imagem de capa do card">
+                        <div class="card-corpo">
+                            <div class="card-titulo">Assistência e reparos</div>
+                            <div class="card-subtitulo">Lucas M. (C-84)</div>
+                            <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+          
+            <footer class="py-2 footer">
+                <div class="container text-center" id="footerText">
+                    <p class="m-0">
+                        Portal do Condomínio | ST02G3-2020
+                        <img src="imagens/favicon.png" width="30" alt=""/>
+                    </p>
+                </div>
+            </footer>       
+           
 
             </div>
+            
 
         </div>
-
-        <footer class="py-2 footer">
-            <div class="container text-center" id="footerText">
-                <p class="m-0">
-                    Portal do Condomínio | ST02G3-2020
-                    <img src="imagens/favicon.png" width="30" alt=""/>
-                </p>
-            </div>
-        </footer>
+  
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script

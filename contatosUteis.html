@@ -1,266 +1,312 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contatos Uteis</title>
-        <link rel="stylesheet" href="./css/menu.css">
-        <link rel="stylesheet" href="./css/bem-vindo.css">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Minha Casa</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <!-- css da parte interna da pagina -->
         <link rel="stylesheet" href="./css/contatosUteis.css">
-        <link rel="stylesheet" href="./css/header.css">
-        <link rel="stylesheet" href="./css/responsividade.css">
+        <!-- css header, menu lateral, menu superior e footer -->
+        <link rel="stylesheet" href="./css/headerMenuFooter.css">
+
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+
+        <link
+            rel="shortcut icon"
+            href="./img/logo/logo-simples.png"
+            type="image/x-icon"/>
     </head>
 
     <body>
-        <section id="bodys">
-            <section id="body-one"></section>
 
-            <section id="body-main">
-                <section id="main">
+        <div class="wrapper">
+            <!-- Menu Retrátil -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <img src="./img/logo/logo-menu.png" class="logotipoMenu" alt="">
+                </div>
 
-                    <header class="mainHeader">
-                        
-                        <div class="head-main">
-                            <div class="titulo">
-                                <div class="nomePag">
-                                    <p>Título da Seção</p>
-                                </div>
-                                <div class="finalidPag">
-                                    <p>Finalidade da Seção</p>
-                                </div>
-                            </div>
-                            <div class="avatar">
-                                <div class="sininho">
-                                    <img src="./img/icon/Vector.svg">"
-                                </div>
-                                <div class="nameUser">
-                                    <p>Olá User!</p>
-                                </div>
-                                <img class="avatarUser" src="./img/logo/user.png">
-                            </div>
-                            </div>
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-home"></i>
+                            Página Inicial</a>
+                    </li>
+                    <li class="active">
+                        <a
+                            href="#homeSubmenu"
+                            data-toggle="collapse"
+                            aria-expanded="false"
+                            class="dropdown-toggle">
+                            <i class="fas fa-heart"></i>
+                            Minha Casa</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="minhaCasa.html">Moradores</a>
+                            </li>
+                            <li>
+                                <a href="prestadoresDeServico.html">Prestadores de Serviço</a>
+                            </li>
+                            <li>
+                                <a href="correspondencias.html">Correspondências</a>
+                            </li>
+                            <li>
+                                <a href="contatosUteis.html">Contatos Uteis</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a
+                            href="#pageSubmenu"
+                            data-toggle="collapse"
+                            aria-expanded="false"
+                            class="dropdown-toggle">
+                            <i class="fas fa-user-friends"></i>
+                            Vizinhança</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="classificados.html">Classificados</a>
+                            </li>
+                            <li>
+                                <a href="meusItens.html">Meus itens</a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="comunicados.html">
+                            <i class='fas'>&#xf0e0;</i>
+                            Comunicados</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-file-alt"></i>
+                            Solicitações</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='fas'>&#xf09d;</i>
+                            Financeiro</a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='fas'>&#xf07b;</i>
+                            Documentação</a>
+                    </li>
+                </ul>
+
+            </nav>
+
+            <!-- Conteudo da página -->
+
+            <div id="content">
+
+                <!-- botão para abrir e fechar o menu -->
+                <div class="botaoAbrireFechar">
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="fas fa-align-left" style="color: white;"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+
+                <!-- Header -->
+                <div class="mainHeader">
+                    <div class="titulo" id="tit">
+                        <div class="nomePag">
+                            <p>Minha Casa</p>
+
                         </div>
-                        <div class="logo-ipad">
-                            <img src="./img/logo/logo-simples.png">
+                        <div class="finalidPag">
+                            <p >Tudo sobre sua residência</p>
                         </div>
 
-                    </header>
-
-                    <div class="mainDiv">
-                        <section class="div-main">
-                            <article class="div-sub-class">
-                                <div>
-                                    <a id="div-sub-moradores" href="#">Moradores</a>
-                                </div>
-                                <div>
-                                    <a id="div-sub-prestadores" href="#">Prestadores de Serviço</a>
-                                </div>
-                                <div>
-                                    <a id="div-sub-correspondencia" href="#">Correspondências</a>
-                                </div>
-                                <div>
-                                    <a id="div-sub-contatos" href="#">Contatos Úteis</a>
-                                </div>
-                            </article>
-                        </section>
                     </div>
 
-                    <nav class="mainNav">
-                        <input type="checkbox" id="check-menu">
-                            <label for="check-menu" class="menu-label">
-                                <div class="hamburger">
-                                    <div class="menu-icon-mobile"></div>
-                                    <div class="menu-icon-mobile" id="icon-midle"></div>
-                                    <div class="menu-icon-mobile"></div>
-                                </div>
-                            </label>
-                        </input>
-                        <nav class="menu">
-                            <div class="logo-tipo">
-                                <div class="img"></div>
-                                <div class="user-name">Olá, Carlos Alberto Gomes de Souza</div>
-                                <!-- <img id="logo-menu" src="img/logo/logo.png" alt="Logo"> -->
+                    <div class="avatar" id="avat">
+
+                        <div class="sininho">
+                            <img src="./img/icon/Vector.svg">"
+                        </div>
+
+                        <div class="nameUser">
+                            <p>Olá, Carlos!</p>
+                        </div>
+
+                        <img class="avatarUser" src="./img/logo/user.png">
+
+                    </div>
+                </div>
+
+                <!-- menu superior -->
+                <nav class="slidemenu">
+
+                    <!-- Item 1 -->
+                    <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"
+                        />
+                    <label for="slide-item-1">
+                        <a href="minhaCasa.html">Moradores</a></label>
+
+                    <!-- Item 2 -->
+                    <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
+                    <label for="slide-item-2">
+                        <a href="prestadoresDeServico.html">Prestadores de Serviço</a></label>
+
+                    <!-- Item 3 -->
+                    <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle"/>
+                    <label for="slide-item-3">
+                        <a href="correspondencias.html">Correspondências</a></label>
+
+                    <!-- Item 4 -->
+                    <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle" checked="checked"/>
+                    <label for="slide-item-4">
+                        <a href="contatosUteis.html">Contatos Úteis</a></label>
+
+                    <div class="clear"></div>
+
+                    <!-- Bar -->
+                    <div class="slider">
+                        <div class="bar"></div>
+                    </div>
+                </nav>
+
+                <!-- botao para adicionar cadastro -->
+                <div class="areaBotaoCad">
+                    <div>
+                        <a href="#" class="btn btn-secondary btn-sm" id="botaoCadastro">
+                            Novo Cadastro</a>
+
+                    </div>
+                </div>
+
+                <!-- area do centro da tela -->
+                <div class="centroTelaContatosUteis">
+
+                    <!-- card do contato -->
+
+                    <div class="cardContato ">
+
+                        <!-- div da foto do morador -->
+                        <div class="imgContato">
+                            <img src="./img/user/joao_das_neves.jpg" alt="...">
+                        </div>
+
+                        <!-- area que organiza os itens do texto do card -->
+                        <div class="corpoCard">
+
+                            <!-- div que contem o nome do morador e os icones para fazer alteração -->
+
+                            <div class="card-titulo">
+                                <b>João das Neves</b>
                             </div>
-                            <div class="menu-dois">
-                                <ul class="menu-dois-ul">
-                                    <li class="principal-menu">
-                                        <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-                                            <path
-                                                d="M 12 2.0996094 L 1 12 L 4 12 L 4 21 L 10 21 L 10 14 L 14 14 L 14 21 L 20 21 L 20 12 L 23 12 L 12 2.0996094 z"/>
-                                        </svg>
-                                        <a href="#" class="li-a">Página Inicial</a>
-                                    </li>
+                            <div class="card-titulo">Seu Síndico</div>
+                            <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
+                            linhas-->
 
-                                    <li class="principal-menu">
-                                        <input type="checkbox" id="check-minha-casa">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-                                                <path d="M0 0h24v24H0z" fill="none"/>
-                                                <path
-                                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-                                            </svg>
-                                            <label for="check-minha-casa" class="sub-menu">Minha casa</label>
-                                        </input>
-                                        <ul>
-                                            <li class="second-menu">
-                                                <a href="#">Moradores</a>
-                                            </li>
-                                            <li class="second-menu">
-                                                <a href="#">Prestadores de Serviço</a>
-                                            </li>
-                                            <li class="second-menu">
-                                                <a href="#">Correspondências</a>
-                                            </li>
-                                            <li class="second-menu">
-                                                <a href="#">Contatos Úteis</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="principal-menu">
-                                        <input type="checkbox" id="check-vizinhanca">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-                                                <path d="M0 0h24v24H0z" fill="none"/>
-                                                <path
-                                                    d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
-                                            </svg>
-                                            <label for="check-vizinhanca" class="sub-menu">Vizinhança</label>
-                                        </input>
-                                        <ul>
-                                            <li class="second-menu">
-                                                <a href="#">Classificados</a>
-                                            </li>
-                                            <li class="second-menu">
-                                                <a href="#">Meus Itens</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="principal-menu">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-                                            <path
-                                                d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
-                                            <path d="M0 0h24v24H0z" fill="none"/></svg>
-                                        <a href="#" class="li-a">Comunicados</a>
-                                    </li>
-                                    <li class="principal-menu">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-                                            <path d="M0 0h24v24H0z" fill="none"/>
-                                            <path
-                                                d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-                                        </svg>
-                                        <a href="#" class="li-a">Solicitações</a>
-                                    </li>
-                                    <li class="principal-menu">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-                                            <path d="M0 0h24v24H0z" fill="none"/>
-                                            <path
-                                                d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/>
-                                        </svg>
-                                        <a href="#" class="li-a">Financeiro</a>
-                                    </li>
-                                    <li class="principal-menu">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24">
-                                            <path
-                                                d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
-                                            <path d="M0 0h24v24H0z" fill="none"/></svg>
-                                        <a href="#" class="li-a">Documentação</a>
-                                    </li>
-                                </ul>
-                                <div class="menu-function">
-                                    <a href="#" class="menu-function-image"></a>
-                                </div>
+                            <div class="card-text">
+                                (11) 987678-8277
                             </div>
-                        </nav>
-                    </nav>
+                            <div class="card-text">joaodasneves@gmail.com</div>
+                        </div>
+                        <div class="iconesContato">
+                            <img src="./img/icon/phone_in_talk.svg" alt="">
+                            <img src="./img/icon/mail.svg" alt="">
+                            <img src="./img/icon/whatsApp.svg" alt="">
 
-                    <aside class="mainAside">
-                        <main class="mc-main">
-                            <section class="mc-morador-section">
-                                <div>
-                                    <article class="mc-resumo">
-                                        <div class="mc-resumo-tema">
-                                            <div class="mc-morador-icon"></div>
-                                            <div class="mc-morador-icon-edit"></div>
-                                            <div class="mc-morador-icon-trash"></div>
-                                            
-                                        </div>
+                        </div>
+                    </div>
 
-                                    </div>
-                                    <div class="mc-morador-rows">
-                                        <article class="mc-morador">
-                                            <div class="mc-morador-icon">
-                                                <div class="mc-morador-icon-photo"><img src="./img/user/user1"></div>
-                                            </div>
-                                            <article class="mc-morado-data">
-                                                <div class="mc-morador-block1">
-                                                    <div class="mc-morador-name">
-                                                        <p>João das Neves</p>
-                                                    </div>
-                                                    
+                    <!-- card com outros contatos -->
+                    <div class="cardOutrosContatos ">
 
-                                                </div>
-                                                <div class="mc-morador-block2">
-                                                    <div class="mc-morador-icon-date">
-                                                        <b>Seu Sindico</b>
-                                                    </div>
-                                                    <div class="mc-morador-icon-rg">(11) 99999-9999</div>
-                                                    <div class="mc-morador-icon-cpf">joaodasneves@gmail.com</div>
-                                                </div>
-                                            </article>
-                                        </article>
-                                        <article class="mc-morador">
-                                            
-                                            <article class="mc-morado-data">
-                                                <div class="mc-morador-block1">
-                                                    
-                                                    <div class="mc-morador-name">
-                                                        <p>Outros Contatos</p>
-                                                    </div>
-                                                    
+                        <!-- area que organiza os itens do texto do card -->
+                        <div class="corpoCardOutrosContatos">
 
-                                                </div>
-                                                <div class="mc-morador-block2">
-                                                    <div class="mc-morador-icon-date">
-                                                        <b>Administração</b>
-                                                    </div>
-                                                    <div class="mc-morador-icon-rg">(11) 99999-9999</div>
+                            <!-- div que contem o nome do contato e os icones para fazer alteração -->
 
-                                                    
-                                                </div>
-                                                <div class="mc-morador-block2">
-                                                    <div class="mc-morador-icon-date">
-                                                        <b>Portaria</b>
-                                                    </div>
-                                                    <div class="mc-morador-icon-rg">(11) 99999-9999</div>
+                            <div class="card-tituloOC">Outros Contatos</div>
 
-                                                    
-                                                </div>
-                                            </article>
-                                        </article>
-                                    </div>
-                                </section>
-                            </main>
-                        </aside>
-
-
-
-                        <footer class="mainFooter">
-                            <div class="footer">
-                                <div class="footer-div">
-                                    <p class="footer-div-copyright">copyright 2020</p>
-                                    <div class="icon-footer"></div>
-                                    <p>
-                                        portal do condomínio</p>
-                                </div>
+                            <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
+                            linhas-->
+                            <!-- div para agrupar os textos e ficarem do lado direito do card -->
+                            <div class="textoCardOutrosContatos">
+                                <div class="card-text">
+                                    <b>Data de Nascimento:</b>
+                                    14/11/1983</div>
+                                <div class="card-text">
+                                    <b>RG:</b>
+                                    45.334.657-9</div>
+                                <div class="card-text">
+                                    <b>CPF:</b>
+                                    345-654-758-66</div>
+                                <div class="card-text">
+                                    <b>Ocupação:</b>
+                                    Professor de Musica</div>
                             </div>
-                        </footer>
-                    </section>
+                        </div>
 
-                </section>
+                    </div>
 
-                <section id="body-three"></section>
-            </section>
-        </body>
+                </div>
 
-    </html>
+            </div>
+
+        </div>
+
+        <footer class="py-2 footer">
+            <div class="container text-center" id="footerText">
+                <p class="m-0">
+                    Portal do Condomínio | ST02G3-2020
+                    <img src="imagens/favicon.png" width="30" alt=""/>
+                </p>
+            </div>
+        </footer>
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({theme: "minimal"});
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+            });
+        </script>
+    </body>
+
+</html>

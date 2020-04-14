@@ -1,0 +1,463 @@
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+
+/* estilo pagina em geral */
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+
+p {
+    margin-bottom: 0 !important;
+}
+
+a,
+a:focus,
+a:hover {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+    display: flex;
+    width: 100%;
+
+}
+
+.logotipoMenu {
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    width: 100%;
+    height: 90px;
+
+}
+
+
+.botaoAbrireFechar {
+    padding-top: 10px;
+    padding-left: 10px;
+
+
+}
+
+#sidebarCollapse {
+    background-color: #3f3f3f;
+}
+
+#sidebar {
+
+    width: 250px;
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #3B3B3B;
+    color: #fff;
+    transition: all 0.3s;
+
+    box-shadow: 8px 0 8px rgba(0, 0, 0, 0.12);
+    border-radius: 0 25px 0 0;
+
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding-top: 20px;
+    padding-right: 5px;
+    background: #3B3B3B;
+    border-radius: 0 25px 0 0;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    padding-left: 10px;
+    border-bottom: 1px solid #3B3B3B;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+
+#sidebar ul li a:hover {
+    color: #fff;
+    background: #3f3f3f;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+    color: #fff;
+    background: #3f3f3f;
+}
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #3B3B3B;
+}
+
+ul.CTAs {
+    padding: 20px;
+}
+
+ul.CTAs a {
+    text-align: center;
+    font-size: 0.9em !important;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+a.download {
+    background: #fff;
+    color: #3B3B3B;
+}
+
+a.article,
+a.article:hover {
+    background: #3f3f3f !important;
+    color: #fff !important;
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+    width: calc(100% - 250px);
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#content.active {
+    width: 100%;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 250px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    #sidebarCollapse {
+        display: none;
+    }
+}
+
+/* folha estilo header */
+@font-face {
+    src: url("fonts/Montserrat/Montserrat-Light.ttf");
+    font-family: 'Montserrat-Ligth';
+    font-weight: normal;
+}
+
+@font-face {
+    src: url("fonts/Lato/Lato-Light.ttf");
+    font-family: 'Lato-Ligth';
+    font-weight: normal;
+}
+
+.mainHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.mainHeader > div {
+
+    /* width: 50%; */
+    display: flex;
+    align-items: center;
+
+}
+.titulo {
+    width: 70%;
+    display: flex;
+}
+.avatar {
+    width: 30%;
+    justify-content: flex-end;
+    font-family: 'Lato-Ligth';
+    font-size: 20px;
+}
+
+.nomePag {
+    text-transform: uppercase;
+    color: #3B3B3B;
+    font-family: 'Montserrat-Ligth';
+    font-size: 40px;
+    font-weight: bold;
+
+}
+
+.finalidPag {
+    font-family: 'Lato-Ligth';
+    color: #878787;
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.nameUser {
+    color: #3B3B3B;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    align-content: center;
+
+}
+
+.avatarUser {
+
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    border: 4px solid #878787;
+}
+
+@media (max-width: 1024px) {
+    #tit {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        position: relative;
+
+    }
+
+    #avat {
+        display: none;
+
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    #tit > .nomePag {
+        font-size: 25px;
+        /* padding-top: 20px; */
+
+    }
+}
+
+@media(min-width:1023px) {
+    #icone-menu {
+        display: none;
+    }
+
+    .mainHeader {
+        padding-top: 20px;
+        padding-left: 40px;
+        padding-right: 40px;
+
+    }
+
+}
+
+/* Menu Superior */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.slide-toggle {
+    display: none;
+}
+
+.slidemenu {
+    max-width: 100%;
+    overflow: hidden;
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+.slidemenu label {
+    width: 25%;
+    text-align: center;
+    display: block;
+    float: left;
+    color: #333;
+    opacity: 0.2;
+
+}
+
+.slidemenu label:hover {
+    cursor: pointer;
+    color: #3B3B3B;
+}
+
+.slidemenu label span {
+    display: block;
+    padding: 5px;
+    /* font-size: 20px;   */
+}
+
+.slidemenu label .icon {
+    border: solid 2px #3B3B3B;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+/*Bar Style*/
+
+.slider {
+    width: 100%;
+    height: 5px;
+    display: block;
+    background: #ccc;
+    border-radius: 5px;
+}
+
+.slider .bar {
+    width: 25%;
+    height: 5px;
+    background: #333;
+    border-radius: 5px;
+}
+
+/*Animations*/
+.slidemenu label,
+.slider .bar {
+    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+}
+
+/*Toggle*/
+
+.slidemenu .slide-toggle:checked + label {
+    opacity: 1;
+}
+
+.slidemenu #slide-item-1:checked ~ .slider .bar {
+    margin-left: 0;
+}
+.slidemenu #slide-item-2:checked ~ .slider .bar {
+    margin-left: 25%;
+}
+.slidemenu #slide-item-3:checked ~ .slider .bar {
+    margin-left: 50%;
+}
+.slidemenu #slide-item-4:checked ~ .slider .bar {
+    margin-left: 75%;
+}
+
+.btn-secondary {
+    text-decoration: white;
+    border-radius: 20px;
+    height: 35px;
+    width: 140px;
+    background-color: #3B3B3B;
+}
+
+#slide-item-1{
+    src: url(../minhaCasa.html);
+}
+
+.h1 {
+    text-align: center;
+}
+
+@media(max-width: 900px) {
+    .slidemenu > label {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 510px) {
+    .slidemenu > label {
+        font-size: 15px;
+    }
+}
+
+/* estilo footer */
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    z-index: 1;
+    margin-top: 15px;
+}
+
+@media(max-width: 768px) {
+    footer {
+        display: none;
+    }
+
+}

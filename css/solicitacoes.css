@@ -1,0 +1,148 @@
+@font-face {
+    src: url(fonts/Roboto/Roboto-Regular.ttf);
+    font-family: 'Robot-normal';    
+    font-weight: normal;
+}
+@font-face {
+    src: url(fonts/Roboto/Roboto-Light.ttf);
+    font-family: 'Robot-ligth';    
+    font-weight: normal;
+}
+
+.mainHeader {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    
+}
+
+/* stilo botão */
+
+.areaBotaoCad {
+    display: flex;
+    justify-content: flex-end;
+    height: 10vh;
+    padding-right: 2vw;
+    align-items: center;
+    padding-top: 70px;
+   
+}
+
+#botaoCadastro {
+    background-color: #3B3B3B;
+    width: 226px;
+    height: 44px;
+    border-radius: 22px;
+    text-transform: uppercase;
+    font-size: 16px;
+    align-items: center;
+    /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+    padding-top: 8px;
+
+}
+
+@media(max-width:765px) {
+    #botaoCadastro {
+        width: auto;
+        font-size: 10px;
+        /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+    padding-top: 12px;
+    }
+}
+
+/* fim stilo botao */
+
+
+/* início do estilo da página solicitações */
+
+.centroTelaSolicitacoes{
+    padding-top: 40px;
+}
+
+
+.aside-main-solicitacoes {
+    width: 100%;
+}
+
+.aside-main-solicitacoes .mc-solicitacoes-buttom {
+    width: 94%;
+    height: 5vh;
+    margin: 20px auto 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.aside-main-solicitacoes .solicitacoes-section {
+    width: 94%;
+    min-width: 900px;
+    height: 254px;
+    margin: 40px 45px 0; 
+    border-radius: 25px;
+    display: flex;
+    border-radius: 25px;  
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
+
+.aside-main-solicitacoes .solicitacoes-section article{
+    width: 100%;
+}
+
+.aside-main-solicitacoes .solicitacoes-section article .solicitacoes-title {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto-Regular;
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    border-bottom: 1px solid #878787;
+}
+
+.aside-main-solicitacoes .solicitacoes-section article .codigo,
+.aside-main-solicitacoes .solicitacoes-section article .type,
+.aside-main-solicitacoes .solicitacoes-section article .date,
+.aside-main-solicitacoes .solicitacoes-section article .status {
+    width: 100%;
+    height: 64px;
+    border-top: 1px solid #C4C4C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto-Regular;
+    font-size: 16px;
+    color: #000000;
+}
+
+.aside-main-solicitacoes .solicitacoes-section .destinatario .status p {
+    width: 143px;
+    height: 32px;
+    margin: 0 10px;
+    text-align: center;
+    line-height: 32px;
+    border-radius: 16px;
+}
+
+.aside-main-solicitacoes .solicitacoes-section .destinatario #grey{
+    background-color: #BDBDBD;
+}
+
+.aside-main-solicitacoes .solicitacoes-section .destinatario #red{
+    color: white;
+    background-color: #EB5757;
+}
+
+.aside-main-solicitacoes .solicitacoes-section .destinatario #green{
+    color: white;
+    background-color: #6FCF97;
+}
+
+
+.logo-ipad {
+    display: none;
+}
+
+

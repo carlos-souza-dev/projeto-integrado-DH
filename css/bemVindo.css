@@ -1,0 +1,123 @@
+@font-face {
+    src: url(fonts/Roboto/Roboto-Regular.ttf);
+    font-family: 'Robot-normal';    
+    font-weight: normal;
+}
+@font-face {
+    src: url(fonts/Roboto/Roboto-Light.ttf);
+    font-family: 'Robot-ligth';    
+    font-weight: normal;
+}
+
+@font-face {
+    src: url(fonts/Montserrat/Montserrat-Light.ttf);
+    font-family: 'Montserrat-Light';    
+    font-weight: normal;
+}
+@font-face {
+    src: url(fonts/Montserrat/Montserrat-SemiBold.ttf);
+    font-family: 'Montserrat-SemiBold';    
+    font-weight: normal;
+}
+@font-face {
+    src: url(fonts/Montserrat/Montserrat-Medium.ttf);
+    font-family: 'Montserrat-Medium';    
+    font-weight: normal;
+}
+
+@font-face {
+    src: url(fonts/Lato/Lato-Regular.ttf);
+    font-family: 'Lato-Regular';    
+    font-weight: normal;
+}
+
+@font-face {
+    src: url(fonts/Roboto/Roboto-Light.ttf);
+    font-family: 'Roboto-Light';    
+    font-weight: normal;
+}
+
+@font-face {
+    src: url(fonts/Roboto/Roboto-Italic.ttf);
+    font-family: 'Roboto-Italic';    
+    font-weight: normal;
+}
+
+@font-face {
+    src: url(fonts/Roboto/Roboto-Regular.ttf);
+    font-family: 'Roboto-Regular';    
+    font-weight: normal;
+}
+
+@font-face {
+    src: url(fonts/Montserrat/Montserrat-Light.ttf);
+    font-family: 'Montserrat-Ligth';    
+    font-weight: normal;
+}
+
+
+@font-face {
+    src: url(fonts/Lato/Lato-Light.ttf);
+    font-family: 'Lato-Ligth';    
+    font-weight: normal;
+}
+
+
+/* Início do estilo do main (bem-vindo) */
+
+#moradores {
+    position: relative;
+    width: 94%;
+    height: 67vh;
+    margin: 40px auto;
+}
+
+.resumo-section {
+    width: 100%;
+    margin-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.main-morador .resumo-section .resumo {
+    width: 47%;
+    min-width: 364px;
+    height: 190px;
+    margin: 20px 0;
+    border-radius: 20px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+
+}
+
+.main-morador #resumo-comunicados {
+    width: 100%;
+    min-width: 364px;
+    height: 190px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
+
+.main-morador .resumo-section .resumo-tema {
+    font-family: Roboto-Regular;
+    text-transform: uppercase;
+    font-weight: bold;
+    justify-content: start;
+    color: #3B3B3B;
+    width: 96%;
+    height: 30px;
+    margin: 10px 16px 0;
+    border-bottom: 1px solid #3B3B3B;
+}
+
+.main-morador .resumo-section .resumo-tema-comunicados {
+    font-family: Roboto-Regular;
+    text-transform: uppercase;
+    font-weight: bold;
+    justify-content: start;
+    color: #3B3B3B;
+    width: 98%;
+    height: 30px;
+    margin: 10px 16px 0;
+    border-bottom: 1px solid #3B3B3B;
+}

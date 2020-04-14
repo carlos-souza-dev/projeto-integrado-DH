@@ -11,7 +11,8 @@
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <!-- css da parte interna da pagina -->
-        <link rel="stylesheet" href="./css/contatosUteis.css">
+        <link rel="stylesheet" href="./css/bemVindo.css">
+        <link rel="stylesheet" href="./css/resposividade.css">
         <!-- css header, menu lateral, menu superior e footer -->
         <link rel="stylesheet" href="./css/headerMenuFooter.css">
 
@@ -79,15 +80,15 @@
                             class="dropdown-toggle">
                             <i class="fas fa-user-friends"></i>
                             Vizinhança</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="classificados.html">Classificados</a>
-                            </li>
-                            <li>
-                                <a href="meusItens.html">Meus itens</a>
-                            </li>
-
-                        </ul>
+                            <ul class="collapse list-unstyled" id="pageSubmenu">
+                                <li>
+                                    <a href="classificados.html">Classificados</a>
+                                </li>
+                                <li>
+                                    <a href="meusItens.html">Meus itens</a>
+                                </li>
+    
+                            </ul>
                     </li>
                     <li>
                         <a href="comunicados.html">
@@ -96,8 +97,8 @@
                     </li>
                     <li>
                         <a href="solicitacoes.html">
-                            <i class="fas fa-file-alt"></i>
-                            Solicitações</a>
+                            <i class="fas fa-file-alt"></i> 
+                             Solicitações</a>
                     </li>
                     
                     <li>
@@ -114,22 +115,22 @@
             <div id="content">
 
                 <!-- botão para abrir e fechar o menu -->
-                <div class="botaoAbrireFechar">
-                    <button type="button" id="sidebarCollapse" class="btn">
-                        <i class="fas fa-align-left" style="color: white;"></i>
-                        <span>Toggle Sidebar</span>
-                    </button>
-                </div>
+                <div class=botaoAbrireFechar>
+                <button type="button" id="sidebarCollapse" class="btn">
+                    <i class="fas fa-align-left" style="color: white;"></i>
+                    <span>Toggle Sidebar</span>
+                </button>
+            </div>
 
                 <!-- Header -->
                 <div class="mainHeader">
                     <div class="titulo" id="tit">
                         <div class="nomePag">
-                            <p>Minha Casa</p>
+                            <p>Seja bem vindo</p>
 
                         </div>
                         <div class="finalidPag">
-                            <p >Tudo sobre sua residência</p>
+                            <p ></p>
                         </div>
 
                     </div>
@@ -149,113 +150,42 @@
                     </div>
                 </div>
 
-                <!-- menu superior -->
-                <nav class="slidemenu">
-
-                    <!-- Item 1 -->
-                    <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"
-                        />
-                    <label for="slide-item-1">
-                        <a href="minhaCasa.html">Moradores</a></label>
-
-                    <!-- Item 2 -->
-                    <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
-                    <label for="slide-item-2">
-                        <a href="prestadoresDeServico.html">Prestadores de Serviço</a></label>
-
-                    <!-- Item 3 -->
-                    <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle"/>
-                    <label for="slide-item-3">
-                        <a href="correspondencias.html">Correspondências</a></label>
-
-                    <!-- Item 4 -->
-                    <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle" checked="checked"/>
-                    <label for="slide-item-4">
-                        <a href="contatosUteis.html">Contatos Úteis</a></label>
-
-                    <div class="clear"></div>
-
-                    <!-- Bar -->
-                    <div class="slider">
-                        <div class="bar"></div>
-                    </div>
-                </nav>
-
-                <!-- botao para adicionar cadastro -->
-                <div class="areaBotaoCad">
-                    <div>
-                        <a href="#" class="btn btn-secondary btn-sm" id="botaoCadastro">
-                            Novo Cadastro</a>
-
-                    </div>
-                </div>
-
+                
+                
                 <!-- area do centro da tela -->
-                <div class="centroTelaContatosUteis">
+                <div class="centroTelaMoradores">
 
-                    <!-- card do contato -->
+                    <!-- cards dos moradores -->
 
-                    <div class="cardContato ">
-
-                        <!-- div da foto do morador -->
-                        <div class="imgContato">
-                            <img src="./img/user/joao_das_neves.jpg" alt="...">
-                        </div>
-
-                        <!-- area que organiza os itens do texto do card -->
-                        <div class="corpoCard">
-
-                            <!-- div que contem o nome do morador e os icones para fazer alteração -->
-
-                            <div class="card-titulo">
-                                <b>João das Neves</b>
-                            </div>
-                            <div class="card-titulo">Seu Síndico</div>
-                            <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
-                            linhas-->
-
-                            <div class="card-text">
-                                (11) 987678-8277
-                            </div>
-                            <div class="card-text">joaodasneves@gmail.com</div>
-                        </div>
-                        <div class="iconesContato">
-                            <img src="./img/icon/phone_in_talk.svg" alt="">
-                            <img src="./img/icon/mail.svg" alt="">
-                            <img src="./img/icon/whatsApp.svg" alt="">
-
-                        </div>
-                    </div>
-
-                    <!-- card com outros contatos -->
-                    <div class="cardOutrosContatos ">
-
-                        <!-- area que organiza os itens do texto do card -->
-                        <div class="corpoCardOutrosContatos">
-
-                            <!-- div que contem o nome do contato e os icones para fazer alteração -->
-
-                            <div class="card-tituloOC">Outros Contatos</div><br>
-
-                            <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
-                            linhas-->
-                            <!-- div para agrupar os textos e ficarem do lado direito do card -->
-                            <div class="textoCardOutrosContatos">
-                                <div class="card-text">
-                                    <b>Administração</b>
-                                    (11)3453-9899</div><br>
-                                <div class="card-text">
-                                    <b>Portaria</b>
-                                    (11) 5234-4092</div>
-                                
-                            </div>
-                        </div>
-
-                    </div>
-
+                   
+                    <aside class="mainAside">
+                        <main class="main-morador" id="moradores">
+                            <section class="resumo-section">
+                                    <article class="resumo">
+                                        <div class="resumo-tema">Resumo 1</div>
+                                    </article>
+                                    <article class="resumo">
+                                        <div class="resumo-tema">Resumo 2</div>
+                                    </article>
+                                    <article class="resumo">
+                                        <div class="resumo-tema">Resumo 3</div>
+                                    </article>
+                                    <article class="resumo">
+                                        <div class="resumo-tema">Resumo 4</div>
+                                    </article>
+                                    <article class="resumo" id="resumo-comunicados">
+                                        <div class="resumo-tema-comunicados">Comunicados</div>
+                                    </article>
+                            </section>
+                        </main>
+                    </aside>
                 </div>
+
+                
+       
 
             </div>
+            
 
         </div>
 
@@ -266,7 +196,7 @@
                     <img src="imagens/favicon.png" width="30" alt=""/>
                 </p>
             </div>
-        </footer>
+        </footer>   
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script

@@ -448,6 +448,12 @@ a.article:hover {
         font-size: 15px;
     }
 }
+@media(max-width: 450px) {
+    .slidemenu > label {
+        font-size: 11px;
+    }
+}
+
 
 /* estilo footer */
 

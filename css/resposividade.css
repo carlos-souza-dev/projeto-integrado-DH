@@ -2,10 +2,10 @@
 
 
 @media screen and (min-width: 2500px){
-
+/* 
     body{
         position: relative;
-    }
+    } */
 
     #bodys{
         display: grid;

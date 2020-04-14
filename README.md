@@ -8,3 +8,6 @@
   - Poder de decisão dos envolvidos;
   - Reflexão crítica efeedbacks;
   - Produto final.
+
+<!-- Teste de Acesso à pasta do Projeto Integrador -->
+<!-- À proposito, isso é um comentário em MarkDown -->

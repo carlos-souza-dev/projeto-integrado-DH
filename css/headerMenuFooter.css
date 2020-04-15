@@ -463,7 +463,7 @@ footer {
     width: 100%;
     background-color: black;
     color: white;
-     /* margin-top: 15px; */
+    margin-bottom: 0;
 }
 
 @media(max-width: 768px) {

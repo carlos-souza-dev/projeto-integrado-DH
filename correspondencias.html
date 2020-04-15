@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <title>Minha Casa</title>
-       
+
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <!-- css da parte interna da pagina -->
@@ -56,20 +56,20 @@
                             class="dropdown-toggle">
                             <i class="fas fa-heart"></i>
                             Minha Casa</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="minhaCasa.html">Moradores</a>
-                                </li>
-                                <li>
-                                    <a href="prestadoresDeServico.html">Prestadores de Serviço</a>
-                                </li>
-                                <li>
-                                    <a href="correspondencias.html">Correspondências</a>
-                                </li>
-                                <li>
-                                    <a href="contatosUteis.html">Contatos Uteis</a>
-                                </li>
-                            </ul>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="minhaCasa.html">Moradores</a>
+                            </li>
+                            <li>
+                                <a href="prestadoresDeServico.html">Prestadores de Serviço</a>
+                            </li>
+                            <li>
+                                <a href="correspondencias.html">Correspondências</a>
+                            </li>
+                            <li>
+                                <a href="contatosUteis.html">Contatos Uteis</a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li>
@@ -100,7 +100,7 @@
                             <i class="fas fa-file-alt"></i>
                             Solicitações</a>
                     </li>
-                    
+
                     <li>
                         <a href="documentacao.html">
                             <i class='fas'>&#xf07b;</i>
@@ -155,25 +155,33 @@
                 <nav class="slidemenu">
 
                     <!-- Item 1 -->
-                    <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"
-                        />
+                    <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"/>
                     <label for="slide-item-1">
-                        <a href="minhaCasa.html">Moradores</a></label>
+                        <a href="minhaCasa.html">Moradores</a>
+                    </label>
 
                     <!-- Item 2 -->
                     <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
                     <label for="slide-item-2">
-                        <a href="prestadoresDeServico.html">Prestadores de Serviço</a></label>
+                        <a href="prestadoresDeServico.html">Prestadores de Serviço</a>
+                    </label>
 
                     <!-- Item 3 -->
-                    <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle" checked="checked"/>
+                    <input
+                        type="radio"
+                        name="slideItem"
+                        id="slide-item-3"
+                        class="slide-toggle"
+                        checked="checked"/>
                     <label for="slide-item-3">
-                        <a href="correspondencias.html">Correspondências</a></label>
+                        <a href="correspondencias.html">Correspondências</a>
+                    </label>
 
                     <!-- Item 4 -->
                     <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle"/>
                     <label for="slide-item-4">
-                        <a href="contatosUteis.html">Contatos Úteis</a></label>
+                        <a href="contatosUteis.html">Contatos Úteis</a>
+                    </label>
 
                     <div class="clear"></div>
 
@@ -183,69 +191,68 @@
                     </div>
                 </nav>
 
-                
-
                 <!-- area do centro da tela -->
-                <section class="correspondencia-section">
-                    <article>
-                        <div class="correspondencia-title">Recebido em</div>
-                        <div class="date">XX/xx/xxxx</div>
-                        <div class="date">XX/xx/xxxx</div>
-                        <div class="date">XX/xx/xxxx</div>
-                        <div class="date">XX/xx/xxxx</div>
-                        <div class="date">XX/xx/xxxx</div>
-                        <div class="date" id="last-child">XX/xx/xxxx</div>
-                    </article>
-                    <article>
-                        <div class="correspondencia-title">Tipo</div>
-                        <div class="type">Encomenda</div>
-                        <div class="type">Carta</div>
-                        <div class="type">Mala Direta</div>
-                        <div class="type">Encomenda</div>
-                        <div class="type">Mala Direta</div>
-                        <div class="type" id="last-child">Encomenda</div>
-                    </article>
-                    <article>
-                        <div class="correspondencia-title">Remetente</div>
-                        <div class="sender">Remetente A</div>
-                        <div class="sender">Remetente B</div>
-                        <div class="sender">Remetente C</div>
-                        <div class="sender">Remetente D</div>
-                        <div class="sender">Remetente E</div>
-                        <div class="sender" id="last-child">Remetente E</div>
-                    </article>
-                    <article>
-                        <div class="correspondencia-title">Destinatário</div>
-                        <div class="receiver">Destinatário A</div>
-                        <div class="receiver">Destinatário B</div>
-                        <div class="receiver">Destinatário C</div>
-                        <div class="receiver">Destinatário D</div>
-                        <div class="receiver">Destinatário E</div>
-                        <div class="receiver" id="last-child">Destinatário F</div>
-                    </article>
-                    <article>
-                        <div class="correspondencia-title">Observações</div>
-                        <div class="note">...</div>
-                        <div class="note">...</div>
-                        <div class="note">...</div>
-                        <div class="note">...</div>
-                        <div class="note">...</div>
-                        <div class="note" id="last-child">...</div>
-                    </article>
-                </section>
+                <div class="centroTelaCorrespondencias">
+                    <section class="correspondencia-section">
+                        <article>
+                            <div class="correspondencia-title">Recebido em</div>
+                            <div class="date">XX/xx/xxxx</div>
+                            <div class="date">XX/xx/xxxx</div>
+                            <div class="date">XX/xx/xxxx</div>
+                            <div class="date">XX/xx/xxxx</div>
+                            <div class="date">XX/xx/xxxx</div>
+                            <div class="date" id="last-child">XX/xx/xxxx</div>
+                        </article>
+                        <article>
+                            <div class="correspondencia-title">Tipo</div>
+                            <div class="type">Encomenda</div>
+                            <div class="type">Carta</div>
+                            <div class="type">Mala Direta</div>
+                            <div class="type">Encomenda</div>
+                            <div class="type">Mala Direta</div>
+                            <div class="type" id="last-child">Encomenda</div>
+                        </article>
+                        <article>
+                            <div class="correspondencia-title">Remetente</div>
+                            <div class="sender">Remetente A</div>
+                            <div class="sender">Remetente B</div>
+                            <div class="sender">Remetente C</div>
+                            <div class="sender">Remetente D</div>
+                            <div class="sender">Remetente E</div>
+                            <div class="sender" id="last-child">Remetente E</div>
+                        </article>
+                        <article>
+                            <div class="correspondencia-title">Destinatário</div>
+                            <div class="receiver">Destinatário A</div>
+                            <div class="receiver">Destinatário B</div>
+                            <div class="receiver">Destinatário C</div>
+                            <div class="receiver">Destinatário D</div>
+                            <div class="receiver">Destinatário E</div>
+                            <div class="receiver" id="last-child">Destinatário F</div>
+                        </article>
+                        <article>
+                            <div class="correspondencia-title">Observações</div>
+                            <div class="note">...</div>
+                            <div class="note">...</div>
+                            <div class="note">...</div>
+                            <div class="note">...</div>
+                            <div class="note">...</div>
+                            <div class="note" id="last-child">...</div>
+                        </article>
+                    </section>
+                </div>
+                <footer class="py-2 footer">
+                    <div class="container text-center" id="footerText">
+                        <p class="m-0">
+                            Portal do Condomínio | ST02G3-2020
+                            <img src="imagens/favicon.png" width="30" alt=""/>
+                        </p>
+                    </div>
+                </footer>
 
             </div>
 
         </div>
-
-        <footer class="py-2 footer">
-            <div class="container text-center" id="footerText">
-                <p class="m-0">
-                    Portal do Condomínio | ST02G3-2020
-                    <img src="imagens/favicon.png" width="30" alt=""/>
-                </p>
-            </div>
-        </footer>
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script

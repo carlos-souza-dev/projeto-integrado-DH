@@ -14,8 +14,9 @@
 
 /* Aplicação de exceções para a página rerrespondências */
 
-
-
+.centroTelaCorrespondencias{
+    padding-bottom: 45px;
+}
 .correspondencia-section{
     width: 94%;
     height: 450px;
@@ -24,6 +25,7 @@
     display: flex;
     border-radius: 25px;  
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+    
 }
 
 .correspondencia-section article{
@@ -74,9 +76,4 @@
         font-size: 10px;
 }
 
-
-
-
-
-
-
+}

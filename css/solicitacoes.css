@@ -9,13 +9,6 @@
     font-weight: normal;
 }
 
-.mainHeader {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding-bottom: 40px;
-    
-}
 
 /* stilo botão */
 
@@ -49,6 +42,10 @@
         /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
     padding-top: 12px;
     }
+
+    .docSepLine{
+        display: none;
+    }
 }
 
 /* fim stilo botao */
@@ -75,7 +72,7 @@
 }
 
 .aside-main-solicitacoes .solicitacoes-section {
-    width: 94%;
+    width: 100%;
     min-width: 900px;
     height: 254px;
     margin: 40px 45px 0; 
@@ -85,7 +82,7 @@
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
-.aside-main-solicitacoes .solicitacoes-section article{
+.solicitacoes-section article{
     width: 100%;
 }
 

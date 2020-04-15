@@ -65,10 +65,11 @@
 
 /* Início do estilo do main (bem-vindo) */
 
+
 #moradores {
     position: relative;
-    width: 94%;
-    height: 67vh;
+    width: 100%;
+    height: 15%;
     margin: 40px auto;
 }
 

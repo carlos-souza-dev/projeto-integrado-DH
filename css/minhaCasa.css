@@ -56,6 +56,8 @@
     justify-content: flex-start; 
     flex-wrap: wrap;
     min-height: 100%;
+    /* para deixar o footer mais pra baixo */
+    padding-bottom: 40px;
     
 } 
 
@@ -76,7 +78,8 @@
 
 
 .cardMorador{
-    /* width: 48%; */
+   
+    width: 30rem;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -127,3 +130,15 @@ padding: 1rem;
     }
 }
 
+
+@media (max-width: 1024px){
+    
+.centroTelaMoradores{
+    
+    
+    justify-content: center; 
+    
+} 
+
+    
+}

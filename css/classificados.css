@@ -90,7 +90,7 @@ z-index: 2;
     flex-direction: row;
     border-radius: 5px;
     margin: 10px;
-    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+  /*  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);*/
 }
 .areaCamposGrandes {
     width: 100%;
@@ -110,8 +110,8 @@ z-index: 2;
 }
 
 .nomeCampoPesquisa {
-    font-family: 'Robot-normal';
-
+    font-size: 16px;
+    font-weight: bold;
 }
 
 #botaoSearch {

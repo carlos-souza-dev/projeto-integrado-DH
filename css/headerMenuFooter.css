@@ -213,6 +213,14 @@ a.article:hover {
     #sidebarCollapse {
         display: none;
     }
+
+    #sidebar.active {
+        margin-left: 0px;
+    }
+
+    #content.active {
+        width: calc(100% - 250px);
+    }
 }
 
 /* folha estilo header */

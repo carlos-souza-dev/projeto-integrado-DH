@@ -38,6 +38,13 @@
         <div class="wrapper">
             <!-- Menu Retrátil -->
             <nav id="sidebar">
+                <div class="botaoAbrireFechar">
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="fas fa-align-left" style="color: white;"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+
                 <div class="sidebar-header">
                     <img src="./img/logo/logo-menu.png" class="logotipoMenu" alt="">
                 </div>
@@ -72,7 +79,7 @@
                         </ul>
                     </li>
 
-                    <li>
+                    <li class="active">
                         <a
                             href="#pageSubmenu"
                             data-toggle="collapse"
@@ -80,48 +87,42 @@
                             class="dropdown-toggle">
                             <i class="fas fa-user-friends"></i>
                             Vizinhança</a>
-                            <ul class="collapse list-unstyled" id="pageSubmenu">
-                                <li>
-                                    <a href="classificados.html">Classificados</a>
-                                </li>
-                                <li>
-                                    <a href="meusItens.html">Meus itens</a>
-                                </li>
-    
-                            </ul>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="classificados.html">Classificados</a>
+                            </li>
+                            <li>
+                                <a href="meusItens.html">Meus itens</a>
+                            </li>
+
+                        </ul>
                     </li>
                     <li>
                         <a href="comunicados.html">
                             <i class='fas'>&#xf0e0;</i>
                             Comunicados</a>
                     </li>
-                    <li class="active">
+                    <li>
                         <a href="solicitacoes.html">
-                            <i class="fas fa-file-alt"></i> 
-                             Solicitações</a>
+                            <i class="fas fa-file-alt"></i>
+                            Solicitações</a>
                     </li>
-                    
+                    <li>
+                        <a href="#">
+                            <i class='fas'>&#xf09d;</i>
+                            Financeiro</a>
+                    </li>
                     <li>
                         <a href="documentacao.html">
                             <i class='fas'>&#xf07b;</i>
                             Documentação</a>
                     </li>
                 </ul>
-
             </nav>
 
             <!-- Conteudo da página -->
 
             <div id="content">
-
-                <!-- botão para abrir e fechar o menu -->
-                <div class=botaoAbrireFechar>
-                <button type="button" id="sidebarCollapse" class="btn">
-                    <i class="fas fa-align-left" style="color: white;"></i>
-                    <span>Toggle Sidebar</span>
-                </button>
-            </div>
-
                 <!-- Header -->
                 <div class="mainHeader">
                     <div class="titulo" id="tit">

@@ -59,28 +59,26 @@ a:hover {
 .botaoAbrireFechar {
     padding-top: 10px;
     padding-left: 10px;
-
-
 }
 
 #sidebarCollapse {
     background-color: #3f3f3f;
+    width: 60px;
+    position: absolute;
+    left: 260px;
 }
 
 #sidebar {
-
     width: 250px;
+    height: 100vh;
     position: fixed;
     left: 0;
-    height: 100vh;
     z-index: 999;
     background: #3B3B3B;
     color: #fff;
-    transition: all 0.3s;
-
+    transition: all 0.5s;
     box-shadow: 8px 0 8px rgba(0, 0, 0, 0.12);
-    border-radius: 0 25px 0 0;
-
+    border-radius: 0 25px 25px 0;
 }
 
 #sidebar.active {
@@ -115,6 +113,10 @@ a:hover {
     font-size: 1.1em;
     display: block;
     
+}
+
+#pageSubmenu, #homeSubmenu li a{
+    text-transform: lowercase;
 }
 #sidebar ul li a:hover {
     color: #fff;
@@ -194,13 +196,13 @@ a.article:hover {
         margin-left: -250px;
     }
     #sidebar.active {
-        margin-left: 0;
+        margin-left: 0px;
     }
     #content {
         width: 100%;
     }
     #content.active {
-        width: calc(100% - 250px);
+        width: 100%;
     }
     #sidebarCollapse span {
         display: none;
@@ -464,6 +466,13 @@ footer {
     background-color: black;
     color: white;
     margin-bottom: 0;
+    width: calc(100% + 250px);
+    left: -250px;
+}
+
+c
+.py-2 #footerText {
+    margin-left: 200px;
 }
 
 @media(max-width: 768px) {

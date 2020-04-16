@@ -4,11 +4,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vizinhança</title>
+        <title>Vizinhança - Classificados</title>
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-        <!-- Bootstrap CSS CDN -->
+       <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <!-- css da parte interna da pagina -->
         <link rel="stylesheet" href="./css/classificados.css">
@@ -41,7 +40,15 @@
 
         <div class="wrapper">
             <!-- Menu Retrátil -->
+            <!-- botão para abrir e fechar o menu -->
             <nav id="sidebar">
+                <div class="botaoAbrireFechar">
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <i class="fas fa-align-left" style="color: white;"></i>
+                        <span>Toggle Sidebar</span>
+                    </button>
+                </div>
+
                 <div class="sidebar-header">
                     <img src="./img/logo/logo-menu.png" class="logotipoMenu" alt="">
                 </div>
@@ -115,21 +122,12 @@
                             Documentação</a>
                     </li>
                 </ul>
-
             </nav>
+           
 
             <!-- Conteudo da página -->
 
             <div id="content">
-
-                <!-- botão para abrir e fechar o menu -->
-                <div class="botaoAbrireFechar">
-                    <button type="button" id="sidebarCollapse" class="btn">
-                        <i class="fas fa-align-left" style="color: white;"></i>
-                        <span>Toggle Sidebar</span>
-                    </button>
-                </div>
-
                 <!-- Header -->
                 <div class="mainHeader">
                     <div class="titulo" id="tit">

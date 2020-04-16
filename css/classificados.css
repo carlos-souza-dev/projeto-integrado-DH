@@ -1,17 +1,33 @@
 @font-face {
     src: url("fonts/Roboto/Roboto-Regular.ttf");
-    font-family: 'Robot-normal';
+    font-family: 'Roboto-normal';
     font-weight: normal;
 }
 @font-face {
-    src: url("fonts/Roboto/Roboto-Light.ttf");
-    font-family: 'Robot-ligth';
+    src: url("fonts/Roboto/Roboto-Italic.ttf");
+    font-family: 'Roboto-italic';
+    font-weight: normal;
+}
+
+@font-face {
+    src: url("fonts/Roboto/Roboto-Medium.ttf.ttf");
+    font-family: 'Roboto-Medium';
     font-weight: normal;
 }
 
 p {
     margin-bottom: 0 !important;
 
+}
+/* estilo do menu lateral para ipad */
+
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+    margin: 0 20px 0 10px;
+}
+
+.botaoAbrireFechar {
+z-index: 2;
 }
 
 /* stilo dos cards classificados*/
@@ -48,13 +64,21 @@ p {
 .card-corpo {
     text-align: center;
     padding: 2px;
-    font-family: "Robot-ligth";
+}
+
+.card-corpo div {
+    margin: 5px 0;
+}
+
+.card-corpo .descricaoCard {
+    font-size: 15px;
+    font-family: 'Roboto-italic';
 }
 
 .card-titulo {
     font-weight: bold;
-    margin: 4px;
-
+    font-family: 'Roboto-normal', sans-serif;
+    font-size: 15px;
 }
 
 /* fim stilo cards classificados */

@@ -116,7 +116,7 @@ a:hover {
 }
 
 #pageSubmenu li a, #homeSubmenu li a{
-    text-transform: lowercase;
+    text-transform: initial;
 }
 #sidebar ul li a:hover {
     color: #fff;

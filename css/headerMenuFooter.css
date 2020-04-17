@@ -181,6 +181,7 @@ a.article:hover {
     position: absolute;
     top: 0;
     right: 0;
+    
 }
 
 #content.active {
@@ -207,12 +208,17 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
+    .listaClassificados{
+        margin: 10px auto;
+    }
 }
 
 @media (min-width: 769px) {
     #sidebarCollapse {
         display: none;
     }
+    
+
 }
 
 /* folha estilo header */
@@ -303,6 +309,7 @@ a.article:hover {
 
     }
 
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -323,6 +330,10 @@ a.article:hover {
         padding-left: 40px;
         padding-right: 40px;
 
+    }
+    
+    .listaClassificados{
+        margin: 10px auto;
     }
 
 }
@@ -487,5 +498,5 @@ c
     footer {
         display: none;
     }
-
+    
 }

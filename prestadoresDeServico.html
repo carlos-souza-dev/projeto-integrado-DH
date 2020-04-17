@@ -154,25 +154,33 @@
                 <nav class="slidemenu">
 
                     <!-- Item 1 -->
-                    <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"
-                        />
+                    <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"/>
                     <label for="slide-item-1">
-                        <a href="minhaCasa.html">Moradores</a></label>
+                        <a href="minhaCasa.html">Moradores</a>
+                    </label>
 
                     <!-- Item 2 -->
-                    <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle" checked="checked"/>
+                    <input
+                        type="radio"
+                        name="slideItem"
+                        id="slide-item-2"
+                        class="slide-toggle"
+                        checked="checked"/>
                     <label for="slide-item-2">
-                        <a href="prestadoresDeServico.html">Prestadores de Serviço</a></label>
+                        <a href="prestadoresDeServico.html">Prestadores de Serviço</a>
+                    </label>
 
                     <!-- Item 3 -->
                     <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle"/>
                     <label for="slide-item-3">
-                        <a href="correspondencias.html">Correspondências</a></label>
+                        <a href="correspondencias.html">Correspondências</a>
+                    </label>
 
                     <!-- Item 4 -->
                     <input type="radio" name="slideItem" id="slide-item-4" class="slide-toggle"/>
                     <label for="slide-item-4">
-                        <a href="contatosUteis.html">Contatos Úteis</a></label>
+                        <a href="contatosUteis.html">Contatos Úteis</a>
+                    </label>
 
                     <div class="clear"></div>
 
@@ -185,8 +193,14 @@
                 <!-- botao para adicionar cadastro -->
                 <div class="areaBotaoCad">
                     <div>
-                        <a href="#" class="btn btn-secondary btn-sm" id="botaoCadastro">
-                            Novo Cadastro</a>
+                        <button
+                            type="button"
+                            id="botaoCadastro"
+                            class="btn btn-secondary btn-sm"
+                            data-toggle="modal"
+                            data-target="#modalCadastroPrestador">
+                            Novo Cadastro
+                        </button>
 
                     </div>
                 </div>
@@ -210,8 +224,8 @@
                             <div class="tituloAndTools">
                                 <div class="card-titulo">Jackson Bardo</div>
                                 <div class="toolsCardPrestServ">
-                                    <img src="./img/icon/edit.svg" alt="">
-                                    <img src="./img/icon/trash.svg" alt="">
+                                    <a data-toggle="modal" data-target="#modalAlterarPrestador"><img src="./img/icon/edit.svg" alt=""></a>
+                                    <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
                                 </div>
                             </div>
                             <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
@@ -246,8 +260,8 @@
                             <div class="tituloAndTools">
                                 <div class="card-titulo">Tissaia de Vries</div>
                                 <div class="toolsCardPrestServ">
-                                    <img src="./img/icon/edit.svg" alt="">
-                                    <img src="./img/icon/trash.svg" alt="">
+                                    <a data-toggle="modal" data-target="#modalAlterarPrestador"><img src="./img/icon/edit.svg" alt=""></a>
+                                    <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
                                 </div>
                             </div>
                             <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
@@ -270,6 +284,115 @@
 
                     </div>
 
+                    <!-- modal para cadastrar novo Prestador de serviço -->
+
+                    <div class="modal" id="modalCadastroPrestador" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Adicionar Prestador de Serviço</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Nome completo</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Data nascimento</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">RG</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">CPF</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Foto</label>
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-secondary">Salvar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- modal para alterar dados do morador cadastrado -->
+
+                    <div class="modal" id="modalAlterarPrestador" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Alterar dados Prestador de Serviço</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Nome completo</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">Data nascimento</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">RG</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlTextarea1">CPF</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleFormControlFile1">Foto</label>
+                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-secondary">Salvar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- modal para confirmar exclusão do prestador de serviço , este modal surge
+                    centralizado na tela -->
+                    <div
+                        class="modal fade"
+                        id="confirmarExclusao"
+                        tabindex="-1"
+                        role="dialog"
+                        aria-labelledby="exampleModalCenterTitle"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    Tem certeza que deseja excluir?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-danger">Tenho certeza</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <footer class="py-2 footer">
                     <div class="container text-center" id="footerText">
@@ -282,8 +405,6 @@
             </div>
 
         </div>
-
-        
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script

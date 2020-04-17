@@ -95,6 +95,18 @@
     margin: 4px;
     
 }
+.toolsCardAnuncio{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.toolsCardAnuncio a img{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
 
 /* fim stilo cards classificados */
 

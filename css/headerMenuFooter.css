@@ -431,6 +431,14 @@ a.article:hover {
     background-color: #3B3B3B;
 }
 
+.btn-danger{
+    text-decoration: white;
+    border-radius: 20px;
+    height: 35px;
+    width: 140px;
+    background-color: #da5c5c;
+}
+
 #slide-item-1{
     src: url(../minhaCasa.html);
 }

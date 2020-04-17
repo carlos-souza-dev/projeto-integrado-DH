@@ -174,12 +174,12 @@
                     </div>
                 </nav>
 
-                 <!-- botao para adicionar cadastro -->
+                 <!-- botao para adicionar cadastro, puxa a modal que está no fim deste código -->
             <div class="areaBotaoCad">
                 <div>
-                    <a href="#" class="btn btn-secondary btn-sm" id="botaoCadastro">
-                        Novo Cadastro</a>
-
+                       <button type="button" id="botaoCadastro" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalCadastroItem">
+                            Novo Cadastro
+                          </button>
                 </div>
             </div>
               
@@ -198,8 +198,11 @@
                         <div class="card-corpo">
                             <div class="card-titulo">Aulas de Violão</div>
                             <div class="card-subtitulo">Juliana B. (B-74)</div>
-                            <div class="descricaoCard">Lorem ipsum dolor sit amet, consectetur
-                            </div>
+                            
+                        </div>
+                        <div class="toolsCardAnuncio">
+                            <a data-toggle="modal" data-target="#alterarAnuncio"><img src="./img/icon/edit.svg" alt=""></a>
+                            <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
                         </div>
                     </div>
                     <div class="card classificado">
@@ -210,12 +213,102 @@
                         <div class="card-corpo">
                             <div class="card-titulo">Assistência e reparos</div>
                             <div class="card-subtitulo">Lucas M. (C-84)</div>
-                            <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
+                            
+                        </div>
+                        <div class="toolsCardAnuncio">
+                            <a data-toggle="modal" data-target="#alterarAnuncio"><img src="./img/icon/edit.svg" alt=""></a>
+                            <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
                         </div>
                     </div>
                     
                 </div>
             </div>
+
+                <!-- modal para cadastrar novos itens -->
+
+            <div class="modal" id="modalCadastroItem" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Adicionar Anúncio</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Título</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                              </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Descrição</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                             <div class="form-group">
+                              <label for="exampleFormControlFile1">Imagem</label>
+                              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-secondary">Salvar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- modal para confirmar exclusão do item , este modal surge centralizado na tela -->
+              <div class="modal fade" id="confirmarExclusao" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    
+                    <div class="modal-body">
+                      Tem certeza que deseja excluir?
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-danger">Tenho certeza</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- modal para alterar anuncio, o conteudo aparece puxando do banco -->
+              <div class="modal" id="alterarAnuncio" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Alterar Anúncio</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Título</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                              </div>
+                            <div class="form-group">
+                              <label for="exampleFormControlTextarea1">Descrição</label>
+                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                             <div class="form-group">
+                              <label for="exampleFormControlFile1">Imagem</label>
+                              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            </div>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                      <button type="button" class="btn btn-secondary">Salvar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
 
           
             <footer class="py-2 footer">

@@ -17,21 +17,12 @@
     align-content: center;
 }
 
-.accordion{
-    margin: 20px;
+.table{
+    width: 80%;
     border-radius: 5px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
-    width: 100%;
-    
 }
 
-
-.card-header{
-    background-color: #fafafa;
-    padding:.50rem 1.0rem;  
-}
-
-.btn-link, .btn-link:hover{
-    color: black;
-    text-decoration: none;
+.data{
+    text-align: right;
 }

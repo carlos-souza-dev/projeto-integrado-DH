@@ -18,7 +18,8 @@
     justify-content: flex-end;
     height: 10vh;
     align-items: center;
-   
+    width: 94%;
+    margin: 0 auto;
 }
 
 #botaoCadastro {
@@ -70,7 +71,7 @@
 
 
 .centroTelaMoradores{
-    width: 94%;
+    width: calc(94% + 1rem);
     margin: 0  auto;
     display: flex;
     justify-content: center;

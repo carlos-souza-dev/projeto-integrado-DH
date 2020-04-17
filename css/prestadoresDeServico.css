@@ -70,7 +70,7 @@
 
 
 .centroTelaPrestServico{
-    width: 94%;
+    width: calc(94% + 1rem);
     margin: 0 auto;
     display: flex;
     justify-content: center; 

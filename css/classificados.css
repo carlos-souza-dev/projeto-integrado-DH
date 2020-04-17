@@ -57,6 +57,7 @@ z-index: 2;
 }
 
 .card {
+    /* margin: 15px; */
     padding: 5px;
     width: 12rem;
     display: flex;
@@ -73,10 +74,7 @@ z-index: 2;
     margin: 5px 0;
 }
 
-.card-corpo .descricaoCard {
-    font-size: 15px;
-    font-family: 'Roboto-italic';
-}
+
 
 .card-titulo {
     font-weight: bold;
@@ -95,6 +93,8 @@ z-index: 2;
     flex-direction: row;
     border-radius: 5px;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+    margin: 10px;
+  /*  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);*/
 }
 .areaCamposGrandes {
     width: 100%;
@@ -115,8 +115,8 @@ z-index: 2;
 }
 
 .nomeCampoPesquisa {
-    font-family: 'Robot-normal';
-
+    font-size: 16px;
+    font-weight: bold;
 }
 
 #botaoSearch {
@@ -151,7 +151,7 @@ z-index: 2;
 }
 
 .linha-vertical {
-    height: 90%;
+    height: 80% ;
     /*Altura da linha*/
     border-left: 2px solid;
     /* Adiciona borda esquerda na div como ser fosse uma linha.*/
@@ -183,7 +183,7 @@ z-index: 2;
 }
 
 #user {
-    margin-bottom: 52px;
+   
     border-radius: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -202,13 +202,20 @@ z-index: 2;
     justify-content: space-between;
 }
 
-#col-md-4-bloco1 {
+/* #col-md-4-bloco1 {
     width: 30% !important;
 }
 
 #col-md-4-bloco2 {
     width: 67% !important;
     border-left: 1px solid black;
+} */
+.card-body > div {
+    padding-bottom: 20px;
+} 
+
+.dadosUser {
+    display: flex;   
 }
 
 #col-md-4-bloco2 > #classificados-descricao {
@@ -231,6 +238,12 @@ z-index: 2;
     display: none;
 }
 
+.imagemUser{
+    align-self: center;
+    padding-right: 10px;
+}
+
+
 .interesses,
 .quemSou {
     font-size: 14px;
@@ -240,6 +253,19 @@ z-index: 2;
 .interesses > button {
     padding: 0px 10px;
     width: auto;
+}
+
+.interesses h6 {
+    font-size: 20px;
+}
+
+.quemSou h6{
+    font-size: 17px;
+}
+
+.interesses button {
+    margin-left: 5px;
+    width: 60px;
     font-size: 12px;
     border: 10px;
     border-radius: 15px;
@@ -248,6 +274,7 @@ z-index: 2;
     background-color: rgb(155, 158, 163);
 
 }
+
 
 .nomeUser > h4 {
     border-bottom: 2px solid #878787;
@@ -269,7 +296,7 @@ z-index: 2;
 
 @media (min-width: 576px){
 .modal-dialog {
-    width: 700px !important;
+    max-width: 700px !important;
 
 }
 }

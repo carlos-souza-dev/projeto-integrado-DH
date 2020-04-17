@@ -149,6 +149,9 @@ a:hover {
 #pageSubmenu li a, #homeSubmenu li a{
     text-transform: lowercase;
 }
+#pageSubmenu li a, #homeSubmenu li a{
+    text-transform: initial;
+}
 #sidebar ul li a:hover {
     color: #fff;
     background: #3f3f3f;
@@ -212,6 +215,7 @@ a.article:hover {
     position: absolute;
     top: 0;
     right: 0;
+    
 }
 
 #content.active {
@@ -238,6 +242,9 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
+    .listaClassificados{
+        margin: 10px auto;
+    }
 }
 
 @media (min-width: 769px) {
@@ -252,6 +259,8 @@ a.article:hover {
     #content.active {
         width: calc(100% - 280px);
     }
+    
+
 }
 
 /* folha estilo header */
@@ -342,6 +351,7 @@ a.article:hover {
 
     }
 
+
 }
 
 @media only screen and (max-width: 500px) {
@@ -362,6 +372,10 @@ a.article:hover {
         padding-left: 40px;
         padding-right: 40px;
 
+    }
+    
+    .listaClassificados{
+        margin: 10px auto;
     }
 
 }
@@ -470,6 +484,14 @@ a.article:hover {
     background-color: #3B3B3B;
 }
 
+.btn-danger{
+    text-decoration: white;
+    border-radius: 20px;
+    height: 35px;
+    width: 140px;
+    background-color: #da5c5c;
+}
+
 #slide-item-1{
     src: url(../minhaCasa.html);
 }
@@ -528,5 +550,5 @@ footer {
     footer {
         display: none;
     }
-
+    
 }

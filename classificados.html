@@ -7,7 +7,7 @@
         <title>Vizinhança - Classificados</title>
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-       <!-- Bootstrap CSS CDN -->
+        <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <!-- css da parte interna da pagina -->
         <link rel="stylesheet" href="./css/classificados.css">
@@ -112,11 +112,7 @@
                             <i class="fas fa-file-alt"></i>
                             Solicitações</a>
                     </li>
-                    <li>
-                        <a href="#">
-                            <i class='fas'>&#xf09d;</i>
-                            Financeiro</a>
-                    </li>
+                   
                     <li>
                         <a href="documentacao.html">
                             <i class='fas'>&#xf07b;</i>
@@ -124,7 +120,6 @@
                     </li>
                 </ul>
             </nav>
-           
 
             <!-- Conteudo da página -->
 
@@ -272,11 +267,10 @@
                                 <div class="card-corpo">
                                     <div class="card-titulo">Aulas de Violão</div>
                                     <div class="card-subtitulo">Juliana B. (B-74)</div>
-                                    <div class="descricaoCard">Lorem ipsum dolor sit amet, consectetur
 
-                                    </div>
                                 </div>
                             </div>
+
                         </a>
 
                         <a data-toggle="modal" data-target="#exampleModal">
@@ -288,7 +282,6 @@
                                 <div class="card-corpo">
                                     <div class="card-titulo">Assistência e reparos</div>
                                     <div class="card-subtitulo">Lucas M. (C-84)</div>
-                                    <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
                                 </div>
                             </div>
                         </a>
@@ -302,7 +295,6 @@
                                 <div class="card-corpo">
                                     <div class="card-titulo">Bolo sob encomenda</div>
                                     <div class="card-subtitulo">Maria B. (D-44)</div>
-                                    <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
                                 </div>
                             </div>
 
@@ -317,7 +309,6 @@
                                 <div class="card-corpo">
                                     <div class="card-titulo">Aulas de Matemática</div>
                                     <div class="card-subtitulo">Paula M. (A-63)</div>
-                                    <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
                                 </div>
                             </div>
                         </a>
@@ -329,8 +320,7 @@
                                     alt="Imagem de capa do card">
                                 <div class="card-corpo">
                                     <div class="card-titulo">Babá</div>
-                                    <div class="card-subtitulo">Bárba C. (A-33)</div>
-                                    <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
+                                    <div class="card-subtitulo">Bárbara C. (A-33)</div>
                                 </div>
                             </div>
                         </a>
@@ -343,7 +333,6 @@
                                 <div class="card-corpo">
                                     <div class="card-titulo">Organizador de Eventos</div>
                                     <div class="card-subtitulo">João A. (D-91)</div>
-                                    <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
                                 </div>
                             </div>
                         </a>
@@ -356,7 +345,6 @@
                                 <div class="card-corpo">
                                     <div class="card-titulo">Mármitas Saudáveis</div>
                                     <div class="card-subtitulo">Antônio O. (C-101)</div>
-                                    <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
                                 </div>
                             </div>
                         </a>
@@ -369,22 +357,13 @@
                                 <div class="card-corpo">
                                     <div class="card-titulo">Passeador de Cães</div>
                                     <div class="card-subtitulo">Daniel S. (B-74)</div>
-                                    <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
                                 </div>
                             </div>
                         </a>
 
-                        <!-- botao da modal -->
-                        <!-- não está sendo exibido na tela -->
-                        <button
-                            id="botaoModal"
-                            type="button"
-                            class="btn btn-primary"
-                            data-toggle="modal"
-                            data-target="#exampleModal">
-                            Launch demo modal
-                        </button>
-                        <!-- estrutura da modal -->
+                        
+                        
+                        <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id -->
                         <div
                             class="modal fade"
                             id="exampleModal"
@@ -450,8 +429,8 @@
                                                         </div>
                                                         <div class="icones">
 
-                                                            <img src="./img/icon/mail.svg" alt="">
-                                                            <img src="./img/icon/whatsApp.svg" alt="">
+                                                            <a><img src="./img/icon/mail.svg" alt=""></a>
+                                                            <a><img src="./img/icon/whatsApp.svg" alt=""></a>
                                                         </div>
                                                     </div>
                                                 </div>

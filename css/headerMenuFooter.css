@@ -65,11 +65,12 @@ a:hover {
     background-color: #3f3f3f;
     width: 60px;
     position: absolute;
-    left: 260px;
+    left: 290px;
+    top: 10px;
 }
 
 #sidebar {
-    width: 250px;
+    width: 280px;
     height: 100vh;
     position: fixed;
     left: 0;
@@ -82,14 +83,18 @@ a:hover {
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -280px;
 }
 
 #sidebar .sidebar-header {
-    padding-top: 20px;
-    padding-right: 5px;
+    padding: 20px 8px;
     background: #3B3B3B;
     border-radius: 0 25px 0 0;
+}
+
+#sidebar .logotipoMenu {
+    width: 100%;
+    height: 90px;
 }
 
 #sidebar ul.components {
@@ -115,7 +120,33 @@ a:hover {
     
 }
 
-#pageSubmenu, #homeSubmenu li a{
+/* menu lateral */
+.list-unstyled {
+    width: 100%;
+    padding: 50px 0 !important;
+}
+
+.list-unstyled a {
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+} 
+
+.list-unstyled a svg{
+    width: 50px !important;
+    font-size: 22px !important;
+    margin: 0 auto;
+}
+
+#homeSubmenu, #pageSubmenu {
+    width: 220px;
+    padding: 0px !important;
+    margin-left: 35px;
+    margin-top: 0;
+    font-size: 18px;
+}
+
+#pageSubmenu li a, #homeSubmenu li a{
     text-transform: lowercase;
 }
 #sidebar ul li a:hover {
@@ -136,7 +167,7 @@ a[data-toggle="collapse"] {
 .dropdown-toggle::after {
     display: block;
     position: absolute;
-    top: 50%;
+    top: 72%;
     right: 20px;
     transform: translateY(-50%);
 }
@@ -175,7 +206,7 @@ a.article:hover {
 ----------------------------------------------------- */
 
 #content {
-    width: calc(100% - 250px);
+    width: calc(100% - 280px);
     min-height: 100vh;
     transition: all 0.3s;
     position: absolute;
@@ -193,7 +224,7 @@ a.article:hover {
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: -280px;
     }
     #sidebar.active {
         margin-left: 0px;
@@ -219,7 +250,7 @@ a.article:hover {
     }
 
     #content.active {
-        width: calc(100% - 250px);
+        width: calc(100% - 280px);
     }
 }
 
@@ -453,6 +484,12 @@ a.article:hover {
     }
 }
 
+@media(max-width: 1000px) {
+    .py-2 #footerText {
+        padding-left: 18%;
+    }
+}
+
 @media(max-width: 510px) {
     .slidemenu > label {
         font-size: 15px;
@@ -468,19 +505,23 @@ a.article:hover {
 /* estilo footer */
 
 footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    width: 100%;
+    width: calc(100% + 280px);
     background-color: black;
     color: white;
     margin-bottom: 0;
-    width: calc(100% + 250px);
-    left: -250px;
+    left: -280px;
 }
 
-c
+
 .py-2 #footerText {
-    margin-left: 200px;
+    margin-left: calc(280px + 100vw) !important;
+}
+
+
+.py-2 #footerText {
+    margin-left: 36.5% !important;
 }
 
 @media(max-width: 768px) {

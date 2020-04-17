@@ -78,22 +78,29 @@ footer {
 
 
 .centroTelaContatosUteis{
+    width: 94%;
+    height: 50vh;
+    margin: 0 auto;
     display: flex;
     justify-content: center; 
     flex-wrap: wrap;
-    padding-bottom: 40px;
+    align-items: center;
 } 
 
 
 
-.centroTelaContatosUteis>div{
-    margin: 1rem;
+.centroTelaContatosUteis > div{
+    width: 30%;
+    min-width: 400px;
+    height: 40vh;
+    min-height: 400px;
+    margin: 5%;
     align-items: center;
     flex-direction: column;
     
 }
 
-.imgContato>img{
+.imgContato > img{
     
     border-radius: 50%;
     background-repeat: no-repeat;
@@ -135,6 +142,7 @@ padding: 1rem;
 
 .card-titulo ,.card-tituloOC{
     font-family: "Robot-normal";
+    font-size: 1.5em;
     
     
 }

@@ -11,8 +11,9 @@
 
 
 .centroTelaComunicados{
+    width: 94%;
+    margin: 50px auto;
     display: flex;
-    padding-top: 50px;
     justify-content: center;
     align-content: center;
 }

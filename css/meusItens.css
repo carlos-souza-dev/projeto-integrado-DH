@@ -15,7 +15,7 @@
 .areaBotaoCad {
     display: flex;
     justify-content: flex-end;
-    height: 10vh;
+    height: 14vh;
     padding-right: 2vw;
     align-items: center;
     /* padding-bottom: 10px; */
@@ -30,17 +30,31 @@
     text-transform: uppercase;
     font-size: 16px;
     align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
     padding-top: 8px;
 
 }
 
-@media(max-width:765px) {
+@media(max-width:768px) {
     #botaoCadastro {
-        width: auto;
-        font-size: 10px;
+        background-color: #3B3B3B;
+        width: 175px;
+        height: 44px;
+        border-radius: 22px;
+        text-transform: uppercase;
+        font-size: 16px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
-    padding-top: 12px;
+    }
+
+    .areaBotaoCad div {
+       margin: 0 auto;
     }
 }
 

@@ -23,7 +23,7 @@ p {
 
 svg:not(:root).svg-inline--fa {
     overflow: visible;
-    margin: 0 20px 0 10px;
+    margin: 0 20px 0 10px !important;
 }
 
 .botaoAbrireFechar {
@@ -109,6 +109,7 @@ z-index: 2;
 }
 
 .campo-pesquisa > div {
+
     padding-bottom: 10px;
 }
 
@@ -160,6 +161,26 @@ z-index: 2;
     position: absolute;
 }
 
+/* Estilo do modal - classificados */
+
+.dadosUser {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.imagemUser {
+    width: 20%;
+    height: 70%;
+}
+
+.nomeUser  {
+    width: 80%;
+    height: 100%;
+}
+
 #user {
    
     border-radius: 50%;
@@ -170,24 +191,50 @@ z-index: 2;
     border: 4px solid #878787;
 }
 
-#fotoItem {
-    padding-left: 15px;
+.modal-content {
+    width: 118%;
 }
 
-.card-body {
+.no-gutters {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
+/* #col-md-4-bloco1 {
+    width: 30% !important;
+}
+
+#col-md-4-bloco2 {
+    width: 67% !important;
+    border-left: 1px solid black;
+} */
 .card-body > div {
     padding-bottom: 20px;
 } 
 
 .dadosUser {
-    display: flex;
-   
-    
+    display: flex;   
+}
 
+#col-md-4-bloco2 > #classificados-descricao {
+    padding: 5% !important;
+}
+
+
+#fotoItem {
+    width: 30%;
+}
+
+.card-body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 1rem;
+}
+
+#botaoModal {
+    display: none;
 }
 
 .imagemUser{
@@ -199,7 +246,12 @@ z-index: 2;
 .interesses,
 .quemSou {
     font-size: 14px;
-    padding-bottom: 10px;
+    padding-bottom: 24px;
+}
+
+.interesses > button {
+    padding: 0px 10px;
+    width: auto;
 }
 
 .interesses h6 {

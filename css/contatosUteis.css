@@ -43,16 +43,25 @@ footer {
 
 
 .centroTelaContatosUteis{
+    width: 94%;
+    height: 50vh;
+    margin: 0 auto;
    padding-top: 30px;
     display: flex;
     justify-content: center; 
     flex-wrap: wrap;
-    padding-bottom: 40px;
+    align-items: center;
 } 
 
 
 
-
+.centroTelaContatosUteis > div{
+    width: 30%;
+    min-width: 400px;
+    height: 40vh;
+    min-height: 400px;
+    margin: 5%;
+}
 .centroTelaContatosUteis>div{
     width: 300px;
     margin: 1rem;
@@ -62,7 +71,7 @@ footer {
     
 }
 
-.imgContato>img{
+.imgContato > img{
     
     border-radius: 50%;
     background-repeat: no-repeat;

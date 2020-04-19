@@ -6,7 +6,7 @@
   - Indagação constante (curiosidade e pesquisa);
   - Autenticidade;
   - Poder de decisão dos envolvidos;
-  - Reflexão crítica efeedbacks;
+  - Reflexão crítica e feedbacks;
   - Produto final.
 
 <!-- Teste de Acesso à pasta do Projeto Integrador -->

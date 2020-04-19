@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,700&display=swap');
+
+/*There are only two hard problems in Computer Science: cache invalidation and naming things — Phil Karlton */
+/* Names according to the best practices guide available at http://getbem.com/naming/ 
+    .block
+    .block__element
+    .block__element--modifier
+*/
+/* Itens inside blocks are organized following the structure below:
+    - Layout Properties (position, float, clear, display)
+    - Box Model Properties (width, height, margin, padding)
+    - Visual Properties (color, background, border, box-shadow)
+    - Typography Properties (font-size, font-family, text-align, text-transform)
+    - Misc Properties (cursor, overflow, z-index)
+ */
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    width: 100%;
+    margin: 0px 20%;
+    border-top: 1px solid rgba(0,0,0,.2) !important;
+}
+
+/* Removes link hovering bootstrap style */
+a:hover {
+    color: inherit !important;
+    text-decoration: inherit !important; 
+}
+
+/* Parallax effect - font https://keithclark.co.uk/articles/pure-css-parallax-websites/ */
+
+.parallax {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+}
+
+.parallax__group {
+    height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+/* Configurado para não ter altura fixa */
+.parallax__group--about,
+.parallax__group--contact {
+    height: auto;
+}
+
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* Ajustado para exibir todo o conteúdo */
+.parallax__layer--about,
+.parallax__layer--contact {
+    position: static;
+}
+
+.parallax__layer--back {
+    background-image: url('../../img/assets/pdc-background.jpg');
+    background-size: contain;
+    background-position-x: 50vw;
+    transform: translateZ(-1px) scale(2);
+}
+
+.parallax__layer--base {
+    padding-top: 80px;
+    padding-bottom: 32px;
+    transform: translateZ(0);
+}
+
+.parallax__layer--base--about {
+    background-color: #fff;
+    box-shadow: 0 8px 16px 16px rgba(0,0,0,0.25);
+}
+
+.parallax__layer--base--contact {
+    background-color: #3B3B3B;
+    box-shadow: 0 8px 16px 16px rgba(0,0,0,0.25);
+}
+
+/* Section custom containers */
+
+.custom-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1140px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.custom-container--header {
+    justify-content: space-between;
+    height: 64px;
+}
+
+.custom-container--landing {
+    height: 100%;
+}
+
+.custom-container--about,
+.custom-container--contact {
+    align-items: stretch;
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    width: 100%;
+    top: 0px;
+    left: 0px;    
+    background-color: #fff;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.12);
+    z-index: 1;
+}
+
+.logo-full {
+    display: flex;
+    height: 48px;
+}
+
+.header__icon {
+    color: #3B3B3B;
+    display: flex;
+}
+
+.header__menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    list-style: none;
+    text-transform: uppercase;  
+}
+
+.menu__option {
+    text-decoration: none;
+    color: #3B3B3B;
+    margin-left: 48px;
+}
+
+.menu__option--login {
+    border: 1px solid #3B3B3B;
+    border-radius: 18px;
+    padding: 8px 16px;
+}
+
+.menu__option--login:hover {
+    color: #ffffff !important;
+    background-color: #3B3B3B;
+    transition-duration: 0.4s;
+}
+
+/* Main */
+
+/* Landing */
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 32px;
+}
+
+.box--contact {
+    padding: 32px 32px 32px 0;
+}
+
+.box--landing {
+    background-color: #ffffff;
+    box-shadow: 16px 16px 16px rgba(0,0,0,0.25);
+    border-radius: 8px;
+    margin-top: 40px;
+}
+
+.title-landing {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #3B3B3B;
+    margin: 0;
+}
+
+.subtitle-landing {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: #3B3B3B;
+    margin: 40px 0;
+}
+
+.call-to-action {
+    padding: 8px 16px;
+    border-radius: 48px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.125);
+    background: linear-gradient(90deg, #7AA355 0%, #EFAE50 100%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;    
+}
+
+.call-to-action--landing {
+    align-self: flex-start; 
+}
+
+.call-to-action:hover {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.20);
+    color: #ffffff !important;
+    transition-duration: 0.2s;
+}
+
+/* About */
+
+.about-subsection {
+    display: flex;
+}
+
+.title-about {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    color: #7aa355;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0;
+}
+    
+.subtitle-about {
+    color: #3B3B3B;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    margin: 16px 0;
+}
+
+.content-about {
+    color: #3B3B3B;
+    font-size: 20px;
+    font-family: 'Lato', sans-serif;
+    line-height: 32px;
+}
+
+.image-about {
+    width: 50%;
+    height: auto;
+    display: flex;
+    padding: 0 40px;
+    margin: auto;
+}
+   
+.content--cta{
+    color: #3B3B3B;
+    font-size: 30px;
+    font-family: 'Lato', sans-serif;
+    line-height: 30px;
+    text-align: center;
+    width: 80%;
+    margin: 16px auto;
+}
+
+.call-to-action--about {
+    margin: 16px auto;
+}
+
+#window {
+    z-index: -1;
+}
+
+/* Contact */
+
+.contact-subsection {
+    display: flex;
+    width: 100%
+}
+
+.title-contact {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #fff;
+    width: 100%;
+}
+
+#name,
+#email,
+#message {
+    border-radius: 24px;
+}
+
+#emailHelp {
+    color: #fff !important;
+    font-size: 14px;
+    margin: 4px 16px;
+}
+
+.custom-control {
+    color: #fff;
+    margin: 16px 16px;
+}
+
+button {
+    border: none !important;
+    background-color: #7aa355 !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    padding: 8px 16px !important;
+    border-radius: 48px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 18px !important;
+    margin: 16px auto !important;
+}
+
+.other-contact-title {
+    
+    color: #fff;
+    font-size: 28px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.contact-channel {
+    display: flex;
+    align-items: center;
+    width: 66%;
+    margin: 12px auto;
+}
+
+.contact-icon{
+    display: flex;
+    color: #fff;
+    margin-right: 16px;
+}
+
+.contact-email,
+.contact-whatsapp {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: #fff;
+}
+/* footer {
+    width: 100%;
+    height: 40px;
+    background-color: #3B3B3B;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+} */
+
+/* Custom responsiveness */
+
+@media (max-width: 425px) {
+    .logo-full {
+        height: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-container--landing {
+        flex-direction: column;
+    }
+    
+    .box {
+        width: 100%;
+    }
+
+    .box--landing {
+        width: 80%;
+    }
+
+    .box--contact {
+        padding-left: 32px;
+    }
+
+    .title-landing,
+    .title-contact {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .subtitle-landing {
+        text-align: center;
+    }
+
+    .call-to-action--landing {
+        align-self: center;
+    }
+
+    .about-subsection,
+    .contact-subsection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-subsection:last-of-type {
+        flex-direction: column-reverse;
+    }
+
+    .title-about, 
+    .content-about {
+        text-align: center;
+    }
+
+    .subtitle-about {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .image-about {
+        width: 88%;
+        margin-bottom: 24px;
+        padding: 0;
+    }
+
+    .contact-channel {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .contact-icon {
+        margin: 4px 0;
+    }
+    
+    .contact-email,
+    .contact-whatsapp {
+        font-size: 16px;
+    }
+}

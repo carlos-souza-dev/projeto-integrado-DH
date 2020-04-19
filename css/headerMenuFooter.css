@@ -500,15 +500,39 @@ a.article:hover {
     text-align: center;
 }
 
-@media(max-width: 900px) {
+@media(max-width: 1440px) {
     .slidemenu > label {
-        font-size: 20px;
+        font-size: 18px;
+    }
+}
+
+@media(max-width: 1150px) {
+    .slidemenu > label {
+        font-size: 16px;
     }
 }
 
 @media(max-width: 1000px) {
     .py-2 #footerText {
         padding-left: 18%;
+    }
+}
+
+@media(max-width: 950px) {
+    .slidemenu > label {
+        font-size: 14px;
+    }
+}
+
+@media(max-width: 865px) {
+    .slidemenu > label {
+        font-size: 12px;
+    }
+}
+
+@media(max-width: 774px) {
+    .slidemenu > label {
+        font-size: 10px;
     }
 }
 
@@ -519,7 +543,7 @@ a.article:hover {
 }
 @media(max-width: 450px) {
     .slidemenu > label {
-        font-size: 11px;
+        font-size: 8px;
     }
 }
 

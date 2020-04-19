@@ -67,6 +67,20 @@
     border-bottom: none;
 }
 
+@media(max-width: 1024px){
+    
+.centroTelaCorrespondencias .correspondencia-section .remetente,
+.centroTelaCorrespondencias .correspondencia-section .observacao{
+    display: none;
+}
+
+.centroTelaCorrespondencias .correspondencia-section {
+    width: 94%;
+    min-width: 300px;
+    height: 450px;
+    margin: 50px auto 0;
+} 
+
 @media(max-width: 500px){
     .correspondencia-section article .date,
     .correspondencia-section article .correspondencia-title,
@@ -75,7 +89,8 @@
     .correspondencia-section article .data,
     .correspondencia-section article .receiver,
     .correspondencia-section article .note {
-        font-size: 10px;
-}
+        font-size: 18px;
 
 }
+
+}}

@@ -19,11 +19,19 @@ p {
     margin-bottom: 0 !important;
 
 }
+
+#homeSubmenu, #pageSubmenu {
+    width: 215px;
+    margin-top: 0;
+    margin-left: 65px;
+    font-size: 16px;
+}
+
 /* estilo do menu lateral para ipad */
 
 svg:not(:root).svg-inline--fa {
     overflow: visible;
-    margin: 0 20px 0 10px !important;
+    margin: 0 20px 0 10px;
 }
 
 .botaoAbrireFechar {
@@ -38,6 +46,7 @@ z-index: 2;
     padding-bottom: 40px;
 
 }
+
 .listaClassificados {
     width: calc(94% + 32px);
     margin: 0 auto;
@@ -47,6 +56,7 @@ z-index: 2;
     justify-content: flex-start;
     padding-left: 16px;
 }
+
 
 .listaClassificados > a {
     padding: 5px;
@@ -109,7 +119,6 @@ z-index: 2;
 }
 
 .campo-pesquisa > div {
-
     padding-bottom: 10px;
 }
 
@@ -161,26 +170,6 @@ z-index: 2;
     position: absolute;
 }
 
-/* Estilo do modal - classificados */
-
-.dadosUser {
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    margin-bottom: 24px;
-}
-
-.imagemUser {
-    width: 20%;
-    height: 70%;
-}
-
-.nomeUser  {
-    width: 80%;
-    height: 100%;
-}
-
 #user {
    
     border-radius: 50%;
@@ -191,50 +180,24 @@ z-index: 2;
     border: 4px solid #878787;
 }
 
-.modal-content {
-    width: 118%;
+#fotoItem {
+    padding-left: 15px;
 }
 
-.no-gutters {
-    width: 100%;
+.card-body {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
-/* #col-md-4-bloco1 {
-    width: 30% !important;
-}
-
-#col-md-4-bloco2 {
-    width: 67% !important;
-    border-left: 1px solid black;
-} */
 .card-body > div {
     padding-bottom: 20px;
 } 
 
 .dadosUser {
-    display: flex;   
-}
-
-#col-md-4-bloco2 > #classificados-descricao {
-    padding: 5% !important;
-}
-
-
-#fotoItem {
-    width: 30%;
-}
-
-.card-body {
-    width: 100%;
     display: flex;
-    flex-direction: column;
-    padding: 0 0 0 1rem;
-}
+   
+    
 
-#botaoModal {
-    display: none;
 }
 
 .imagemUser{
@@ -246,12 +209,7 @@ z-index: 2;
 .interesses,
 .quemSou {
     font-size: 14px;
-    padding-bottom: 24px;
-}
-
-.interesses > button {
-    padding: 0px 10px;
-    width: auto;
+    padding-bottom: 10px;
 }
 
 .interesses h6 {
@@ -275,6 +233,9 @@ z-index: 2;
 }
 
 
+#col-md-4-bloco2 > #classificados-descricao {
+    padding: 5% !important;
+}
 .nomeUser > h4 {
     border-bottom: 2px solid #878787;
 }
@@ -286,10 +247,11 @@ z-index: 2;
     .listaClassificados{
         justify-content: center;
     }
-
+    
     #botaoSearch {
         margin: auto;
     }
+
 
 }
 

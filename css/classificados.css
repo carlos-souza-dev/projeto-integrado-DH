@@ -19,6 +19,14 @@ p {
     margin-bottom: 0 !important;
 
 }
+
+#homeSubmenu, #pageSubmenu {
+    width: 215px;
+    margin-top: 0;
+    margin-left: 65px;
+    font-size: 16px;
+}
+
 /* estilo do menu lateral para ipad */
 
 svg:not(:root).svg-inline--fa {

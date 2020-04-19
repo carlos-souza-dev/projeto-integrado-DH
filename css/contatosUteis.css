@@ -43,32 +43,23 @@ footer {
 
 
 .centroTelaContatosUteis{
-    width: 94%;
+    width: calc(94% + 1rem) ;
     height: 50vh;
-    margin: 0 auto;
-   padding-top: 30px;
+    margin: 40px auto;
     display: flex;
-    justify-content: center; 
+    justify-content: space-evenly; 
     flex-wrap: wrap;
     align-items: center;
 } 
 
-
-
 .centroTelaContatosUteis > div{
-    width: 30%;
-    min-width: 400px;
-    height: 40vh;
-    min-height: 400px;
-    margin: 5%;
-}
-.centroTelaContatosUteis>div{
-    width: 300px;
-    margin: 1rem;
+    width: 30rem;
+    max-width: 860px;
+    min-width: 600px;
+    min-height: 190px;
+    margin:1rem;
     align-items: center;
-    
-    flex-direction: column;
-    
+    flex-grow: 1;
 }
 
 .imgContato > img{
@@ -100,8 +91,14 @@ footer {
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
-.cardContato>div{
-padding: 1rem;
+.corpoCardOutrosContatos {
+    padding: 0 40px;
+}
+
+.cardContato > div{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
 }
 
 

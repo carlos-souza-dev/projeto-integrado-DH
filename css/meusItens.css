@@ -10,10 +10,11 @@
 /* stilo botão */
 
 .areaBotaoCad {
+    width: 94%;
+    margin: 0 auto;
     display: flex;
     justify-content: flex-end;
     height: 14vh;
-    padding-right: 2vw;
     align-items: center;
     /* padding-bottom: 10px; */
 
@@ -58,31 +59,17 @@
 
 
 .centroTelaClassificados{
-    
+    width: calc(94% + 1rem);
+    margin: 0 auto;
     display: flex;
-    
-    
-    
-} 
-
-.listaClassificados{
-    display: flex;
-    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    padding-left: 15px;
-    
-}
-
-
-.listaClassificados>div{
-    padding: 5px;
-    margin: 8px;
 }
 
 
 .card{
     width: 12rem;
+    margin: 1rem;
     display: flex;
     border-radius: 5px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);

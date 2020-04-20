@@ -28,28 +28,17 @@ z-index: 2;
 /* stilo dos cards classificados*/
 
 .centroTelaClassificados {
-
+    width: calc(94% + 1rem);
     display: flex;
     padding-bottom: 40px;
-
-}
-
-.listaClassificados {
-    width: calc(94% + 32px);
     margin: 0 auto;
-    display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    padding-left: 16px;
+
 }
 
-
-.listaClassificados > a {
-    padding: 5px;
+.centroTelaClassificados > a {
     /* margin: px; */
-    margin: 10px;
-
+    margin: 1rem;
 }
 
 .card {
@@ -75,13 +64,13 @@ z-index: 2;
 .card-titulo {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .card-subtitulo {
     font-weight: lighter;
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /* fim stilo cards classificados */
@@ -175,6 +164,8 @@ z-index: 2;
 
 #fotoItem {
     padding-left: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
 }
 
 .card-body {
@@ -186,11 +177,13 @@ z-index: 2;
     padding-bottom: 20px;
 } 
 
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
 .dadosUser {
     display: flex;
-   
-    
-
 }
 
 .imagemUser{
@@ -211,14 +204,18 @@ z-index: 2;
 
 .quemSou h6{
     font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
 .interesses button {
     margin-left: 5px;
     width: 60px;
+    padding: 2px 3px;
     font-size: 12px;
     border: 10px;
     border-radius: 15px;
+    font-family: 'Roboto', sans-serif;
     font-weight: bold;
     color: black;
     background-color: rgb(155, 158, 163);
@@ -231,6 +228,13 @@ z-index: 2;
 }
 .nomeUser > h4 {
     border-bottom: 2px solid #878787;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.nomeUser > p, .quemSou > p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
 }
 
 @media(max-width: 767px) {

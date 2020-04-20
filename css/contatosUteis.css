@@ -128,10 +128,29 @@ footer {
     padding-left: 0.3rem;
 }
 
+@media (max-width: 768px){
+    .centroTelaContatosUteis > div {
+        min-width: 327px;
+    }
+
+    .cardContato > div {
+        margin: 0;
+    }
+
+    .cardContato .imgContato > img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .cardContato .iconesContato {
+        width: 30px;
+    }
+}
+
 @media (max-width: 450px){
     .imgPrestServ>img{
         width: 6rem;
-    height: 6rem;
+        height: 6rem;
 
     }
 }

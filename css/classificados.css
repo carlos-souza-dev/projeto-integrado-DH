@@ -94,14 +94,16 @@ z-index: 2;
     justify-content: space-around;
 }
 
-.areaBotaoSearch {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+.areaCamposGrandes #zero-filter, #first-filter, #second-filter {
+    width: 30%;
 }
 
-.campo-pesquisa > div {
-    padding-bottom: 10px;
+.areaBotaoSearch {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .nomeCampoPesquisa {
@@ -249,7 +251,20 @@ z-index: 2;
         margin: auto;
     }
 
+    .areaCamposGrandes {
+        height: 150px;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .areaCamposGrandes #zero-filter, #first-filter, #second-filter {
+        width: 80%;
+    }
+
+    .areaCamposGrandes #zero-filter {
+        border: 1px solid #000000;;
+    }
 }
 
 @media (min-width: 576px){

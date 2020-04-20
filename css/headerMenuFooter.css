@@ -230,42 +230,6 @@ a.article:hover {
     MEDIAQUERIES
 ----------------------------------------------------- */
 
-@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -280px;
-    }
-    #sidebar.active {
-        margin-left: 0px;
-    }
-    #content {
-        width: 100%;
-    }
-    #content.active {
-        width: 100%;
-    }
-    #sidebarCollapse span {
-        display: none;
-    }
-    .listaClassificados{
-        margin: 10px auto;
-    }
-}
-
-@media (min-width: 769px) {
-    #sidebarCollapse {
-        display: none;
-    }
-
-    #sidebar.active {
-        margin-left: 0px;
-    }
-
-    #content.active {
-        width: calc(100% - 280px);
-    }
-    
-
-}
 
 /* folha estilo header */
 /* @font-face {
@@ -280,44 +244,55 @@ a.article:hover {
     font-weight: normal;
 } */
 
+
 .mainHeader {
+    width: 94%;
+    min-height: 80px;
+    height: 10vh;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
-
-}
-
-.mainHeader > div {
-
-    /* width: 50%; */
-    display: flex;
     align-items: center;
-
 }
+
 .titulo {
-    width: 70%;
+    width: 75%;
     display: flex;
 }
+
+.logo-mobile {
+    display: none;
+}
+
 .avatar {
-    width: 30%;
+    width: 25%;
+    display: flex;
     justify-content: flex-end;
+    align-items: center;
     font-family: 'Lato', sans-serif;
     font-size: 20px;
 }
 
 .nomePag {
+    width: 50%;
+    height: 10vh;
+    min-height: 80px;
     text-transform: uppercase;
     color: #3B3B3B;
     font-family: 'Montserrat', sans-serif;
-    font-size: 40px;
-
+    font-size: 3vw;
+    line-height: 10vh;
 }
 
 .finalidPag {
+    width: 50%;
+    height: 10vh;
+    min-height: 80px;
     font-family: 'Lato', sans-serif;
     color: #878787;
-    font-size: 20px;
+    line-height: 10vh;
+    font-size: 1.5vw;
     padding-left: 20px;
 }
 
@@ -341,12 +316,42 @@ a.article:hover {
 }
 
 @media (max-width: 1024px) {
-    #tit {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        position: relative;
 
+    .mainHeader {
+        margin: 5px auto;
+        height: 5vh;
+        min-height: 70px;
+        align-items: flex-start;
+    }
+
+    #tit {
+        width: 100%;
+        height: 8vh;
+        min-height: 70px;
+        min-height: 22px;
+        flex-direction: column;
+    }
+
+    .nomePag {
+        width: 85%;
+        height: 5vh;
+        min-height: 30px;
+        margin-left: 5%;
+        font-size: 3vw;
+        line-height: 5vh;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .finalidPag {
+        width: 85%;
+        height: 2vh;
+        min-height: 20px;
+        margin-left: 5%;
+        line-height: 2vh;
+        text-align: center;
+        padding-left: 0px;
     }
 
     #avat {
@@ -354,6 +359,67 @@ a.article:hover {
 
     }
 
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -280px;
+    }
+    #sidebar.active {
+        margin-left: 0px;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: 100%;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+    .listaClassificados{
+        margin: 10px auto;
+    }
+
+    .nomePag {
+        margin-left: 5%;
+        font-size: 5vw;
+    }
+
+    .finalidPag {
+        font-size: 2.5vw;
+    }
+
+    .logo-mobile {
+        width: 70px;
+        height: 90px;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 3px;
+    }
+
+    .logo-mobile img {
+        width: 70px;
+        height: 90px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: unset;
+    }
+}
+
+@media (min-width: 769px) {
+    #sidebarCollapse {
+        display: none;
+    }
+
+    #sidebar.active {
+        margin-left: 0px;
+    }
+
+    #content.active {
+        width: calc(100% - 280px);
+    }    
 
 }
 
@@ -368,13 +434,6 @@ a.article:hover {
 @media(min-width:1023px) {
     #icone-menu {
         display: none;
-    }
-
-    .mainHeader {
-        padding-top: 20px;
-        padding-left: 40px;
-        padding-right: 40px;
-
     }
     
     .listaClassificados{

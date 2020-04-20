@@ -47,7 +47,6 @@
                 <div class="botaoAbrireFechar">
                     <button type="button" id="sidebarCollapse" class="btn">
                         <i class="fas fa-align-left" style="color: white;"></i>
-                        <span>Toggle Sidebar</span>
                     </button>
                 </div>
 
@@ -187,7 +186,7 @@
                         Filtrar Classificados
                     </div>
                     <div class="areaCamposGrandes">
-                        <div class="campoSearch" style="width: 30%;">
+                        <div class="campoSearch" id="zero-filter">
                             <form class="form-inline">
                                 <input
                                     class="form-control"
@@ -197,7 +196,7 @@
                                     aria-label="Search">
                             </form>
                         </div>
-                        <div class="btn-group" style="width: 30%;">
+                        <div class="btn-group" id="first-filter">
                             <button
                                 class="btn btn-secondary text-left btn-sm"
                                 id="btn-pesquisa"
@@ -221,7 +220,7 @@
                                 <a class="dropdown-item" href="#">Aulas</a>
                             </div>
                         </div>
-                        <div class="btn-group" style="width: 30%;">
+                        <div class="btn-group" id="second-filter">
                             <button
                                 class="btn btn-secondary text-left btn-sm"
                                 id="btn-pesquisa"

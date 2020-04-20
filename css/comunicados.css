@@ -1,14 +1,3 @@
-@font-face {
-    src: url(fonts/Roboto/Roboto-Regular.ttf);
-    font-family: 'Robot-normal';    
-    font-weight: normal;
-}
-@font-face {
-    src: url(fonts/Roboto/Roboto-Light.ttf);
-    font-family: 'Robot-ligth';    
-    font-weight: normal;
-}
-
 
 .centroTelaComunicados{
     width: 94%;

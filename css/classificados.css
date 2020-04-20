@@ -1,19 +1,6 @@
-@font-face {
-    src: url("fonts/Roboto/Roboto-Regular.ttf");
-    font-family: 'Roboto-normal';
-    font-weight: normal;
-}
-@font-face {
-    src: url("fonts/Roboto/Roboto-Italic.ttf");
-    font-family: 'Roboto-italic';
-    font-weight: normal;
-}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,700&display=swap');
 
-@font-face {
-    src: url("fonts/Roboto/Roboto-Medium.ttf.ttf");
-    font-family: 'Roboto-Medium';
-    font-weight: normal;
-}
 
 p {
     margin-bottom: 0 !important;
@@ -87,8 +74,14 @@ z-index: 2;
 
 .card-titulo {
     font-weight: bold;
-    font-family: 'Roboto-normal', sans-serif;
-    font-size: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+.card-subtitulo {
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
 }
 
 /* fim stilo cards classificados */

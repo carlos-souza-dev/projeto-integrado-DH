@@ -1,66 +1,8 @@
-@font-face {
-    src: url(fonts/Roboto/Roboto-Regular.ttf);
-    font-family: 'Robot-normal';    
-    font-weight: normal;
-}
-@font-face {
-    src: url(fonts/Roboto/Roboto-Light.ttf);
-    font-family: 'Robot-ligth';    
-    font-weight: normal;
-}
 
-@font-face {
-    src: url(fonts/Montserrat/Montserrat-Light.ttf);
-    font-family: 'Montserrat-Light';    
-    font-weight: normal;
-}
-@font-face {
-    src: url(fonts/Montserrat/Montserrat-SemiBold.ttf);
-    font-family: 'Montserrat-SemiBold';    
-    font-weight: normal;
-}
-@font-face {
-    src: url(fonts/Montserrat/Montserrat-Medium.ttf);
-    font-family: 'Montserrat-Medium';    
-    font-weight: normal;
-}
-
-@font-face {
-    src: url(fonts/Lato/Lato-Regular.ttf);
-    font-family: 'Lato-Regular';    
-    font-weight: normal;
-}
-
-@font-face {
-    src: url(fonts/Roboto/Roboto-Light.ttf);
-    font-family: 'Roboto-Light';    
-    font-weight: normal;
-}
-
-@font-face {
-    src: url(fonts/Roboto/Roboto-Italic.ttf);
-    font-family: 'Roboto-Italic';    
-    font-weight: normal;
-}
-
-@font-face {
-    src: url(fonts/Roboto/Roboto-Regular.ttf);
-    font-family: 'Roboto-Regular';    
-    font-weight: normal;
-}
-
-@font-face {
-    src: url(fonts/Montserrat/Montserrat-Light.ttf);
-    font-family: 'Montserrat-Ligth';    
-    font-weight: normal;
-}
-
-
-@font-face {
-    src: url(fonts/Lato/Lato-Light.ttf);
-    font-family: 'Lato-Ligth';    
-    font-weight: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,700&display=swap');
 
 
 /* Início do estilo do main (bem-vindo) */
@@ -102,7 +44,7 @@
 }
 
 .main-morador .resumo-section .resumo-tema {
-    font-family: Roboto-Regular;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
     justify-content: start;
@@ -114,7 +56,7 @@
 }
 
 .main-morador .resumo-section .resumo-tema-comunicados {
-    font-family: Roboto-Regular;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
     justify-content: start;

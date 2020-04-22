@@ -33,11 +33,12 @@
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
-.resumo-tags {
+.resumo-box {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     margin: 0;
-    width: 100%
+    width: 100%;
 }
 
 .resumo-section__info {
@@ -49,7 +50,7 @@
     border-radius: 8px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.08);
-    margin: 16px 24px;
+    margin: 16px 0;
 }
 
 .resumo-icon-box {
@@ -91,6 +92,50 @@
     color: #3B3B3B;
 }
 
+.resumo-section__classificados {
+    box-sizing: border-box;
+    width: 48%;
+    height: 50vh;
+    border-radius: 8px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    margin: 16px 0;
+    padding: 8px;
+}
+
+.resumo-section__classificados-title,
+.resumo-section__others-title {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    justify-content: start;
+    color: #3B3B3B;
+    width: 100%;
+    border-bottom: 1px solid #3B3B3B;
+    line-height: 24px;
+}
+
+.resumo-section__others {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 48%;
+    height: 50vh;
+    margin: 16px 0;
+    align-content: space-between;
+}
+
+.resumo-section__others--sub {
+    box-sizing: border-box;
+    width: 100%;
+    height: 30%;
+    border-radius: 8px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    padding: 8px;
+}
 
 .main-morador #resumo-comunicados {
     width: 100%;

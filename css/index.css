@@ -7,7 +7,6 @@
 
 /* Início do estilo do main (bem-vindo) */
 
-
 #moradores {
     position: relative;
     width: 100%;
@@ -34,27 +33,64 @@
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
+.resumo-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    width: 100%
+}
+
 .resumo-section__info {
-    width: 45%;
-    min-width: 300px;
-    height: 190px;
-    margin: 20px;
-    border-radius: 20px;
-    flex-grow: 1;
-    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    display: flex;
+    width: 28%;
+    min-width: 256px;
+    height: 96px;
+    border-radius: 8px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    margin: 16px 24px;
+}
+
+.resumo-icon-box {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 8px 0 0 8px;
+    height: 100%;
+    min-width: 96px;
+    align-items: center;
+    justify-content: center;
+}
+
+.resumo-section__info-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto 12px;
+    justify-content: space-around;
 }
 
 .resumo-section__info-title {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 16px;
     justify-content: start;
     color: #3B3B3B;
-    width: 94;
-    height: 30px;
-    margin: 10px 16px 0;
-    border-bottom: 1px solid #3B3B3B;
+    width: 100%;
+    min-width: 144px;
+    margin: 0;
 }
+
+.resumo-section__info-subtitle {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    justify-content: start;
+    font-size: 26px;
+    color: #3B3B3B;
+}
+
 
 .main-morador #resumo-comunicados {
     width: 100%;
@@ -64,19 +100,7 @@
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
-.main-morador .resumo-section .resumo-tema {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    font-weight: bold;
-    justify-content: start;
-    color: #3B3B3B;
-    width: 94;
-    height: 30px;
-    margin: 10px 16px 0;
-    border-bottom: 1px solid #3B3B3B;
-}
-
-.main-morador .resumo-section .resumo-tema-comunicados {
+.main-morador .resumo-section .resumo-tema .resumo-tema-comunicados {
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
@@ -86,4 +110,12 @@
     height: 30px;
     margin: 10px 16px 0;
     border-bottom: 1px solid #3B3B3B;
+}
+
+@media (max-width: 768px) {
+    .resumo-section__info {
+        width: 66%;
+        margin: 16px auto;
+    }
+
 }

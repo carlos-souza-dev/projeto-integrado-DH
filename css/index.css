@@ -32,7 +32,28 @@
     border-radius: 20px;
     flex-grow: 1;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
 
+.resumo-section__info {
+    width: 45%;
+    min-width: 300px;
+    height: 190px;
+    margin: 20px;
+    border-radius: 20px;
+    flex-grow: 1;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
+
+.resumo-section__info-title {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    justify-content: start;
+    color: #3B3B3B;
+    width: 94;
+    height: 30px;
+    margin: 10px 16px 0;
+    border-bottom: 1px solid #3B3B3B;
 }
 
 .main-morador #resumo-comunicados {

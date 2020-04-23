@@ -149,7 +149,7 @@
     flex-wrap: wrap;
     width: 48%;
     margin: 16px 0;
-    align-content: space-between;
+    align-content: flex-start;
 }
 
 .resumo-section__others--sub {
@@ -159,6 +159,7 @@
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.24);
     padding: 8px;
+    margin-bottom: 16px;
 }
 
 .main-morador #resumo-comunicados {
@@ -187,5 +188,12 @@
     .resumo-section__others {
         width: 100%;
         margin: 16px auto;
+    }
+
+    .resumo-section__classificados-title,
+    .resumo-section__others-title,
+    .resumo-section__classificados-subtitle, 
+    .resumo-section__others-subtitle {
+        text-align: center;
     }
 }

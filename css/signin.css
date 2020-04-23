@@ -24,6 +24,11 @@ body {
   position: relative;
   box-shadow:1px 5px 30px rgb(195, 195, 195);
 }
+
+.signin-title {
+  color: #3b3b3b;
+}
+
 .form-signin .checkbox {
   font-weight: 400;
 }

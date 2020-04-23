@@ -95,7 +95,6 @@
 .resumo-section__classificados {
     box-sizing: border-box;
     width: 48%;
-    height: 50vh;
     border-radius: 8px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.24);
@@ -114,15 +113,41 @@
     width: 100%;
     border-bottom: 1px solid #3B3B3B;
     line-height: 24px;
+    width: 100%;
+}
+
+.resumo-section__classificados-subtitle, 
+.resumo-section__others-subtitle {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    justify-content: start;
+    font-size: 14px;
+    color: #3B3B3B;
+    margin-top: 16px;
+    width: 100%;
+}
+
+.resumo-section__others-nocontent {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 16px;
+    color: #3B3B3B;
+    text-align: center;
+    margin: 16px auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
 .resumo-section__others {
+    display: flex;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     width: 48%;
-    height: 50vh;
     margin: 16px 0;
     align-content: space-between;
 }
@@ -130,7 +155,6 @@
 .resumo-section__others--sub {
     box-sizing: border-box;
     width: 100%;
-    height: 30%;
     border-radius: 8px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.24);
@@ -158,9 +182,10 @@
 }
 
 @media (max-width: 768px) {
-    .resumo-section__info {
-        width: 66%;
+    .resumo-section__info,
+    .resumo-section__classificados,
+    .resumo-section__others {
+        width: 100%;
         margin: 16px auto;
     }
-
 }

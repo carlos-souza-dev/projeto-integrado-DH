@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <title>Vizinhanca</title>
@@ -39,7 +39,7 @@
             <!-- Menu Retrátil -->
             <nav id="sidebar">
                 <!-- botão para abrir e fechar o menu -->
-                <div class=botaoAbrireFechar>
+                <div class="botaoAbrireFechar">
                     <button type="button" id="sidebarCollapse" class="btn">
                         <i class="fas fa-align-left" style="color: white;"></i>
                         <span>Toggle Sidebar</span>
@@ -63,20 +63,20 @@
                             class="dropdown-toggle">
                             <i class="fas fa-heart"></i>
                             Minha Casa</a>
-                            <ul class="collapse list-unstyled" id="homeSubmenu">
-                                <li>
-                                    <a href="minhaCasa.html">Moradores</a>
-                                </li>
-                                <li>
-                                    <a href="prestadoresDeServico.html">Prestadores de Serviço</a>
-                                </li>
-                                <li>
-                                    <a href="correspondencias.html">Correspondências</a>
-                                </li>
-                                <li>
-                                    <a href="contatosUteis.html">Contatos Uteis</a>
-                                </li>
-                            </ul>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="minhaCasa.html">Moradores</a>
+                            </li>
+                            <li>
+                                <a href="prestadoresDeServico.html">Prestadores de Serviço</a>
+                            </li>
+                            <li>
+                                <a href="correspondencias.html">Correspondências</a>
+                            </li>
+                            <li>
+                                <a href="contatosUteis.html">Contatos Uteis</a>
+                            </li>
+                        </ul>
                     </li>
 
                     <li class="active">
@@ -104,10 +104,10 @@
                     </li>
                     <li>
                         <a href="solicitacoes.html">
-                            <i class="fas fa-file-alt"></i> 
-                             Solicitações</a>
+                            <i class="fas fa-file-alt"></i>
+                            Solicitações</a>
                     </li>
-                    
+
                     <li>
                         <a href="documentacao.html">
                             <i class='fas'>&#xf07b;</i>
@@ -133,8 +133,22 @@
 
                     </div>
                     <!-- logo para versção mobile -->
-                    <div class="logo-mobile">
-                        <img src="./img/logo/logo-simples.png" alt="">
+                    <div class="dropleft logo-mobile">
+                        <a
+                            class="dropdown-toggle"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                            <img src="./img/logo/logo-simples.png" alt="">
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Perfil</a>
+                            <a class="dropdown-item" href="login.html">Sair</a>
+
+                        </div>
                     </div>
                     <div class="avatar" id="avat">
 
@@ -145,8 +159,24 @@
                         <div class="nameUser">
                             <p>Olá, Carlos!</p>
                         </div>
+                        <div class="dropleft">
+                            <a
+                                class="dropdown-toggle"
+                                href="#"
+                                role="button"
+                                id="dropdownMenuLink"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                <img class="avatarUser" src="./img/logo/user.png">
+                            </a>
 
-                        <img class="avatarUser" src="./img/logo/user.png">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Perfil</a>
+                                <a class="dropdown-item" href="login.html">Sair</a>
+
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -155,39 +185,47 @@
                 <nav class="slidemenu">
 
                     <!-- Item 1 -->
+                    <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"/>
+                    <label for="slide-item-1">
+                        <a href="classificados.html">Classificados</a>
+                    </label>
+
+                    <!-- Item 2 -->
                     <input
                         type="radio"
                         name="slideItem"
-                        id="slide-item-1"
+                        id="slide-item-2"
                         class="slide-toggle"
-                        />
-                    <label for="slide-item-1">
-                        <a href="classificados.html">Classificados</a></label>
-    
-                    <!-- Item 2 -->
-                    <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle" checked="checked"/>
+                        checked="checked"/>
                     <label for="slide-item-2">
-                        <a>Meus Itens</a></label>
-    
+                        <a>Meus Itens</a>
+                    </label>
+
                     <div class="clear"></div>
-    
+
                     <!-- Bar -->
                     <div class="slider">
                         <div class="bar"></div>
                     </div>
                 </nav>
 
-                 <!-- botao para adicionar cadastro, puxa a modal que está no fim deste código -->
-            <div class="areaBotaoCad">
-                <div>
-                       <button type="button" id="botaoCadastro" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#modalCadastroItem">
+                <!-- botao para adicionar cadastro, puxa a modal que está no fim deste código
+                -->
+                <div class="areaBotaoCad">
+                    <div>
+                        <button
+                            type="button"
+                            id="botaoCadastro"
+                            class="btn btn-secondary btn-sm"
+                            data-toggle="modal"
+                            data-target="#modalCadastroItem">
                             Novo Anúncio
-                          </button>
+                        </button>
+                    </div>
                 </div>
-            </div>
-              
-               <!-- area do centro da tela -->
-            <div class="centroTelaClassificados">
+
+                <!-- area do centro da tela -->
+                <div class="centroTelaClassificados">
                     <!-- cards dos meus ítens -->
                     <div class="card classificado">
                         <img
@@ -197,7 +235,7 @@
                         <div class="card-corpo">
                             <div class="card-titulo">Aulas de Violão</div>
                             <div class="card-subtitulo">Juliana B. (B-74)</div>
-                            
+
                         </div>
                         <div class="toolsCardAnuncio">
                             <a data-toggle="modal" data-target="#alterarAnuncio"><img src="./img/icon/edit.svg" alt=""></a>
@@ -212,117 +250,119 @@
                         <div class="card-corpo">
                             <div class="card-titulo">Assistência e reparos</div>
                             <div class="card-subtitulo">Lucas M. (C-84)</div>
-                            
+
                         </div>
                         <div class="toolsCardAnuncio">
                             <a data-toggle="modal" data-target="#alterarAnuncio"><img src="./img/icon/edit.svg" alt=""></a>
                             <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
                         </div>
                     </div>
-            </div>
+                </div>
 
                 <!-- modal para cadastrar novos itens -->
 
-            <div class="modal" id="modalCadastroItem" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Adicionar Anúncio</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Título</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                              </div>
-                            <div class="form-group">
-                              <label for="exampleFormControlTextarea1">Descrição</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <div class="modal" id="modalCadastroItem" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Adicionar Anúncio</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
                             </div>
-                             <div class="form-group">
-                              <label for="exampleFormControlFile1">Imagem</label>
-                              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Título</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Descrição</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Imagem</label>
+                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    </div>
+                                </form>
                             </div>
-                          </form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-secondary">Salvar</button>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                      <button type="button" class="btn btn-secondary">Salvar</button>
-                    </div>
-                  </div>
                 </div>
-              </div>
 
-              <!-- modal para confirmar exclusão do item , este modal surge centralizado na tela -->
-              <div class="modal fade" id="confirmarExclusao" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                    
-                    <div class="modal-body">
-                      Tem certeza que deseja excluir?
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                      <button type="button" class="btn btn-danger">Tenho certeza</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <!-- modal para confirmar exclusão do item , este modal surge centralizado na
+                tela -->
+                <div
+                    class="modal fade"
+                    id="confirmarExclusao"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
 
-              <!-- modal para alterar anuncio, o conteudo aparece puxando do banco -->
-              <div class="modal" id="alterarAnuncio" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title">Alterar Anúncio</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleFormControlTextarea1">Título</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                              </div>
-                            <div class="form-group">
-                              <label for="exampleFormControlTextarea1">Descrição</label>
-                              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <div class="modal-body">
+                                Tem certeza que deseja excluir?
                             </div>
-                             <div class="form-group">
-                              <label for="exampleFormControlFile1">Imagem</label>
-                              <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-danger">Tenho certeza</button>
                             </div>
-                          </form>
+                        </div>
                     </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                      <button type="button" class="btn btn-secondary">Salvar</button>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            
 
-          
-            <footer class="py-2 footer">
-                <div class="container text-center" id="footerText">
-                    <p class="m-0">
-                        Portal do Condomínio | ST02G3-2020
-                        <img src="imagens/favicon.png" width="30" alt=""/>
-                    </p>
+                <!-- modal para alterar anuncio, o conteudo aparece puxando do banco -->
+                <div class="modal" id="alterarAnuncio" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Alterar Anúncio</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Título</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Descrição</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Imagem</label>
+                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-secondary">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </footer>       
-           
+
+                <footer class="py-2 footer">
+                    <div class="container text-center" id="footerText">
+                        <p class="m-0">
+                            Portal do Condomínio | ST02G3-2020
+                            <img src="imagens/favicon.png" width="30" alt=""/>
+                        </p>
+                    </div>
+                </footer>
 
             </div>
-            
 
         </div>
-  
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script

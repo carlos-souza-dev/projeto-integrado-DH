@@ -15,8 +15,10 @@
         <link rel="stylesheet" href="./css/detalhes.css">
         <link rel="stylesheet" href="./css/classificados.css">
         <script src="https://kit.fontawesome.com/1dceb0bf4e.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
-    
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+
         <link
             href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
             rel="stylesheet">
@@ -42,6 +44,7 @@
 
         <div class="wrapper">
             <!-- Menu Retrátil -->
+           
             <!-- botão para abrir e fechar o menu -->
             <nav id="sidebar">
                 <div class="botaoAbrireFechar">
@@ -112,7 +115,7 @@
                             <i class="fas fa-file-alt"></i>
                             Solicitações</a>
                     </li>
-                   
+
                     <li>
                         <a href="documentacao.html">
                             <i class='fas'>&#xf07b;</i>
@@ -136,7 +139,24 @@
                         </div>
 
                     </div>
+                    <!-- logo para versção mobile -->
+                    <div class="dropleft logo-mobile">
+                        <a
+                                class="dropdown-toggle"
+                                role="button"
+                                id="dropdownMenuLink"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                        <img src="./img/logo/logo-simples.png" alt="">
+                        </a>
+                        
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="#">Perfil</a>
+                            <a class="dropdown-item" href="login.html">Sair</a>
 
+                        </div>
+                    </div>
                     <div class="avatar" id="avat">
 
                         <div class="sininho">
@@ -146,8 +166,23 @@
                         <div class="nameUser">
                             <p>Olá, Carlos!</p>
                         </div>
+                        <div class="dropleft">
+                            <a
+                                class="dropdown-toggle"
+                                role="button"
+                                id="dropdownMenuLink"
+                                data-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false">
+                                <img class="avatarUser" src="./img/logo/user.png">
+                            </a>
 
-                        <img class="avatarUser" src="./img/logo/user.png">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">Perfil</a>
+                                <a class="dropdown-item" href="login.html">Sair</a>
+
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -253,191 +288,190 @@
                 <!-- area do centro da tela -->
                 <div class="centroTelaClassificados">
 
-                        <!-- cards dos classificados -->
-                        <!-- estão dentro da tag <a> para abrir o modal que tá sendo referenciado -->
-                        <a data-toggle="modal" data-target="#exampleModal">
-                            <div class="card classificado">
-                                <img
-                                    class="card-img-top"
-                                    src="./img/classificados/aulas violão.png"
-                                    alt="Imagem de capa do card">
-                                <div class="card-corpo">
-                                    <div class="card-titulo">Aulas de Violão</div>
-                                    <div class="card-subtitulo">Juliana B. (B-74)</div>
+                    <!-- cards dos classificados -->
+                    <!-- estão dentro da tag <a> para abrir o modal que tá sendo referenciado -->
+                    <a data-toggle="modal" data-target="#exampleModal">
+                        <div class="card classificado">
+                            <img
+                                class="card-img-top"
+                                src="./img/classificados/aulas violão.png"
+                                alt="Imagem de capa do card">
+                            <div class="card-corpo">
+                                <div class="card-titulo">Aulas de Violão</div>
+                                <div class="card-subtitulo">Juliana B. (B-74)</div>
 
-                                </div>
                             </div>
+                        </div>
 
-                        </a>
+                    </a>
 
-                        <a data-toggle="modal" data-target="#exampleModal">
-                            <div class="card classificado">
-                                <img
-                                    class="card-img-top"
-                                    src="./img/classificados/assistência.png"
-                                    alt="Imagem de capa do card">
-                                <div class="card-corpo">
-                                    <div class="card-titulo">Assistência e reparos</div>
-                                    <div class="card-subtitulo">Lucas M. (C-84)</div>
-                                </div>
+                    <a data-toggle="modal" data-target="#exampleModal">
+                        <div class="card classificado">
+                            <img
+                                class="card-img-top"
+                                src="./img/classificados/assistência.png"
+                                alt="Imagem de capa do card">
+                            <div class="card-corpo">
+                                <div class="card-titulo">Assistência e reparos</div>
+                                <div class="card-subtitulo">Lucas M. (C-84)</div>
                             </div>
-                        </a>
+                        </div>
+                    </a>
 
-                        <a data-toggle="modal" data-target="#exampleModal">
-                            <div class="card classificado">
-                                <img
-                                    class="card-img-top"
-                                    src="./img/classificados/bolo"
-                                    alt="Imagem de capa do card">
-                                <div class="card-corpo">
-                                    <div class="card-titulo">Bolo sob encomenda</div>
-                                    <div class="card-subtitulo">Maria B. (D-44)</div>
-                                </div>
+                    <a data-toggle="modal" data-target="#exampleModal">
+                        <div class="card classificado">
+                            <img
+                                class="card-img-top"
+                                src="./img/classificados/bolo"
+                                alt="Imagem de capa do card">
+                            <div class="card-corpo">
+                                <div class="card-titulo">Bolo sob encomenda</div>
+                                <div class="card-subtitulo">Maria B. (D-44)</div>
                             </div>
+                        </div>
 
-                        </a>
+                    </a>
 
-                        <a data-toggle="modal" data-target="#exampleModal">
-                            <div class="card classificado">
-                                <img
-                                    class="card-img-top"
-                                    src="./img/classificados/aulas.png"
-                                    alt="Imagem de capa do card">
-                                <div class="card-corpo">
-                                    <div class="card-titulo">Aulas de Química</div>
-                                    <div class="card-subtitulo">Paula M. (A-63)</div>
-                                </div>
+                    <a data-toggle="modal" data-target="#exampleModal">
+                        <div class="card classificado">
+                            <img
+                                class="card-img-top"
+                                src="./img/classificados/aulas.png"
+                                alt="Imagem de capa do card">
+                            <div class="card-corpo">
+                                <div class="card-titulo">Aulas de Química</div>
+                                <div class="card-subtitulo">Paula M. (A-63)</div>
                             </div>
-                        </a>
-                        <a data-toggle="modal" data-target="#exampleModal">
-                            <div class="card classificado">
-                                <img
-                                    class="card-img-top"
-                                    src="./img/classificados/baba.png"
-                                    alt="Imagem de capa do card">
-                                <div class="card-corpo">
-                                    <div class="card-titulo">Babá</div>
-                                    <div class="card-subtitulo">Bárbara C. (A-33)</div>
-                                </div>
+                        </div>
+                    </a>
+                    <a data-toggle="modal" data-target="#exampleModal">
+                        <div class="card classificado">
+                            <img
+                                class="card-img-top"
+                                src="./img/classificados/baba.png"
+                                alt="Imagem de capa do card">
+                            <div class="card-corpo">
+                                <div class="card-titulo">Babá</div>
+                                <div class="card-subtitulo">Bárbara C. (A-33)</div>
                             </div>
-                        </a>
-                        <a data-toggle="modal" data-target="#exampleModal">
-                            <div class="card classificado">
-                                <img
-                                    class="card-img-top"
-                                    src="./img/classificados/organizador.png"
-                                    alt="Imagem de capa do card">
-                                <div class="card-corpo">
-                                    <div class="card-titulo">Organizador de Eventos</div>
-                                    <div class="card-subtitulo">João A. (D-91)</div>
-                                </div>
+                        </div>
+                    </a>
+                    <a data-toggle="modal" data-target="#exampleModal">
+                        <div class="card classificado">
+                            <img
+                                class="card-img-top"
+                                src="./img/classificados/organizador.png"
+                                alt="Imagem de capa do card">
+                            <div class="card-corpo">
+                                <div class="card-titulo">Organizador de Eventos</div>
+                                <div class="card-subtitulo">João A. (D-91)</div>
                             </div>
-                        </a>
-                        <a data-toggle="modal" data-target="#exampleModal">
-                            <div class="card classificado">
-                                <img
-                                    class="card-img-top"
-                                    src="./img/classificados/marmita.png"
-                                    alt="Imagem de capa do card">
-                                <div class="card-corpo">
-                                    <div class="card-titulo">Marmitas Saudáveis</div>
-                                    <div class="card-subtitulo">Antônio O. (C-101)</div>
-                                </div>
+                        </div>
+                    </a>
+                    <a data-toggle="modal" data-target="#exampleModal">
+                        <div class="card classificado">
+                            <img
+                                class="card-img-top"
+                                src="./img/classificados/marmita.png"
+                                alt="Imagem de capa do card">
+                            <div class="card-corpo">
+                                <div class="card-titulo">Marmitas Saudáveis</div>
+                                <div class="card-subtitulo">Antônio O. (C-101)</div>
                             </div>
-                        </a>
-                        <a data-toggle="modal" data-target="#exampleModal">
-                            <div class="card classificado">
-                                <img
-                                    class="card-img-top"
-                                    src="./img/classificados/dog.png"
-                                    alt="Imagem de capa do card">
-                                <div class="card-corpo">
-                                    <div class="card-titulo">Passeador de Cães</div>
-                                    <div class="card-subtitulo">Daniel S. (B-74)</div>
-                                </div>
+                        </div>
+                    </a>
+                    <a data-toggle="modal" data-target="#exampleModal">
+                        <div class="card classificado">
+                            <img
+                                class="card-img-top"
+                                src="./img/classificados/dog.png"
+                                alt="Imagem de capa do card">
+                            <div class="card-corpo">
+                                <div class="card-titulo">Passeador de Cães</div>
+                                <div class="card-subtitulo">Daniel S. (B-74)</div>
                             </div>
-                        </a>
+                        </div>
+                    </a>
 
-                        
-                        
-                        <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id -->
-                        <div
-                            class="modal fade"
-                            id="exampleModal"
-                            tabindex="-1"
-                            role="dialog"
-                            aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Detalhes</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body" id="corpo-modal">
+                    <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id
+                    -->
+                    <div
+                        class="modal fade"
+                        id="exampleModal"
+                        tabindex="-1"
+                        role="dialog"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Detalhes</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" id="corpo-modal">
 
-                                        <!-- dados do centro do modal (quando abre o anuncio) -->
-                                        <div class="cardy mb-3" id="cardModal">
-                                            <h4 class="card-title">Passeador de Cães</h4>
-                                            <div class="row no-gutters">
+                                    <!-- dados do centro do modal (quando abre o anuncio) -->
+                                    <div class="cardy mb-3" id="cardModal">
+                                        <h4 class="card-title">Passeador de Cães</h4>
+                                        <div class="row no-gutters">
 
-                                                <div class="col-md-4 text-left" id="fotoItem">
-                                                    <img src="./img/detalhes/dog.jpg" class="card-img" alt="...">
-                                                    <p>
-                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem error
-                                                        necessitatibus veniam doloremque veritatis dolorum fuga, dignissimos commodi
-                                                        quia beatae cupiditate temporibus ducimus saepe facilis perspiciatis quasi
-                                                        soluta laudantium totam!</p>
-                                                </div>
-                                                <div class="linha-vertical"></div>
-                                                <div class="col-md-8">
-                                                    <div class="card-body">
-                                                        <div class="dadosUser">
-                                                            <div class="imagemUser">
-                                                                <img src="img/detalhes/user.jpg" id="user"/>
-                                                            </div>
-                                                            <div class="nomeUser">
-                                                                <h4>Gustavo Nóbrega</h4>
-                                                                <p>Apartamento B-74
-                                                                </p>
-                                                                <p>Morador desde: Jan/2018
-                                                                </p>
-                                                            </div>
-
+                                            <div class="col-md-4 text-left" id="fotoItem">
+                                                <img src="./img/detalhes/dog.jpg" class="card-img" alt="...">
+                                                <p>
+                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem error
+                                                    necessitatibus veniam doloremque veritatis dolorum fuga, dignissimos commodi
+                                                    quia beatae cupiditate temporibus ducimus saepe facilis perspiciatis quasi
+                                                    soluta laudantium totam!</p>
+                                            </div>
+                                            <div class="linha-vertical"></div>
+                                            <div class="col-md-8">
+                                                <div class="card-body">
+                                                    <div class="dadosUser">
+                                                        <div class="imagemUser">
+                                                            <img src="img/detalhes/user.jpg" id="user"/>
+                                                        </div>
+                                                        <div class="nomeUser">
+                                                            <h4>Gustavo Nóbrega</h4>
+                                                            <p>Apartamento B-74
+                                                            </p>
+                                                            <p>Morador desde: Jan/2018
+                                                            </p>
                                                         </div>
 
-                                                        <div class="interesses">
-                                                            <h6>Interesses</h6>
-                                                            <button>Futebol</button>
-                                                            <button>Música</button>
-                                                            <button>Cozinha</button>
-                                                            <button>Cachorros</button>
+                                                    </div>
 
-                                                        </div>
-                                                        <div class="quemSou">
-                                                            <h6>Quem sou eu?</h6>
-                                                            <p class="card-text text-left">Lorem ipsum dolor sit amet consectetur,
-                                                                adipisicing elit. Voluptatem quaerat maxime autem iste debitis, totam
-                                                                temporibus, nisi voluptate inventore nemo unde enim expedita doloremque quo rem
-                                                                error tempore ad eveniet!</p>
+                                                    <div class="interesses">
+                                                        <h6>Interesses</h6>
+                                                        <button>Futebol</button>
+                                                        <button>Música</button>
+                                                        <button>Cozinha</button>
+                                                        <button>Cachorros</button>
 
-                                                        </div>
-                                                        <div class="icones">
+                                                    </div>
+                                                    <div class="quemSou">
+                                                        <h6>Quem sou eu?</h6>
+                                                        <p class="card-text text-left">Lorem ipsum dolor sit amet consectetur,
+                                                            adipisicing elit. Voluptatem quaerat maxime autem iste debitis, totam
+                                                            temporibus, nisi voluptate inventore nemo unde enim expedita doloremque quo rem
+                                                            error tempore ad eveniet!</p>
 
-                                                            <a><img src="./img/icon/mail.svg" alt=""></a>
-                                                            <a><img src="./img/icon/whatsApp.svg" alt=""></a>
-                                                        </div>
+                                                    </div>
+                                                    <div class="icones">
+
+                                                        <a><img src="./img/icon/mail.svg" alt=""></a>
+                                                        <a><img src="./img/icon/whatsApp.svg" alt=""></a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="modal-footer"></div>
                                 </div>
+                                <div class="modal-footer"></div>
                             </div>
                         </div>
+                    </div>
                 </div>
 
                 <footer class="py-2 footer">

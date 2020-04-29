@@ -14,6 +14,9 @@
         <link rel="stylesheet" href="./css/index.css">
         <!-- css header, menu lateral, menu superior e footer -->
         <link rel="stylesheet" href="./css/headerMenuFooter.css">
+        <link rel="stylesheet" href="./css/classificados.css">
+        <link rel="stylesheet" href="./css/correspondencias.css">
+        <link rel="stylesheet" href="./css/solicitacoes.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
         <script
             defer="defer"
@@ -131,20 +134,44 @@
 
                     </div>
                     <!-- logo para versção mobile -->
-                    <div class="logo-mobile">
-                        <img src="./img/logo/logo-simples.png" alt="">
+                    <div class="dropleft logo-mobile">
+                        <a
+                            class="dropdown-toggle"
+                            role="button"
+                            id="dropdownMenuLink"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false">
+                            <img src="./img/logo/logo-simples.png" alt="">
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="perfil.html">Perfil</a>
+                            <a class="dropdown-item" href="login.html">Sair</a>
+
+                        </div>
                     </div>
                     <div class="avatar" id="avat">
 
                         <div class="sininho">
-                            <img src="./img/icon/Vector.svg">"
+                            <img src="./img/icon/Vector.svg">
                         </div>
 
                         <div class="nameUser">
                             <p>Olá, Carlos!</p>
                         </div>
+                        <div class="dropleft">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="avatarUser" src="./img/logo/user.png">
+                            </a>
+                          
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="perfil.html">Perfil</a>
+                              <a class="dropdown-item" href="login.html">Sair</a>
+                              
+                            </div>
+                          </div>
 
-                        <img class="avatarUser" src="./img/logo/user.png">
 
                     </div>
                 </div>
@@ -160,22 +187,206 @@
                     <aside class="mainAside">
                         <main class="main-morador" id="moradores">
                             <section class="resumo-section">
-                                    <article class="resumo">
-                                        <div class="resumo-tema">Resumo 1</div>
+                                <div class="resumo-box">
+                                    <a class="resumo-section__info" href="minhaCasa.html">
+                                        <div class="resumo-icon-box">
+                                            <i class="material-icons-outlined resumo-icon" style="font-size:48px;">favorite_border</i>
+                                        </div>
+                                        <div class="resumo-section__info-content">
+                                            <h2 class="resumo-section__info-title">Moradores</h2>
+                                            <span class="resumo-section__info-subtitle">3</span>
+                                        </div>
+                                    </a>
+                                    <a class="resumo-section__info" href="prestadoresDeServico.html">
+                                        <div class="resumo-icon-box">
+                                            <i class="material-icons-outlined resumo-icon" style="font-size:48px;">assignment_ind</i>
+                                        </div>
+                                        <div class="resumo-section__info-content">
+                                            <h2 class="resumo-section__info-title">Prestadores de Serviço</h2>
+                                            <span class="resumo-section__info-subtitle">2</span>
+                                        </div>
+                                    </a>
+                                    <a class="resumo-section__info" href="meusItens.html">
+                                        <div class="resumo-icon-box">
+                                            <i class="material-icons-outlined resumo-icon" style="font-size:48px;">storefront</i>
+                                        </div>
+                                        <div class="resumo-section__info-content">
+                                            <h2 class="resumo-section__info-title">Meus Anúncios</h2>
+                                            <span class="resumo-section__info-subtitle">2</span>
+                                        </div>
+                                    </a>
+                                </div>
 
-                                    </article>
-                                    <article class="resumo">
-                                        <div class="resumo-tema">Resumo 2</div>
-                                    </article>
-                                    <article class="resumo">
-                                        <div class="resumo-tema">Resumo 3</div>
-                                    </article>
-                                    <article class="resumo">
-                                        <div class="resumo-tema">Resumo 4</div>
-                                    </article>
-                                    <article class="resumo" id="resumo-comunicados">
-                                        <div class="resumo-tema-comunicados">Comunicados</div>
-                                    </article>
+                                <div class="resumo-box">
+                                    <div class="resumo-section__classificados" href="classificados.html">
+                                        <h2 class="resumo-section__classificados-title">Classificados</h2>
+                                        <h3 class="resumo-section__classificados-subtitle">Últimos anúncios dos seus vizinhos</h3>
+                                        <div class="centroTelaClassificados--home">
+                                            <div>
+                                                <div class="card card--home classificado">
+                                                    <img
+                                                        class="card-img-top"
+                                                        src="./img/classificados/bolo"
+                                                        alt="Imagem de capa do card">
+                                                    <div class="card-corpo">
+                                                        <div class="card-titulo card-titulo--home">Bolo sob encomenda</div>
+                                                        <div class="card-subtitulo">Maria B. (D-44)</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="card card--home classificado">
+                                                    <img
+                                                        class="card-img-top"
+                                                        src="./img/classificados/aulas.png"
+                                                        alt="Imagem de capa do card">
+                                                    <div class="card-corpo">
+                                                        <div class="card-titulo card-titulo--home">Aulas de Matemática</div>
+                                                        <div class="card-subtitulo">Paula M. (A-63)</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="card card--home classificado">
+                                                    <img
+                                                        class="card-img-top"
+                                                        src="./img/classificados/baba.png"
+                                                        alt="Imagem de capa do card">
+                                                    <div class="card-corpo">
+                                                        <div class="card-titulo card-titulo--home">Babá</div>
+                                                        <div class="card-subtitulo">Bárbara C. (A-33)</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="card card--home classificado">
+                                                    <img
+                                                        class="card-img-top"
+                                                        src="./img/classificados/organizador.png"
+                                                        alt="Imagem de capa do card">
+                                                    <div class="card-corpo">
+                                                        <div class="card-titulo card-titulo--home">Organizador de Eventos</div>
+                                                        <div class="card-subtitulo">João A. (D-91)</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="card card--home classificado">
+                                                    <img
+                                                        class="card-img-top"
+                                                        src="./img/classificados/marmita.png"
+                                                        alt="Imagem de capa do card">
+                                                    <div class="card-corpo">
+                                                        <div class="card-titulo card-titulo--home">Marmitas Saudáveis</div>
+                                                        <div class="card-subtitulo">Antônio O. (C-101)</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="classificados.html">
+                                                <div class="card card--home classificado">
+                                                    <div class="card-corpo card-more">
+                                                        <i class="material-icons-outlined resumo-icon icon-seemore" style="font-size:48px;">add_circle_outline</i>
+                                                        <div class="card-titulo card-titulo--home">Ver mais</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <h3 class="resumo-section__classificados-subtitle">Seus últimos anúncios</h3>
+                                        <div class="centroTelaClassificados--home">
+                                            <div>
+                                                <div class="card card--home classificado">
+                                                    <img
+                                                        class="card-img-top"
+                                                        src="./img/classificados/aulas violão.png"
+                                                        alt="Imagem de capa do card">
+                                                    <div class="card-corpo">
+                                                        <div class="card-titulo card-titulo--home">Aulas de Violão</div>
+                                                        <div class="card-subtitulo">Juliana B. (B-74)</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="card card--home classificado">
+                                                    <img
+                                                        class="card-img-top"
+                                                        src="./img/classificados/assistência.png"
+                                                        alt="Imagem de capa do card">
+                                                    <div class="card-corpo">
+                                                        <div class="card-titulo card-titulo--home">Assistência e reparos</div>
+                                                        <div class="card-subtitulo">Lucas M. (C-84)</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="meusItens.html">
+                                                <div class="card card--home classificado">
+                                                    <div class="card-corpo card-more">
+                                                        <i class="material-icons-outlined resumo-icon icon-seemore" style="font-size:48px;">add_circle_outline</i>
+                                                        <div class="card-titulo card-titulo--home">Ver mais</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="resumo-section__others">
+                                        <a class="resumo-section__others--sub" href="correspondencias.html">
+                                            <h2 class="resumo-section__others-title">Últimas correspondências</h2>
+                                                <table class="tabela-correspondencia">
+                                                    <tr class="tabela-correspondencia-title">
+                                                        <th class="th-title">Tipo</th>
+                                                        <th class="th-title">Destinatário</th>
+                                                        <th class="th-title">Recebido em</th>
+                                                    </tr>
+                                                    <tr class="tabela-correspondencia-content">
+                                                        <th>Encomenda</th>
+                                                        <th>Juliana B.</th>
+                                                        <th>23/04/2020</th>
+                                                    </tr>
+                                                    <tr class="tabela-correspondencia-content">
+                                                        <th>Carta</th>
+                                                        <th>Gustavo N.</th>
+                                                        <th>22/04/2020</th>
+                                                    </tr>
+                                                    <tr class="tabela-correspondencia-content">
+                                                        <th>Telegrama</th>
+                                                        <th>Camila L.</th>
+                                                        <th>20/04/2020</th>
+                                                    </tr>
+                                                    <tr class="tabela-correspondencia-content">
+                                                        <th>Carta</th>
+                                                        <th>Carlos S.</th>
+                                                        <th>20/04/2020</th>
+                                                    </tr>
+                                                    <tr class="tabela-correspondencia-content">
+                                                        <th>Encomenda</th>
+                                                        <th>Daniel S.</th>
+                                                        <th>16/04/2020</th>
+                                                    </tr>
+                                                </table>
+                                        </a>
+                                        <a class="resumo-section__others--sub" href="comunicados.html">
+                                            <h2 class="resumo-section__others-title">Últimos Comunicados</h2>
+                                            <h3 class="resumo-section__others-nocontent">Sem novos comunicados nos últimos 7 dias</h3>
+                                            
+                                        </a>
+                                        <a class="resumo-section__others--sub" href="solicitacoes.html">
+                                            <h2 class="resumo-section__others-title">Status das Solicitações</h2>
+                                            <table class="tabela-solicitacao">
+                                                <tr class="tabela-solicitacao-title">
+                                                    <th class="th-title">Tipo</th>
+                                                    <th class="th-title">Status</th>
+                                                </tr>
+                                                <tr class="tabela-solicitacao-content">
+                                                    <th>Reserva de salão</th>
+                                                    <th class="solicitacao-status solicitacao-status--analise">Em análise</th>
+                                                </tr>
+                                                <tr class="tabela-solicitacao-content">
+                                                    <th>Reforma de cômodo</th>
+                                                    <th class="solicitacao-status solicitacao-status--indeferida">Indeferido</th>
+                                                </tr>
+                                        </a>
+                                    </div>
+                                </div>
+
                             </section>
                         </main>
                     </aside> 

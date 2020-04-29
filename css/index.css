@@ -7,7 +7,6 @@
 
 /* Início do estilo do main (bem-vindo) */
 
-
 #moradores {
     position: relative;
     width: 100%;
@@ -32,7 +31,135 @@
     border-radius: 20px;
     flex-grow: 1;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
 
+.resumo-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0;
+    width: 100%;
+}
+
+.resumo-section__info {
+    box-sizing: border-box;
+    display: flex;
+    width: 28%;
+    min-width: 256px;
+    height: 96px;
+    border-radius: 8px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    margin: 16px 0;
+}
+
+.resumo-icon-box {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 8px 0 0 8px;
+    height: 100%;
+    min-width: 96px;
+    align-items: center;
+    justify-content: center;
+}
+
+.resumo-section__info-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto 12px;
+    justify-content: space-around;
+}
+
+.resumo-section__info-title {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    justify-content: start;
+    color: #3B3B3B;
+    width: 100%;
+    min-width: 144px;
+    margin: 0;
+}
+
+.resumo-section__info-subtitle {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    justify-content: start;
+    font-size: 26px;
+    color: #3B3B3B;
+}
+
+.resumo-section__classificados {
+    box-sizing: border-box;
+    width: 48%;
+    border-radius: 8px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    margin: 16px 0;
+    padding: 8px;
+}
+
+.resumo-section__classificados-title,
+.resumo-section__others-title {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    justify-content: start;
+    color: #3B3B3B;
+    width: 100%;
+    border-bottom: 1px solid #3B3B3B;
+    line-height: 24px;
+    width: 100%;
+}
+
+.resumo-section__classificados-subtitle, 
+.resumo-section__others-subtitle {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    justify-content: start;
+    font-size: 14px;
+    color: #3B3B3B;
+    margin-top: 16px;
+    width: 100%;
+}
+
+.resumo-section__others-nocontent {
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 16px;
+    color: #3B3B3B;
+    text-align: center;
+    margin: 16px auto;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.resumo-section__others {
+    display: flex;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 48%;
+    margin: 16px 0;
+    align-content: flex-start;
+}
+
+.resumo-section__others--sub {
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    padding: 8px;
+    margin-bottom: 16px;
 }
 
 .main-morador #resumo-comunicados {
@@ -43,19 +170,7 @@
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
-.main-morador .resumo-section .resumo-tema {
-    font-family: 'Roboto', sans-serif;
-    text-transform: uppercase;
-    font-weight: bold;
-    justify-content: start;
-    color: #3B3B3B;
-    width: 94;
-    height: 30px;
-    margin: 10px 16px 0;
-    border-bottom: 1px solid #3B3B3B;
-}
-
-.main-morador .resumo-section .resumo-tema-comunicados {
+.main-morador .resumo-section .resumo-tema .resumo-tema-comunicados {
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     font-weight: bold;
@@ -65,4 +180,20 @@
     height: 30px;
     margin: 10px 16px 0;
     border-bottom: 1px solid #3B3B3B;
+}
+
+@media (max-width: 768px) {
+    .resumo-section__info,
+    .resumo-section__classificados,
+    .resumo-section__others {
+        width: 100%;
+        margin: 16px auto;
+    }
+
+    .resumo-section__classificados-title,
+    .resumo-section__others-title,
+    .resumo-section__classificados-subtitle, 
+    .resumo-section__others-subtitle {
+        text-align: center;
+    }
 }

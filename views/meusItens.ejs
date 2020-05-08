@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Vizinhanca</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <!-- css da parte interna da pagina -->
+        <link rel="stylesheet" href="./css/meusItens.css">
+        <!-- css header, menu lateral, menu superior e footer -->
+        <link rel="stylesheet" href="./css/headerMenuFooter.css">
+
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+
+        <link
+            rel="shortcut icon"
+            href="./img/logo/logo-simples.png"
+            type="image/x-icon"/>
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+            <!-- Menu Retrátil -->
+            <%- include('./partials/menuRetratil') %>
+
+            <!-- Conteudo da página -->
+
+            <div id="content">
+                <!-- Header -->
+                <div class="mainHeader">
+                    <div class="titulo" id="tit">
+                        <div class="nomePag">
+                            <p>Vizinhança</p>
+
+                        </div>
+                        <div class="finalidPag">
+                            <p >O que acontece ao seu redor</p>
+                        </div>
+
+                    </div>
+                    <!-- inclui o logo mobile e o avatar em uma partial  -->
+                    <%- include('./partials/avatar') %>
+               
+                </div>
+
+                <!-- menu superior -->
+                <nav class="slidemenu">
+
+                    <!-- Item 1 -->
+                    <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"/>
+                    <label for="slide-item-1">
+                        <a href="classificados.html">Classificados</a>
+                    </label>
+
+                    <!-- Item 2 -->
+                    <input
+                        type="radio"
+                        name="slideItem"
+                        id="slide-item-2"
+                        class="slide-toggle"
+                        checked="checked"/>
+                    <label for="slide-item-2">
+                        <a>Meus Itens</a>
+                    </label>
+
+                    <div class="clear"></div>
+
+                    <!-- Bar -->
+                    <div class="slider">
+                        <div class="bar"></div>
+                    </div>
+                </nav>
+
+                <!-- botao para adicionar cadastro, puxa a modal que está no fim deste código
+                -->
+                <div class="areaBotaoCad">
+                    <div>
+                        <button
+                            type="button"
+                            id="botaoCadastro"
+                            class="btn btn-secondary btn-sm"
+                            data-toggle="modal"
+                            data-target="#modalCadastroItem">
+                            Novo Anúncio
+                        </button>
+                    </div>
+                </div>
+
+                <!-- area do centro da tela -->
+                <div class="centroTelaClassificados">
+                    <!-- cards dos meus ítens -->
+                    <div class="card classificado">
+                        <img
+                            class="card-img-top"
+                            src="./img/classificados/aulas violão.png"
+                            alt="Imagem de capa do card">
+                        <div class="card-corpo">
+                            <div class="card-titulo">Aulas de Violão</div>
+                            <div class="card-subtitulo">Juliana B. (B-74)</div>
+
+                        </div>
+                        <div class="toolsCardAnuncio">
+                            <a data-toggle="modal" data-target="#alterarAnuncio"><img src="./img/icon/edit.svg" alt=""></a>
+                            <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="card classificado">
+                        <img
+                            class="card-img-top"
+                            src="./img/classificados/assistência.png"
+                            alt="Imagem de capa do card">
+                        <div class="card-corpo">
+                            <div class="card-titulo">Assistência e reparos</div>
+                            <div class="card-subtitulo">Lucas M. (C-84)</div>
+
+                        </div>
+                        <div class="toolsCardAnuncio">
+                            <a data-toggle="modal" data-target="#alterarAnuncio"><img src="./img/icon/edit.svg" alt=""></a>
+                            <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- modal para cadastrar novos itens -->
+
+                <div class="modal" id="modalCadastroItem" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Adicionar Anúncio</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Título</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Descrição</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Imagem</label>
+                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-secondary">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- modal para confirmar exclusão do item , este modal surge centralizado na
+                tela -->
+                <div
+                    class="modal fade"
+                    id="confirmarExclusao"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-body">
+                                Tem certeza que deseja excluir?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-danger">Tenho certeza</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- modal para alterar anuncio, o conteudo aparece puxando do banco -->
+                <div class="modal" id="alterarAnuncio" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Alterar Anúncio</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Título</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Descrição</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlFile1">Imagem</label>
+                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                <button type="button" class="btn btn-secondary">Salvar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="py-2 footer">
+                    <div class="container text-center" id="footerText">
+                        <p class="m-0">
+                            Portal do Condomínio | ST02G3-2020
+                            <img src="imagens/favicon.png" width="30" alt=""/>
+                        </p>
+                    </div>
+                </footer>
+
+            </div>
+
+        </div>
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({theme: "minimal"});
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+            });
+        </script>
+    </body>
+
+</html>

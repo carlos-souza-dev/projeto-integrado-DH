@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Portal do Condomínio</title>
+
+  <script src="https://kit.fontawesome.com/1dceb0bf4e.js" crossorigin="anonymous"></script>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/signin.css" rel="stylesheet">
+
+</head>
+
+<body class="text-center">
+  <form class="form-signin" action="/login" method="POST">
+    <h1 class="h3 mb-3 font-weight-normal signin-title"><b><br>Acessar Casa Virtual</b></h1>
+    <img class="mb-4" src="img/logo/logo.png" alt="">
+    <br>
+    <div class="border-botton">
+      <i class="fas fa-user"></i>
+      <label for="inputEmail" class="sr-only">Email</label>
+      <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email">
+    </div>
+    <div class="border-botton-2">
+      <i class="fas fa-lock"></i>
+      <label for="inputPassword" class="sr-only">Senha</label>
+      <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Senha">
+    </div>
+
+    <div class="checkbox mb-3">
+      <label>
+        <input type="checkbox" value="remember-me"> Lembrar Senha
+      </label>
+    </div>
+    <br>
+    <button class="btn btn-secondary btn-sm" type="submit">ENTRAR</button>
+    <!-- <a href="/home" class="btn btn-secondary btn-sm" type="submit">ENTRAR</a> -->
+    <input class="btn btn-sm btn-verde btn-block" value="Esqueci Minha Senha" name="SendRecupSenha" type="submit">
+
+  </form>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

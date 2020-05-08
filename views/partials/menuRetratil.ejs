@@ -1,0 +1,78 @@
+<nav id="sidebar">
+    <div class="botaoAbrireFechar">
+        <button type="button" id="sidebarCollapse" class="btn">
+            <i class="fas fa-align-left" style="color: white;"></i>
+            <span>Toggle Sidebar</span>
+        </button>
+    </div>
+
+    <div class="sidebar-header">
+        <img src="./img/logo/logo-menu.png" class="logotipoMenu" alt="">
+    </div>
+
+    <ul class="list-unstyled components">
+        <li>
+            <a href="home">
+                <i class="fas fa-home"></i>
+                Página Inicial</a>
+        </li>
+        <li>
+            <a
+                href="#homeSubmenu"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="dropdown-toggle">
+                <i class="fas fa-heart"></i>
+                Minha Casa</a>
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="/moradores">Moradores</a>
+                </li>
+                <li>
+                    <a href="/prestadoresDeServico">Prestadores de Serviço</a>
+                </li>
+                <li>
+                    <a href="/correspondencias">Correspondências</a>
+                </li>
+                <li>
+                    <a href="/contatosUteis">Contatos Uteis</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="active">
+            <a
+                href="#pageSubmenu"
+                data-toggle="collapse"
+                aria-expanded="false"
+                class="dropdown-toggle">
+                <i class="fas fa-user-friends"></i>
+                Vizinhança</a>
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="/classificados">Classificados</a>
+                </li>
+                <li>
+                    <a href="/meusItens">Meus itens</a>
+                </li>
+
+            </ul>
+        </li>
+        <li>
+            <a href="/comunicados">
+                <i class='fas'>&#xf0e0;</i>
+                Comunicados</a>
+        </li>
+        <li>
+            <a href="/solicitacoes">
+                <i class="fas fa-file-alt"></i>
+                Solicitações</a>
+        </li>
+        
+        <li>
+            <a href="/documentacao">
+                <i class='fas'>&#xf07b;</i>
+                Documentação</a>
+        </li>
+    </ul>
+</nav>

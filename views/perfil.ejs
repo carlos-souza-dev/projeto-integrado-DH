@@ -65,7 +65,17 @@
                 <!-- area do centro da tela -->
                 <div class="centroOpcoesPerfil">
                     
-                    
+                    <main class="container content">
+                        <section class="card">
+                            <h2>Carregar foto</h2>
+                            <p>Faça o upload da sua foto</p>
+                            <form action="/perfil_method=PUT" method="POST" enctype="multipart/form-data">
+                                <label for="photo">Selecione a foto</label>
+                                <input type="file" name="photo" id="photo">
+                                <button type="submit" class="btn btn-send">Enviar</button>
+                            </form>
+                        </section>
+                    </main>
                    
                 </div>
             </div>

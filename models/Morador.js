@@ -1,24 +1,26 @@
 module.exports = (sequelize, DataTypes) => {
-    const Moradores = sequelize.define(
-      "Moradores",
-      {
-        id: {
-          type: DataTypes.INTEGER,
-          primaryKey: true,
-          autoIncrement: true,
-        },
-        nome: DataTypes.STRING,
-        cpf: DataTypes.STRING,
-        email: {
-          type: DataTypes.STRING,
-          allowNull: false,
-        },
-        senha: DataTypes.STRING,
+  const Morador = sequelize.define(
+    "Moradores",
+    {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
       },
+      nome: DataTypes.STRING(45),
+      cpf: DataTypes.STRING(11),
+      email: {
+        type: DataTypes.STRING(45),
+        allowNull: false,
+      },
+      senha: DataTypes.STRING(245),
+      foto: DataTypes.STRING(245),
+      sobre: DataTypes.STRING(245),
       
-    );
-  
-      
-    return Moradores;
-  };
-  
+    },
+    
+  );
+
+    
+  return Morador;
+};

@@ -5,13 +5,13 @@ const multer = require("multer");
 const authController = require("../controllers/authController");
 const userController = require("../controllers/userController");
 const homeController = require("../controllers/homeController");
-
+const perfilController = require("../controllers/perfilController");
 
 const auth = require("../middlewares/auth");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join("public", "posts"));
+    cb(null, path.join("upload"));
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname);
@@ -60,9 +60,9 @@ router.get('/documentacao', auth, function(req, res, next) {
   res.render('documentacao', { title: 'Documentacao' });
 });
 
-router.get('/perfil', auth, function(req, res, next) {
-  res.render('perfil', { title: 'Documentacao' });
-});
+router.get('/perfil', auth, perfilController.index);
+// router.post('/perfil', upload.any(), perfilController.store);
+
 
 
 router.get("/registro", userController.create);

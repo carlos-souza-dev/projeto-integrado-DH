@@ -33,10 +33,10 @@ module.exports = {
     },
     foto: Sequelize.STRING(245),
     sobre: Sequelize.STRING(245),
-    create_at: Sequelize.DATE,
-    update_at: Sequelize.DATE,
-  });
-     
+    createdAt: Sequelize.DATE,
+    updatedAt: Sequelize.DATE
+    });
+    
   },
 
 

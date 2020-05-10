@@ -7,12 +7,15 @@ const userController = {
   create: (_req, res) => res.render("auth/register"),
 
   store: async (req, res) => {
+   
     const { nome, cpf, email, senha } = req.body;
+    
     const con = new Sequelize(config);
     const hashPassword = bcrypt.hashSync(senha, 10);
 
+
     const user = await con.query(
-      "INSERT INTO moradores (nome, cpf, email , senha, create_at, update_at) values (:nome, :cpf, :email, :senha, :create_at, :update_at)",
+      "INSERT INTO moradores (nome, cpf, email , senha, create_at, update_at) values (:nome, :cpf, :email, :senha,  :create_at, :update_at)",
       {
         replacements: {
           nome,
@@ -33,6 +36,9 @@ const userController = {
 
     return res.redirect("/login");
   },
+
 };
+
+
 
 module.exports = userController;

@@ -24,14 +24,20 @@ const authController = {
             return res.render("login", {msg: "Email ou senha errados!"});
         }
 
-        req.session.user = {
+        
+        usuario = {
             id: user.id,
             nome: user.nome,
             email: user.email,
-            foto: user.foto
+            foto: user.foto,
         };
 
-        return res.redirect("home");
+        
+        req.session.user = usuario;
+        // let usuario = {    foto: user.foto, }
+        
+        return res.render("home", {usuario});
+        
     },
 
     destroy: (req, res) => {

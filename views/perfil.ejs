@@ -37,86 +37,107 @@
     <body>
 
         <div class="wrapper">
-             <!-- Menu Retrátil -->
-             <%- include('./partials/menuRetratil') %>
+            <!-- Menu Retrátil -->
+            <%- include('./partials/menuRetratil') %>
 
-            <!-- Conteudo da página -->
+                <!-- Conteudo da página -->
 
-            <div id="content">
-                <!-- Header -->
-                <div class="mainHeader">
-                    <div class="titulo" id="tit">
-                        <div class="nomePag">
-                            <p>Meu Perfil</p>
+                <div id="content">
+                    <!-- Header -->
+                    <div class="mainHeader">
+                        <div class="titulo" id="tit">
+                            <div class="nomePag">
+                                <p>Meu Perfil</p>
+
+                            </div>
+                            <div class="finalidPag">
+                                <p ></p>
+                            </div>
 
                         </div>
-                        <div class="finalidPag">
-                            <p ></p>
+
+                        <!-- inclui o logo mobile e o avatar em uma partial -->
+                        <%- include('./partials/avatar') %>
                         </div>
+
+                        <hr class="docSepLine">
+
+                        <!-- area do centro da tela -->
+                        <div class="centroOpcoesPerfil">
+
+                            <main class="container content">
+                                <section class="card">
+                                    <h2>Carregar foto</h2>
+                                    <p>Faça o upload da sua foto</p>
+                                    <form action="/perfil?_method=PUT" method="POST" enctype="multipart/form-data">
+                                        <label for="photo">Selecione a foto</label>
+                                        <input type="file" name="photo" id="photo">
+                                                                                
+                                <form class="card p-3" method="POST" action="/perfil?_method=PUT" >
+                                    <div class="form-group">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" class="form-control" id="nome" name="nome" value="<%= usuario.nome %>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" name="email" value="<%= usuario.email %>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Senha</label>
+                                        <input type="text" class="form-control" id="password" name="senha">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Sobre</label>
+                                        <input type="text" class="form-control" id="password" name="sobre"  value="<%= usuario.sobre %>">
+                                    </div>
+
+                                    <button class="btn btn-success" type="submit">Salvar Alterações</button>
+                                </form>
+
+                               
+                            </main>
+
+
+                        </div>
+                    </div>
+
+                    <!-- footer -->
+                    <%- include('./partials/footer') %>
 
                     </div>
-                    
-                     <!-- inclui o logo mobile e o avatar em uma partial  -->
-                     <%- include('./partials/avatar') %>
+
                 </div>
 
-                <hr class="docSepLine">
+                <!-- jQuery CDN - Slim version (=without AJAX) -->
+                <script
+                    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                <!-- Popper.JS -->
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+                    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+                    crossorigin="anonymous"></script>
+                <!-- Bootstrap JS -->
+                <script
+                    src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+                    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+                    crossorigin="anonymous"></script>
+                <!-- jQuery Custom Scroller CDN -->
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-                <!-- area do centro da tela -->
-                <div class="centroOpcoesPerfil">
-                    
-                    <main class="container content">
-                        <section class="card">
-                            <h2>Carregar foto</h2>
-                            <p>Faça o upload da sua foto</p>
-                            <form action="/perfil_method=PUT" method="POST" enctype="multipart/form-data">
-                                <label for="photo">Selecione a foto</label>
-                                <input type="file" name="photo" id="photo">
-                                <button type="submit" class="btn btn-send">Enviar</button>
-                            </form>
-                        </section>
-                    </main>
-                   
-                </div>
-            </div>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#sidebar").mCustomScrollbar({theme: "minimal"});
 
-            <!-- footer -->
-            <%- include('./partials/footer') %>
+                        $('#sidebarCollapse').on('click', function () {
+                            $('#sidebar, #content').toggleClass('active');
+                            $('.collapse.in').toggleClass('in');
+                            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                        });
+                    });
+                </script>
+            </body>
 
-        </div>
-
-    </div>
-
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script
-        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <!-- Popper.JS -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-        crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-        crossorigin="anonymous"></script>
-    <!-- jQuery Custom Scroller CDN -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#sidebar").mCustomScrollbar({theme: "minimal"});
-
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar, #content').toggleClass('active');
-                $('.collapse.in').toggleClass('in');
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
-        });
-    </script>
-</body>
-
-</html>
+        </html>

@@ -11,7 +11,7 @@ const auth = require("../middlewares/auth");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join("upload"));
+    cb(null, path.join("public", "img"));
   },
   filename: function (req, file, cb) {
     cb(null, Date.now() + file.originalname);
@@ -60,8 +60,8 @@ router.get('/documentacao', auth, function(req, res, next) {
   res.render('documentacao', { title: 'Documentacao' });
 });
 
-router.get('/perfil', auth, perfilController.index);
-// router.post('/perfil', upload.any(), perfilController.store);
+router.get('/perfil', auth, perfilController.edit);
+router.put('/perfil', upload.any(), perfilController.update);
 
 
 

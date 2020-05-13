@@ -6,7 +6,7 @@ const authController = require("../controllers/authController");
 const userController = require("../controllers/userController");
 const homeController = require("../controllers/homeController");
 const perfilController = require("../controllers/perfilController");
-
+const solicitacoesController = require("../controllers/solicitacoesController");
 const auth = require("../middlewares/auth");
 
 const storage = multer.diskStorage({
@@ -52,9 +52,12 @@ router.get('/meusItens', auth, function(req, res, next) {
 router.get('/comunicados', auth, function(req, res, next) {
   res.render('comunicados', { title: 'Comunicados' });
 });
-router.get('/solicitacoes', auth, function(req, res, next) {
-  res.render('solicitacoes', { title: 'Solicitacoes' });
-});
+
+
+
+// Listar solicitações
+router.get('/solicitacoes', solicitacoesController.solicitacoes);
+
 
 router.get('/documentacao', auth, function(req, res, next) {
   res.render('documentacao', { title: 'Documentacao' });

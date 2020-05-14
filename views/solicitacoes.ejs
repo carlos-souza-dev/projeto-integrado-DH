@@ -75,29 +75,36 @@
 
                     <aside class="mainAside">                      
                          <main class="aside-main-solicitacoes">
-                           <%= console.log(result);%>
                             <section class="solicitacoes-section">
                                 <article class="recebido">
                                     <div class="solicitacoes-title">Código</div>
-                                    <div class="codigo"><%= result[1].codigo %></div>
+                                    <% for(let resultado of result) { %> 
+                                    <div class="codigo"><%= resultado.codigo %></div>
+                                    <% } %> 
                                     <!-- <div class="codigo">ABC123</div>
                                     <div class="codigo">ABC123</div> -->
                                 </article>
                                 <article class="tipo">
                                     <div class="solicitacoes-title">Tipo</div>
-                                    <div class="type"><%= result[1].tipo %></div>
+                                    <% for(let resultado of result) { %> 
+                                    <div class="type"><%= resultado.tipo %></div>
+                                    <% } %> 
                                     <!-- <div class="type">Serviço</div>
                                     <div class="type">Autorização</div> -->
                                 </article>
                                 <article class="remetente">
                                     <div class="solicitacoes-title">Data</div>
-                                    <div class="date"><%= result[1].data %></div>
+                                    <% for(let resultado of result) { %> 
+                                    <div class="date"><%= resultado.data %></div>
+                                    <% } %> 
                                     <!-- <div class="date">XX/xx/xxxx</div>
                                     <div class="date">XX/xx/xxxx</div> -->
                                 </article>
                                 <article class="destinatario">
                                     <div class="solicitacoes-title">Status</div>
-                                    <div class="status"><p id="grey"><%= result[1].status %></p></div>
+                                    <% for(let resultado of result) { %> 
+                                    <div class="status"><p><%= resultado.status %></p></div>
+                                    <% } %> 
                                     <!-- <div class="status"><p id="red">Indeferida</p></div>
                                     <div class="status"><p id="green">Deferida</p></div> -->
                                 </article>
@@ -105,15 +112,8 @@
                         </main>
                     </aside> 
                 <!-- </div> -->
-
-                <footer class="py-2 footer">
-                    <div class="container text-center" id="footerText">
-                        <p class="m-0">
-                            Portal do Condomínio | ST02G3-2020
-                            <img src="imagens/favicon.png" width="30" alt=""/>
-                        </p>
-                    </div>
-                </footer>    
+                
+                <%- include('./partials/footer') %>
        
 
             </div>

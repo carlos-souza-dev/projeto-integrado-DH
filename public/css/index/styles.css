@@ -76,7 +76,7 @@ a:hover {
     background-image: url('../../img/assets/pdc-background.jpg');
     background-size: contain;
     background-position-x: 50vw;
-    transform: translateZ(-1px) scale(2);
+    transform: translateZ(-1px) scale(2.05);
     margin: 0px;
 }
 

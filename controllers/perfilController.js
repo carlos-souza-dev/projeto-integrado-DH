@@ -5,6 +5,8 @@ const bcrypt = require("bcrypt");
 const Op = Sequelize.Op;
 
 const perfilController = {
+
+    //função para retornar todos os moradores
     index: async (req, res) => {
         let users = await Moradores.findAll();
         console.log(users);

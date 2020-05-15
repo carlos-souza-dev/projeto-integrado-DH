@@ -7,7 +7,7 @@ const authController = {
         return res.render("login");
     },
     store: async (req, res) => {
-        const {email, senha} = req.body;
+        const {email, senha, logado} = req.body;
         const con = new Sequelize(config);
 
         const [user] = await con.query(
@@ -25,6 +25,7 @@ const authController = {
         }
 
         
+        
         usuario = {
             id: user.id,
             nome: user.nome,
@@ -32,9 +33,12 @@ const authController = {
             foto: user.foto,
         };
 
+        if(logado == undefined){
+            res.cookie('logado', user.email, {maxAge: 60000})
+        }
         
         req.session.user = usuario;
-        // let usuario = {    foto: user.foto, }
+       
         
         return res.render("home", {usuario});
         
@@ -42,7 +46,7 @@ const authController = {
 
     destroy: (req, res) => {
         req.session = undefined;
-        return res.redirect("login");
+        return res.redirect("/");
     }
 };
 

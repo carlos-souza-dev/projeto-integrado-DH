@@ -5,6 +5,7 @@ var methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require("express-session");
+var cookieLogin = require('./middlewares/cookieLogin')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -28,7 +29,7 @@ app.use(
 );
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cookieLogin);
 
 
 app.use('/', indexRouter);

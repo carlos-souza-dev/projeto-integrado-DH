@@ -17,9 +17,21 @@ module.exports = (sequelize, DataTypes) => {
       foto: DataTypes.STRING(245),
       sobre: DataTypes.STRING(245),
       
+      id_apartamento:{
+        type: DataTypes.INTEGER,
+        foreingKey: true,
+      } 
+      
     },
     
-  );
+  )
+
+  Morador.associate = (listaDeModelos) => {
+    Morador.belongsTo(listaDeModelos.Apartamentos, {
+      foreingKey: 'id_apartamentos',
+      as: 'apartamento'
+    })
+  }
 
     
   return Morador;

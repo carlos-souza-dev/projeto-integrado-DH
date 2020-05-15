@@ -13,7 +13,7 @@ const comunicadosController = {
         )
        
         // console.log(titulo, informacao)
-        return res.redirect("/login");
+        return res.redirect("/comunicados");
 
 
     },

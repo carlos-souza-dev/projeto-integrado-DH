@@ -73,4 +73,5 @@ router.post("/registro", userController.store);
 router.post('/logoff', authController.destroy);
     
 
+
 module.exports = router;

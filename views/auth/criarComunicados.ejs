@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Cadastro</title>
+    <title> Comunicados</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/css/style.css' />
 </head>
@@ -12,24 +12,19 @@
         <div id="banner">
             <img src="/img/banner-login.png" alt="" srcset="">
             <p>
-                Cadastre-se para ver fotos dos seus amigos
+                Escreva seu Comunicado
             </p>
         </div>
         <form class="form-auth card" method="post" action="/registro">
             <div id="logo">
                 <img src="img/logo.png" alt="">
             </div>
-            <input type="email" name="email" placeholder="Digite seu email">
-            <input type="text" name="nome" placeholder="Digite seu nome completo">
-            <input type="text" name="cpf" placeholder="Digite seu cpf">
             
-            <input type="password" name="senha" placeholder="Senha">
+            <input type="text" name="titulo" placeholder="Digite o Título">
+            <input type="text" name="texto" placeholder="Escreva o texto">
             <button type="submit">
-                Cadastra-se
+              Enviar 
             </button>
-            <p>
-                Ao se cadastrar, você concorda com nossos <b>Termos, Política de Dados e Política de Cookies.</b>
-            </p>
             <div class="register card">
                 <p> Tem uma conta? <a href="/login"><b>Conecte-se</b></a> </p>
             </div>

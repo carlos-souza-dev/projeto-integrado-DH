@@ -34,7 +34,7 @@ const authController = {
         };
 
         if(logado == undefined){
-            res.cookie('logado', user.email, {maxAge: 60000})
+            res.cookie('logado', user.email, {maxAge: 600000})
         }
         
         req.session.user = usuario;

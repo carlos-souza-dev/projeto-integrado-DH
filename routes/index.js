@@ -53,12 +53,6 @@ router.get('/comunicados', auth, function(req, res, next) {
   res.render('comunicados', { title: 'Comunicados' });
 });
 
-
-
-// Listar solicitações
-router.get('/solicitacoes', solicitacoesController.solicitacoes);
-
-
 router.get('/documentacao', auth, function(req, res, next) {
   res.render('documentacao', { title: 'Documentacao' });
 });
@@ -70,6 +64,7 @@ router.put('/perfil', upload.any(), perfilController.update);
 
 router.get("/registro", userController.create);
 router.post("/registro", userController.store);
+
 
 
 

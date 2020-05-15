@@ -1,8 +1,309 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+@font-face {
+  src: url('/css/fonts/Montserrat/Montserrat/Montserrat-Light.ttf');
+  font-family: 'Montserrat-Light';    
+  font-weight: normal;
 }
 
-a {
-  color: #00B7FF;
+@font-face {
+  src: url('/css/fonts/Montserrat/Montserrat-Light.ttf');
+  font-family: 'Montserrat-Light';    
+  font-weight: normal;
+}
+
+@font-face {
+  src: url('/css/fonts/Montserrat/Montserrat-SemiBold.ttf');
+  font-family: 'Montserrat-SemiBold';    
+  font-weight: normal;
+}
+@font-face {
+  src: url('/css/fonts/Montserrat/Montserrat-Medium.ttf');
+  font-family: 'Montserrat-Medium';    
+  font-weight: normal;
+}
+
+@font-face {
+  src: url('/css/fonts/Lato/Lato-Regular.ttf');
+  font-family: 'Lato-Regular';    
+  font-weight: normal;
+}
+
+@font-face {
+  src: url('/css/fonts/Roboto/Roboto-Light.ttf');
+  font-family: 'Roboto-Light';    
+  font-weight: normal;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* header */
+/* estilo página de cadastro */
+
+.text-center {
+  width: 100%;
+  height: 100vh;
+}
+
+.text-center .header-logo {
+  width: 100%;
+  height: 14vh;
+  min-height: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: 2px 5px 68px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 5px 68px -7px rgba(0,0,0,0.75);
+  box-shadow: 2px 5px 68px -7px rgba(0,0,0,0.75);}
+
+.text-center .header-logo .logo {
+  width: 4vw;
+  height: 14vh;
+  margin-right: 1%;
+  background-image: url("/img/logo/logo_compact.png");
+  background-position: center;
+  background-size: 4vw 12vh;
+  background-repeat: no-repeat;
+}
+
+.text-center .header-logo .portal {
+  width: 12vw;
+  margin-right: 0.5%;
+  font-size: 2.5vw;
+  font-family: 'Montserrat-Light', sans-serif;
+}
+
+.text-center .header-logo .condominio {
+  width: 16vw;
+  font-size: 2.5vw;
+  font-family: 'Montserrat-Medium', sans-serif;
+}
+
+.text-center #btn-cancelar {
+  width: 210px;
+  height: 50px;
+  padding: 0px 40px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 25px;
+  color: #C4C4C4;
+  text-decoration: none;
+  font-family: 'Montserrat-Medium';
+  text-transform: uppercase;
+  background-color: rgb(173, 7, 7);
+  color: rgb(228, 228, 228);
+  border: 1px solid rgb(173, 7, 7);
+}
+  
+
+
+.text-center .cadastro-section .form-signin-cadastro {
+  max-height: 800px;
+  margin: 8vh 5vw;
+  border-radius: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px 40px;
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
+
+.text-center .form-signin-cadastro .div-input {
+  width: 40%;
+  min-width: 400px;
+  height: 75px;
+  margin: 20px 0 5px 0;
+  padding-left: 70px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-center .cadastro-section .form-signin-cadastro #form-control {
+  width: 100%;
+  height: 13vh;
+}
+
+.text-center .form-signin-cadastro label {
+  width: 100%;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  font-family: 'Roboto-Regular', sans-serif;
+}
+
+.text-center .form-signin-cadastro input {
+  width: 70%;
+  height: 40px;
+  margin-left: 20px;
+  padding-left: 10px;
+  font-size: 1.3rem;
+  font-family: 'Roboto-Light',sans-serif;
+  border-radius: 5px;
+  border: none;
+  border: 1px solid #3B3B3B;
+  transition: all 1s;
+}
+
+.text-center .form-signin-cadastro input[id='inputfoto'] {
+  border: none;
+  font-size: 1.3rem;
+  width: 21.5%;
+  height: 5vh;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.text-center .form-signin-cadastro input:focus {
+  border: 3px solid rgb(26, 149, 197);
+  transition: all 0.5s;
+}
+
+form #inputDataNasc,
+form #inputrg,
+form #inputcpf {
+  max-width: 300px;
+  height: 40px;
+}
+
+.text-center .form-signin-cadastro .cadastro-enter {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-center .form-signin-cadastro .btn-cadastro {
+  width: 210px;
+  height: 50px;
+  padding: 0px 40px;
+  line-height: 50px;
+  font-size: 20px;
+  border-radius: 25px;
+  color: #C4C4C4;
+  text-decoration: none;
+  font-family: 'Montserrat-Medium';
+  text-transform: uppercase;
+  background-color: #3B3B3B;
+  border: 1px solid #3B3B3B;
+}
+
+/* estilo página de login */
+
+
+.text-center #button-geral a {
+  position: absolute;
+  right: 40px;
+}
+
+
+/* página sucesso */
+
+.text-center .sucess-section {
+  width: 100%;
+  min-width: 300px;
+  height: 86vh;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+}
+.text-center .sucess-section #sucess-main {
+  width: 80%;
+  min-width: 300px;
+  height: 15vh;
+  min-height: 200px;
+  padding: 0 15px;
+  margin: 12vh auto;
+  border-radius: 8px;
+  background-color: rgb(183, 221, 197);;
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
+
+.text-center .sucess-section #sucess-main .login-title {
+  height: 7vh;
+  font-family: 'Montserrat-Light', sans-serif;
+  font-size: 2vw;
+  line-height: 7vh;
+  color: rgb(2, 73, 29);
+}
+
+.text-center .sucess-section #sucess-main .sucess-text {
+  height: 5vh;
+  font-family: 'Roboto-Light'; 
+  font-size: 1.5vw;
+  line-height: 5vh;
+  color: rgb(2, 73, 29);
+}
+
+.text-center .sucess-section .button-sucess {
+  width: 100%;
+  height: 5vh;
+  min-height: 55px;
+  line-height: 55px;
+  text-align: center;
+}
+
+.text-center .sucess-section .button-sucess a {
+  padding: 12px 40px;
+  font-size: 16px;
+  border-radius: 25px;
+  color: #C4C4C4;
+  text-decoration: none;
+  font-family: 'Montserrat-Medium';
+  text-transform: uppercase;
+  background-color: rgb(59, 59, 59);
+}
+
+@media screen and (max-width: 768px){
+
+  .text-center #btn-cancelar {
+    width: 150px;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    padding: 0;
+  }
+
+  .text-center .header-logo .logo {
+    width: 4vw;
+    height: 10vh;
+    margin-right: 1%;
+    background-image: url(/img/logo/logo_compact.png);
+    background-position: center;
+    background-size: 4vw 7vh;
+    background-repeat: no-repeat;
+}
+
+.text-center .header-logo .portal {
+  width: 19vw;
+  margin-right: 0.5%;
+  font-size: 4vw;
+  font-family: 'Montserrat-Light', sans-serif;
+}
+
+.text-center .header-logo .condominio {
+  width: 27vw;
+  font-size: 4vw;
+  font-family: 'Montserrat-Medium', sans-serif;
+}
+.text-center .header-logo {
+  position: relative;
+}
+
+.text-center #button-geral a {
+  position: absolute;
+  top: 33%;
+  right: 20px;
+}
+
+.text-center .container-fluid .col-sm-5 {
+  width: 80% !important;
+}
+
 }

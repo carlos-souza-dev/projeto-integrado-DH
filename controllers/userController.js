@@ -20,8 +20,8 @@ const userController = {
             return res.render("auth/register", {msg: "Erro ao cadastrar um usuario"});
         }
 
-        return res.redirect("/login");
-    }
+        res.render("registro", {user});
+    },
 };
 
 module.exports = userController;

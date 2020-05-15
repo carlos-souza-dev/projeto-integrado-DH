@@ -26,12 +26,12 @@ module.exports = (sequelize, DataTypes) => {
       })
 
       
-      Comunicado.associate  = (listaDeModelos) =>{
-        Comunicado.hasMany(listaDeModelos.Apartamento,{
-            foreingKey:'id_apartamento',
-            as: 'apartamento',
-        })
-    }
+    //   Comunicado.associate  = (listaDeModelos) =>{
+    //     Comunicado.belongsTo(listaDeModelos.Apartamento,{
+    //         foreingKey:'id_apartamento',
+    //         as: 'apartamento',
+    //     })
+    // }
   
       
     return Comunicado;

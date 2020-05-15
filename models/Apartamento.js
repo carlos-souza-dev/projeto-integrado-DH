@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false,
         },
       
-        bloco: DataTypes.VARCHAR,
+        bloco: DataTypes.STRING,
 
         condominio_id:{
             type: DataTypes.INTEGER,

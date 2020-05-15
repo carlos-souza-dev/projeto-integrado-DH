@@ -27,12 +27,12 @@ module.exports = (sequelize, DataTypes) => {
           timestamps:false, 
       })
 
-      Condominio.associate = (listaDeModelos) =>{
-          Condominio.hasMany(listaDeModelos.ContatosUteis,{
-              foreingKey:'contatos_uteis_id',
-              as: contatosUteis
-          })
-      }
+      // Condominio.associate = (listaDeModelos) =>{
+      //     Condominio.hasMany(listaDeModelos.ContatosUteis,{
+      //         foreingKey:'contatos_uteis_id',
+      //         as: contatosUteis
+      //     })
+      // }
   
       
     return Condominio;

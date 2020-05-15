@@ -53,9 +53,9 @@ a:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    text-align: center;
-    width: 100%;
-    height: 90px;
+    /* text-align: center; */
+    width: 232px;
+    /* height: 100%; */
 
 }
 
@@ -92,15 +92,17 @@ a:hover {
 }
 
 #sidebar .sidebar-header {
+    display: flex;
+    justify-content: center;
     padding: 20px 8px;
     background: #3B3B3B;
     border-radius: 0 25px 0 0;
 }
 
-#sidebar .logotipoMenu {
+/* #sidebar .logotipoMenu {
     width: 100%;
     height: 90px;
-}
+} */
 
 #sidebar ul.components {
     padding: 20px 0;
@@ -250,7 +252,7 @@ a.article:hover {
     width: 94%;
     min-height: 80px;
     height: 10vh;
-    margin: 0 auto;
+    margin: 1rem auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -276,13 +278,13 @@ a.article:hover {
 }
 
 .nomePag {
-    width: 50%;
+    /* width: 50%; */
     height: 10vh;
     min-height: 80px;
     text-transform: uppercase;
     color: #3B3B3B;
     font-family: 'Montserrat', sans-serif;
-    font-size: 3vw;
+    font-size: 36px;
     line-height: 10vh;
 }
 
@@ -291,9 +293,10 @@ a.article:hover {
     height: 10vh;
     min-height: 80px;
     font-family: 'Lato', sans-serif;
-    color: #878787;
+    color: #3B3B3B;
+    opacity: 50%;
     line-height: 10vh;
-    font-size: 1.5vw;
+    font-size: 18px;
     padding-left: 20px;
 }
 
@@ -303,7 +306,7 @@ a.article:hover {
     padding-right: 40px;
     display: flex;
     align-content: center;
-
+    font-size: 16px;
 }
 
 .avatarUser {
@@ -634,18 +637,14 @@ footer {
     background-color: black;
     color: white;
     margin-bottom: 0;
+    margin-left: 280px;
     left: -280px;
+    z-index: 2;
 }
 
-
-.py-2 #footerText {
-    margin-left: calc(280px + 100vw) !important;
-}
-
-
-.py-2 #footerText {
+/* .py-2 #footerText {
     margin-left: 36.5% !important;
-}
+} */
 
 @media(max-width: 768px) {
     footer {

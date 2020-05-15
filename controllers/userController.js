@@ -11,7 +11,7 @@ const userController = {
     store: async (req, res) => {
         const {nome, cpf, email, senha} = req.body;
         const hashPassword = bcrypt.hashSync(senha, 10);
-
+        
         const user = await Moradores.create(
             {nome, cpf, email, senha: hashPassword, foto: './img/user/fotoDefault.png'}
         )

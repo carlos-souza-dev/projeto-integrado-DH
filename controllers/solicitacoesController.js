@@ -11,14 +11,14 @@ const solictacoesController = {
             res.render('solicitacoes', {result: result, title: 'Solicitacoes' });
     },
     store: async (req, res) => {
-          const {codigo,tipo,data,status} = req.body;
-  
-          const resultado = await Solicitacao.create("INSERT INTO solicitacoes",
-              {codigo, tipo, data, status}
+          const {codigo,tipo,status} = req.body;
+
+          const resultado = await Solicitacao.create (
+              {codigo, tipo, data: new Date, status}
           );
 
           console.log(resultado);
-          return res.redirect("/solicitacoes");
+          return res.render("solicitacoes");
     }
     
 }

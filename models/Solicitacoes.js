@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Solicitacao = sequelize.define(
-    "solicitacoes",
+    "Solicitacoes",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -23,9 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       createAt: DataTypes.DATE,
       updateAt: DataTypes.DATE,
-    },{
-      tableName: 'solicitacoes',
-      timestamps:false, 
+    
   })
 
   return Solicitacao;

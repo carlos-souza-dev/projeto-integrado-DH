@@ -51,8 +51,6 @@ router.get('/meusItens', auth, function (req, res, next) {
     res.render('meusItens', {title: 'Meus Itens'});
 });
 
-
-
 // Listar solicitações
 router.get('/solicitacoes', solicitacoesController.solicitacoes);
 router.post('/solicitacoes', solicitacoesController.store);

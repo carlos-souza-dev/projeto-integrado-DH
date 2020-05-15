@@ -81,37 +81,36 @@
                     <aside class="mainAside">                      
                          <main class="aside-main-solicitacoes">
                             <section class="solicitacoes-section">
+                             
                                 <article class="recebido">
                                     <div class="solicitacoes-title">Código</div>
                                     <% for(let resultado of result) { %>
-                                    <div class="codigo"><%= resultado.codigo %></div>
-                                    <% } %> 
-                                    <!-- <div class="codigo">ABC123</div>
-                                    <div class="codigo">ABC123</div> -->
+                                        <div class="codigo"><%= resultado.codigo %></div>
+                                        
+                                  <%  };%>
+                                   
+                                    
                                 </article>
                                 <article class="tipo">
                                     <div class="solicitacoes-title">Tipo</div>
                                     <% for(let resultado of result) { %>
                                     <div class="type"><%= resultado.tipo %></div>
                                     <% } %> 
-                                    <!-- <div class="type">Serviço</div>
-                                    <div class="type">Autorização</div> -->
+                                   
                                 </article>
                                 <article class="remetente">
                                     <div class="solicitacoes-title">Data</div>
                                     <% for(let resultado of result) { %>
                                     <div class="date"><%= resultado.data %></div>
                                     <% } %> 
-                                    <!-- <div class="date">XX/xx/xxxx</div>
-                                    <div class="date">XX/xx/xxxx</div> -->
+                                    
                                 </article>
                                 <article class="destinatario">
                                     <div class="solicitacoes-title">Status</div>
                                     <% for(let resultado of result) { %>
                                     <div class="status"><p id="grey"><%= resultado.status %></p></div>
                                     <% } %> 
-                                    <!-- <div class="status"><p id="red">Indeferida</p></div>
-                                    <div class="status"><p id="green">Deferida</p></div> -->
+                                  
                                 </article>
                             </section>
                         </main>

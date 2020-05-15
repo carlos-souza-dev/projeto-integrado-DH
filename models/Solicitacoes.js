@@ -20,9 +20,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.ENUM,
         values: ['Em análise','Indeferida','Deferida'],
         allowNull: false,
-      },
-      createAt: DataTypes.DATE,
-      updateAt: DataTypes.DATE,
+      }
     
   })
 

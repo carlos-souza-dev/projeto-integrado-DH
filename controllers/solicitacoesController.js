@@ -1,6 +1,6 @@
 const Sequelize = require("sequelize");
 const config = require("../config/database");
-const {Solicitacao} = require("../models");
+const {Solicitacoes} = require("../models");
 
 const solictacoesController = {
     solicitacoes: async (req, res) => {
@@ -8,16 +8,16 @@ const solictacoesController = {
             const result = await db.query("select * from solicitacoes", {type:Sequelize.QueryTypes.SELECT});
 
             // console.log(result);
-            res.render('solicitacoes', {result: result, title: 'Solicitacoes' });
+            res.render('solicitacoes', {result, title: 'Solicitacoes' });
     },
     store: async (req, res) => {
           const {codigo,tipo,status} = req.body;
 
-          const resultado = await Solicitacao.create (
+          const resultado = await Solicitacoes.create (
               {codigo, tipo, data: new Date, status}
           );
 
-          console.log(resultado);
+       
           return res.render("solicitacoes");
     }
     

@@ -3,13 +3,7 @@ const config = require("../config/database");
 const {Solicitacoes} = require("../models");
 
 const solictacoesController = {
-    solicitacoes: async (req, res) => {
-            const db = new Sequelize(config)
-            const result = await db.query("select * from solicitacoes", {type:Sequelize.QueryTypes.SELECT});
-
-            // console.log(result);
-            res.render('solicitacoes', {result, title: 'Solicitacoes' });
-    },
+    
     store: async (req, res) => {
           const {codigo,tipo,status} = req.body;
 
@@ -18,8 +12,16 @@ const solictacoesController = {
           );
 
        
-          return res.render("solicitacoes");
-    }
+          return res.redirect("/solicitacoes");
+    },
+
+    solicitacoes: async (req, res) => {
+           
+            
+        const result = await Solicitacoes.findAll()
+            // console.log(result);
+            return res.render('solicitacoes', {result});
+    },
     
 }
 

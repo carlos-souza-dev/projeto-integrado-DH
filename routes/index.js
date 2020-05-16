@@ -8,6 +8,7 @@ const homeController = require("../controllers/homeController");
 const perfilController = require("../controllers/perfilController");
 const solicitacoesController = require("../controllers/solicitacoesController");
 const comunicadosController = require("../controllers/comunicadosController")
+const moradoresController = require("../controllers/moradoresController")
 
 const auth = require("../middlewares/auth");
 
@@ -32,9 +33,8 @@ router.post('/login', authController.store);
 
 router.get('/home', auth, homeController.index);
 
-router.get('/moradores', auth, function (req, res, next) {
-    res.render('moradores', {title: 'Moradores'});
-});
+router.get('/moradores', auth, moradoresController.exibir );
+
 router.get('/prestadoresDeServico', auth, function (req, res, next) {
     res.render('prestadoresDeServico', {title: 'Prestadores de Servico'});
 });

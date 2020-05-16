@@ -80,7 +80,7 @@
     font-size: 18px;
     color: #000000;
     font-weight: bold;
-    border-bottom: 1px solid #878787;
+  
 }
 
 .aside-main-solicitacoes .solicitacoes-section article .codigo,
@@ -108,16 +108,17 @@
     border-radius: 16px;
 }
 
-.aside-main-solicitacoes .solicitacoes-section .destinatario #grey{
-    background-color: #BDBDBD;
+.aside-main-solicitacoes .solicitacoes-section .destinatario .status-grey{
+    background-color: rgb(54, 54, 54);
+    color: white;
 }
 
-.aside-main-solicitacoes .solicitacoes-section .destinatario #red{
+.aside-main-solicitacoes .solicitacoes-section .destinatario .status-red{
     color: white;
     background-color: #EB5757;
 }
 
-.aside-main-solicitacoes .solicitacoes-section .destinatario #green{
+.aside-main-solicitacoes .solicitacoes-section .destinatario .status-green{
     color: white;
     background-color: #6FCF97;
 }

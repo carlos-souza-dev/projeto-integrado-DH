@@ -38,6 +38,7 @@ const authController = {
         }
         
         req.session.user = usuario;
+        
        
         
         return res.render("home", {usuario});

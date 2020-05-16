@@ -9,6 +9,9 @@ const perfilController = require("../controllers/perfilController");
 const solicitacoesController = require("../controllers/solicitacoesController");
 const comunicadosController = require("../controllers/comunicadosController")
 const moradoresController = require("../controllers/moradoresController")
+const correspondenciaController = require(
+    "../controllers/correspondenciaController"
+);
 
 const auth = require("../middlewares/auth");
 
@@ -33,14 +36,16 @@ router.post('/login', authController.store);
 
 router.get('/home', auth, homeController.index);
 
-router.get('/moradores', auth, moradoresController.exibir );
+router.get('/moradores', auth, moradoresController.exibir);
 
 router.get('/prestadoresDeServico', auth, function (req, res, next) {
     res.render('prestadoresDeServico', {title: 'Prestadores de Servico'});
 });
-router.get('/correspondencias', auth, function (req, res, next) {
-    res.render('correspondencias', {title: 'Correspondencias'});
-});
+router.get('/registroCorrespondencia', correspondenciaController.create);
+router.post('/registroCorrespondencia', correspondenciaController.store);
+
+router.get('/correspondencias', auth, correspondenciaController.exibir);
+
 router.get('/contatosUteis', auth, function (req, res, next) {
     res.render('contatosUteis', {title: 'Contatos Uteis'});
 });
@@ -71,7 +76,5 @@ router.get("/registro", userController.create);
 router.post("/registro", userController.store);
 
 router.post('/logoff', authController.destroy);
-    
-
 
 module.exports = router;

@@ -67,51 +67,33 @@
                 <!-- area do centro da tela -->
                 <div class="centroTelaCorrespondencias">
                     <section class="correspondencia-section">
+
+                        <% if (correspondencia) { %>
                         <article>
                             <div class="correspondencia-title">Recebido em</div>
-                            <div class="date">XX/xx/xxxx</div>
-                            <div class="date">XX/xx/xxxx</div>
-                            <div class="date">XX/xx/xxxx</div>
-                            <div class="date">XX/xx/xxxx</div>
-                            <div class="date">XX/xx/xxxx</div>
-                            <div class="date" id="last-child">XX/xx/xxxx</div>
+
+                            <% correspondencia.forEach(corresp =>  { %>
+                            
+                            <div class="date" id="last-child"><%= corresp.createdAt %></div>
+                             <%})%>
+
                         </article>
                         <article>
                             <div class="correspondencia-title">Tipo</div>
-                            <div class="type">Encomenda</div>
-                            <div class="type">Carta</div>
-                            <div class="type">Mala Direta</div>
-                            <div class="type">Encomenda</div>
-                            <div class="type">Mala Direta</div>
-                            <div class="type" id="last-child">Encomenda</div>
+                            <% correspondencia.forEach(corresp =>  { %>
+                           
+                            <div class="type" id="last-child"><%= corresp.tipo %></div>
+                            <%})%>
                         </article>
-                        <article class="remetente">
-                            <div class="correspondencia-title">Remetente</div>
-                            <div class="sender">Remetente A</div>
-                            <div class="sender">Remetente B</div>
-                            <div class="sender">Remetente C</div>
-                            <div class="sender">Remetente D</div>
-                            <div class="sender">Remetente E</div>
-                            <div class="sender" id="last-child">Remetente E</div>
-                        </article>
+                        
                         <article>
                             <div class="correspondencia-title">Destinatário</div>
-                            <div class="receiver">Destinatário A</div>
-                            <div class="receiver">Destinatário B</div>
-                            <div class="receiver">Destinatário C</div>
-                            <div class="receiver">Destinatário D</div>
-                            <div class="receiver">Destinatário E</div>
-                            <div class="receiver" id="last-child">Destinatário F</div>
+                            <% correspondencia.forEach(corresp =>  { %>
+                            <div class="receiver" id="last-child"><%= corresp.destinatario %></div>
+                            <%})%>
                         </article>
-                        <article class="observacao">
-                            <div class="correspondencia-title">Observações</div>
-                            <div class="note">...</div>
-                            <div class="note">...</div>
-                            <div class="note">...</div>
-                            <div class="note">...</div>
-                            <div class="note">...</div>
-                            <div class="note" id="last-child">...</div>
-                        </article>
+                        <%}%>
+
                     </section>
                 </div>
                  <!-- footer -->

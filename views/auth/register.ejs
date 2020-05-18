@@ -7,61 +7,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal do Condomínio - Cadastro</title>
     <link href="/stylesheets/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="./css/index/styles.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 
 <body>
+    <header>
+        <div class="custom-container custom-container--header header-signin">
+            <a href="#landing">
+                <img class="logo-full" src="./img/assets/logo-original.svg" alt="Portal do Condomínio">
+            </a>
+            <ul class="header__menu d-none d-md-flex">
+                <li><a id="btn-cancelar" href="/login">Cancelar</a></li>
+            </ul>
+        </div>
+    </header>
     <main class="text-center">
-        <main class="text-center">
-            <div class="header-logo" id="button-geral">
+            <!-- <div class="header-logo" id="button-geral">
                 <div class="logo"></div>
                 <h1 class="portal">Portal do </h1>
                 <h1 class="condominio">Condomínio</h1>
                 <a id="btn-cancelar" href="/login">Cancelar</a>
-            </div>
-            <section class="cadastro-section container-fluid">
-                <form class="form-signin-cadastro row" action="registro" method="POST">
-                    <div class="form-group col-sm-5">
-                        <label>Nome</label>
-                        <input type="text" name="nome" id="inputNome" placeholder="Nome">
-                    </div>
-                    <div class="form-group col-sm-5">
-                        <label>Sobrenome</label>
-                        <input type="text" name="sobrenome" id="inputSobrenome" placeholder="Sobrenome">
-                    </div>
-                    <div class="form-group col-sm-5">
-                        <label class="label-email">E-mail</label>
-                        <input type="email" name="email" id="inputEmail" placeholder="E-mail">
-                    </div>
-                    <div class="form-group col-sm-5">
-                        <label>CPF</label>
-                        <input type="number" name="cpf" id="inputcpf" placeholder="CPF">
-                    </div>
-                    <div class="form-group col-sm-5">
-                        <label>RG</label>
-                        <input type="number" name="rg" id="inputrg" placeholder="RG">
-                    </div>
-                    <div class="form-group col-sm-5">
-                        <label>Data de Nasc.</label>
-                        <input type="date" id="inputDataNasc">
-                    </div> 
-                    <div class="form-group col-sm-5">
-                        <label>Senha</label>
-                        <input type="password" name="senha" id="password" placeholder="Senha">
-                    </div>
-                    <div class="form-group col-sm-5">
-                        <label>Confirmar Senha</label>
-                        <input type="password" name="confirmarSenha" id="confirmPassword" placeholder="Confirmar Senha">
-                    </div>
-                    <div class="cadastro-enter">
-                        <button class="btn-cadastro" type="submit">Cadastrar</button>
-                    </div>
+            </div> -->
+        <section class="cadastro-section container">
+            <form class="form-signin-cadastro row" action="registro" method="POST">
+                <div class="form-group col-sm-5">
+                    <label>Nome</label>
+                    <input type="text" name="nome" id="inputNome" placeholder="Nome">
+                </div>
+                <div class="form-group col-sm-5">
+                    <label>Sobrenome</label>
+                    <input type="text" name="sobrenome" id="inputSobrenome" placeholder="Sobrenome">
+                </div>
+                <div class="form-group col-sm-5">
+                    <label class="label-email">E-mail</label>
+                    <input type="email" name="email" id="inputEmail" placeholder="E-mail">
+                </div>
+                <div class="form-group col-sm-5">
+                    <label>CPF</label>
+                    <input type="number" name="cpf" id="inputcpf" placeholder="CPF">
+                </div>
+                <div class="form-group col-sm-5">
+                    <label>RG</label>
+                    <input type="number" name="rg" id="inputrg" placeholder="RG">
+                </div>
+                <div class="form-group col-sm-5">
+                    <label>Data de Nascimento</label>
+                    <input type="date" id="inputDataNasc">
+                </div> 
+                <div class="form-group col-sm-5">
+                    <label>Senha</label>
+                    <input type="password" name="senha" id="password" placeholder="Senha">
+                </div>
+                <div class="form-group col-sm-5">
+                    <label>Confirmar Senha</label>
+                    <input type="password" name="confirmarSenha" id="confirmPassword" placeholder="Confirmar Senha">
+                </div>
+                <div class="cadastro-enter">
+                    <button class="btn-cadastro" type="submit">Cadastrar</button>
+                </div>
 
-                </form>
-            </section>
-        </main>
-        <script src="/js/script.js">
-        </script>
+            </form>
+        </section>
+    </main>
+    <script src="/js/script.js">
+    </script>
 </body>
 </html>

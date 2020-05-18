@@ -98,16 +98,27 @@
   border: 1px solid rgb(173, 7, 7);
 }
   
+#btn-cancelar {
+  color: red;
+  border: 1px solid red;
+  border-radius: 25px;
+  padding: 8px 16px;
+}
 
+#btn-cancelar:hover {
+  color: white !important;
+  background-color: red;
+  transition-duration: 0.4s;
+}
 
 .text-center .cadastro-section .form-signin-cadastro {
   max-height: 800px;
-  margin: 8vh 5vw;
+  margin-top: 96px;
   border-radius: 25px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 10px 40px;
+  padding: 32px 40px;
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
@@ -179,10 +190,10 @@ form #inputcpf {
 }
 
 .text-center .form-signin-cadastro .btn-cadastro {
+  align-items: center;
   width: 210px;
   height: 50px;
   padding: 0px 40px;
-  line-height: 50px;
   font-size: 20px;
   border-radius: 25px;
   color: #C4C4C4;

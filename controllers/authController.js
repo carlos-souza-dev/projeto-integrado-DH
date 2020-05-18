@@ -14,7 +14,7 @@ const authController = {
             "select * from moradores where email=:email limit 1",
             {
                 replacements: {
-                    email
+                    email: email
                 },
                 type: Sequelize.QueryTypes.SELECT
             }

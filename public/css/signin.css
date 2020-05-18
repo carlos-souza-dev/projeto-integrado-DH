@@ -15,14 +15,19 @@ body {
 
 .form-signin {
   width: 100%;
-  max-width: 350px;
-  height:500px ;
+  max-width: 400px;
+  /* height:500px ; */
   padding: 15px;
   margin: auto;
   background-color: #fff;
   border-radius: 8px;
   position: relative;
   box-shadow:1px 5px 30px rgb(195, 195, 195);
+}
+
+.login-error {
+  color: red;
+  font-size: 18px;
 }
 
 .signin-title {
@@ -43,7 +48,7 @@ body {
   z-index: 2;
 }
 .form-signin input[type="email"] {
-  font-size: 14px;
+  font-size: 16px;
   width: 250px;
   display: inline-block;
   margin-bottom: -1px;
@@ -52,7 +57,7 @@ body {
   border-bottom-left-radius: 0;
 }
 .form-signin input[type="password"] {
-  font-size: 14px;
+  font-size: 16px;
   width: 250px;
   display: inline-block;
   margin-bottom: 10px;
@@ -67,11 +72,9 @@ body {
 
 .btn-secondary {
   border-radius: 20px;
-  height:35px;
-  width:140px;
-  background-color: #3B3B3B;
+  height:40px;
+  width:200px;
 }
-
 
 .border-botton {
   padding: 1px 0;
@@ -112,14 +115,29 @@ body {
   height: 30px;
 }
 
+#login-button {
+  background-color: #7aa355 !important;
+  border-color: 1px solid #7aa355 !important;
+}
+
+#login-button:hover {
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.12);
+}
+
 .text-center #register-button {
-  width: 60%;
+  width: 200px;
   height: 40px;
   line-height: 40px;
   text-transform: uppercase;
   font-family: sans-serif !important;
-  margin-top: 40px;
+  margin: 40px auto;
   padding: 0;
-  background-color: rgb(9, 119, 73);
-  border-bottom: 1px solid rgb(9, 119, 73) !important;
+  color: #3b3b3b;
+  background-color: white;
+  border-bottom: 1px solid #3b3b3b !important;
+}
+
+#register-button:hover {
+  background-color: #3b3b3b;
+  color: white;
 }

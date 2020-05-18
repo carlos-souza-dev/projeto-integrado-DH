@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 
 const authController = {
     create: (_req, res) => {
-        return res.render("login");
+        return res.render("login", {msg: ""});
     },
     store: async (req, res) => {
         const {email, senha, logado} = req.body;
@@ -21,7 +21,7 @@ const authController = {
         );
         //
         if (!user || !bcrypt.compareSync(senha, user.senha)) {
-            return res.render("login", {msg: "Email ou senha errados!"});
+            return res.render("login", {msg: "Email ou senha inválidos!"});
         }
 
         

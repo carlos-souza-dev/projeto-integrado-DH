@@ -31,7 +31,10 @@ const authController = {
             nome: user.nome,
             email: user.email,
             foto: user.foto,
+            admin: user.admin? true : false,
         };
+
+        console.log(usuario);
 
         if(logado == undefined){
             res.cookie('logado', user.email, {maxAge: 600000})

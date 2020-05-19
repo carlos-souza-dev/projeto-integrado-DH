@@ -8,7 +8,7 @@
     <title>Portal do Condomínio - Cadastro</title>
     <link href="/stylesheets/style.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/index/styles.css">
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css//bootstrap.min.css">
 </head>
 
 <body>
@@ -17,18 +17,61 @@
             <a href="#landing">
                 <img class="logo-full" src="./img/assets/logo-original.svg" alt="Portal do Condomínio">
             </a>
-            <ul class="header__menu d-none d-md-flex">
+            <ul class="header__menu">
                 <li><a id="btn-cancelar" href="/login">Cancelar</a></li>
             </ul>
         </div>
     </header>
-    <main class="text-center">
-            <!-- <div class="header-logo" id="button-geral">
+    <main>
+        <div class="container">
+            <div class="form-newUser row">
+                <h2> Cadastro de novo usuário</h2>
+                <form class="row" action="registro" method="POST">
+                    <div class="cpfError col-12">
+                        <p><%=msgCPF%></p>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>Nome Completo</label>
+                        <input type="text" class="form-control" name="nome" id="inputNome" placeholder="Digite seu nome completo" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="label-email">E-mail</label>
+                        <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Digite seu e-mail" aria-describedby="infoEmail" required>
+                        <small id="infoEmail" class="form-text text-muted">Seu e-mail nunca será compartilhado.</small>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>CPF</label>
+                        <input type="text" class="form-control" name="cpf" id="inputcpf" placeholder="Informe o seu CPF (apenas números)" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Data de Nascimento</label>
+                        <input type="date" class="form-control" name="dataNascimento" id="inputDataNasc" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Senha</label>
+                        <input type="password" class="form-control" name="senha" id="password" placeholder="Digite uma senha" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Confirmar Senha</label>
+                        <input type="password" class="form-control" name="confirmarSenha" id="confirmPassword" placeholder="Confirme a senha" required>
+                    </div>
+                    <div class="form-group col-12 admin-check">
+                        <div>
+                            <input type="checkbox" class="form-check-input" id="admin" name="admin" value="1">
+                            <label class="form-check-label" for="admin">Usuário Administrativo</label>
+                        </div>
+                    </div>
+                    <button class="btn-cadastro cadastro-enter" type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    <!-- <main class="text-center">
+            <div class="header-logo" id="button-geral">
                 <div class="logo"></div>
                 <h1 class="portal">Portal do </h1>
                 <h1 class="condominio">Condomínio</h1>
                 <a id="btn-cancelar" href="/login">Cancelar</a>
-            </div> -->
+            </div>
         <section class="cadastro-section container">
             <form class="form-signin-cadastro row" action="registro" method="POST">
                 <div class="cpfError">
@@ -75,9 +118,9 @@
                 </div>
 
             </form>
-        </section>
+        </section> -->
     </main>
-    <script src="/js/script.js">
-    </script>
+    <script src="/js/script.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
 </body>
 </html>

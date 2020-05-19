@@ -9,6 +9,7 @@ const userController = {
     },
 
     store: async (req, res) => {
+        
         const {nome, cpf, email, senha} = req.body;
         const hashPassword = bcrypt.hashSync(senha, 10);
         
@@ -20,7 +21,7 @@ const userController = {
             return res.render("auth/register", {msg: "Erro ao cadastrar um usuario"});
         }
 
-        res.render("registro", {user});
+        res.render("sucesso", {user});
     },
 };
 

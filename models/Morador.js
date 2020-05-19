@@ -22,7 +22,10 @@ module.exports = (sequelize, DataTypes) => {
       //   foreingKey: true,
       // } 
       
-    },
+    },{
+      tableName:'moradores'
+      
+      }
     
   )
 

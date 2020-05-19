@@ -34,16 +34,12 @@ const authController = {
             admin: user.admin? true : false,
         };
 
-        console.log(usuario);
-
         if(logado == undefined){
             res.cookie('logado', user.email, {maxAge: 600000})
         }
         
         req.session.user = usuario;
-        
-       
-        
+                
         return res.render("home", {usuario});
         
     },

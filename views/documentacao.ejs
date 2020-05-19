@@ -62,6 +62,21 @@
                 
                 <hr class="docSepLine">
 
+                <% if(usuario.admin) { %>
+                    <div class="areaBotaoCad">
+                        <div>
+                            <button
+                                type="button"
+                                id="botaoCadastro"
+                                class="btn btn-secondary btn-sm"
+                                data-toggle="modal"
+                                data-target="#modalCadastroMorador">
+                                Adicionar Documento
+                            </button>
+                        </div>
+                    </div>
+                    <% } %>
+
                 <!-- area do centro da tela -->
                 <div class="centroTelaClassificados">
                     <!-- cards dos classificados -->

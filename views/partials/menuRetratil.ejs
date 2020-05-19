@@ -72,10 +72,11 @@
                 <li>
                     <a href="/classificados">Classificados</a>
                 </li>
+                <% if(!usuario.admin) { %>
                 <li>
                     <a href="/meusItens">Meus itens</a>
                 </li>
-
+                <% } %>
             </ul>
         </li>
         <li>

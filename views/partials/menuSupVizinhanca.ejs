@@ -1,0 +1,27 @@
+<nav class="slidemenu">
+
+
+    <!-- isso faz ficar marcado ao clicar, precisa ver como mudar sozinho -->
+        <!-- checked="checked" -->
+    
+    
+        <!-- Item 1 -->
+        <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"/>
+        <label for="slide-item-1">
+            <a href="/classificados">Classificados</a>
+        </label>
+    
+        <!-- Item 2 -->
+        <% if(!usuario.admin) { %>
+        <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
+        <label for="slide-item-2">
+            <a href="/meusItens">Meus Itens</a>
+        </label>
+        <% } %>
+        <div class="clear"></div>
+    
+        <!-- Bar -->
+        <div class="slider">
+            <div class="bar"></div>
+        </div>
+    </nav>

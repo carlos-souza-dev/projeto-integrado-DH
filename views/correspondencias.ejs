@@ -63,6 +63,20 @@
                <!-- menu superior -->
                <%- include('./partials/menuSupMinhaCasa') %>
 
+               <div class="areaBotaoCad">
+                    <div>
+                        <% if(usuario.admin) { %>
+                        <button
+                            type="button"
+                            id="botaoCadastro"
+                            class="btn btn-secondary btn-sm"
+                            data-toggle="modal"
+                            data-target="#modalCadastroMorador">
+                            Novo Registro
+                        </button>
+                        <% } %>
+                    </div>
+                </div>
 
                 <!-- area do centro da tela -->
                 <div class="centroTelaCorrespondencias">

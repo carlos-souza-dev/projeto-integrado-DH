@@ -13,6 +13,8 @@ const correspondenciaController = require(
     "../controllers/correspondenciaController"
 );
 const prestadoresController = require('../controllers/prestadoresController');
+const documentacaoController = require("../controllers/documentacaoController");
+
 
 const auth = require("../middlewares/auth");
 
@@ -26,6 +28,19 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({storage: storage});
+
+
+const storageDoc = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, path.join("public", "docs"));
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + file.originalname);
+    }
+});
+
+const uploadDoc = multer({storage: storageDoc});
+
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -60,9 +75,9 @@ router.post('/solicitacoes', solicitacoesController.store);
 
 router.get('/comunicados', auth, comunicadosController.exibir);
 
-router.get('/documentacao', auth, function (req, res, next) {
-    res.render('documentacao', {title: 'Documentacao'});
-});
+router.get('/documentacao', auth, documentacaoController.exibir);
+router.post('/documentacoes', uploadDoc.any(), documentacaoController.store);
+router.delete('/excluirDocumentacao/:id', documentacaoController.destroy);
 
 router.get('/criarComunicados', comunicadosController.create);
 router.post('/criarComunicados', comunicadosController.store);

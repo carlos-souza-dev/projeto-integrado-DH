@@ -8,7 +8,54 @@
 
 /* stilo dos cards classificados*/
 
+.areaBotaoCad {
+    display: flex;
+    justify-content: flex-end;
+    height: 10vh;
+    align-items: center;
+    width: 94%;
+    margin: 0 auto;
+}
 
+#botaoCadastro {
+    background-color: #3B3B3B;
+    width: 226px;
+    height: 44px;
+    border-radius: 22px;
+    text-transform: uppercase;
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+}
+
+@media(max-width:768px) {
+    #botaoCadastro {
+        background-color: #3B3B3B;
+        width: 226px;
+        height: 44px;
+        border-radius: 22px;
+        text-transform: uppercase;
+        font-size: 16px;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+            /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+    }
+
+    .areaBotaoCad {
+        width: 94%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+        align-items: center;
+    }   
+        /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+} 
 
 .centroTelaClassificados{
     width: calc(94% + 1rem);

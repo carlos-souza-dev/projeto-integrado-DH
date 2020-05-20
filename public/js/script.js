@@ -27,7 +27,7 @@ formCadastro.addEventListener("mouseover", function (eve) {
             confirmarSenha.style.backgroundColor = "white";
         }
     } else {
-            console.log("Digite um senha.");
+            console.log("Digite uma senha.");
             senha.style.backgroundColor = "rgb(243, 198, 198, 1)";
             confirmarSenha.style.backgroundColor = "rgb(243, 198, 198, 1)";
     }

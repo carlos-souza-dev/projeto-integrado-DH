@@ -63,6 +63,7 @@
                 <!-- botao para adicionar cadastro -->
                 <div class="areaBotaoCad">
                     <div>
+                        <% if(usuario.admin) { %>
                         <button
                             type="button"
                             id="botaoCadastro"
@@ -71,7 +72,7 @@
                             data-target="#modalCadastroMorador">
                             Novo Cadastro
                         </button>
-
+                        <% } %>
                     </div>
                 </div>
 
@@ -100,19 +101,18 @@
                                     <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
                                 </div>
                             </div>
-                            <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
-                            linhas-->
-                            <!-- <div class="card-text">
-                                <b>Data de Nascimento:</b>
-                                14/11/1980</div> -->
-                            <!-- <div class="card-text">
-                                <b>RG:</b>
-                                44.398.239-4</div> -->
+                           
                             <div class="card-text">
                                 <b>CPF:</b>
                                 <%=user.cpf%></div>
-                        </div>
+                            </div>
+                            <div class="card-text">
+                                <b>Nasc:</b>
+                                <%=user.dataNascimento%></div>
+                            </div>
 
+
+                            
                     </div>
                 
                 <% }); %>

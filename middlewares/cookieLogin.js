@@ -23,6 +23,7 @@ const cookieLogin = async (req, res, next) => {
             nome: user.nome,
             email: user.email,
             foto: user.foto,
+            admin: user.admin? true : false,
         };
 
         if (user.email == email){

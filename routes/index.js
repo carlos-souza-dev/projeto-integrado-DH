@@ -39,9 +39,6 @@ router.get('/home', auth, homeController.index);
 
 router.get('/moradores', auth, moradoresController.exibir);
 
-router.get('/prestadoresDeServico', auth, function (req, res, next) {
-    res.render('prestadoresDeServico', {title: 'Prestadores de Servico'});
-});
 router.get('/registroCorrespondencia', correspondenciaController.create);
 router.post('/registroCorrespondencia', correspondenciaController.store);
 
@@ -78,7 +75,7 @@ router.post("/registro", userController.store);
 
 router.post('/logoff', authController.destroy);
 
-router.get('/prestadores', prestadoresController.prestadores);
-router.post('/prestadores', prestadoresController.store);
+router.get('/prestadoresDeServico', prestadoresController.prestadores);
+router.post('/prestadoresDeServico',upload.any(), prestadoresController.store);
 
 module.exports = router;

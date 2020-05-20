@@ -63,6 +63,7 @@
                 <!-- botao para adicionar cadastro -->
                 <div class="areaBotaoCad">
                     <div>
+                        <% if(usuario.admin) { %>
                         <button
                             type="button"
                             id="botaoCadastro"
@@ -71,7 +72,7 @@
                             data-target="#modalCadastroMorador">
                             Novo Cadastro
                         </button>
-
+                        <% } %>
                     </div>
                 </div>
 

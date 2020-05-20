@@ -31,6 +31,7 @@ const authController = {
             nome: user.nome,
             email: user.email,
             foto: user.foto,
+            admin: user.admin? true : false,
         };
 
         if(logado == undefined){
@@ -38,9 +39,7 @@ const authController = {
         }
         
         req.session.user = usuario;
-        
-       
-        
+                
         return res.render("home", {usuario});
         
     },

@@ -7,11 +7,12 @@ const userController = require("../controllers/userController");
 const homeController = require("../controllers/homeController");
 const perfilController = require("../controllers/perfilController");
 const solicitacoesController = require("../controllers/solicitacoesController");
-const comunicadosController = require("../controllers/comunicadosController")
-const moradoresController = require("../controllers/moradoresController")
+const comunicadosController = require("../controllers/comunicadosController");
+const moradoresController = require("../controllers/moradoresController");
 const correspondenciaController = require(
     "../controllers/correspondenciaController"
 );
+const prestadoresController = require('../controllers/prestadoresController');
 
 const auth = require("../middlewares/auth");
 
@@ -76,5 +77,8 @@ router.get("/registro", userController.create);
 router.post("/registro", userController.store);
 
 router.post('/logoff', authController.destroy);
+
+router.get('/prestadores', prestadoresController.prestadores);
+router.post('/prestadores', prestadoresController.store);
 
 module.exports = router;

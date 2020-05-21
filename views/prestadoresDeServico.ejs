@@ -119,43 +119,7 @@
 
                     </div>
 
-                    <div class="cardPrestServico">
-
-                        <!-- div da foto do morador -->
-                        <div class="imgPrestServ">
-                            <img src="./img/user/tissaia.jpg" alt="...">
-                        </div>
-
-                        <!-- area que organiza os itens do texto do card -->
-                        <div class="corpoCard">
-
-                            <!-- div que contem o nome do morador e os icones para fazer alteração -->
-                            <div class="tituloAndTools">
-                                <div class="card-titulo">Tissaia de Vries</div>
-                                <div class="toolsCardPrestServ">
-                                    <a data-toggle="modal" data-target="#modalAlterarPrestador"><img src="./img/icon/edit.svg" alt=""></a>
-                                    <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
-                                </div>
-                            </div>
-                            <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
-                            linhas-->
-                            <div class="card-text">
-                                <b>Data de Nascimento:</b>
-                                14/12/1974</div>
-                            <div class="card-text">
-                                <b>RG:</b>
-                                34.567.345-3
-                                <div class="card-text">
-                                    <b>CPF:</b>
-                                    282.474.258-55</div>
-                                <div class="card-text">
-                                    <b>Ocupação:</b>
-                                    Terapêuta</div>
-                            </div>
-
-                        </div>
-
-                    </div>
+                   
 
                     <!-- modal para cadastrar novo Prestador de serviço -->
 
@@ -169,23 +133,23 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form method="POST" action="/prestadoresDeServico" enctype="multipart/form-data
+                                    >
+
+                              
                                         
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Nome completo</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                            <input type="text" class="form-control" name="nome" id="exampleFormControlTextarea1" rows="1"></input>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Data nascimento</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                        </div>
+                            
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">RG</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                            <input type="text" class="form-control" name="rg" id="exampleFormControlTextarea1" rows="1"></input>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">CPF</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                            <input type="text" class="form-control" name="cpf" id="exampleFormControlTextarea1" rows="1"></input>
                                         </div>
                                         <div class="nomeCampoPesquisa">
                                             Categoria
@@ -202,7 +166,7 @@
                                                         aria-label="Search">
                                         
                                         <div class="modal-menu">
-                                        <div class="dropdown-menu">
+                                        <div class="dropdown-menu" name="categoria">
                                             <a class="dropdown-item" href="#">Alimentação</a>
                                             <a class="dropdown-item" href="#">Assistência</a>
                                             <a class="dropdown-item" href="#">Educação</a>
@@ -214,16 +178,17 @@
                                 </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlFile1">Foto</label>
-                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                            <input type="file" name="foto" class="form-control-file" id="exampleFormControlFile1">
                                         </div>
                                 
-                                    </form>
+                                   
                             
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-secondary">Salvar</button>
+                                    <button type="submit" class="btn btn-secondary">Salvar</button>
                                 </div>
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -240,37 +205,63 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form method="POST" action="/prestadores">
+
+                                    
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">Nome completo</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                            <input type="text" class="form-control" name="nome" id="exampleFormControlTextarea1" rows="1"></input>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Data nascimento</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                        </div>
+                            
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">RG</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                            <input type="text" class="form-control" name="rg" id="exampleFormControlTextarea1" rows="1"></input>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlTextarea1">CPF</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                            <input type="text" class="form-control" name="cpf" id="exampleFormControlTextarea1" rows="1"></input>
                                         </div>
+                                        <div class="nomeCampoPesquisa">
+                                            Categoria
+                                        </div>
+                                        <div class="areaCamposGrandes">
+                                            <div class="campoSearch" id="zero-filter">
+                                                <form class="form-inline">
+                                                    <input
+                                                        class="form-control"
+                                                        style="width: 100%;"
+                                                        type="search"
+                                                        data-toggle="dropdown"
+                                                        placeholder="Palavra-Chave"
+                                                        aria-label="Search">
+                                        
+                                        <div class="modal-menu">
+                                        <div class="dropdown-menu" name="categoria">
+                                            <a class="dropdown-item" href="#">Alimentação</a>
+                                            <a class="dropdown-item" href="#">Assistência</a>
+                                            <a class="dropdown-item" href="#">Educação</a>
+                                            <a class="dropdown-item" href="#">Moda e Beleza</a>
+                                           <a class="dropdown-item" href="#">Saúde</a>
+                                        </div>
+                                        </div>
+                                   
+                                </div>
                                         <div class="form-group">
                                             <label for="exampleFormControlFile1">Foto</label>
-                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                            <input type="file" name="foto" class="form-control-file" id="exampleFormControlFile1">
                                         </div>
-                                    </form>
-                                </div>
+                                
+                                  
+                            
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                                     <button type="button" class="btn btn-secondary">Salvar</button>
                                 </div>
+                            </form>
                             </div>
                         </div>
                     </div>
-
+                 
                     <!-- modal para confirmar exclusão do prestador de serviço , este modal surge
                     centralizado na tela -->
                     <div

@@ -15,13 +15,9 @@ module.exports = (sequelize, DataTypes) => {
         informacao: DataTypes.STRING,
 
         data: DataTypes.DATE,
-
-         id_apartamentos: { 
-         type: DataTypes.INTEGER,
          
       
-    },
-   
+     
       
       })
 

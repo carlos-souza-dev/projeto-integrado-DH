@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
           primaryKey: true,
           autoIncrement: true,
         },
-        tipo:{ 
+        nome:{ 
           type: DataTypes.STRING(100),
           allowNull: false,
         },
@@ -19,6 +19,9 @@ module.exports = (sequelize, DataTypes) => {
         foto: DataTypes.STRING,
    
       
+      },
+      {
+        timestamps: false
       })
 
 

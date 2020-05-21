@@ -1,13 +1,15 @@
 const Sequelize = require("sequelize");
+const config = require("../config/database");
 const {Prestadores} = require("../models");
 
 const prestadoresController = {
     
     store: async (req, res) => {
-        const {nome, rg, cpf, categoria, foto} = req.body;
+        const [files] = req.files;
+        const {nome, rg, cpf, categoria} = req.body;
 
         const conteudo = await Prestadores.create(
-            {nome, rg, cpf, categoria, foto}
+            {nome, rg, cpf, categoria,  foto: `/img/${files.filename}`}
         )
        
         return res.redirect("/prestadoresDeServico");
@@ -19,7 +21,7 @@ const prestadoresController = {
            
             
         const result = await Prestadores.findAll()
-            return res.render('prestadores', {result});
+            return res.render('prestadoresDeServico', {result});
     },
     
 

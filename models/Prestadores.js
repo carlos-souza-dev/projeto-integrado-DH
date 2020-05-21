@@ -16,6 +16,8 @@ module.exports = (sequelize, DataTypes) => {
 
         cpf: DataTypes.INTEGER,
 
+        categoria:DataTypes.STRING,
+
         foto: DataTypes.STRING,
    
       

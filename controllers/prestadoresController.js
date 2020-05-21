@@ -17,13 +17,24 @@ const prestadoresController = {
 
     },
 
-    prestadores: async (req, res) => {
+    exibir: async (req, res) => {
            
             
-        const result = await Prestadores.findAll()
-            return res.render('prestadoresDeServico', {result});
+        const prestadores = await Prestadores.findAll()
+            return res.render('prestadoresDeServico', {prestadores});
     },
     
+    
+    destroy: async (req, res) => {
+        const {id} = req.params;
+        const resultado = await Prestadores.destroy({
+            where: {
+                id: id
+            }
+        })
+       
+        res.redirect('/prestadoresDeServico')
+    }
 
 }
 

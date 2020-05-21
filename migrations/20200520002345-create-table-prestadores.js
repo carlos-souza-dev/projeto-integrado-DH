@@ -21,7 +21,9 @@ module.exports = {
      type: Sequelize.STRING(11),
      allowNull: false,
    },
+   categoria: Sequelize.STRING,
    foto: Sequelize.STRING,
+
 
    
     });

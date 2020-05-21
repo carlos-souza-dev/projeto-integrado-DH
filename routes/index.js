@@ -90,7 +90,8 @@ router.post("/registro", userController.store);
 
 router.post('/logoff', authController.destroy);
 
-router.get('/prestadoresDeServico', prestadoresController.prestadores);
-router.post('/prestadoresDeServico',upload.any(), prestadoresController.store);
+router.get('/prestadoresDeServico', prestadoresController.exibir);
+router.post('/cadastroPrestador',upload.any(), prestadoresController.store);
+router.delete('/excluirPrestador/:id', prestadoresController.destroy);
 
 module.exports = router;

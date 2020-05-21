@@ -10,7 +10,7 @@ const userController = {
     },
 
     store: async (req, res) => {
-        const {nome, cpf, email, senha, admin = 0, dataNascimento} = req.body;
+        const {nome, cpf, email, senha, admin = 0, dataNascimento, id_apartamento} = req.body;
         const hashPassword = bcrypt.hashSync(senha, 10);
         const db = new Sequelize(config);
 
@@ -33,6 +33,7 @@ const userController = {
                 foto: './img/user/fotoDefault.png',
                 admin,
                 dataNascimento,
+                id_apartamento,
         })
         } else {
              return res.render("auth/register", {msgCPF: "Erro ao cadastrar usuário. O CPF informado já está sendo utilizado."});

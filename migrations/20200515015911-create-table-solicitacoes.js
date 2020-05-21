@@ -9,10 +9,6 @@ module.exports = {
       primaryKey: true,
       autoIncrement: true,
     },
-    codigo: {
-        type: Sequelize.STRING(6),
-        allowNull: false,
-    },
     tipo: {
         type: Sequelize.STRING(45),
         allowNull: false,
@@ -21,8 +17,18 @@ module.exports = {
         type: Sequelize.DATE,
     },
     status: {
-        type: Sequelize.ENUM('Em análise','Indeferida','Deferida'),
+        type: Sequelize.ENUM('Pendente','Indeferida','Deferida'),
         allowNull: false,
+    },
+    descricao: {
+        type: Sequelize.STRING(250),
+        allowNull: false,
+    },
+    comentarios: {
+        type: Sequelize.STRING(250),
+    },
+    id_morador: {
+      type: Sequelize.INTEGER,
     },
     createdAt: {
       type: Sequelize.DATE,

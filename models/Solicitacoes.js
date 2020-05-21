@@ -7,10 +7,6 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      codigo: {
-        type: DataTypes.STRING(6),
-        allowNull: false,
-      },
       tipo: {
         type: DataTypes.STRING(45),
         allowNull: false,
@@ -18,11 +14,27 @@ module.exports = (sequelize, DataTypes) => {
       data: DataTypes.DATE,
       status: {
         type: DataTypes.ENUM,
-        values: ['Em análise','Indeferida','Deferida'],
+        values: ['Pendente','Indeferida','Deferida'],
         allowNull: false,
-      }
-    
+      },
+      descricao: {
+        type: DataTypes.STRING(250),
+        allowNull: false,
+      },
+      comentarios: {
+        type: DataTypes.STRING(250),
+      },
+      id_morador: {
+        type: DataTypes.INTEGER,
+      },
   })
+
+  Solicitacao.associate = (models) => {
+    Solicitacao.belongsTo(models.Moradores, {
+      foreignKey: 'id_morador',
+      as: 'morador',
+    })
+  }
 
   return Solicitacao;
 };

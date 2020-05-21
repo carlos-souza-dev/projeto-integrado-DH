@@ -31,7 +31,10 @@ const authController = {
             nome: user.nome,
             email: user.email,
             foto: user.foto,
+            sobre: user.sobre,
             admin: user.admin? true : false,
+            dataNascimento: user.dataNascimento,
+            id_apartamento: user.id_apartamento,
         };
 
         if(logado == undefined){

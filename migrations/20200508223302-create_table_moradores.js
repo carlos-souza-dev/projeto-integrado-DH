@@ -37,6 +37,9 @@ module.exports = {
       type: Sequelize.BOOLEAN,
     },
     dataNascimento: Sequelize.DATEONLY,
+    id_apartamento: {
+      type: Sequelize.INTEGER,
+    },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE
     });

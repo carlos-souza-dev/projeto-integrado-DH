@@ -1,14 +1,19 @@
 const Sequelize = require("sequelize");
 const config = require("../config/database");
-const {Solicitacoes} = require("../models");
+const {Moradores, Solicitacoes} = require("../models");
 
 const solictacoesController = {
     
     store: async (req, res) => {
-          const {codigo,tipo,status} = req.body;
+          const {tipo, descricao} = req.body;
 
-          const resultado = await Solicitacoes.create (
-              {codigo, tipo, data: new Date, status}
+          const resultado = await Solicitacoes.create ({
+              tipo, 
+              data: new Date, 
+              status: 'Pendente', 
+              descricao,
+              id_morador: req.session.user.id,
+            }
           );
 
        
@@ -18,7 +23,13 @@ const solictacoesController = {
     solicitacoes: async (req, res) => {
            
             
-        const result = await Solicitacoes.findAll()
+        const result = await Solicitacoes.findAll({
+            include: {
+                model: Moradores,
+                as: 'morador',
+                required: true
+            }
+        })
             // console.log(result);
             return res.render('solicitacoes', {result});
     },

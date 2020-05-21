@@ -135,6 +135,50 @@
                                     <% } %> 
                                   
                                 </article>
+
+                                <article class="destinatario">
+                                    <div class="solicitacoes-title"></div>
+                                    <% for(let resultado of result) { %>
+                                    <div class="status">
+                                        <button
+                                            type="button"
+                                            id="botaoDetalhe"
+                                            class="btn btn-secondary btn-sm"
+                                            data-toggle="modal"
+                                            data-target="#<%=resultado.id%>">
+                                            Visualizar
+                                        </button>
+                                        <div class="modal fade" id="<%=resultado.id%>" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <h4 class="modal-title" id="staticBackdropLabel">Detalhes da Solicitação</h4>
+                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                  </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h6>Código</h6>
+                                                    <span><%= ("00000" + resultado.id).slice(-5) %></span>
+                                                    <h6>Tipo</h6>
+                                                    <span><%= resultado.tipo %></span>
+                                                    <h6>Criado em</h6>
+                                                    <span><%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)).slice(-2) + "/" + resultado.data.getFullYear() + "   " + ("0" + resultado.data.getHours()).slice(-2) + ":" + ("0" + resultado.data.getMinutes()).slice(-2) %></span>
+                                                    <h6>Descrição</h6>
+                                                    <span><%resultado.descricao %></span>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                  <button type="button" class="btn btn-secondary">Excluir</button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <% } %> 
+                                  
+                                </article>
                             </section>
                         </main>
                     </aside> 
@@ -193,6 +237,26 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
                 <!-- </div> -->  
                 <!-- footer -->
                 <%- include('./partials/footer') %>
@@ -233,6 +297,7 @@
                 });
             });
         </script>
+
     </body>
 
 </html>

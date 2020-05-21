@@ -32,6 +32,19 @@
     color: white;
     /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
 }
+
+#botaoDetalhe {
+    height: 40px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3b3b3b;
+    background-color: white;
+    /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+}
 /* fim stilo botao */
 
 

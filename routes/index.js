@@ -72,6 +72,9 @@ router.get('/meusItens', auth, function (req, res, next) {
 // Listar solicitações
 router.get('/solicitacoes', auth, solicitacoesController.solicitacoes);
 router.post('/solicitacoes', solicitacoesController.store);
+router.put('/updateSolicitacoesAp/:id', solicitacoesController.updateAp);
+router.put('/updateSolicitacoesRep/:id', solicitacoesController.updateRep);
+router.delete('/solicitacoes/:id', solicitacoesController.destroy);
 
 router.get('/comunicados', auth, comunicadosController.exibir);
 

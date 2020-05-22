@@ -8,6 +8,15 @@
 
 /* stilo botão */
 
+.emptySolicitacoes {
+    display: inline;
+    padding: 8px 40px;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+}
+
 .areaBotaoCad {
     width: 94%;
     margin: 0 auto;
@@ -32,6 +41,40 @@
     color: white;
     /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
 }
+
+#botaoDetalhe {
+    height: 40px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3b3b3b;
+    background-color: white;
+    /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+}
+
+#btnAprovado {
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #7aa355;
+    color: white;
+    border: none;
+}
+
+#btnReprovado {
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #da5c5c;
+    color: white;
+    border: none;
+}
+
 /* fim stilo botao */
 
 
@@ -43,8 +86,10 @@
 
 
 .aside-main-solicitacoes {
+    display: flex;
     width: 94%;
-    margin: 0 auto;
+    margin: 24px auto;
+    justify-content: center;
 }
 
 .aside-main-solicitacoes .mc-solicitacoes-buttom {
@@ -62,7 +107,7 @@
     margin: 40px 0; 
     border-radius: 25px;
     display: flex;
-    border-radius: 25px;  
+    border-radius: 16px;  
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
@@ -97,6 +142,7 @@
     font-weight: lighter;
     font-size: 16px;
     color: #000000;
+    text-align: center;
 }
 
 .aside-main-solicitacoes .solicitacoes-section .destinatario .status p {
@@ -176,9 +222,32 @@
     border-radius: 5px;
 }
 
-.modal-body .form-group {
+.form-group {
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+}
+
+.form-label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-control-plaintext {
+    padding: 0px;
+    font-size: 18px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-around;
+    padding: 4px 16px;
+    text-transform: uppercase;
+    font-size: 18px;
 }
 
 @media(max-width:765px) {

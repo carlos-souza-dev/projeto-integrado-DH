@@ -17,7 +17,7 @@ module.exports = {
         type: Sequelize.DATE,
     },
     status: {
-        type: Sequelize.ENUM('Pendente','Indeferida','Deferida'),
+        type: Sequelize.ENUM('Pendente','Reprovada','Aprovada'),
         allowNull: false,
     },
     descricao: {

@@ -88,7 +88,7 @@ router.post('/criarComunicados', comunicadosController.store);
 router.get('/perfil', auth, perfilController.edit);
 router.put('/perfil', upload.any(), auth, perfilController.update);
 
-router.get("/registro", auth, userController.create);
+router.get("/registro", userController.create);
 router.post("/registro", userController.store);
 
 router.post('/logoff', authController.destroy);

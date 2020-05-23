@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
               foreignKey:'condominio_id',
               as: 'condominio',
           })
-      }
+      };
 
 
     return Apartamento;

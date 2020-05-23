@@ -152,6 +152,27 @@
                                             Visualizar
                                         </button>
                                     </div>
+                                    <div
+                                        class="modal fade"
+                                        id="confirmarExclusao<%=resultado.id%>"
+                                        tabindex="2"
+                                        role="dialog"
+                                        aria-labelledby="exampleModalCenterTitle"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <form  action="/solicitacoes/<%=resultado.id%>?_method=DELETE" method="POST">  
+                                                    <div class="modal-body">
+                                                        Tem certeza de que deseja excluir esta solicitação? A ação não poderá ser desfeita.
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                        <button type="submit" class="btn btn-danger">Excluir</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="modal fade" id="<%=resultado.id%>" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                           <div class="modal-content">
@@ -196,16 +217,16 @@
                                                             <button type="submit" id="btnReprovado"formaction="/updateSolicitacoesRep/<%=resultado.id%>?_method=PUT" class="btn btn-secondary"><i class="material-icons-outlined" style="font-size:24px;">clear</i>Reprovar</button>
                                                         </div>
                                                         <% } else { %>
-                                                            <% if (resultado.comentarios != "") { %>
+                                                            <% if (resultado.comentarios) { %>
                                                             <div class="form-group">
                                                                 <label for="staticComments" class="form-label">Comentários</label>
                                                                 <textarea type="text" readonly class="form-control" name="comentarios" id="staticComments" maxlength="250" placeholder="Comente e justifique sua decisão sobre esta solicitação (max. 250 caracteres)"><%= resultado.comentarios %></textarea>
                                                             </div>
                                                             <% } %>
                                                             <div class="modal-footer">
-                                                                <button type="submit" formaction="/solicitacoes/<%=resultado.id%>?_method=DELETE" class="btn btn-secondary"><i class="material-icons-outlined" style="font-size:24px;">delete</i>Excluir</button>
+                                                                <button type="button" data-toggle="modal" data-dismiss="modal" data-target="#confirmarExclusao<%=resultado.id%>" class="btn btn-secondary"><i class="material-icons-outlined" style="font-size:24px;">delete</i>Excluir</button>
                                                             </div>
-                                                           <% } %>
+                                                        <% } %>
                                                     </div>
                                                 </form>
                                             <% } else { %>
@@ -223,7 +244,7 @@
                                                             <label for="staticDescribe" class="form-label">Descrição</label>
                                                             <input type="text" readonly class="form-control-plaintext" id="staticDescribe" value="<%= resultado.descricao %>">
                                                         </div>
-                                                        <% if (resultado.comentarios != "") { %>
+                                                        <% if (resultado.comentarios) { %>
                                                             <div class="form-group">
                                                                 <label for="staticComments" class="form-label">Comentários</label>
                                                                 <textarea type="text" readonly class="form-control" name="comentarios" id="staticComments" maxlength="250" placeholder="Comente e justifique sua decisão sobre esta solicitação (max. 250 caracteres)"><%= resultado.comentarios %></textarea>
@@ -231,15 +252,16 @@
                                                             <% } %>
                                                         <% if(resultado.status == 'Pendente') { %>
                                                         <div class="modal-footer">
-                                                            <button type="submit" formaction="/solicitacoes/<%=resultado.id%>?_method=DELETE" class="btn btn-secondary"><i class="material-icons-outlined" style="font-size:24px;">delete</i>Excluir</button>
+                                                            <button type="button" data-toggle="modal" data-target="#confirmarExclusao<%=resultado.id%>" data-dismiss="modal" class="btn btn-secondary"><i class="material-icons-outlined" style="font-size:24px;">delete</i>Excluir</button>
                                                         </div>
                                                         <% } %>
                                                     </div>
                                                 </form>
                                             <% } %>
-                                        </div>
+                                        </div>    
                                     </div>
                                 </div>
+                                
                                 <% } %> 
                             </article>
                             

@@ -26,7 +26,7 @@ const authController = {
 
         
         
-        usuario = {
+        let usuario = {
             id: user.id,
             nome: user.nome,
             email: user.email,

@@ -10,7 +10,7 @@ const perfilController = {
     //função para retornar todos os moradores
     index: async (req, res) => {
         let users = await Moradores.findAll();
-        console.log(users);
+        // console.log(users);
 
         return res.render('perfil', {users});
     },
@@ -66,10 +66,10 @@ const perfilController = {
     edit: async (req, res) => {
         const id = req.session.user.id;
 
-        const user = await Moradores.findByPk(id);
+        const usuario = await Moradores.findByPk(id);
       
         
-        return res.render('perfil', {user})
+        return res.render('perfil', {usuario})
     },
 
     destroy: async (req, res) => {
@@ -80,7 +80,7 @@ const perfilController = {
                     id: id
                 }
             })
-            console.log(resultado)
+            // console.log(resultado)
             res.redirect('/perfil')
     },
     
@@ -123,7 +123,7 @@ const perfilController = {
             }
         ]
         const resultado = await Usuario.bulkCreate(listaDeUsuarios);
-        console.log(resultado)
+        // console.log(resultado)
         res.send("Criados")
     }
 }

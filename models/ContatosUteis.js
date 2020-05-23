@@ -1,18 +1,18 @@
 module.exports = (sequelize, DataTypes) => {
     const contatosUteis = sequelize.define(
-      "contatosUteis",
+      "ContatosUteis",
       {
         id: {
           type: DataTypes.INTEGER,
           primaryKey: true,
           autoIncrement: true,
         },
-        nome:{ 
-          type: DataTypes.STRING,
-          
-        },
-      
-        cpf: DataTypes.STRING(11),
+        foto: DataTypes.STRING,
+        nome : DataTypes.STRING,
+        descricao: DataTypes.STRING,
+        numero: DataTypes.INTEGER,
+        email: DataTypes.STRING,
+       
     })
       
     return contatosUteis;

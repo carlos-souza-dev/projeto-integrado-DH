@@ -14,6 +14,8 @@ const correspondenciaController = require(
 );
 const prestadoresController = require('../controllers/prestadoresController');
 const documentacaoController = require("../controllers/documentacaoController");
+const contatosUteisController = require("../controllers/contatosUteisController");
+
 
 
 const auth = require("../middlewares/auth");
@@ -59,9 +61,7 @@ router.post('/registroCorrespondencia', correspondenciaController.store);
 
 router.get('/correspondencias', auth, correspondenciaController.exibir);
 
-router.get('/contatosUteis', auth, function (req, res, next) {
-    res.render('contatosUteis', {title: 'Contatos Uteis'});
-});
+
 router.get('/classificados', auth, function (req, res, next) {
     res.render('classificados', {title: 'classificados'});
 });
@@ -93,5 +93,9 @@ router.post('/logoff', authController.destroy);
 router.get('/prestadoresDeServico', prestadoresController.exibir);
 router.post('/cadastroPrestador',upload.any(), prestadoresController.store);
 router.delete('/excluirPrestador/:id', prestadoresController.destroy);
+
+router.get('/contatosUteis', auth, contatosUteisController.exibir);
+router.post('/contatosUteis', uploadDoc.any(), contatosUteisController.store);
+router.delete('/excluirContatos/:id', contatosUteisController.destroy);
 
 module.exports = router;

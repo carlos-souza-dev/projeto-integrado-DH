@@ -33,7 +33,42 @@ const solictacoesController = {
             // console.log(result);
             return res.render('solicitacoes', {result});
     },
+
+    updateAp: async (req, res) => {
+        const {id} =  req.params;
+        const {comentarios} = req.body;
+        const result = await Solicitacoes.update({
+                comentarios: comentarios,
+                status: 'Aprovada',
+            }, 
+            {
+                where: {id: id}
+            },
+        )
+            return res.redirect('/solicitacoes')
+    },
     
+    updateRep: async (req, res) => {
+        const {id} =  req.params;
+        const {comentarios} = req.body;
+        const result = await Solicitacoes.update({
+                comentarios: comentarios,
+                status: 'Reprovada',
+            }, 
+            {
+                where: {id: id}
+            },
+        )
+            return res.redirect('/solicitacoes')
+    },
+
+    destroy: async (req, res) => {
+        const {id} = req.params;
+        const result = await Solicitacoes.destroy({
+            where: {id: id}
+        })
+        return res.redirect('/solicitacoes')
+    }
 }
 
 module.exports = solictacoesController;

@@ -1,6 +1,7 @@
 const {Moradores} = require("../models");
 const Sequelize = require("sequelize");
 const bcrypt = require("bcrypt");
+const session = require("express-session");
 
 const Op = Sequelize.Op;
 
@@ -65,11 +66,10 @@ const perfilController = {
     edit: async (req, res) => {
         const id = req.session.user.id;
 
-        const usuario = await Moradores.findByPk(id);
-        console.log(id)
-
+        const user = await Moradores.findByPk(id);
+      
         
-        return res.render('perfil', {usuario})
+        return res.render('perfil', {user})
     },
 
     destroy: async (req, res) => {

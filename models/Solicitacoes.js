@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       data: DataTypes.DATE,
       status: {
         type: DataTypes.ENUM,
-        values: ['Pendente','Indeferida','Deferida'],
+        values: ['Pendente','Reprovada','Aprovada'],
         allowNull: false,
       },
       descricao: {

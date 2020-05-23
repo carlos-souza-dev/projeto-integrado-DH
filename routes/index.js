@@ -56,10 +56,10 @@ router.get('/home', auth, homeController.index);
 
 router.get('/moradores', auth, moradoresController.exibir);
 
-router.get('/registroCorrespondencia', correspondenciaController.create);
-router.post('/registroCorrespondencia', correspondenciaController.store);
 
 router.get('/correspondencias', auth, correspondenciaController.exibir);
+router.post('/registroCorrespondencia', auth, correspondenciaController.store);
+
 
 
 router.get('/classificados', auth, function (req, res, next) {
@@ -70,8 +70,11 @@ router.get('/meusItens', auth, function (req, res, next) {
 });
 
 // Listar solicitações
-router.get('/solicitacoes', solicitacoesController.solicitacoes);
+router.get('/solicitacoes', auth, solicitacoesController.solicitacoes);
 router.post('/solicitacoes', solicitacoesController.store);
+router.put('/updateSolicitacoesAp/:id', solicitacoesController.updateAp);
+router.put('/updateSolicitacoesRep/:id', solicitacoesController.updateRep);
+router.delete('/solicitacoes/:id', solicitacoesController.destroy);
 
 router.get('/comunicados', auth, comunicadosController.exibir);
 
@@ -83,16 +86,17 @@ router.get('/criarComunicados', comunicadosController.create);
 router.post('/criarComunicados', comunicadosController.store);
 
 router.get('/perfil', auth, perfilController.edit);
-router.put('/perfil', upload.any(), perfilController.update);
+router.put('/perfil', upload.any(), auth, perfilController.update);
 
-router.get("/registro", userController.create);
+router.get("/registro", auth, userController.create);
 router.post("/registro", userController.store);
 
 router.post('/logoff', authController.destroy);
 
-router.get('/prestadoresDeServico', prestadoresController.exibir);
+router.get('/prestadoresDeServico', auth, prestadoresController.exibir);
 router.post('/cadastroPrestador',upload.any(), prestadoresController.store);
 router.delete('/excluirPrestador/:id', prestadoresController.destroy);
+router.put('/atualizarPrestador/:id', upload.any(), prestadoresController.update);
 
 router.get('/contatosUteis', auth, contatosUteisController.exibir);
 router.post('/contatosUteis', uploadDoc.any(), contatosUteisController.store);

@@ -15,6 +15,8 @@
         <!-- css header, menu lateral, menu superior e footer -->
         <link rel="stylesheet" href="./css/headerMenuFooter.css">
 
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+
         <script
             defer="defer"
             src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -82,6 +84,7 @@
 
                     <aside class="mainAside">                      
                          <main class="aside-main-solicitacoes">
+                            <% if(result.length > 0) { %>
                             <section class="solicitacoes-section">
                              
                                 <article class="recebido">
@@ -106,9 +109,9 @@
                                 <article class="recebido">
                                     <div class="solicitacoes-title">Apartamento</div>
                                     <% for(let resultado of result) { %>
-                                        <div class="codigo"><% resultado.morador.id_apartamento %></div>
+                                        <div class="codigo"><%= resultado.morador.id_apartamento %></div>
                                         
-                                  <%  };%>
+                                    <% };%>
                                                                     
                                 </article>
                                 
@@ -131,7 +134,7 @@
                                 <article class="destinatario">
                                     <div class="solicitacoes-title">Status</div>
                                     <% for(let resultado of result) { %>
-                                    <div class="status"><p id="grey"><%= resultado.status %></p></div>
+                                    <div class="status"><p id="<%=resultado.status%>"><%= resultado.status %></p></div>
                                     <% } %> 
                                   
                                 </article>
@@ -148,38 +151,104 @@
                                             data-target="#<%=resultado.id%>">
                                             Visualizar
                                         </button>
-                                        <div class="modal fade" id="<%=resultado.id%>" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                              <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <h4 class="modal-title" id="staticBackdropLabel">Detalhes da Solicitação</h4>
-                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                  </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <h6>Código</h6>
-                                                    <span><%= ("00000" + resultado.id).slice(-5) %></span>
-                                                    <h6>Tipo</h6>
-                                                    <span><%= resultado.tipo %></span>
-                                                    <h6>Criado em</h6>
-                                                    <span><%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)).slice(-2) + "/" + resultado.data.getFullYear() + "   " + ("0" + resultado.data.getHours()).slice(-2) + ":" + ("0" + resultado.data.getMinutes()).slice(-2) %></span>
-                                                    <h6>Descrição</h6>
-                                                    <span><%resultado.descricao %></span>
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                                  <button type="button" class="btn btn-secondary">Excluir</button>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
                                     </div>
-                                    <% } %> 
-                                  
-                                </article>
+                                    <div class="modal fade" id="<%=resultado.id%>" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                          <div class="modal-content">
+                                            <div class="modal-header">
+                                              <h4 class="modal-title" id="staticBackdropLabel">Solicitação nº <%= ("00000" + resultado.id).slice(-5) %></h4>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                            </div>
+                                            <%if(usuario.admin) { %>
+                                                <form method="POST">
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="form-group col-6">
+                                                                <label for="staticMorador" class="form-label">Morador</label>
+                                                                <input type="text" readonly class="form-control-plaintext" id="staticMorador" value="<%= resultado.morador.nome %>">
+                                                            </div>
+                                                            <div class="form-group col-6">
+                                                                <label for="staticAp" class="form-label">Apartamento</label>
+                                                                <input type="text" readonly class="form-control-plaintext" id="staticAp" value="<%= resultado.morador.id_apartamento %>">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="staticType" class="form-label">Tipo</label>
+                                                            <input type="text" readonly class="form-control-plaintext" id="staticType" value="<%= resultado.tipo %>">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="staticDate" class="form-label">Criada em</label>
+                                                            <input type="text" readonly class="form-control-plaintext" id="staticDate" value="<%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)).slice(-2) + "/" + resultado.data.getFullYear() + " " + ("0" + resultado.data.getHours()).slice(-2) + ":" + ("0" + resultado.data.getMinutes()).slice(-2) %>">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="staticDescribe" class="form-label">Descrição</label>
+                                                            <input type="text" readonly class="form-control-plaintext" id="staticDescribe" value="<%= resultado.descricao %>">
+                                                        </div>
+                                                        <% if(resultado.status == 'Pendente') { %>
+                                                        <div class="form-group">
+                                                            <label for="staticComments" class="form-label">Comentários</label>
+                                                            <textarea type="text" class="form-control" name="comentarios" id="staticComments" rows="6" maxlength="250" placeholder="Comente e justifique sua decisão sobre esta solicitação (max. 250 caracteres)"></textarea>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" id="btnAprovado" formaction="/updateSolicitacoesAp/<%=resultado.id%>?_method=PUT" class="btn btn-secondary"><i class="material-icons-outlined" style="font-size:24px;">check</i>Aprovar</button>
+                                                            <button type="submit" id="btnReprovado"formaction="/updateSolicitacoesRep/<%=resultado.id%>?_method=PUT" class="btn btn-secondary"><i class="material-icons-outlined" style="font-size:24px;">clear</i>Reprovar</button>
+                                                        </div>
+                                                        <% } else { %>
+                                                            <% if (resultado.comentarios != "") { %>
+                                                            <div class="form-group">
+                                                                <label for="staticComments" class="form-label">Comentários</label>
+                                                                <textarea type="text" readonly class="form-control" name="comentarios" id="staticComments" maxlength="250" placeholder="Comente e justifique sua decisão sobre esta solicitação (max. 250 caracteres)"><%= resultado.comentarios %></textarea>
+                                                            </div>
+                                                            <% } %>
+                                                            <div class="modal-footer">
+                                                                <button type="submit" formaction="/solicitacoes/<%=resultado.id%>?_method=DELETE" class="btn btn-secondary"><i class="material-icons-outlined" style="font-size:24px;">delete</i>Excluir</button>
+                                                            </div>
+                                                           <% } %>
+                                                    </div>
+                                                </form>
+                                            <% } else { %>
+                                                <form method="POST">
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label for="staticType" class="form-label">Tipo</label>
+                                                            <input type="text" readonly class="form-control-plaintext" id="staticType" value="<%= resultado.tipo %>">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="staticDate" class="form-label">Criada em</label>
+                                                            <input type="text" readonly class="form-control-plaintext" id="staticDate" value="<%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)).slice(-2) + "/" + resultado.data.getFullYear() + " " + ("0" + resultado.data.getHours()).slice(-2) + ":" + ("0" + resultado.data.getMinutes()).slice(-2) %>">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="staticDescribe" class="form-label">Descrição</label>
+                                                            <input type="text" readonly class="form-control-plaintext" id="staticDescribe" value="<%= resultado.descricao %>">
+                                                        </div>
+                                                        <% if (resultado.comentarios != "") { %>
+                                                            <div class="form-group">
+                                                                <label for="staticComments" class="form-label">Comentários</label>
+                                                                <textarea type="text" readonly class="form-control" name="comentarios" id="staticComments" maxlength="250" placeholder="Comente e justifique sua decisão sobre esta solicitação (max. 250 caracteres)"><%= resultado.comentarios %></textarea>
+                                                            </div>
+                                                            <% } %>
+                                                        <% if(resultado.status == 'Pendente') { %>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" formaction="/solicitacoes/<%=resultado.id%>?_method=DELETE" class="btn btn-secondary"><i class="material-icons-outlined" style="font-size:24px;">delete</i>Excluir</button>
+                                                        </div>
+                                                        <% } %>
+                                                    </div>
+                                                </form>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% } %> 
+                            </article>
+                            
                             </section>
+                            <% } else { %>
+                                <div class="emptySolicitacoes">
+                                    Não há solicitações
+                                </div>
+                            <% } %>
                         </main>
                     </aside> 
 
@@ -238,25 +307,6 @@
                         </div>
                     </div>
 
-                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
                 <!-- </div> -->  
                 <!-- footer -->
                 <%- include('./partials/footer') %>

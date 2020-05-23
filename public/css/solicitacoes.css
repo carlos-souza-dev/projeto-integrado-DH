@@ -70,7 +70,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: #da5c5c;
+    background-color: #EB5757;
     color: white;
     border: none;
 }
@@ -154,19 +154,19 @@
     border-radius: 16px;
 }
 
-.aside-main-solicitacoes .solicitacoes-section .destinatario .status-grey{
-    background-color: rgb(54, 54, 54);
-    color: white;
+#Pendente {
+    background-color: rgba(0, 0, 0, 0.25);
+    color: #3B3B3B;
 }
 
-.aside-main-solicitacoes .solicitacoes-section .destinatario .status-red{
+#Reprovada {
     color: white;
     background-color: #EB5757;
 }
 
-.aside-main-solicitacoes .solicitacoes-section .destinatario .status-green{
+#Aprovada{
     color: white;
-    background-color: #6FCF97;
+    background-color: #7aa355;
 }
 
 

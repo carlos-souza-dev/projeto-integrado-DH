@@ -3,12 +3,6 @@ const Sequelize = require("sequelize");
 
 const contatosUteisController = {
 
-    exibir: async (req, res) => {
-        console.log(ContatosUteis);
-        let contato = await ContatosUteis.findAll();
-
-        return res.render('contatosUteis', {contato});
-    },
 
     store: async (req, res) => {
 
@@ -23,6 +17,13 @@ const contatosUteisController = {
         return res.redirect("/contatosUteis");
 
     },
+
+    exibir: async (req, res) => {
+        
+        const contato = await ContatosUteis.findAll();
+        return res.render('contatosUteis', {contato});
+    },
+
     update: async (req, res) => {
         const {id} = req.params;
         const [files] = req.files;

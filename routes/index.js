@@ -15,10 +15,12 @@ const correspondenciaController = require(
 const prestadoresController = require('../controllers/prestadoresController');
 const documentacaoController = require("../controllers/documentacaoController");
 const contatosUteisController = require("../controllers/contatosUteisController");
+const classificadosController = require("../controllers/classificadosController")
 
 
 
 const auth = require("../middlewares/auth");
+
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -62,12 +64,11 @@ router.post('/registroCorrespondencia', auth, correspondenciaController.store);
 
 
 
-router.get('/classificados', auth, function (req, res, next) {
-    res.render('classificados', {title: 'classificados'});
-});
-router.get('/meusItens', auth, function (req, res, next) {
-    res.render('meusItens', {title: 'Meus Itens'});
-});
+router.get('/classificados', auth, classificadosController.exibirClassificados);
+
+router.get('/meusItens', auth, classificadosController.exibirMeusItens);
+router.post('/criarClassificado', auth, upload.any(), classificadosController.store);
+router.delete('/excluirClassificado/:id', auth, classificadosController.destroy);
 
 // Listar solicitações
 router.get('/solicitacoes', auth, solicitacoesController.solicitacoes);

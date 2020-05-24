@@ -4,7 +4,7 @@ const Op = Sequelize.Op;
 const moradoresController = {
 
 exibir: async (req, res) => {
-    console.log(req.session.user.id_apartamento)
+    // console.log(req.session.user.id_apartamento)
     
     let users = await Moradores.findAll({
         where: {
@@ -14,7 +14,7 @@ exibir: async (req, res) => {
         }
     });
    
-    console.log(users);
+    // console.log(users);
     return res.render('moradores', {users});
 },
 

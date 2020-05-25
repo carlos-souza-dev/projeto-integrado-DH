@@ -179,114 +179,29 @@
 
                     <!-- cards dos classificados -->
                     <!-- estão dentro da tag <a> para abrir o modal que tá sendo referenciado -->
-                    <a data-toggle="modal" data-target="#exampleModal">
+                   
+                        <% if (classificados) { %>
+                            <% classificados.forEach(classificado => { %>
+                        <a data-toggle="modal" data-target="#<%=classificado.id%>">
                         <div class="card classificado">
                             <img
                                 class="card-img-top"
-                                src="./img/classificados/aulas violão.png"
+                                src="<%=classificado.foto%>"
                                 alt="Imagem de capa do card">
                             <div class="card-corpo">
-                                <div class="card-titulo">Aulas de Violão</div>
-                                <div class="card-subtitulo">Juliana B. (B-74)</div>
+                                <div class="card-titulo"><%=classificado.titulo%></div>
+                                <div class="card-subtitulo"></div>
 
                             </div>
                         </div>
 
                     </a>
 
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/assistência.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Assistência e reparos</div>
-                                <div class="card-subtitulo">Lucas M. (C-84)</div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/bolo"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Bolo sob encomenda</div>
-                                <div class="card-subtitulo">Maria B. (D-44)</div>
-                            </div>
-                        </div>
-
-                    </a>
-
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/aulas.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Aulas de Química</div>
-                                <div class="card-subtitulo">Paula M. (A-63)</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/baba.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Babá</div>
-                                <div class="card-subtitulo">Bárbara C. (A-33)</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/organizador.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Organizador de Eventos</div>
-                                <div class="card-subtitulo">João A. (D-91)</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/marmita.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Marmitas Saudáveis</div>
-                                <div class="card-subtitulo">Antônio O. (C-101)</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/dog.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Passeador de Cães</div>
-                                <div class="card-subtitulo">Daniel S. (B-74)</div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id
+ <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id
                     -->
                     <div
                         class="modal fade"
-                        id="exampleModal"
+                        id="<%=classificado.id%>"
                         tabindex="-1"
                         role="dialog"
                         aria-labelledby="exampleModalLabel"
@@ -303,27 +218,24 @@
 
                                     <!-- dados do centro do modal (quando abre o anuncio) -->
                                     <div class="cardy mb-3" id="cardModal">
-                                        <h4 class="card-title">Passeador de Cães</h4>
+                                        <h4 class="card-title"><%=classificado.titulo%></h4>
                                         <div class="row no-gutters">
 
                                             <div class="col-md-4 text-left" id="fotoItem">
-                                                <img src="./img/detalhes/dog.jpg" class="card-img" alt="...">
+                                                <img src="<%=classificado.foto%>" class="card-img" alt="...">
                                                 <p>
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem error
-                                                    necessitatibus veniam doloremque veritatis dolorum fuga, dignissimos commodi
-                                                    quia beatae cupiditate temporibus ducimus saepe facilis perspiciatis quasi
-                                                    soluta laudantium totam!</p>
+                                                    <%=classificado.descricao%></p>
                                             </div>
                                             <div class="linha-vertical"></div>
                                             <div class="col-md-8">
                                                 <div class="card-body">
                                                     <div class="dadosUser">
                                                         <div class="imagemUser">
-                                                            <img src="img/detalhes/user.jpg" id="user"/>
+                                                            <img src="<%=classificado.morador.foto%>" id="user"/>
                                                         </div>
                                                         <div class="nomeUser">
-                                                            <h4>Gustavo Nóbrega</h4>
-                                                            <p>Apartamento B-74
+                                                            <h4><%=classificado.morador.nome%></h4>
+                                                            <p>Apartamento: <%=classificado.morador.id_apartamento%>
                                                             </p>
                                                             <p>Morador desde: Jan/2018
                                                             </p>
@@ -341,10 +253,7 @@
                                                     </div>
                                                     <div class="quemSou">
                                                         <h6>Quem sou eu?</h6>
-                                                        <p class="card-text text-left">Lorem ipsum dolor sit amet consectetur,
-                                                            adipisicing elit. Voluptatem quaerat maxime autem iste debitis, totam
-                                                            temporibus, nisi voluptate inventore nemo unde enim expedita doloremque quo rem
-                                                            error tempore ad eveniet!</p>
+                                                        <p class="card-text text-left"><%=classificado.morador.sobre%></p>
 
                                                     </div>
                                                     <div class="icones">
@@ -361,6 +270,18 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <% })%>
+                    <% } else {%>    
+                        <div class="emptyComunicados">
+                            Não há anuncios cadastrados
+                        </div>
+                        <% } %>
+                   
+
+                   
+               
                 </div>
 
                  <!-- footer -->

@@ -101,5 +101,7 @@ router.put('/atualizarPrestador/:id', upload.any(), prestadoresController.update
 router.get('/contatosUteis', auth, contatosUteisController.exibir);
 router.post('/contatosUteis', uploadDoc.any(), contatosUteisController.store);
 router.delete('/excluirContatos/:id', contatosUteisController.destroy);
+router.put('/atualizarContatos/:id', upload.any(), contatosUteisController.update);
+
 
 module.exports = router;

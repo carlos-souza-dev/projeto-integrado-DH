@@ -57,6 +57,9 @@ router.post('/login', authController.store);
 router.get('/home', auth, homeController.index);
 
 router.get('/moradores', auth, moradoresController.exibir);
+router.post('/moradores', uploadDoc.any(), moradoresController.store);
+router.delete('/excluirMoradores/:id', moradoresController.destroy);
+router.put('/atualizarMoradores/:id', upload.any(), moradoresController.update);
 
 
 router.get('/correspondencias', auth, correspondenciaController.exibir);

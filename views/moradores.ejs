@@ -63,7 +63,7 @@
                             <!-- botao para adicionar cadastro -->
                             <div class="areaBotaoCad">
                                 <div>
-                                    <% if(usuario.admin) { %>
+                                   <% if(usuario.admin) { %> 
                                         <button
                                             type="button"
                                             id="botaoCadastro"
@@ -80,6 +80,7 @@
                             <div class="centroTelaMoradores">
 
                                 <!-- cards dos moradores -->
+                                <% if (users) { %>
                                 <% users.forEach(user => { %>
 
                                     <div class="cardMorador">
@@ -114,54 +115,9 @@
                                         </div>
                                     </div>
 
-                                <% }); %>
+                                
 
-                             </div>
-
-                                    <!-- modal para cadastrar novo morador -->
-
-                                    <div class="modal" id="modalCadastroMorador" tabindex="-1" role="dialog">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Adicionar Morador</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form>
-                                                        <div class="form-group">
-                                                            <label for="exampleFormControlTextarea1">Nome completo</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleFormControlTextarea1">Data nascimento</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleFormControlTextarea1">RG</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleFormControlTextarea1">CPF</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleFormControlFile1">Foto</label>
-                                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                    <button type="button" class="btn btn-secondary">Salvar</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- modal para confirmar exclusão do morador , este modal surge centralizado na
+                              <!-- modal para confirmar exclusão do morador , este modal surge centralizado na
                                     tela -->
                                     <div
                                         class="modal fade"
@@ -172,6 +128,7 @@
                                         aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
+                                                <form  action="/excluirMorador/<%=user.id%>?_method=DELETE" method="POST">  
 
                                                 <div class="modal-body">
                                                     Tem certeza que deseja excluir?
@@ -180,6 +137,7 @@
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                                                     <button type="button" class="btn btn-danger">Tenho certeza</button>
                                                 </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
@@ -196,42 +154,95 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form>
+                                                    <form  action="/atualizarMorador/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
+
                                                         <div class="form-group">
                                                             <label for="exampleFormControlTextarea1">Nome completo</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                                            <input class="form-control" value="<%=user.nome%>" id="exampleFormControlTextarea1" rows="1"></input>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleFormControlTextarea1">Data nascimento</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                                            <input class="form-control" value="<%=user.dataNascimento%>" id="exampleFormControlTextarea1" rows="1"></input>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleFormControlTextarea1">RG</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                                            <input class="form-control" value="<%=user.rg%>" id="exampleFormControlTextarea1" rows="1"></input>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleFormControlTextarea1">CPF</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                                            <input class="form-control" value="<%=user.cpf%>" id="exampleFormControlTextarea1" rows="1"></input>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleFormControlFile1">Foto</label>
                                                             <input type="file" class="form-control-file" id="exampleFormControlFile1">
                                                         </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                            <button type="button" class="btn btn-secondary">Salvar</button>
+                                                        </div>
                                                     </form>
+                                                    </div>
                                                 </div>
+                                        </div>
+
+                                                <% }) %>
+                                                <% } %>
+                                    <!-- modal para cadastrar novo morador -->
+
+                                    <div class="modal" id="modalCadastroMorador" tabindex="-1" role="dialog">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Adicionar Morador</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="/cadastroMorador" method="POST" enctype="multipart/form-data">
+
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlTextarea1">Nome completo</label>
+                                                            <input class="form-control" id="exampleFormControlTextarea1" rows="1"></input>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlTextarea1">Data nascimento</label>
+                                                            <input class="form-control" id="exampleFormControlTextarea1" rows="1"></input>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlTextarea1">RG</label>
+                                                            <input class="form-control" id="exampleFormControlTextarea1" rows="1"></input>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlTextarea1">CPF</label>
+                                                            <input class="form-control" id="exampleFormControlTextarea1" rows="1"></input>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlFile1">Foto</label>
+                                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                                        </div>
+                                                    </div>
+            
+                                   
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                                                     <button type="button" class="btn btn-secondary">Salvar</button>
                                                 </div>
-                                            </div>
+                                            </form>
+                                            
                                         </div>
                                     </div>
+                                    </div>  
+
+                                </div>
                                     <!-- footer -->
                                     <%- include('./partials/footer') %>
 
                                     </div>
 
                                 </div>
+
+                            </div>
 
                                 <!-- jQuery CDN - Slim version (=without AJAX) -->
                                 <script

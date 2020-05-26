@@ -12,7 +12,6 @@ const contatosUteisController = {
 
     store: async (req, res) => {
 
-        const {nome, descricao, numero, email} = req.body;
         const [files] = req.files;
         const {nome, descricao, numero, email} = req.body;
         

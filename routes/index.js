@@ -105,8 +105,8 @@ router.delete('/excluirPrestador/:id', prestadoresController.destroy);
 router.put('/atualizarPrestador/:id', upload.any(), prestadoresController.update);
 
 router.get('/contatosUteis', auth, contatosUteisController.exibir);
-router.post('/contatosUteis', upload.any(), contatosUteisController.store);
-router.delete('/excluirContatos/:id', contatosUteisController.destroy);
-router.put('/atualizarContatos/:id', upload.any(), contatosUteisController.update);
+router.post('/contatosUteis', auth, upload.any(), contatosUteisController.store);
+router.delete('/excluirContatos/:id', auth, contatosUteisController.destroy);
+router.put('/atualizarContatos/:id', auth, upload.any(), contatosUteisController.update);
 
 module.exports = router;

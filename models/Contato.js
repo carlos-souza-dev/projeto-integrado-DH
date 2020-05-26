@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const contatosUteis = sequelize.define(
+    const Contato = sequelize.define(
       "ContatosUteis",
       {
         id: {
@@ -15,6 +15,6 @@ module.exports = (sequelize, DataTypes) => {
        
     })
       
-    return contatosUteis;
+    return Contato;
   };
   

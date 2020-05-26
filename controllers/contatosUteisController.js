@@ -14,12 +14,56 @@ const contatosUteisController = {
 
         const {nome, descricao, numero, email} = req.body;
         const [files] = req.files;
+        const {nome, descricao, numero, email} = req.body;
+        
 
         const resultado = await ContatosUteis.create(
-            {nome, descricao, numero, email, foto: `/img/${files.filename}`}
+            {foto: `/img/${files.filename}`, nome, descricao, numero, email}
         );
 
         return res.redirect("/contatosUteis");
+
+    },
+
+    exibir: async (req, res) => {
+        
+        const contato = await ContatosUteis.findAll();
+        return res.render('contatosUteis', {contato});
+    },
+
+    update: async (req, res) => {
+        const {id} = req.params;
+        const [files] = req.files;
+        const {nome, descricao, numero, email} = req.body;
+
+        if ([files] == "") {
+            const contatos = await ContatosUteis.update({
+                foto: `/img/${files.filename}`,
+                nome,
+                descricao,
+                numero,
+                email
+            }, {
+                where: {
+                    id: id
+                }
+            })
+
+        } else {
+            const contatos = await ContatosUteis.update({
+                
+                foto: `/img/${files.filename}`,
+                nome,
+                descricao,
+                numero,
+                email
+            }, {
+                where: {
+                    id: id
+                }
+            })
+        }
+        return res.redirect('/contatosUteis');
 
     },
 

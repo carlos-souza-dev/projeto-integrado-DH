@@ -1,7 +1,9 @@
 
 const homeController = {
     index: (req,res) => {
-        res.render('home');
+        console.log(req.session)
+        res.render('home', {usuario: req.session.user});
+
     }
 }
 

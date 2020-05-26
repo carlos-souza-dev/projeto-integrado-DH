@@ -74,11 +74,11 @@
                                 <form class="card p-3" method="POST" action="/perfil?_method=PUT" >
                                     <div class="form-group">
                                         <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" value="<%= usuario.nome %>">
+                                        <input type="text" class="form-control" id="nome" name="nome" value="<%= user.nome %>">
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
-                                        <input type="text" class="form-control" id="email" name="email" value="<%= usuario.email %>">
+                                        <input type="text" class="form-control" id="email" name="email" value="<%= user.email %>">
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Senha</label>
@@ -86,7 +86,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Sobre</label>
-                                        <input type="text" class="form-control" id="password" name="sobre"  value="<%= usuario.sobre %>">
+                                        <input type="text" class="form-control" id="password" name="sobre"  value="<%= user.sobre %>">
                                     </div>
 
                                     <button class="btn btn-success" type="submit">Salvar Alterações</button>

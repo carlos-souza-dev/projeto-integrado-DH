@@ -15,7 +15,7 @@ exibir: async (req, res) => {
     });
    
     // console.log(users);
-    return res.render('moradores', {users});
+    return res.render('moradores', {users, usuario: req.session.user});
 },
 
 

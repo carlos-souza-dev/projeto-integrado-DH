@@ -19,7 +19,7 @@ const prestadoresController = {
     exibir: async (req, res) => {
 
         const prestadores = await Prestadores.findAll()
-        return res.render('prestadoresDeServico', {prestadores});
+        return res.render('prestadoresDeServico', {prestadores, usuario: req.session.user});
     },
 
     update: async (req, res) => {
@@ -38,6 +38,7 @@ const prestadoresController = {
                     id: id
                 }
             })
+            return res.redirect('/prestadoresDeServico');
 
         } else {
             const prestador = await Prestadores.update({
@@ -51,8 +52,9 @@ const prestadoresController = {
                     id: id
                 }
             })
+            return res.render('prestadoresDeServico', {prestador, usuario: req.session.user});
         }
-        return res.redirect('/prestadoresDeServico');
+        
 
     },
 

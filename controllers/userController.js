@@ -39,7 +39,7 @@ const userController = {
              return res.render("auth/register", {msgCPF: "Erro ao cadastrar usuário. O CPF informado já está sendo utilizado."});
         }
 
-        res.render("login", {msg: ""});
+        res.render("login", {msg: "", usuario: req.session.user});
     },
 };
 

@@ -36,6 +36,9 @@ const perfilController = {
                     id: id
                 }
             })
+            
+        return res.render('perfil' ,{usuario: req.session.user});
+
         } else if ([files] == "") {
             const resultado = await Moradores.update({
                 nome,
@@ -47,6 +50,9 @@ const perfilController = {
                     id: id
                 }
             });
+            
+        return res.render('perfil' ,{usuario: req.session.user});
+
         } else if (senha == "") {
             const resultado = await Moradores.update({
                 foto: `/img/${files.filename}`,
@@ -58,18 +64,19 @@ const perfilController = {
                     id: id
                 }
             });
+            req.session.user.foto = `/img/${files.filename}`;
+        return res.render('perfil' ,{usuario: req.session.user});
         };
-
-        return res.redirect('/perfil');
+        
     },
 
     edit: async (req, res) => {
         const id = req.session.user.id;
 
-        const usuario = await Moradores.findByPk(id);
+        const user = await Moradores.findByPk(id);
       
         
-        return res.render('perfil', {usuario})
+        return res.render('perfil', {user, usuario: req.session.user})
     },
 
     destroy: async (req, res) => {
@@ -81,7 +88,7 @@ const perfilController = {
                 }
             })
             // console.log(resultado)
-            res.redirect('/perfil')
+            res.render('/perfil', {usuario: req.session.user})
     },
     
     search: async (req, res) => {
@@ -96,7 +103,7 @@ const perfilController = {
                 ['id_usuario', 'ASC']
             ]
         });
-        return res.render('usuarios', {users})
+        return res.render('usuarios', {users, usuario: req.session.user})
     },
    
 

@@ -52,7 +52,7 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/login', authController.create);
-router.post('/login', authController.store);
+router.post('/login', authController.logar);
 
 router.get('/home', auth, homeController.index);
 
@@ -68,7 +68,9 @@ router.get('/classificados', auth, classificadosController.exibirClassificados);
 
 router.get('/meusItens', auth, classificadosController.exibirMeusItens);
 router.post('/criarClassificado', auth, upload.any(), classificadosController.store);
+router.put('/updateClassificado/:id', auth, upload.any(), classificadosController.update);
 router.delete('/excluirClassificado/:id', auth, classificadosController.destroy);
+router.post('/buscarClassificado', auth, classificadosController.search);
 
 // Listar solicitações
 router.get('/solicitacoes', auth, solicitacoesController.solicitacoes);
@@ -100,7 +102,7 @@ router.delete('/excluirPrestador/:id', prestadoresController.destroy);
 router.put('/atualizarPrestador/:id', upload.any(), prestadoresController.update);
 
 router.get('/contatosUteis', auth, contatosUteisController.exibir);
-router.post('/contatosUteis', uploadDoc.any(), contatosUteisController.store);
+router.post('/contatosUteis', upload.any(), contatosUteisController.store);
 router.delete('/excluirContatos/:id', contatosUteisController.destroy);
 
 module.exports = router;

@@ -13,6 +13,8 @@ module.exports = {
     titulo: Sequelize.STRING,
     foto: Sequelize.STRING,
     descricao: Sequelize.STRING,
+    categoria: Sequelize.STRING,
+    tipo: Sequelize.STRING,
     id_morador: {
       type: Sequelize.DataTypes.INTEGER,
       

@@ -31,7 +31,7 @@ const solictacoesController = {
             }
         })
             // console.log(result);
-            return res.render('solicitacoes', {result});
+            return res.render('solicitacoes', {result, usuario: req.session.user});
     },
 
     updateAp: async (req, res) => {

@@ -72,32 +72,7 @@
                 
                 <%- include('./partials/menuSupVizinhanca') %>
 
-                <!-- <nav class="slidemenu"> -->
-
-                    <!-- Item 1 -->
-                    <!-- <input
-                        type="radio"
-                        name="slideItem"
-                        id="slide-item-1"
-                        class="slide-toggle"
-                        checked="checked"/>
-                    <label for="slide-item-1">
-                        <a href="classificados.html">Classificados</a>
-                    </label> -->
-
-                    <!-- Item 2 -->
-                    <!-- <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
-                    <label for="slide-item-2">
-                        <a href="meusItens">Meus Itens</a>
-                    </label>
-
-                    <div class="clear"></div> -->
-
-                    <!-- Bar -->
-                    <!-- <div class="slider">
-                        <div class="bar"></div>
-                    </div>
-                </nav> -->
+               
 
                 <nav class="navbar navbar-light campo-pesquisa" id="areaFiltro">
 
@@ -106,72 +81,66 @@
                     </div>
                     <div class="areaCamposGrandes">
                         <div class="campoSearch" id="zero-filter">
-                            <form class="form-inline">
+                            <form action="/buscarClassificado" method="POST" class="form-inline">
                                 <input
                                     class="form-control"
                                     style="width: 100%;"
                                     type="search"
+                                    name="busca"
                                     placeholder="Palavra-Chave"
-                                    aria-label="Search">
-                            </form>
+                                    aria-label="Search"> </input>
+                                
+                            
                         </div>
-                        <div class="btn-group" id="first-filter">
-                            <button
-                                class="btn btn-secondary text-left btn-sm"
-                                id="btn-pesquisa"
-                                style="width: 100%;"
-                                type="button">
-                                Categoria
-                            </button>
-                            <button
-                                type="button"
-                                class="btn btn-secondary btn-sm dropdown-toggle dropdown-toggle-split"
-                                id="btn-pesquisa"
-                                style="width: 20%;"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Alimentação</a>
-                                <a class="dropdown-item" href="#">Assistência</a>
-                                <a class="dropdown-item" href="#">Educação</a>
-                                <a class="dropdown-item" href="#">Moda e Beleza</a>
-                                <a class="dropdown-item" href="#">Saúde</a>
- 
+                       
 
+                        <div class="form-group">
+                            
+                            <select class="form-control" type="text" name="tipo"  id="exampleFormControlTextarea1">
+                                <option disabled selected>Selecione o tipo</option>
+                                
+                                <option value="Serviço">Serviço</option>
+                                <option value="Produto">Produto</option>
+                                
+                            </select>
+                        </div>
 
-                            </div>
+                        <div class="form-group">
+                           
+                            <select class="form-control" type="text" name="categoria"  id="exampleFormControlTextarea1">
+                                <option disabled selected>Selecione a categoria</option>
+                                
+                                <option value="Alimentos e bebidas">Alimentos e bebidas</option>
+                                <option value="Animais">Animais</option>
+                                <option value="Beleza e cuidado pessoal">Beleza e cuidado pessoal</option>
+                                <option value="Calcados, roupas e bolsas">Calçados, roupas e bolsas</option>
+                                <option value="Celulares e telefonia">Celulares e telefonia</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Eletrodomésticos">Eletrodomésticos</option>
+                                <option value="Eletrônicos">Eletrônicos</option>
+                                <option value="Esportes">Esportes</option>
+                                <option value="Ferramentas e construção">Ferramentas e construção</option>
+                                <option value="Festas">Festas</option>
+                                <option value="Games">Games</option>
+                                <option value="Informática">Informática</option>
+                                <option value="Instrumentos musicais">Instrumentos musicais</option>
+                                <option value="Jóias e acessórios">Jóias e acessórios</option>
+                                <option value="Livros e revistas">Livros e revistas</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Outros">Outros</option>
+                                
+
+                            </select>
                         </div>
-                        <div class="btn-group" id="second-filter">
-                            <button
-                                class="btn btn-secondary text-left btn-sm"
-                                id="btn-pesquisa"
-                                style="width: 100%;"
-                                type="button">
-                                Tipo
-                            </button>
-                            <button
-                                type="button"
-                                class="btn btn-secondary btn-sm dropdown-toggle dropdown-toggle-split"
-                                id="btn-pesquisa"
-                                style="width:20%;"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Manutenção</a>
-                                <a class="dropdown-item" href="#">Festas</a>
-                                <a class="dropdown-item" href="#">Aulas</a>
-                            </div>
-                        </div>
+
+                        
+
+                       
                     </div>
                     <div class="areaBotaoSearch">
                         <button class="btn  my-2 my-sm-0" id="botaoSearch" type="submit">Filtrar</button>
                     </div>
+                </form>
                 </nav>
 
                 <!-- area do centro da tela -->

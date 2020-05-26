@@ -21,7 +21,7 @@ const comunicadosController = {
     exibir: async (req, res) => {
         let comunicados = await Comunicados.findAll();
         
-        return res.render('comunicados', {comunicados})
+        return res.render('comunicados', {comunicados, usuario: req.session.user})
     }
 
 };

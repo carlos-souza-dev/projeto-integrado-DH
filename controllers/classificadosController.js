@@ -6,10 +6,10 @@ const classificadosController = {
 
     store: async (req,res) => {
         const [files] = req.files;
-        const {titulo,descricao} = req.body;
+        const {titulo,descricao,categoria, tipo} = req.body;
 
         const classificado = await Classificados.create(
-            {titulo, descricao, id_morador:req.session.user.id,foto: `/img/${files.filename}` }
+            {titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/${files.filename}` }
         )
         
         
@@ -30,8 +30,8 @@ const classificadosController = {
                 
             }
         });
-        console.log(classificados)
-        return res.render('meusItens', {classificados})
+        
+        return res.render('meusItens', {classificados, usuario: req.session.user})
     },
 
     exibirClassificados: async (req,res) => {
@@ -42,8 +42,8 @@ const classificadosController = {
                 required: true
             }
         });
-        console.log(classificados)
-        return res.render('classificados', {classificados})
+        
+        return res.render('classificados', {classificados, usuario: req.session.user})
     },
     
     destroy: async (req, res) => {
@@ -55,7 +55,98 @@ const classificadosController = {
         })
 
         res.redirect('/meusItens')
+    },
+
+    
+    update: async (req, res) => {
+        const {id} = req.params;
+        const [files] = req.files;
+        const {titulo,descricao,categoria, tipo} = req.body;
+
+        if ([files] == "") {
+            const classificado = await Classificados.update({
+                titulo, descricao, categoria, tipo, id_morador:req.session.user.id
+            }, {
+                where: {
+                    id: id
+                }
+            })
+
+        } else {
+            const classificado = await Classificados.update({
+                titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/${files.filename}` 
+            }, {
+                where: {
+                    id: id
+                }
+            })
+        }
+        return res.redirect('/meusItens');
+
+    },
+
+    search: async (req, res) => {
+        const {busca, categoria, tipo} = req.body;
+
+        if (busca != ""){
+        const classificados = await Classificados.findAll({
+            where: {
+                [Op.or]: [
+                  {
+                    titulo: {
+                      [Op.like]: `%${busca}%`
+                    }
+                  },
+                  {
+                    descricao: {
+                      [Op.like]: `%${busca}%`
+                    }
+                  }
+                ]
+              },
+            include: {
+                model: Moradores,
+                as: 'morador',
+                required: true
+            }
+        })
+        
+        return res.render('classificados', {classificados, usuario: req.session.user})
     }
+        
+    else if (categoria){
+        const classificados = await Classificados.findAll({
+            where:{
+                categoria: categoria,
+            },
+            include: {
+                model: Moradores,
+                as: 'morador',
+                required: true
+            }
+
+        })
+        
+        return res.render('classificados', {classificados, usuario: req.session.user})
+
+    } else if (tipo){
+        const classificados = await Classificados.findAll({
+            where:{
+                tipo: tipo,
+            },
+            include: {
+                model: Moradores,
+                as: 'morador',
+                required: true
+            }
+        })
+        
+        return res.render('classificados', {classificados, usuario: req.session.user})
+    }
+
+      
+
+    } 
 
 
 }

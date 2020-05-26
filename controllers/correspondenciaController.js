@@ -20,7 +20,7 @@ const correspondenciaController = {
     exibir: async (req, res) => {
         let correspondencia = await Correspondencias.findAll();
         
-        return res.render('correspondencias', {correspondencia})
+        return res.render('correspondencias', {correspondencia, usuario: req.session.user})
     }
 
 };

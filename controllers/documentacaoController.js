@@ -7,7 +7,7 @@ const documentacaoController = {
         console.log(Documentacoes);
         let docs = await Documentacoes.findAll();
 
-        return res.render('documentacao', {docs});
+        return res.render('documentacao', {docs,  usuario: req.session.user});
     },
 
     store: async (req, res) => {

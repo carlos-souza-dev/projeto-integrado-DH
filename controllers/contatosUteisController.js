@@ -7,16 +7,16 @@ const contatosUteisController = {
         console.log(ContatosUteis);
         let docs = await ContatosUteis.findAll();
 
-        return res.render('contatosUteis', {docs});
+        return res.render('contatosUteis', {docs, usuario: req.session.user});
     },
 
     store: async (req, res) => {
 
-        const {foto, nome, descricao, numero, email} = req.body;
+        const {nome, descricao, numero, email} = req.body;
         const [files] = req.files;
 
         const resultado = await ContatosUteis.create(
-            {foto,nome, descricao, numero, email: `/docs/${files.filename}`}
+            {nome, descricao, numero, email, foto: `/img/${files.filename}`}
         );
 
         return res.redirect("/contatosUteis");

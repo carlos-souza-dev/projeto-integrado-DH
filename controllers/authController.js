@@ -3,7 +3,7 @@ const config = require("../config/database");
 const bcrypt = require("bcrypt");
 
 const authController = {
-    create: (_req, res) => {
+    index: (_req, res) => {
         return res.render("login", {msg: ""});
     },
 
@@ -43,9 +43,9 @@ const authController = {
         // }
         
         req.session.user = user;
-        let usuario = req.session.user;
-                console.log(res.locals.user)
-        return res.render("home", {usuario});
+        
+                console.log(req.session.user)
+        return res.redirect("/home");
         
     },
 

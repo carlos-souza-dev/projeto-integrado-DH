@@ -2,6 +2,8 @@ const Sequelize = require("sequelize");
 const config = require("../config/database");
 const {Moradores, Solicitacoes} = require("../models");
 
+const Op = Sequelize.Op;
+
 const solictacoesController = {
     
     store: async (req, res) => {
@@ -22,16 +24,34 @@ const solictacoesController = {
 
     solicitacoes: async (req, res) => {
            
-            
-        const result = await Solicitacoes.findAll({
-            include: {
-                model: Moradores,
-                as: 'morador',
-                required: true
+            if (req.session.user.admin) {
+                const result = await Solicitacoes.findAll({
+                    include: {
+                        model: Moradores,
+                        as: 'morador',
+                        required: true
+                    }
+                })
+
+                return res.render('solicitacoes', {result, usuario: req.session.user});
+            } else {
+                const result = await Solicitacoes.findAll({
+                    include: {
+                        model: Moradores,
+                        as: 'morador',
+                        required: true
+                    },
+                    where:{
+                        id_morador:{
+                         [Op.eq] : req.session.user.id
+                        }  
+                     }
+                })
+                return res.render('solicitacoes', {result, usuario: req.session.user});
             }
-        })
+        
             // console.log(result);
-            return res.render('solicitacoes', {result, usuario: req.session.user});
+           
     },
 
     updateAp: async (req, res) => {

@@ -1,5 +1,7 @@
 const Sequelize = require("sequelize");
 const {Correspondencias} = require("../models");
+const Op = Sequelize.Op;
+
 
 const correspondenciaController = {
     create: (req, res) => {
@@ -18,7 +20,13 @@ const correspondenciaController = {
     },
 
     exibir: async (req, res) => {
-        let correspondencia = await Correspondencias.findAll();
+        const correspondencia = await Correspondencias.findAll({
+            where:{
+                apartamento:{
+                 [Op.eq] : req.session.user.id_apartamento
+                }  
+             }
+        });
         
         return res.render('correspondencias', {correspondencia, usuario: req.session.user})
     }

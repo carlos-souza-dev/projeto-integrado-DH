@@ -19,6 +19,8 @@ module.exports = (sequelize, DataTypes) => {
         categoria:DataTypes.STRING,
 
         foto: DataTypes.STRING,
+
+        id_apartamento: DataTypes.INTEGER,
    
       
       },

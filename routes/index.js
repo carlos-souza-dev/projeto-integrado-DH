@@ -51,10 +51,10 @@ router.get('/', function (req, res, next) {
     res.render('index', {title: 'Portal do Condominio'});
 });
 
-router.get('/login', authController.create);
-router.post('/login', authController.logar);
+router.get('/login', authController.index);
+router.post('/logar', authController.logar);
 
-router.get('/home', auth, homeController.index);
+router.get('/home', auth, homeController.exibir);
 
 router.get('/moradores', auth, moradoresController.exibir);
 router.post('/moradores', uploadDoc.any(), moradoresController.store);

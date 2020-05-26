@@ -89,7 +89,7 @@
 
                             <% correspondencia.forEach(corresp =>  { %>
                             
-                            <div class="date" id="last-child"><%= corresp.createdAt %></div>
+                            <div class="date" id="last-child"> <%= ("0" + corresp.createdAt.getDate()).slice(-2) + "/" + ("0"+(corresp.createdAt.getMonth()+1)).slice(-2) + "/" + corresp.createdAt.getFullYear() %> %></div>
                              <%})%>
 
                         </article>

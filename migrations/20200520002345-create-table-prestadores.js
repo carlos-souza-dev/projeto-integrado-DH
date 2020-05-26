@@ -23,6 +23,7 @@ module.exports = {
    },
    categoria: Sequelize.STRING,
    foto: Sequelize.STRING,
+   id_apartamento: Sequelize.INTEGER,
 
 
    

@@ -71,7 +71,7 @@
                                                 <td >
                                                     <b><%= comunicado.titulo %></b>
                                                 </td>
-                                                <td class="data"><%=comunicado.createdAt%>
+                                                <td class="data"><%= ("0" + comunicado.createdAt.getDate()).slice(-2) + "/" + ("0"+(comunicado.createdAt.getMonth()+1)).slice(-2) + "/" + comunicado.createdAt.getFullYear() %>
                                                 </td>
                                             </tr>
                                         </tbody>

@@ -80,7 +80,7 @@
                                         </div>
                                         <div class="resumo-section__info-content">
                                             <h2 class="resumo-section__info-title">Moradores</h2>
-                                            <span class="resumo-section__info-subtitle">3</span>
+                                            <span class="resumo-section__info-subtitle"><%= qtdMorador %></span>
                                         </div>
                                     </a>
                                     <a class="resumo-section__info" href="/prestadoresDeServico">
@@ -89,7 +89,7 @@
                                         </div>
                                         <div class="resumo-section__info-content">
                                             <h2 class="resumo-section__info-title">Prestadores de Serviço</h2>
-                                            <span class="resumo-section__info-subtitle">2</span>
+                                            <span class="resumo-section__info-subtitle"><%= qtdPrestadores %></span>
                                         </div>
                                     </a>
                                     <a class="resumo-section__info" href="/meusItens">
@@ -98,7 +98,7 @@
                                         </div>
                                         <div class="resumo-section__info-content">
                                             <h2 class="resumo-section__info-title">Meus Anúncios</h2>
-                                            <span class="resumo-section__info-subtitle">2</span>
+                                            <span class="resumo-section__info-subtitle"><%=qtdClassificados%></span>
                                         </div>
                                     </a>
                                 </div>
@@ -107,68 +107,30 @@
                                     <div class="resumo-section__classificados" href="classificados.html">
                                         <h2 class="resumo-section__classificados-title">Classificados</h2>
                                         <h3 class="resumo-section__classificados-subtitle">Últimos anúncios dos seus vizinhos</h3>
+                                       
                                         <div class="centroTelaClassificados--home">
+                                            
+                                            
+                                           
+                                            <% if (anunciosViz) { %>
+                                                <% anunciosViz.forEach(anuncio => { %>
                                             <div>
                                                 <div class="card card--home classificado">
                                                     <img
                                                         class="card-img-top"
-                                                        src="./img/classificados/bolo"
+                                                        src="<%= anuncio.foto%>"
                                                         alt="Imagem de capa do card">
                                                     <div class="card-corpo">
-                                                        <div class="card-titulo card-titulo--home">Bolo sob encomenda</div>
-                                                        <div class="card-subtitulo">Maria B. (D-44)</div>
+                                                        <div class="card-titulo card-titulo--home"><%= anuncio.titulo%></div>
+                                                        <div class="card-subtitulo"><%= anuncio.morador.nome%> ( <%=anuncio.morador.id_apartamento %>)</div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <div class="card card--home classificado">
-                                                    <img
-                                                        class="card-img-top"
-                                                        src="./img/classificados/aulas.png"
-                                                        alt="Imagem de capa do card">
-                                                    <div class="card-corpo">
-                                                        <div class="card-titulo card-titulo--home">Aulas de Matemática</div>
-                                                        <div class="card-subtitulo">Paula M. (A-63)</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="card card--home classificado">
-                                                    <img
-                                                        class="card-img-top"
-                                                        src="./img/classificados/baba.png"
-                                                        alt="Imagem de capa do card">
-                                                    <div class="card-corpo">
-                                                        <div class="card-titulo card-titulo--home">Babá</div>
-                                                        <div class="card-subtitulo">Bárbara C. (A-33)</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="card card--home classificado">
-                                                    <img
-                                                        class="card-img-top"
-                                                        src="./img/classificados/organizador.png"
-                                                        alt="Imagem de capa do card">
-                                                    <div class="card-corpo">
-                                                        <div class="card-titulo card-titulo--home">Organizador de Eventos</div>
-                                                        <div class="card-subtitulo">João A. (D-91)</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div>
-                                                <div class="card card--home classificado">
-                                                    <img
-                                                        class="card-img-top"
-                                                        src="./img/classificados/marmita.png"
-                                                        alt="Imagem de capa do card">
-                                                    <div class="card-corpo">
-                                                        <div class="card-titulo card-titulo--home">Marmitas Saudáveis</div>
-                                                        <div class="card-subtitulo">Antônio O. (C-101)</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <a href="classificados">
+
+                                            <% })%>
+                                        <% }%>
+
+                                            <a href="/classificados">
                                                 <div class="card card--home classificado">
                                                     <div class="card-corpo card-more">
                                                         <i class="material-icons-outlined resumo-icon icon-seemore" style="font-size:48px;">add_circle_outline</i>
@@ -177,33 +139,29 @@
                                                 </div>
                                             </a>
                                         </div>
+
+                                        
                                         <h3 class="resumo-section__classificados-subtitle">Seus últimos anúncios</h3>
                                         <div class="centroTelaClassificados--home">
+                                            
+                                            <% if (meusAnuncios) { %>
+                                                <% meusAnuncios.forEach(meuanuncio => { %>
                                             <div>
                                                 <div class="card card--home classificado">
                                                     <img
                                                         class="card-img-top"
-                                                        src="./img/classificados/aulas violão.png"
+                                                        src="<%= meuanuncio.foto%>"
                                                         alt="Imagem de capa do card">
                                                     <div class="card-corpo">
-                                                        <div class="card-titulo card-titulo--home">Aulas de Violão</div>
-                                                        <div class="card-subtitulo">Juliana B. (B-74)</div>
+                                                        <div class="card-titulo card-titulo--home"><%= meuanuncio.titulo%></div>
+                                                        <div class="card-subtitulo"><%= meuanuncio.morador.nome%> (<%= meuanuncio.morador.id_apartamento%>)</div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <div class="card card--home classificado">
-                                                    <img
-                                                        class="card-img-top"
-                                                        src="./img/classificados/assistência.png"
-                                                        alt="Imagem de capa do card">
-                                                    <div class="card-corpo">
-                                                        <div class="card-titulo card-titulo--home">Assistência e reparos</div>
-                                                        <div class="card-subtitulo">Lucas M. (C-84)</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <a href="meusItens">
+                                            <% })%>
+                                            <% }%>
+
+                                            <a href="/meusItens">
                                                 <div class="card card--home classificado">
                                                     <div class="card-corpo card-more">
                                                         <i class="material-icons-outlined resumo-icon icon-seemore" style="font-size:48px;">add_circle_outline</i>
@@ -214,7 +172,7 @@
                                         </div>
                                     </div>
                                     <div class="resumo-section__others">
-                                        <a class="resumo-section__others--sub" href="correspondencias">
+                                        <a class="resumo-section__others--sub" href="/correspondencias">
                                             <h2 class="resumo-section__others-title">Últimas correspondências</h2>
                                                 <table class="tabela-correspondencia">
                                                     <tr class="tabela-correspondencia-title">
@@ -222,38 +180,44 @@
                                                         <th class="th-title">Destinatário</th>
                                                         <th class="th-title">Recebido em</th>
                                                     </tr>
+                                                    
+                                                    <% if (correspondencia) { %>
+                                                        <% correspondencia.forEach(corresp => { %>
                                                     <tr class="tabela-correspondencia-content">
-                                                        <th>Encomenda</th>
-                                                        <th>Juliana B.</th>
-                                                        <th>23/04/2020</th>
+                                                        <th><%= corresp.tipo%></th>
+                                                        <th><%= corresp.destinatario%></th>
+                                                        <th><%= ("0" + corresp.createdAt.getDate()).slice(-2) + "/" + ("0"+(corresp.createdAt.getMonth()+1)).slice(-2) + "/" + corresp.createdAt.getFullYear() %></th>
                                                     </tr>
-                                                    <tr class="tabela-correspondencia-content">
-                                                        <th>Carta</th>
-                                                        <th>Gustavo N.</th>
-                                                        <th>22/04/2020</th>
-                                                    </tr>
-                                                    <tr class="tabela-correspondencia-content">
-                                                        <th>Telegrama</th>
-                                                        <th>Camila L.</th>
-                                                        <th>20/04/2020</th>
-                                                    </tr>
-                                                    <tr class="tabela-correspondencia-content">
-                                                        <th>Carta</th>
-                                                        <th>Carlos S.</th>
-                                                        <th>20/04/2020</th>
-                                                    </tr>
-                                                    <tr class="tabela-correspondencia-content">
-                                                        <th>Encomenda</th>
-                                                        <th>Daniel S.</th>
-                                                        <th>16/04/2020</th>
-                                                    </tr>
+                                                    <% })%>
+                                                    <% } else {%> 
+                                                        <h3 class="resumo-section__others-nocontent">Sem novas correspondencias</h3>
+                                                        <% }%>
                                                 </table>
                                         </a>
-                                        <a class="resumo-section__others--sub" href="comunicados">
+                                       
+                                        <a class="resumo-section__others--sub" href="/comunicados">
                                             <h2 class="resumo-section__others-title">Últimos Comunicados</h2>
-                                            <h3 class="resumo-section__others-nocontent">Sem novos comunicados nos últimos 7 dias</h3>
-                                            
+                                                <table class="tabela-correspondencia">
+                                                    <tr class="tabela-correspondencia-title">
+                                                        <th class="th-title">Título</th>
+                                                        <th class="th-title">Data</th>
+                                                        
+                                                    </tr>
+                                                    
+                                                    <% if (comunicados) { %>
+                                                        <% comunicados.forEach(comunicado => { %>
+                                                    <tr class="tabela-correspondencia-content">
+                                                        <th><%= comunicado.titulo%></th>
+                                                        
+                                                        <th><%= ("0" + comunicado.createdAt.getDate()).slice(-2) + "/" + ("0"+(comunicado.createdAt.getMonth()+1)).slice(-2) + "/" + comunicado.createdAt.getFullYear() %></th>
+                                                    </tr>
+                                                    <% })%>
+                                                    <% } else {%> 
+                                                        <h3 class="resumo-section__others-nocontent">Sem novos comunicados</h3>
+                                                        <% }%>
+                                                </table>
                                         </a>
+                                        
                                         <a class="resumo-section__others--sub" href="solicitacoes">
                                             <h2 class="resumo-section__others-title">Status das Solicitações</h2>
                                             <table class="tabela-solicitacao">
@@ -261,14 +225,17 @@
                                                     <th class="th-title">Tipo</th>
                                                     <th class="th-title">Status</th>
                                                 </tr>
+                                                <% if (solicitacoes) { %>
+                                                    <% solicitacoes.forEach(solicitacao => { %>
                                                 <tr class="tabela-solicitacao-content">
-                                                    <th>Reserva de salão</th>
-                                                    <th class="solicitacao-status solicitacao-status--analise">Em análise</th>
+                                                    <th><%= solicitacao.tipo%></th>
+                                                    <th class="solicitacao-status"><%= solicitacao.status%></th>
                                                 </tr>
-                                                <tr class="tabela-solicitacao-content">
-                                                    <th>Reforma de cômodo</th>
-                                                    <th class="solicitacao-status solicitacao-status--indeferida">Indeferido</th>
-                                                </tr>
+                                                <% })%>
+                                                <% } else {%> 
+                                                    <h3 class="resumo-section__others-nocontent">Sem solicitações</h3>
+                                                    <% }%>
+                                                </table>
                                         </a>
                                     </div>
                                 </div>

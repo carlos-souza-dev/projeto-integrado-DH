@@ -12,12 +12,9 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false,
         },
       
-        informacao: DataTypes.STRING,
+        informacao: DataTypes.STRING(5000),
 
-        data: DataTypes.DATE,
-         
-      
-     
+             
       
       })
 

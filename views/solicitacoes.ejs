@@ -131,6 +131,15 @@
                                     <% } %> 
                                     
                                 </article>
+
+                                <article class="remetente">
+                                    <div class="solicitacoes-title">Data pretendida</div>
+                                    <% for(let resultado of result) { %>
+                                    <div class="date"><%= resultado.dataAlvo.split("-")[2] + "/" + resultado.dataAlvo.split("-")[1] + "/" + resultado.dataAlvo.split("-")[0] %></div>
+                                    <% } %> 
+                                    
+                                </article>
+
                                 <article class="destinatario">
                                     <div class="solicitacoes-title">Status</div>
                                     <% for(let resultado of result) { %>
@@ -178,6 +187,7 @@
                                           <div class="modal-content">
                                             <div class="modal-header">
                                               <h4 class="modal-title" id="staticBackdropLabel">Solicitação nº <%= ("00000" + resultado.id).slice(-5) %></h4>
+                                              <p class="status--modal" id="<%=resultado.status%>"><%= resultado.status %></p>
                                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                               </button>
@@ -199,9 +209,15 @@
                                                             <label for="staticType" class="form-label">Tipo</label>
                                                             <input type="text" readonly class="form-control-plaintext" id="staticType" value="<%= resultado.tipo %>">
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label for="staticDate" class="form-label">Criada em</label>
-                                                            <input type="text" readonly class="form-control-plaintext" id="staticDate" value="<%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)).slice(-2) + "/" + resultado.data.getFullYear() + " " + ("0" + resultado.data.getHours()).slice(-2) + ":" + ("0" + resultado.data.getMinutes()).slice(-2) %>">
+                                                        <div class="row">
+                                                            <div class="form-group col-6">
+                                                                <label for="staticDate" class="form-label">Criada em</label>
+                                                                <input type="text" readonly class="form-control-plaintext" id="staticDate" value="<%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)).slice(-2) + "/" + resultado.data.getFullYear() + " " + ("0" + resultado.data.getHours()).slice(-2) + ":" + ("0" + resultado.data.getMinutes()).slice(-2) %>">
+                                                            </div>
+                                                            <div class="form-group col-6">
+                                                                <label for="staticDate" class="form-label">Data pretendida</label>
+                                                                <input type="text" readonly class="form-control-plaintext" id="staticDate" value="<%= resultado.dataAlvo.split("-")[2] + "/" + resultado.dataAlvo.split("-")[1] + "/" + resultado.dataAlvo.split("-")[0] %>">
+                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="staticDescribe" class="form-label">Descrição</label>
@@ -236,9 +252,15 @@
                                                             <label for="staticType" class="form-label">Tipo</label>
                                                             <input type="text" readonly class="form-control-plaintext" id="staticType" value="<%= resultado.tipo %>">
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label for="staticDate" class="form-label">Criada em</label>
-                                                            <input type="text" readonly class="form-control-plaintext" id="staticDate" value="<%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)).slice(-2) + "/" + resultado.data.getFullYear() + " " + ("0" + resultado.data.getHours()).slice(-2) + ":" + ("0" + resultado.data.getMinutes()).slice(-2) %>">
+                                                        <div class="row">
+                                                            <div class="form-group col-6">
+                                                                <label for="staticDate" class="form-label">Criada em</label>
+                                                                <input type="text" readonly class="form-control-plaintext" id="staticDate" value="<%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)).slice(-2) + "/" + resultado.data.getFullYear() + " " + ("0" + resultado.data.getHours()).slice(-2) + ":" + ("0" + resultado.data.getMinutes()).slice(-2) %>">
+                                                            </div>
+                                                            <div class="form-group col-6">
+                                                                <label for="staticDate" class="form-label">Data pretendida</label>
+                                                                <input type="text" readonly class="form-control-plaintext" id="staticDate" value="<%= resultado.dataAlvo.split("-")[2] + "/" + resultado.dataAlvo.split("-")[1] + "/" + resultado.dataAlvo.split("-")[0] %>">
+                                                            </div>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="staticDescribe" class="form-label">Descrição</label>
@@ -301,9 +323,9 @@
                                             <input class="form-control" type="text" name="codigo" id="exampleFormControlTextarea1" rows="1"></input>
                                         </div> -->
                                         <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Tipo</label>
-                                            <select class="form-control" type="text" name="tipo" id="exampleFormControlTextarea1">
-                                                <option disabled selected>Selecione o tipo</option>
+                                            <label for="tipoSolicitacao">Tipo</label>
+                                            <select class="form-control" type="text" name="tipo" id="tipoSolicitacao" required>
+                                                <option disabled selected value="">Selecione o tipo</option>
                                                 <option value="Autorização">Autorização</option>
                                                 <option value="Serviço">Serviço</option>
                                                 <option value="Reserva de área comum">Reserva de área comum</option>
@@ -315,8 +337,12 @@
                                             <input class="form-control" type="date" name="data" id="exampleFormControlTextarea1" rows="1"></input>
                                         </div> -->
                                         <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Descrição</label>
-                                            <textarea class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="6" maxlength="250" placeholder="Descreva sua solicitação (max. 250 caracteres)"></textarea>
+                                            <label for="dataAlvo">Data pretendida para a ocasião</label>
+                                            <input class="form-control" type="date" name="dataAlvo" id="dataAlvo" required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="descricaoSolicitacao">Descrição</label>
+                                            <textarea class="form-control" name="descricao" id="descricaoSolicitacao" rows="6" maxlength="250" placeholder="Descreva sua solicitação (max. 250 caracteres)" required></textarea>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
@@ -368,6 +394,20 @@
                     $('a[aria-expanded=true]').attr('aria-expanded', 'false');
                 });
             });
+
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth()+1; //January is 0!
+            var yyyy = today.getFullYear();
+            if(dd<10){
+                    dd='0'+dd
+                } 
+                if(mm<10){
+                    mm='0'+mm
+                } 
+
+            today = yyyy+'-'+mm+'-'+dd;
+            document.getElementById("dataAlvo").setAttribute("min", today);
         </script>
 
     </body>

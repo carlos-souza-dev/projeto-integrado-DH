@@ -16,6 +16,9 @@ module.exports = {
     data: {
         type: Sequelize.DATE,
     },
+    dataAlvo: {
+      type: Sequelize.DATEONLY,
+    },
     status: {
         type: Sequelize.ENUM('Pendente','Reprovada','Aprovada'),
         allowNull: false,

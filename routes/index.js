@@ -82,14 +82,21 @@ router.put('/updateSolicitacoesAp/:id', solicitacoesController.updateAp);
 router.put('/updateSolicitacoesRep/:id', solicitacoesController.updateRep);
 router.delete('/solicitacoes/:id', solicitacoesController.destroy);
 
+router.get('/criarComunicado', auth, comunicadosController.index )
 router.get('/comunicados', auth, comunicadosController.exibir);
+router.put('/alterarComunicado/:id', auth, comunicadosController.update);
+router.get('/updateComunicado/:id', auth, comunicadosController.exibirUpdate);
+
+router.post('/criarComunicados', auth, comunicadosController.store);
+router.delete('/excluirComunicado/:id', auth, comunicadosController.destroy);
+
+
 
 router.get('/documentacao', auth, documentacaoController.exibir);
 router.post('/documentacoes', uploadDoc.any(), documentacaoController.store);
 router.delete('/excluirDocumentacao/:id', documentacaoController.destroy);
 
-router.get('/criarComunicados', comunicadosController.create);
-router.post('/criarComunicados', comunicadosController.store);
+
 
 router.get('/perfil', auth, perfilController.edit);
 router.put('/perfil', upload.any(), auth, perfilController.update);

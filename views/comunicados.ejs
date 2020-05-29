@@ -59,57 +59,131 @@
 
                         <hr 0="0" class="docSepLine" margin:="margin:">
 
-                        <div class="centroTelaComunicados">
-                            
-                            <% if (comunicados.length > 0) { %>
-                            
-                                <table class="table">
+                        <% if(usuario.admin) { %>
+                        <nav class="slidemenu">
 
+
+                            <!-- isso faz ficar marcado ao clicar, precisa ver como mudar sozinho -->
+                                <!-- checked="checked" -->
+                            
+                            
+                                <!-- Item 1 -->
+                                <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"/>
+                                <label for="slide-item-1">
+                                    <a href="/comunicados">Comunicados</a>
+                                </label>
+                            
+                                <!-- Item 2 -->
+                                <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
+                                <label for="slide-item-2">
+                                    <a href="/criarComunicado">Criar Comunicados</a>
+                                </label>
+                            
+                                
+                            
+                                <div class="clear"></div>
+                            
+                                <!-- Bar -->
+                                <div class="slider">
+                                    <div class="bar"></div>
+                                </div>
+                            </nav>
+
+                            <% } %>
+
+
+                        <div class="centroTelaComunicados">
+
+                            <% if (comunicados.length > 0) { %>
+
+                                <table class="table">
                                     <% comunicados.forEach(comunicado => { %>
                                         <tbody>
-                                            <tr data-toggle="modal" data-target="#<%=comunicado.id%>">
-                                                <td >
+                                            <tr>
+                                                <td data-toggle="modal" data-target="#<%=comunicado.id%>" >
                                                     <b><%= comunicado.titulo %></b>
+                                                    
                                                 </td>
-                                                <td class="data"><%= ("0" + comunicado.createdAt.getDate()).slice(-2) + "/" + ("0"+(comunicado.createdAt.getMonth()+1)).slice(-2) + "/" + comunicado.createdAt.getFullYear() %>
+                                                
+                                                <td class="data"><%= ("0" + comunicado.createdAt.getDate()).slice(-2) + "/" +
+                                                    ("0"+(comunicado.createdAt.getMonth()+1)).slice(-2) + "/" +
+                                                    comunicado.createdAt.getFullYear() %> 
+                                                    
+                                                </td>
+                                                <td>
+                                                    <div id="botaoComunicado">
+                                                        <% if(usuario.admin) { %>
+                                                            <form  action="/updateComunicado/<%=comunicado.id%>" method="GET">
+                                                            <button  class="btn btn-secondary" type="submit">Editar</button>
+                                                            </form>
+                                                            <button data-toggle="modal" class="btn btn-danger" data-target="#confirmarExclusao">Excluir</button>
+                                                        <% } %>
+                                                    </div>
                                                 </td>
                                             </tr>
+                                            
                                         </tbody>
-                                        <div
-                                            class="modal fade"
-                                            id="<%=comunicado.id%>"
-                                            tabindex="-1"
-                                            role="dialog"
-                                            aria-labelledby="exampleModalScrollableTitle"
-                                            aria-hidden="true">
-                                            <div class="modal-dialog modal-dialog-scrollable" role="document">
-                                                <div class="modal-content">
+                                        
+                                        
+                                        
+                                        <div class="modal fade bd-example-modal-lg" id="<%=comunicado.id%>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-lg">
+                                              <div class="modal-content">
+                                        
+                                        
+                                        
+                                       
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Comunicado</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                        </button>
+                                                        <h5 class="modal-title" id="tituloComunicado">Comunicado</h5>
+                                                        
                                                     </div>
                                                     <div class="modal-body">
-
-                                                        <%= comunicado.informacao %>
-
+                                                        <%- comunicado.informacao %>
                                                     </div>
                                                     <div class="modal-footer">
+
                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
-                                    <% }) %>
-                                </table>
-                            <% } else {%>    
-                                <div class="emptyComunicados">
-                                    Não há comunicados
+                                        <div
+                                            class="modal fade"
+                                            id="confirmarExclusao"
+                                            tabindex="-1"
+                                            role="dialog"
+                                            aria-labelledby="exampleModalCenterTitle"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <form
+                                                        action="/excluirComunicado/<%=comunicado.id%>?_method=DELETE"
+                                                        method="POST">
+                                                        <div class="modal-body">
+                                                            Tem certeza que deseja excluir?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                            <button type="submit" class="btn btn-danger">Tenho certeza</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+
+                                        <% }) %>
+                                        </table>
+                                    <% } else {%>
+                                        <div class="emptyComunicados">
+                                            Não há comunicados
+                                        </div>
+                                    <% } %>
                                 </div>
-                                <% } %>
-                        </div>
+
+
+                                
 
                                 <!-- footer -->
                                 <%- include('./partials/footer') %>
@@ -140,7 +214,6 @@
                             <script type="text/javascript">
                                 $(document).ready(function () {
                                     $("#sidebar").mCustomScrollbar({theme: "minimal"});
-
                                     $('#sidebarCollapse').on('click', function () {
                                         $('#sidebar, #content').toggleClass('active');
                                         $('.collapse.in').toggleClass('in');

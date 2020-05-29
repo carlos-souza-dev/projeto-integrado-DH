@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="custom-container custom-container--header header-signin">
             <a href="#landing">
@@ -26,6 +27,15 @@
         <div class="container">
             <div class="form-newUser row">
                 <h2> Cadastro de novo usuário</h2>
+                <% if(typeof(errors) != "undefined"){ %>
+                    <p style="color:red">Erro</p>
+                    <ul>
+                        <% errors.forEach((error)=> { %>
+                            <li><%= error.msg %> </li>
+                        <%})%> 
+                    </ul>
+ 
+                 <% } %>   
                 <form class="row" action="registro" method="POST">
                     <div class="cpfError col-12">
                         <p><%=msgCPF%></p>

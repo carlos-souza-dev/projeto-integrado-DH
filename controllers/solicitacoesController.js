@@ -7,11 +7,12 @@ const Op = Sequelize.Op;
 const solictacoesController = {
     
     store: async (req, res) => {
-          const {tipo, descricao} = req.body;
+          const {tipo, dataAlvo, descricao} = req.body;
 
           const resultado = await Solicitacoes.create ({
               tipo, 
-              data: new Date, 
+              data: new Date,
+              dataAlvo, 
               status: 'Pendente', 
               descricao,
               id_morador: req.session.user.id,

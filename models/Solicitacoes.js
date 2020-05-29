@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       data: DataTypes.DATE,
+      dataAlvo: DataTypes.DATEONLY,
       status: {
         type: DataTypes.ENUM,
         values: ['Pendente','Reprovada','Aprovada'],

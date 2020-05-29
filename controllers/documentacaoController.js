@@ -4,7 +4,7 @@ const Sequelize = require("sequelize");
 const documentacaoController = {
 
     exibir: async (req, res) => {
-        console.log(Documentacoes);
+        
         let docs = await Documentacoes.findAll();
 
         return res.render('documentacao', {docs,  usuario: req.session.user});

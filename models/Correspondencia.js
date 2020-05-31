@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       
         destinatario: DataTypes.STRING,
 
-        apartamento: DataTypes.STRING,
+        apartamento: DataTypes.INTEGER,
 
       createdAt: DataTypes.DATE,
       updatedAt: DataTypes.DATE

@@ -45,7 +45,10 @@ const userController = {
                 admin,
                 dataNascimento,
                 id_apartamento,
+                
         }) 
+        console.log(hashPassword)
+
         } else {
              return res.render("auth/register", {msgCPF: "Erro ao cadastrar usuário. O CPF informado já está sendo utilizado."});
         }

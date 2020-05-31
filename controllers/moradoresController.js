@@ -17,18 +17,29 @@ store: async (req, res) => {
 
 
 exibir: async (req, res) => {
-    // console.log(req.session.user.id_apartamento)
     
-    let users = await Moradores.findAll({
-        where: {
-            id_apartamento: {
-               [Op.eq] : req.session.user.id_apartamento
+    if (req.session.user.admin) {
+        let users = await Moradores.findAll()
+
+        return res.render('moradores', {users, usuario: req.session.user});
+
+    } else {
+
+        let users = await Moradores.findAll({
+            where: {
+                id_apartamento: {
+                   [Op.eq] : req.session.user.id_apartamento
+                }
             }
-        }
-    });
+    })
+    return res.render('moradores', {users, usuario: req.session.user});
+}
+    
+        // console.log(req.session.user.id_apartamento)
+    
    
     // console.log(users);
-    return res.render('moradores', {users, usuario: req.session.user});
+    
 },
 update: async (req, res) => {
     const {id} = req.params;

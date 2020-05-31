@@ -13,7 +13,7 @@ module.exports = {
      foto: Sequelize.STRING,
      nome: Sequelize.STRING,
      descricao: Sequelize.STRING,
-     numero:Sequelize.INTEGER,
+     numero:Sequelize.STRING,
      email:Sequelize.STRING,
      createdAt: Sequelize.DATE,
      updatedAt: Sequelize.DATE

@@ -206,7 +206,8 @@
                                                             <h4><%=classificado.morador.nome%></h4>
                                                             <p>Apartamento: <%=classificado.morador.id_apartamento%>
                                                             </p>
-                                                            <p>Morador desde: Jan/2018
+                                                            <p>Morador desde: <%=("0"+(classificado.morador.createdAt.getMonth()+1)).slice(-2) + "/" +
+                                                                classificado.morador.createdAt.getFullYear()%>
                                                             </p>
                                                         </div>
 

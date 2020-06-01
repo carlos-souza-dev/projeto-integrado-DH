@@ -8,7 +8,10 @@
 
 /* stilo dos cards classificados*/
 
-
+.profileTitle {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
 
 .centroOpcoesPerfil{
     width: calc(94% + 1rem);
@@ -21,13 +24,15 @@
 } 
 
 .card{
-    min-width: 195px;
-    margin: 1rem;
-    padding: 5px;
-    width: 25rem;
+    box-sizing: border-box;
+    min-width: 196px;
+    margin: 16px;
+    padding: 16px;
+    width: 50%;
     display: flex;
-    border-radius: 5px;
-    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -49,6 +54,24 @@
     border: 2px solid #878787;
     height: 70%;
     width: 100%;
+}
+
+.options{
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+#salvarAlteracoes {
+    border: none !important;
+    background-color: #7aa355 !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    padding: 8px 24px !important;
+    border-radius: 48px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 18px !important;
+    margin: 0 24px !important;
 }
 
 @media (max-width: 770px){

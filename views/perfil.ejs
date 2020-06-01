@@ -63,7 +63,70 @@
                         <div class="centroOpcoesPerfil">
 
                             <main class="container content">
-                                <section class="card">
+                                <form action="/perfil?_method=PUT" method="POST" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h3 class="profileTitle">Dados cadastrais</h3>
+                                            <div class="form-group">
+                                                <label for="nameInput">Nome Completo</label>
+                                                <input type="text" class="form-control" name="nome" id="nameInput" value="<%= usuario.nome %>">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="email">E-mail</label>
+                                                <input type="email" class="form-control" name="email" id="email" value="<%= usuario.email %>">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="password">Nova senha</label>
+                                                <input type="password" class="form-control" name="senha" id="senha">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="senha">Repetir nova senha</label>
+                                                <input type="password" class="form-control" name="senharepeat" id="senharepeat" disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3 class="profileTitle">Perfil e Interesses</h3>
+                                            <div class="form-group">
+                                                <label for="photo">Selecione uma foto para seu perfil</label>
+                                                <input type="file" name="photo" id="photo">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sobre">Quem sou eu?</label>
+                                                <textarea class="form-control" name="sobre" id="sobre" rows="4" maxlength="250" placeholder="Conte para a sua vizinhança quem é você e como você pode contribuir para tornar este lugar ainda mais incrível (max. 250 caracteres)"><%=usuario.sobre%></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Interesses</label>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="interesses" id="Interesse 1" value="Futebol">
+                                                    <label class="form-check-label" for="gridCheck1">Futebol</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="interesses" id="Interesse 1" value="Música">
+                                                    <label class="form-check-label" for="gridCheck1">Música</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="interesses" id="Interesse 1" value="Animais">
+                                                    <label class="form-check-label" for="gridCheck1">Animais</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="interesses" id="Interesse 1" value="Gastronomia">
+                                                    <label class="form-check-label" for="gridCheck1">Gastronomia</label>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" name="interesses" id="Interesse 1" value="Artesanato">
+                                                    <label class="form-check-label" for="gridCheck1">Artesanato</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="options col-12">
+                                            <button id="salvarAlteracoes" type="submit">Salvar Alterações</button>
+                                        </div>
+                                    </div>
+                                </form>                        
+                                
+                                <!-- <section class="card">
                                     <h2>Atualizar Perfil</h2>
                     
                                     <form action="/perfil?_method=PUT" method="POST" enctype="multipart/form-data">
@@ -88,9 +151,13 @@
                                         <label for="password">Sobre</label>
                                         <input type="text" class="form-control" id="password" name="sobre"  value="<%= user.sobre %>">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="interesses">Interesses</label>
+                                        <input type="text" class="form-control" id="interesses" name="interesses">
+                                    </div>
 
                                     <button class="btn btn-success" type="submit">Salvar Alterações</button>
-                                </form>
+                                </form> -->
 
                                
                             </main>
@@ -136,6 +203,7 @@
                         });
                     });
                 </script>
+                <script src="/js/profileScripts.js"></script>
             </body>
 
         </html>

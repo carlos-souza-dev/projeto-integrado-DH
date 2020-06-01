@@ -22,53 +22,103 @@ const perfilController = {
     update: async (req, res) => {
         const id = req.session.user.id;
         const [files] = req.files;
-        const {nome, email, senha, sobre} = req.body;
+        const {nome, email, senha, sobre, interesses} = req.body;
 
-        if ((senha !== "") && ([files] == "")) {
+        if(files != undefined) {
+            const resultado = await Moradores.update({
+                foto: `/img/${files.filename}`
+            }, {
+                where: {
+                    id: id
+                }
+            });
+        };
+
+        if(senha) {
             const hashPassword = bcrypt.hashSync(senha, 10);
             const resultado = await Moradores.update({
-                nome,
-                email,
-                senha: hashPassword,
-                sobre
-            }, {
-                where: {
-                    id: id
-                }
-            })
-            
-        return res.render('perfil' ,{usuario: req.session.user});
-
-        } else if ([files] == "") {
-            const resultado = await Moradores.update({
-                nome,
-                email,
-                sobre
-
+                senha: hashPassword
             }, {
                 where: {
                     id: id
                 }
             });
-            
-        return res.render('perfil' ,{usuario: req.session.user});
-
-        } else if (senha == "") {
-            const resultado = await Moradores.update({
-                foto: `/img/${files.filename}`,
-                nome,
-                email,
-                sobre
-            }, {
-                where: {
-                    id: id
-                }
-            });
-            req.session.user.foto = `/img/${files.filename}`;
-        return res.render('perfil' ,{usuario: req.session.user});
         };
-        
+
+        const resultado = await Moradores.update({
+            nome,
+            email,
+            sobre,
+            interesses: JSON.stringify(interesses),
+        }, {
+            where: {
+                id: id
+            }
+        });
+
+        const usuario = req.session.user;
+
+        usuario.foto = `/img/${files.filename}`;
+        usuario.nome = nome;
+        usuario.email = email;
+        usuario.sobre = sobre;
+        usuario.interesses = interesses
+
+        return res.render('perfil', {usuario: usuario});
     },
+
+    // update: async (req, res) => {
+    //     const id = req.session.user.id;
+    //     const [files] = req.files;
+    //     const {nome, email, senha, sobre, interesses} = req.body;
+
+        // if ((senha !== "") && ([files] == "")) {
+    //         const hashPassword = bcrypt.hashSync(senha, 10);
+    //         const resultado = await Moradores.update({
+    //             nome,
+    //             email,
+    //             senha: hashPassword,
+    //             sobre,
+    //             interesses
+    //         }, {
+    //             where: {
+    //                 id: id
+    //             }
+    //         })
+            
+    //     return res.render('perfil' ,{usuario: req.session.user});
+
+    //     } else if ([files] == "") {
+    //         const resultado = await Moradores.update({
+    //             nome,
+    //             email,
+    //             sobre,
+    //             interesses
+    //         }, {
+    //             where: {
+    //                 id: id
+    //             }
+    //         });
+            
+    //     return res.render('perfil' ,{usuario: req.session.user});
+
+    //     } else if (senha == "") {
+    //         const resultado = await Moradores.update({
+    //             foto: `/img/${files.filename}`,
+    //             nome,
+    //             email,
+    //             sobre,
+    //             interesses,
+    //         }, {
+    //             where: {
+    //                 id: id
+    //             }
+    //         });
+    //         req.session.user.foto = `/img/${files.filename}`;
+    //     return res.render('perfil' ,{usuario: req.session.user});
+    //     };
+        
+    // },
 
     edit: async (req, res) => {
         const id = req.session.user.id;

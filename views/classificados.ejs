@@ -178,7 +178,7 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Detalhes</h5>
+                                    <h4 class="modal-title" id="exampleModalLabel"><%=classificado.titulo%></h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -187,11 +187,11 @@
 
                                     <!-- dados do centro do modal (quando abre o anuncio) -->
                                     <div class="cardy mb-3" id="cardModal">
-                                        <h4 class="card-title"><%=classificado.titulo%></h4>
+                                        <!-- <h4 class="card-title"><%=classificado.titulo%></h4> -->
                                         <div class="row no-gutters">
 
                                             <div class="col-md-4 text-left" id="fotoItem">
-                                                <img src="<%=classificado.foto%>" class="card-img" alt="...">
+                                                <img src="<%=classificado.foto%>" class="card-img" alt="classificado">
                                                 <p>
                                                     <%=classificado.descricao%></p>
                                             </div>
@@ -206,23 +206,25 @@
                                                             <h4><%=classificado.morador.nome%></h4>
                                                             <p>Apartamento: <%=classificado.morador.id_apartamento%>
                                                             </p>
-                                                            <p>Morador desde: Jan/2018
-                                                            </p>
+                                                            <p>Morador desde <%= ("0" + (classificado.morador.createdAt.getMonth() + 1)).slice(-2) + "/" + classificado.morador.createdAt.getFullYear() %></p>
                                                         </div>
 
                                                     </div>
-
-                                                    <div class="interesses">
-                                                        <h6>Interesses</h6>
-                                                        <button>Futebol</button>
+                                                    
+                                                    <h6 class="section-title">Interesses</h6>
+                                                        <div class="interesses">
+                                                        <% for(let interesse of JSON.parse(classificado.morador.interesses)){ %>
+                                                            <span class="interesse"><%= interesse %></span>
+                                                        <% } %>
+                                                        <!-- <button>Futebol</button>
                                                         <button>Música</button>
                                                         <button>Cozinha</button>
-                                                        <button>Cachorros</button>
+                                                        <button>Cachorros</button> -->
 
-                                                    </div>
+                                                        </div>
                                                     <div class="quemSou">
-                                                        <h6>Quem sou eu?</h6>
-                                                        <p class="card-text text-left"><%=classificado.morador.sobre%></p>
+                                                        <h6 class="section-title">Quem sou eu?</h6>
+                                                        <p class="card-text text-left about-content"><%=classificado.morador.sobre%></p>
 
                                                     </div>
                                                     <div class="icones">

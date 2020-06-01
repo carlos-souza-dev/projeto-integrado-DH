@@ -16,13 +16,15 @@ module.exports = (sequelize, DataTypes) => {
       senha: DataTypes.STRING(245),
       foto: DataTypes.STRING(245),
       sobre: DataTypes.STRING(245),
+      interesses: {
+        type: DataTypes.STRING,
+      },
       admin: {
         type: DataTypes.BOOLEAN,
       },
       dataNascimento: DataTypes.DATEONLY,
       id_apartamento: {
         type: DataTypes.INTEGER,
-        
       },
       // id_apartamento:{
       //   type: DataTypes.INTEGER,

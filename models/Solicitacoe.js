@@ -21,7 +21,10 @@ module.exports = (sequelize, DataTypes) => {
       },
       createAt: DataTypes.DATE,
       updateAt: DataTypes.DATE,
-    }, 
+    },{
+      tableName:'solicitacoes'
+      
+      }
   ); 
 
     

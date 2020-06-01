@@ -16,7 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       senha: DataTypes.STRING(245),
       foto: DataTypes.STRING(245),
       sobre: DataTypes.STRING(245),
-      
+      admin: {
+        type: DataTypes.BOOLEAN,
+      },
+      dataNascimento: DataTypes.DATEONLY,
       // id_apartamento:{
       //   type: DataTypes.INTEGER,
       //   foreingKey: true,
@@ -25,9 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     },{
       tableName:'moradores'
       
-      }
-    
-  )
+      })
 
   // Morador.associate = (listaDeModelos) => {
   //   Morador.belongsTo(listaDeModelos.Apartamentos, {

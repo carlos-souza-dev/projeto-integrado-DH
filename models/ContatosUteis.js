@@ -13,7 +13,11 @@ module.exports = (sequelize, DataTypes) => {
         },
       
         cpf: DataTypes.STRING(11),
-    })
+
+    },{
+      tableName:'contatosUteis'
+      
+      })
       
     return contatosUteis;
   };

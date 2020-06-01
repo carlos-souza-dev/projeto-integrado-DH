@@ -3,21 +3,21 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     
-      return queryInterface.createTable('comunicados', { 
+      return queryInterface.createTable('correspondencias', { 
         id:{ 
           type:Sequelize.INTEGER,
           primaryKey: true,
           autoIncrement: true,
           
         },
-        titulo:{ 
+        tipo:{ 
           type: Sequelize.STRING(100),
           allowNull: false,
         },
       
-        informacao: Sequelize.STRING,
+        destinatario: Sequelize.STRING,
 
-        data: Sequelize.DATE,
+        apartamento: Sequelize.STRING,
         
         
     createdAt: Sequelize.DATE,
@@ -29,7 +29,7 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
    
-      return queryInterface.dropTable('comunicados');
+      return queryInterface.dropTable('correspondencias');
    
   }
 };

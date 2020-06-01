@@ -20,9 +20,9 @@ module.exports = (sequelize, DataTypes) => {
          type: DataTypes.INTEGER,
          
       
-    },
-   
-      
+    }},{
+      tableName:'comunicados'
+           
       })
 
       

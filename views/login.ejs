@@ -17,7 +17,7 @@
 <body class="text-center">
   <form class="form-signin" action="/login" method="POST">
     <h1 class="h3 mb-3 font-weight-normal signin-title"><b><br>Acessar Casa Virtual</b></h1>
-    <img class="mb-4" src="img/logo/logo.png" alt="">
+    <!-- <img class="mb-4" src="img/logo/logo.png" alt=""> -->
     <br>
     <div class="border-botton">
       <i class="fas fa-user"></i>
@@ -29,7 +29,11 @@
       <label for="inputPassword" class="sr-only">Senha</label>
       <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Senha">
     </div>
-
+    <div class="login-error">
+      <% if(msg != ""){ %>
+        <p><%=msg%></P>
+      <% } %>
+    </div>
     <div class="checkbox mb-3">
       <label>
 
@@ -37,10 +41,10 @@
       </label>
     </div>
     <br>
-    <button class="btn btn-secondary btn-sm" type="submit">ENTRAR</button>
+    <button class="btn btn-secondary btn-sm" id=login-button type="submit">ENTRAR</button>
     <!-- <a href="/home" class="btn btn-secondary btn-sm" type="submit">ENTRAR</a> -->
     <input class="btn btn-sm btn-verde btn-block" value="Esqueci Minha Senha" name="SendRecupSenha" type="submit">
-    <a class="btn btn-secondary btn-sm" id="register-button" href="registro">Cadastre-se</a>
+    <a class="btn btn-secondary btn-sm" id="register-button" href="registro">Novo Cadastro</a>
   </form>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>

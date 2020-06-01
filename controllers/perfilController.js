@@ -1,7 +1,7 @@
 const {Moradores} = require("../models");
 const Sequelize = require("sequelize");
 const bcrypt = require("bcrypt");
-// const user = require('./authController');
+
 const Op = Sequelize.Op;
 
 const perfilController = {
@@ -67,6 +67,8 @@ const perfilController = {
 
         const usuario = await Moradores.findByPk(id);
         console.log(id)
+
+        
         return res.render('perfil', {usuario})
     },
 

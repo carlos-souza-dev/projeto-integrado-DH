@@ -50,6 +50,30 @@ module.exports = {
       apartamento: 6,
       createdAt: new Date(),
       updatedAt: new Date()
+},
+{
+  id:7,
+      tipo: 'Carta',
+      destinatario: 'Camila Lopes',
+      apartamento: 2,
+      createdAt: new Date(),
+      updatedAt: new Date()
+},
+{
+  id:8,
+      tipo: 'Encomenda',
+      destinatario: 'Gabriel Lopes',
+      apartamento: 2,
+      createdAt: new Date(),
+      updatedAt: new Date()
+},
+{
+  id:9,
+      tipo: 'Carta',
+      destinatario: 'Renan Lopes',
+      apartamento: 2,
+      createdAt: new Date(),
+      updatedAt: new Date()
 }], {});
     
   },

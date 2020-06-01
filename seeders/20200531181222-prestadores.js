@@ -75,7 +75,25 @@ module.exports = {
        categoria: 'Professor de Matemática',
        foto: '/img/1590892765445mauricioVilela.jpg',
        id_apartamento: 6,
-}], {});
+},
+{
+  id: 9,
+        nome: 'Danielle Cerqueira',
+       rg: '29372458-32',
+       cpf:'32968173489',
+       categoria: 'Instrutora de Yoga',
+       foto: '/img/1590892765445mauricioVilela.jpg',
+       id_apartamento: 7,
+},{
+  id: 10,
+        nome: 'Felipe Lima',
+       rg: '56972458-89',
+       cpf:'46967793489',
+       categoria: 'Fotógrafo',
+       foto: '/img/1590892765445felipeLima.jpg',
+       id_apartamento: 7,
+}
+], {});
     
   },
 

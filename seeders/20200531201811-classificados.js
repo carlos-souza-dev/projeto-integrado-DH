@@ -167,7 +167,41 @@ module.exports = {
         id_morador: 6,
         createdAt: new Date(),
         updatedAt: new Date()
-}], {});
+},
+{
+  id: 16,
+        titulo: 'DJ',
+        foto: './img/classificados/dj.jpg',
+        descricao: 'Todo tipo de música para cada ocasião. Vamos animar sua Festa!',
+        categoria: 'Festas',
+        tipo: 'Serviço',
+        id_morador: 8,
+        createdAt: new Date(),
+        updatedAt: new Date()
+},
+{
+  id: 17,
+        titulo: 'Cabeleireira',
+        foto: './img/classificados/cabeleireira.jpg',
+        descricao: 'Cortes, Penteados, Tratamento Capilar e mais.',
+        categoria: 'Outros',
+        tipo: 'Serviço',
+        id_morador: 9,
+        createdAt: new Date(),
+        updatedAt: new Date()
+},
+{
+  id: 18,
+        titulo: 'Bolo de Pote',
+        foto: './img/classificados/boloPote.jpg',
+        descricao: 'Bolos deliciosos de inúmeros sabores',
+        categoria: 'Alimentos e Bebidas',
+        tipo: 'Produto',
+        id_morador: 7,
+        createdAt: new Date(),
+        updatedAt: new Date()
+}
+], {});
     
   },
 

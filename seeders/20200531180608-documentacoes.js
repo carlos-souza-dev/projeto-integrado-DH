@@ -18,7 +18,15 @@ module.exports = {
       documento: '/docs/planta_apartamento.pdf',
       createdAt: new Date(),
       updatedAt: new Date() 
-    }], {});
+      },
+    {
+      id: 3,
+      nomeDoc: 'Projeto Elétrico',
+      descricao: 'Apartamento ',
+      documento: '/docs/projeto_eletrico.pdf',
+      createdAt: new Date(),
+      updatedAt: new Date() 
+  }], {});
     
   },
 

@@ -49,6 +49,21 @@ module.exports = {
         <p><span style="font-size: 18pt;">S&iacute;ndico</span></p>`,
         createdAt: new Date,
         updatedAt: new Date
+      },
+      {
+        id:3,
+        titulo: 'Reunião para discussão de Reforma de Fachada do Prédio',
+      
+        informacao: `<p><span style="font-size: 18pt;"><strong>REUNIAO GERAL </strong></span></p>
+        <p><span style="font-size: 18pt;">Convocação de Moradores para tópicos de discussão</span></p>
+        <p><span style="font-size: 18pt;">1 -Escolha Projeto para Fachada</span></p>
+        <p><span style="font-size: 18pt;">2 -Apresentação de Orçamentos</span></p>
+        <p><span style="font-size: 18pt;">2 -Opções de Mão de Obra</span></p>
+        <p><span style="font-size: 18pt;">Atenciosamente,</span></p>
+        <p><span style="font-size: 18pt;">Jo&atilde;o das Neves</span></p>
+        <p><span style="font-size: 18pt;">S&iacute;ndico</span></p>`,
+        createdAt: new Date,
+        updatedAt: new Date
       }
     ], {});
     

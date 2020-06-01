@@ -12,6 +12,16 @@ module.exports = {
          email:'joaodasneves@email.com',
          createdAt: new Date(),
          updatedAt: new Date()
+      },
+      {
+        id:2,
+         foto: './img/user/severino.jpg',
+         nome: 'Severino da Silva',
+         descricao: 'Porteiro',
+         numero:'98864-0909',
+         email:'seuseverino@email.com',
+         createdAt: new Date(),
+         updatedAt: new Date()
       }], {});
     
   },

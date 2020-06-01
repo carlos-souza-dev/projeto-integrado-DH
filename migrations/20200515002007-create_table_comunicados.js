@@ -15,10 +15,8 @@ module.exports = {
           allowNull: false,
         },
       
-        informacao: Sequelize.STRING(5000),
+        informacao: Sequelize.TEXT,
 
-        
-        
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE
 

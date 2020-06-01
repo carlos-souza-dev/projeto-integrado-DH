@@ -26,8 +26,6 @@
     "session": "^0.1.0"
   },
   "devDependencies": {
-    
     "sequelize-cli": "^5.5.1"
   }
-  
 }

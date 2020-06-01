@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false,
         },
       
-        informacao: DataTypes.STRING(5000),
+        informacao: DataTypes.TEXT,
 
              
       

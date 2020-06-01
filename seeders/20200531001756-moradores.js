@@ -104,6 +104,34 @@ module.exports = {
       createdAt: new Date(),
       updatedAt: new Date() 
     },
+    {
+      id: 8,
+      nome:'Gabriel Lopes',
+      cpf:'35960212278',
+      email: 'biel@email.com',
+      senha: bcrypt.hashSync('123', 10),
+      foto: '/img/1590888745432alex.jpg',
+      sobre: 'Estagiário',
+      admin: false,
+      dataNascimento: 20011208,
+      id_apartamento: 2,
+      createdAt: new Date(),
+      updatedAt: new Date() 
+    },
+    {
+      id: 8,
+      nome:'Renan Lopes',
+      cpf:'35975612377',
+      email: 'real@email.com',
+      senha: bcrypt.hashSync('123', 10),
+      foto: '/img/1590888745432renan.jpg',
+      sobre: 'Funcionário Público',
+      admin: false,
+      dataNascimento: 19930822,
+      id_apartamento: 2,
+      createdAt: new Date(),
+      updatedAt: new Date() 
+    },
   
   
   ]);

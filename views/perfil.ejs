@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="./css/perfil.css">
         <!-- css header, menu lateral, menu superior e footer -->
         <link rel="stylesheet" href="./css/headerMenuFooter.css">
-
         <script
             defer="defer"
             src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -65,59 +64,74 @@
                             <main class="container content">
                                 <form action="/perfil?_method=PUT" method="POST" enctype="multipart/form-data">
                                     <div class="row">
-                                        <div class="col-md-6">
-                                            <h3 class="profileTitle">Dados cadastrais</h3>
-                                            <div class="form-group">
-                                                <label for="nameInput">Nome Completo</label>
-                                                <input type="text" class="form-control" name="nome" id="nameInput" value="<%= usuario.nome %>">
+                                        <h3 class="profileTitle col-12">Dados cadastrais</h3>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="nameInput">Nome Completo</label>
+                                                    <input type="text" class="form-control" name="nome" id="nameInput" value="<%= usuario.nome %>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">E-mail</label>
+                                                    <input type="email" class="form-control" name="email" id="email" value="<%= usuario.email %>">
+                                                </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="email">E-mail</label>
-                                                <input type="email" class="form-control" name="email" id="email" value="<%= usuario.email %>">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="password">Nova senha</label>
+                                                    <input type="password" class="form-control" name="senha" id="senha">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="senha">Repetir nova senha</label>
+                                                    <input type="password" class="form-control" name="senharepeat" id="senharepeat" disabled>
+                                                </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label for="password">Nova senha</label>
-                                                <input type="password" class="form-control" name="senha" id="senha">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="senha">Repetir nova senha</label>
-                                                <input type="password" class="form-control" name="senharepeat" id="senharepeat" disabled>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h3 class="profileTitle">Perfil e Interesses</h3>
-                                            <div class="form-group">
-                                                <label for="photo">Selecione uma foto para seu perfil</label>
+                                    </div>
+                                    <div class="row">
+                                        <h3 class="profileTitle col-12">Perfil</h3>
+                                            <div class="form-group col-md-6">
+                                                <label>Foto do perfil</label>
+                                                <label for="photo" class="photo">Clique para explorar ou solte a foto aqui</label>
                                                 <input type="file" name="photo" id="photo">
                                             </div>
-                                            <div class="form-group">
+                                            <div class="form-group col-md-6">
                                                 <label for="sobre">Quem sou eu?</label>
-                                                <textarea class="form-control" name="sobre" id="sobre" rows="4" maxlength="250" placeholder="Conte para a sua vizinhança quem é você e como você pode contribuir para tornar este lugar ainda mais incrível (max. 250 caracteres)"><%=usuario.sobre%></textarea>
+                                                <textarea class="form-control" name="sobre" id="sobre" maxlength="250" placeholder="Conte para a sua vizinhança quem é você e como você pode contribuir para tornar este lugar ainda mais incrível (max. 250 caracteres)"><%=usuario.sobre%></textarea>
                                             </div>
-                                            <div class="form-group">
-                                                <label>Interesses</label>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="interesses" id="Interesse 1" value="Futebol">
-                                                    <label class="form-check-label" for="gridCheck1">Futebol</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="interesses" id="Interesse 1" value="Música">
-                                                    <label class="form-check-label" for="gridCheck1">Música</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="interesses" id="Interesse 1" value="Animais">
-                                                    <label class="form-check-label" for="gridCheck1">Animais</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="interesses" id="Interesse 1" value="Gastronomia">
-                                                    <label class="form-check-label" for="gridCheck1">Gastronomia</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" name="interesses" id="Interesse 1" value="Artesanato">
-                                                    <label class="form-check-label" for="gridCheck1">Artesanato</label>
-                                                </div>
+                                    </div>
+                                    <div class="row">
+                                        <h3 class="profileTitle col-12">Interesses</h3>
+                                        <label class="col-12">Selecione até <span id="limit"></span> interesses <span class="total-score">(seleções restantes: <span class="interessesRestantes"></span>)</span></label>
+                                            <div class="form-group col-12">
+                                                <ul class="tagsInteresse">
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse1" value="Filmes"><label for="interesse1">Filmes</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse2" value="Fotografia"><label for="interesse2">Fotografia</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse3" value="Animais e Natureza"><label for="interesse3">Animais e Natureza</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse4" value="Aventura"><label for="interesse4">Aventura</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse5" value="Artesanato"><label for="interesse5">Artesanato</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse6" value="Livros e Poesia"><label for="interesse6">Livros e Poesia</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse7" value="Beleza e Cuidados Pessoais"><label for="interesse7">Beleza e Cuidados Pessoais</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse8" value="Saúde e Fitness"><label for="interesse8">Saúde e Fitness</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse9" value="Futebol"><label for="interesse9">Futebol</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse10" value="Esportes"><label for="interesse10">Esportes</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse11" value="Artes Marciais"><label for="interesse11">Artes Marciais</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse12" value="Astrologia"><label for="interesse12">Astrologia</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse13" value="Jardinagem"><label for="interesse13">Jardinagem</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse14" value="Design & Tecnologia"><label for="interesse14">Design & Tecnologia</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse15" value="Música"><label for="interesse15">Música</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse16" value="Games"><label for="interesse16">Games</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse17" value="Moda"><label for="interesse17">Moda</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse18" value="Carros"><label for="interesse18">Carros</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse19" value="Motos"><label for="interesse19">Motos</label></li>                                                    
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse21" value="Arquitetura"><label for="interesse21">Arquitetura</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse22" value="Viagens"><label for="interesse22">Viagens</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse23" value="Cozinha"><label for="interesse23">Cozinha</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse24" value="Veganismo"><label for="interesse24">Veganismo</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse25" value="Mercado Financeiro"><label for="interesse25">Mercado Financeiro</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse26" value="Ficção Científica"><label for="interesse26">Ficção Científica</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse28" value="Filosofia"><label for="interesse28">Filosofia</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse29" value="Faça Você Mesmo (DIY)"><label for="interesse29">Faça Você Mesmo (DIY)</label></li>
+                                                </ul>
                                             </div>
-                                        </div>
                                     </div>
                                     <div class="row">
                                         <div class="options col-12">

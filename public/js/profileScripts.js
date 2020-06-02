@@ -1,5 +1,10 @@
 const novaSenha = document.getElementById('senha');
 const confirmarNovaSenha = document.getElementById('senharepeat');
+const inputFile = document.getElementById('photo');
+const photoLabel = document.querySelector('.photo');
+const interesses = document.querySelector('.tagsInteresse');
+const restante = document.querySelector('.interessesRestantes');
+const limit = document.getElementById('limit');
 
 confirmarNovaSenha.addEventListener('blur', function () {
     
@@ -32,3 +37,35 @@ novaSenha.addEventListener('blur', function () {
     }
 
 });
+
+
+inputFile.addEventListener('change', function(e) {
+    photoLabel.innerHTML = inputFile.files[0].name;
+});
+
+
+
+let limiteDeInteresses = 10;
+
+limit.innerText = limiteDeInteresses;
+restante.innerText = limiteDeInteresses;
+
+interesses.addEventListener('change', function(event) { 
+    
+    const checked = this.querySelectorAll('input[type="checkbox"]:checked');
+    const notChecked = this.querySelectorAll('input[type="checkbox"]:not(:checked)');
+        
+    if(checked.length >= limiteDeInteresses) {
+        for(interesse of notChecked) {
+            interesse.disabled = true;
+        }
+    }
+
+    if(checked.length < limiteDeInteresses) {
+        for(interesse of notChecked) {
+            interesse.disabled = false;
+        }
+    }
+
+    restante.innerText = (limiteDeInteresses - checked.length);
+})

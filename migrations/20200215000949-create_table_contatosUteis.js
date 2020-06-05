@@ -10,9 +10,13 @@ module.exports = {
         autoIncrement: true,
 
      } ,
+     foto: Sequelize.STRING,
      nome: Sequelize.STRING,
-     cpf: Sequelize.STRING(11),
-    
+     descricao: Sequelize.STRING,
+     numero:Sequelize.STRING,
+     email:Sequelize.STRING,
+     createdAt: Sequelize.DATE,
+     updatedAt: Sequelize.DATE
     });
 
   },

@@ -105,6 +105,10 @@ z-index: 2;
     font-size: 12px;
 }
 
+.card-img {
+    margin-bottom: 16px;
+}
+
 /* fim stilo cards classificados */
 
 /* Inicio stilo area para filtrar conteudo */
@@ -126,7 +130,9 @@ z-index: 2;
     justify-content: space-around;
 }
 
-.areaCamposGrandes #zero-filter, #first-filter, #second-filter {
+.areaCamposGrandes #zero-filter, 
+#first-filter, 
+#second-filter {
     width: 30%;
 }
 
@@ -225,37 +231,31 @@ z-index: 2;
     padding-right: 10px;
 }
 
-
-.interesses,
-.quemSou {
-    font-size: 14px;
-    padding-bottom: 10px;
+.interesses {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.interesses h6 {
+.section-title {
     font-size: 20px;
-}
-
-.quemSou h6{
-    font-size: 17px;
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 
-.interesses button {
-    margin-left: 5px;
-    width: 60px;
-    padding: 2px 3px;
-    font-size: 12px;
-    border: 10px;
-    border-radius: 15px;
+.interesse {
+    margin-right: 8px;
+    margin-bottom: 16px;
+    padding: 8px 12px;
+    font-size: 18px;
+    border-radius: 24px;
     font-family: 'Roboto', sans-serif;
-    font-weight: bold;
     color: black;
-    background-color: rgb(155, 158, 163);
-
+    background-color: rgba(155, 158, 163, 0.5);
 }
 
+.about-content {
+    font-size: 18px;
+}
 
 #col-md-4-bloco2 > #classificados-descricao {
     padding: 5% !important;

@@ -24,12 +24,18 @@ module.exports = (sequelize, DataTypes) => {
         timestamps:false, 
     })
   
-      Apartamento.associate  = (listaDeModelos) =>{
+    Apartamento.associate = models => {
+      Apartamento.hasMany(models.Morador, {
+        as: 'morador',
+      })
+    }; 
+    
+    Apartamento.associate  = (listaDeModelos) =>{
           Apartamento.belongsTo(listaDeModelos.Condominio,{
-              foreingKey:'condominio_id',
+              foreignKey:'condominio_id',
               as: 'condominio',
           })
-      }
+      };
 
 
     return Apartamento;

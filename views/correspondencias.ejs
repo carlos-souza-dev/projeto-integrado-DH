@@ -63,18 +63,33 @@
                <!-- menu superior -->
                <%- include('./partials/menuSupMinhaCasa') %>
 
+               <div class="areaBotaoCad">
+                    <div>
+                        <% if(usuario.admin) { %>
+                        <button
+                            type="button"
+                            id="botaoCadastro"
+                            class="btn btn-secondary btn-sm"
+                            data-toggle="modal"
+                            data-target="#modalCadastroCorresp">
+                            Novo Registro
+                        </button>
+                        <% } %>
+                    </div>
+                </div>
 
                 <!-- area do centro da tela -->
                 <div class="centroTelaCorrespondencias">
+                    <% if (correspondencia) { %>
                     <section class="correspondencia-section">
 
-                        <% if (correspondencia) { %>
+                        
                         <article>
                             <div class="correspondencia-title">Recebido em</div>
 
                             <% correspondencia.forEach(corresp =>  { %>
                             
-                            <div class="date" id="last-child"><%= corresp.createdAt %></div>
+                            <div class="date" id="last-child"> <%= ("0" + corresp.createdAt.getDate()).slice(-2) + "/" + ("0"+(corresp.createdAt.getMonth()+1)).slice(-2) + "/" + corresp.createdAt.getFullYear() %> %></div>
                              <%})%>
 
                         </article>
@@ -92,10 +107,54 @@
                             <div class="receiver" id="last-child"><%= corresp.destinatario %></div>
                             <%})%>
                         </article>
-                        <%}%>
+                        
 
                     </section>
+                    <%} else {%> 
+                        <div class="emptyComunicados">
+                            Não há Correspondencias
+                        </div>
+                        <% } %>
                 </div>
+
+
+                <div class="modal" id="modalCadastroCorresp" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Adicionar Correspondencia</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form  action="/registroCorrespondencia" method="POST" >  
+                                   
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Tipo</label>
+                                        <input class="form-control" type="text" name="tipo" id="exampleFormControlTextarea1" rows="1" placeholder="Digite o Tipo da Correspondência"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Destinatário</label>
+                                        <input class="form-control" type="text" name="destinatario" id="exampleFormControlTextarea1" rows="1" placeholder="Nome do destinatário"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Apartamento</label>
+                                        <input class="form-control" type="text" name="apartamento" id="exampleFormControlTextarea1" rows="1" placeholder="Numero do apartamento"></input>
+                                    </div>
+                                         
+    
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-secondary">Salvar</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
                  <!-- footer -->
                  <%- include('./partials/footer') %>
 

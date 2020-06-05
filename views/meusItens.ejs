@@ -60,32 +60,10 @@
                 </div>
 
                 <!-- menu superior -->
-                <nav class="slidemenu">
 
-                    <!-- Item 1 -->
-                    <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"/>
-                    <label for="slide-item-1">
-                        <a href="classificados">Classificados</a>
-                    </label>
+                <%- include('./partials/menuSupVizinhanca') %>
 
-                    <!-- Item 2 -->
-                    <input
-                        type="radio"
-                        name="slideItem"
-                        id="slide-item-2"
-                        class="slide-toggle"
-                        checked="checked"/>
-                    <label for="slide-item-2">
-                        <a>Meus Itens</a>
-                    </label>
-
-                    <div class="clear"></div>
-
-                    <!-- Bar -->
-                    <div class="slider">
-                        <div class="bar"></div>
-                    </div>
-                </nav>
+               
 
                 <!-- botao para adicionar cadastro, puxa a modal que está no fim deste código
                 -->
@@ -105,37 +83,128 @@
                 <!-- area do centro da tela -->
                 <div class="centroTelaClassificados">
                     <!-- cards dos meus ítens -->
+                    
+                    <% if (classificados) { %>
+                        <% classificados.forEach(classificado => { %>
                     <div class="card classificado">
                         <img
                             class="card-img-top"
-                            src="./img/classificados/aulas violão.png"
+                            src="<%=classificado.foto%>"
                             alt="Imagem de capa do card">
                         <div class="card-corpo">
-                            <div class="card-titulo">Aulas de Violão</div>
-                            <div class="card-subtitulo">Juliana B. (B-74)</div>
+                            <div class="card-titulo"><%=classificado.titulo%></div>
+                            <div class="card-subtitulo"><%=classificado.morador.nome%> <%=classificado.morador.id_apartamento%></div>
 
                         </div>
                         <div class="toolsCardAnuncio">
-                            <a data-toggle="modal" data-target="#alterarAnuncio"><img src="./img/icon/edit.svg" alt=""></a>
+                            <a data-toggle="modal" data-target="#<%=classificado.id%>"><img src="./img/icon/edit.svg" alt=""></a>
                             <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
                         </div>
                     </div>
-                    <div class="card classificado">
-                        <img
-                            class="card-img-top"
-                            src="./img/classificados/assistência.png"
-                            alt="Imagem de capa do card">
-                        <div class="card-corpo">
-                            <div class="card-titulo">Assistência e reparos</div>
-                            <div class="card-subtitulo">Lucas M. (C-84)</div>
-
+                     <!-- modal para confirmar exclusão do item , este modal surge centralizado na
+                tela -->
+                <div
+                class="modal fade"
+                id="confirmarExclusao"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <form  action="/excluirClassificado/<%=classificado.id%>?_method=DELETE" method="POST">  
+                        <div class="modal-body">
+                            Tem certeza que deseja excluir?
                         </div>
-                        <div class="toolsCardAnuncio">
-                            <a data-toggle="modal" data-target="#alterarAnuncio"><img src="./img/icon/edit.svg" alt=""></a>
-                            <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-danger">Tenho certeza</button>
                         </div>
+                    </form>
                     </div>
                 </div>
+            </div>
+
+             <!-- modal para alterar anuncio, o conteudo aparece puxando do banco -->
+             <div class="modal" id="<%=classificado.id%>" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Alterar Anúncio</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/updateClassificado/<%=classificado.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Título</label>
+                                    <input class="form-control" name="titulo" value="<%=classificado.titulo%>" id="exampleFormControlTextarea1" rows="1"></input>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Descrição</label>
+                                    <input class="form-control" name="descricao" value="<%=classificado.descricao%>" id="exampleFormControlTextarea1" rows="3"></input>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Imagem</label>
+                                    <input type="file" name="foto" class="form-control-file" id="exampleFormControlFile1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Tipo</label>
+                                    <select class="form-control" type="text" name="tipo"  id="exampleFormControlTextarea1">
+                                        <option disabled selected><%= classificado.tipo %></option>
+                                        
+                                        <option value="Serviço">Serviço</option>
+                                        <option value="Produto">Produto</option>
+                                        
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Categoria</label>
+                                    <select class="form-control" type="text" name="categoria"  id="exampleFormControlTextarea1">
+                                        <option disabled selected><%= classificado.categoria %> </option>
+                                        
+                                        <option value="Alimentos e bebidas">Alimentos e bebidas</option>
+                                        <option value="Animais">Animais</option>
+                                        <option value="Beleza e cuidado pessoal">Beleza e cuidado pessoal</option>
+                                        <option value="Calcados, roupas e bolsas">Calçados, roupas e bolsas</option>
+                                        <option value="Celulares e telefonia">Celulares e telefonia</option>
+                                        <option value="Educação">Educação</option>
+                                        <option value="Eletrodomésticos">Eletrodomésticos</option>
+                                        <option value="Eletrônicos">Eletrônicos</option>
+                                        <option value="Esportes">Esportes</option>
+                                        <option value="Ferramentas e construção">Ferramentas e construção</option>
+                                        <option value="Festas">Festas</option>
+                                        <option value="Games">Games</option>
+                                        <option value="Informática">Informática</option>
+                                        <option value="Instrumentos musicais">Instrumentos musicais</option>
+                                        <option value="Jóias e acessórios">Jóias e acessórios</option>
+                                        <option value="Livros e revistas">Livros e revistas</option>
+                                        <option value="Saúde">Saúde</option>
+                                        <option value="Outros">Outros</option>
+                                        
+        
+                                    </select>
+                                </div>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-secondary">Salvar</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+
+
+                    <% })%>
+                    <% } else {%>    
+                        <div class="emptyComunicados">
+                            Não há anuncios cadastrados
+                        </div>
+                        <% } %>
+
 
                 <!-- modal para cadastrar novos itens -->
 
@@ -149,85 +218,70 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                                <form action="/criarClassificado" method="POST" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1">Título</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        <input class="form-control" name="titulo" id="exampleFormControlTextarea1" rows="1"></input>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlTextarea1">Descrição</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        <input class="form-control" name="descricao" id="exampleFormControlTextarea1" rows="3"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Tipo</label>
+                                        <select class="form-control" type="text" name="tipo"  id="exampleFormControlTextarea1">
+                                            <option disabled selected>Selecione o tipo</option>
+                                            
+                                            <option value="Serviço">Serviço</option>
+                                            <option value="Produto">Produto</option>
+                                            
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Categoria</label>
+                                        <select class="form-control" type="text" name="categoria"  id="exampleFormControlTextarea1">
+                                            <option disabled selected>Selecione a categoria</option>
+                                            
+                                            <option value="Alimentos e bebidas">Alimentos e bebidas</option>
+                                            <option value="Animais">Animais</option>
+                                            <option value="Beleza e cuidado pessoal">Beleza e cuidado pessoal</option>
+                                            <option value="Calcados, roupas e bolsas">Calçados, roupas e bolsas</option>
+                                            <option value="Celulares e telefonia">Celulares e telefonia</option>
+                                            <option value="Educação">Educação</option>
+                                            <option value="Eletrodomésticos">Eletrodomésticos</option>
+                                            <option value="Eletrônicos">Eletrônicos</option>
+                                            <option value="Esportes">Esportes</option>
+                                            <option value="Ferramentas e construção">Ferramentas e construção</option>
+                                            <option value="Festas">Festas</option>
+                                            <option value="Games">Games</option>
+                                            <option value="Informática">Informática</option>
+                                            <option value="Instrumentos musicais">Instrumentos musicais</option>
+                                            <option value="Jóias e acessórios">Jóias e acessórios</option>
+                                            <option value="Livros e revistas">Livros e revistas</option>
+                                            <option value="Saúde">Saúde</option>
+                                            <option value="Outros">Outros</option>
+                                            
+            
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleFormControlFile1">Imagem</label>
-                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                                        <input type="file" name="foto" class="form-control-file" id="exampleFormControlFile1">
                                     </div>
-                                </form>
+                                
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-secondary">Salvar</button>
+                                <button type="submit" class="btn btn-secondary">Salvar</button>
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>
 
-                <!-- modal para confirmar exclusão do item , este modal surge centralizado na
-                tela -->
-                <div
-                    class="modal fade"
-                    id="confirmarExclusao"
-                    tabindex="-1"
-                    role="dialog"
-                    aria-labelledby="exampleModalCenterTitle"
-                    aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
+               
 
-                            <div class="modal-body">
-                                Tem certeza que deseja excluir?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-danger">Tenho certeza</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- modal para alterar anuncio, o conteudo aparece puxando do banco -->
-                <div class="modal" id="alterarAnuncio" tabindex="-1" role="dialog">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Alterar Anúncio</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Título</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlTextarea1">Descrição</label>
-                                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Imagem</label>
-                                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-secondary">Salvar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
                 <!-- footer -->
                 <%- include('./partials/footer') %>
 

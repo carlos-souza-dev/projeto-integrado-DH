@@ -1,27 +1,34 @@
 const Sequelize = require("sequelize");
 const {Correspondencias} = require("../models");
+const Op = Sequelize.Op;
+
 
 const correspondenciaController = {
     create: (req, res) => {
-        return res.render("registroCorrespondencia")
+        return res.render("correspondencias")
     },
     store: async (req, res) => {
         const {tipo,destinatario,apartamento} = req.body;
 
-        const conteudo = await Correspondencias.create(
+        const correspondencia = await Correspondencias.create(
             {tipo,destinatario,apartamento}
         )
        
         // console.log(titulo, informacao)
-        return res.render("registroCorrespondencia");
-
+        return res.redirect("/correspondencias");
 
     },
 
     exibir: async (req, res) => {
-        let correspondencia = await Correspondencias.findAll();
+        const correspondencia = await Correspondencias.findAll({
+            where:{
+                apartamento:{
+                 [Op.eq] : req.session.user.id_apartamento
+                }  
+             }
+        });
         
-        return res.render('correspondencias', {correspondencia})
+        return res.render('correspondencias', {correspondencia, usuario: req.session.user})
     }
 
 };

@@ -60,17 +60,35 @@
 
                <!-- menu superior -->
                <%- include('./partials/menuSupMinhaCasa') %>
+               
+               <% if(usuario.admin) { %>
+               <div class="areaBotaoCad">
+                    <div>
+                        <button
+                            type="button"
+                            id="botaoCadastro"
+                            class="btn btn-secondary btn-sm"
+                            data-toggle="modal"
+                            data-target="#modalCadastroContato">
+                            Novo Contato
+                        </button>
+                    </div>
+                </div>
+                <% } %>
+
 
                 <!-- area do centro da tela -->
                 <div class="centroTelaContatosUteis">
+                 <!-- card do contato -->
+                 <% if (contato) { %>
 
-                    <!-- card do contato -->
+                <% contato.forEach(contatos => { %>
 
                     <div class="cardContato ">
 
                         <!-- div da foto do morador -->
                         <div class="imgContato">
-                            <img src="./img/user/joao_das_neves.jpg" alt="...">
+                            <img src="<%=contatos.foto%>" alt="...">
                         </div>
 
                         <!-- area que organiza os itens do texto do card -->
@@ -79,59 +97,217 @@
                             <!-- div que contem o nome do morador e os icones para fazer alteração -->
 
                             <div class="card-titulo">
-                                <b>João das Neves</b>
+                                <b><%= contatos.nome %></b>
                             </div>
-                            <div class="card-text"><b>Seu Síndico</b></div>
+                            <div class="card-text"><b><%= contatos.descricao %></b></div>
                             <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
                             linhas-->
 
                             <div class="card-text">
-                                (11) 987678-8277
+                                <%= contatos.numero %>
                             </div>
-                            <div class="card-text">joaodasneves@gmail.com</div>
+                            <div class="card-text"><%= contatos.email %></div>
                         </div>
                         <div class="iconesContato">
                             <img src="./img/icon/phone_in_talk.svg" alt="">
                             <img src="./img/icon/mail.svg" alt="">
                             <img src="./img/icon/whatsApp.svg" alt="">
-
+                    
+                            
                         </div>
-                    </div>
+                        <% if(usuario.admin) { %>
+                        <a data-toggle="modal" data-target="#modalAlterarContato"><img src="./img/icon/edit.svg" alt=""></a>
+                        <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                        <% } %>
+                        </div>
 
-                    <!-- card com outros contatos -->
-                    <div class="cardOutrosContatos ">
 
-                        <!-- area que organiza os itens do texto do card -->
-                        <div class="corpoCardOutrosContatos">
 
-                            <!-- div que contem o nome do contato e os icones para fazer alteração -->
-
-                            <div class="card-tituloOC">Outros Contatos</div><br>
-
-                            <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
-                            linhas-->
-                            <!-- div para agrupar os textos e ficarem do lado direito do card -->
-                            <div class="textoCardOutrosContatos">
-                                <div class="card-text">
-                                    <b>Administração</b>
-                                    (11)3453-9899</div><br>
-                                <div class="card-text">
-                                    <b>Portaria</b>
-                                    (11) 5234-4092</div>
-                                
+                    <div
+                    class="modal fade"
+                    id="confirmarExclusao"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <form  action="/excluirContatos/<%=contatos.id%>?_method=DELETE" method="POST">  
+                            <div class="modal-body">
+                                Tem certeza que deseja excluir?
                             </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-danger">Tenho certeza</button>
+                            </div>
+                        </form>
                         </div>
-
                     </div>
-
+               
+                            
+               
                 </div>
+ 
+                <!-- modal para alterar dados do contato cadastrado -->
 
-                 <!-- footer -->
-                 <%- include('./partials/footer') %>
-            </div>
+                    
+                <div class="modal" id="modalAlterarContato" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Editar Contato</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                    <div class="modal-body">
+                                        <form  action="/atualizarContatos/<%=contatos.id%>?_method=PUT" method="POST" enctype="multipart/form-data"> 
+                                              
+                                            <div class="form-group">
+                                                <label for="exampleFormControlFile1">Foto</label>
+                                                <input
+                                                    type="file"
+                                                    name="foto"
+                                                    class="form-control-file"
+                                                    id="exampleFormControlFile1">
+                                            </div>
 
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Nome Completo</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        value="<%=contatos.nome%>"
+                                                        name="nome"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Descrição</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="descricao"
+                                                        value="<%=contatos.descricao%>"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Numero</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="numero"
+                                                        value="<%=contatos.numero%>"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Email</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="email"
+                                                        value="<%=contatos.email%>"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                               
+            
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                <button type="submit" class="btn btn-secondary">Salvar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                         
+                    
+                            <% })%>
+
+                            <% } %>
+                        
+                    <!-- modal para cadastrar novo Contato -->
+
+                    <div class="modal" id="modalCadastroContato" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Cadastrar Contato</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                    <div class="modal-body">
+                                        <form  action="/contatosUteis" method="POST" enctype="multipart/form-data"> 
+                                              
+                                            <div class="form-group">
+                                                <label for="exampleFormControlFile1">Foto</label>
+                                                <input
+                                                    type="file"
+                                                    name="foto"
+                                                    class="form-control-file"
+                                                    id="exampleFormControlFile1">
+                                            </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Nome Completo</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="nome"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Descrição</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="descricao"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Numero</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="numero"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Email</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="email"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                               
+            
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                <button type="submit" class="btn btn-secondary">Salvar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                        </div>         
+                    </div>     
+                    
+            <!-- footer -->
+            <%- include('./partials/footer') %>
+           </div>
+       
+       
         </div>
-
 
         <!-- jQuery CDN - Slim version (=without AJAX) -->
         <script

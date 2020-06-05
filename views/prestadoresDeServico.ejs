@@ -38,270 +38,295 @@
             <!-- Menu Retrátil -->
             <%- include('./partials/menuRetratil') %>
 
-            <!-- Conteudo da página -->
+                <!-- Conteudo da página -->
 
-            <div id="content">
-                <!-- Header -->
-                <div class="mainHeader">
-                    <div class="titulo" id="tit">
-                        <div class="nomePag">
-                            <p>Minha Casa</p>
+                <div id="content">
+                    <!-- Header -->
+                    <div class="mainHeader">
+                        <div class="titulo" id="tit">
+                            <div class="nomePag">
+                                <p>Minha Casa</p>
 
-                        </div>
-                        <div class="finalidPag">
-                            <p >Tudo sobre sua residência</p>
-                        </div>
-
-                    </div>
-                  <!-- inclui o logo mobile e o avatar em uma partial  -->
-                  <%- include('./partials/avatar') %>
-                  
-                </div>
-
-               
-                <!-- menu superior -->
-                <%- include('./partials/menuSupMinhaCasa') %>
-
-
-                <!-- botao para adicionar cadastro -->
-                <div class="areaBotaoCad">
-                    <div>
-                        <button
-                            type="button"
-                            id="botaoCadastro"
-                            class="btn btn-secondary btn-sm"
-                            data-toggle="modal"
-                            data-target="#modalCadastroPrestador">
-                            Novo Cadastro
-                        </button>
-
-                    </div>
-                </div>
-
-                <!-- area do centro da tela -->
-                <div class="centroTelaPrestServico">
-
-                    <!-- cards dos prestadores de serviço -->
-
-                    <div class="cardPrestServico">
-
-                        <!-- div da foto do prestador de serviço -->
-                        <div class="imgPrestServ">
-                            <img src="./img/user/jackson.png" alt="...">
-                        </div>
-
-                        <!-- area que organiza os itens do texto do card -->
-                        <div class="corpoCard">
-
-                            <!-- div que contem o nome do prestador e os icones para fazer alteração -->
-                            <div class="tituloAndTools">
-                                <div class="card-titulo">Jackson Bardo</div>
-                                <div class="toolsCardPrestServ">
-                                    <a data-toggle="modal" data-target="#modalAlterarPrestador"><img src="./img/icon/edit.svg" alt=""></a>
-                                    <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
-                                </div>
                             </div>
-                            <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
-                            linhas-->
-                            <div class="card-text">
-                                <b>Data de Nascimento:</b>
-                                14/11/1983</div>
-                            <div class="card-text">
-                                <b>RG:</b>
-                                45.334.657-9</div>
-                            <div class="card-text">
-                                <b>CPF:</b>
-                                345-654-758-66</div>
-                            <div class="card-text">
-                                <b>Ocupação:</b>
-                                Professor de Musica</div>
-                        </div>
-
-                    </div>
-
-                    <div class="cardPrestServico">
-
-                        <!-- div da foto do morador -->
-                        <div class="imgPrestServ">
-                            <img src="./img/user/tissaia.jpg" alt="...">
-                        </div>
-
-                        <!-- area que organiza os itens do texto do card -->
-                        <div class="corpoCard">
-
-                            <!-- div que contem o nome do morador e os icones para fazer alteração -->
-                            <div class="tituloAndTools">
-                                <div class="card-titulo">Tissaia de Vries</div>
-                                <div class="toolsCardPrestServ">
-                                    <a data-toggle="modal" data-target="#modalAlterarPrestador"><img src="./img/icon/edit.svg" alt=""></a>
-                                    <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
-                                </div>
-                            </div>
-                            <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
-                            linhas-->
-                            <div class="card-text">
-                                <b>Data de Nascimento:</b>
-                                14/12/1974</div>
-                            <div class="card-text">
-                                <b>RG:</b>
-                                34.567.345-3
-                                <div class="card-text">
-                                    <b>CPF:</b>
-                                    282.474.258-55</div>
-                                <div class="card-text">
-                                    <b>Ocupação:</b>
-                                    Terapêuta</div>
+                            <div class="finalidPag">
+                                <p >Tudo sobre sua residência</p>
                             </div>
 
                         </div>
+                        <!-- inclui o logo mobile e o avatar em uma partial -->
+                        <%- include('./partials/avatar') %>
 
-                    </div>
+                        </div>
 
-                    <!-- modal para cadastrar novo Prestador de serviço -->
+                        <!-- menu superior -->
+                        <%- include('./partials/menuSupMinhaCasa') %>
 
-                    <div class="modal" id="modalCadastroPrestador" tabindex="-1" role="dialog">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Adicionar Prestador de Serviço</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
+                            <!-- botao para adicionar cadastro -->
+                            <div class="areaBotaoCad">
+                                <div>
+                                    <button
+                                        type="button"
+                                        id="botaoCadastro"
+                                        class="btn btn-secondary btn-sm"
+                                        data-toggle="modal"
+                                        data-target="#modalCadastroPrestador">
+                                        Novo Cadastro
                                     </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Nome completo</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Data nascimento</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">RG</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">CPF</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlFile1">Foto</label>
-                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-secondary">Salvar</button>
+
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- modal para alterar dados do morador cadastrado -->
+                            <!-- area do centro da tela -->
+                            <div class="centroTelaPrestServico">
 
-                    <div class="modal" id="modalAlterarPrestador" tabindex="-1" role="dialog">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Alterar dados Prestador de Serviço</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Nome completo</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                <!-- cards dos prestadores de serviço -->
+
+                                <% if (prestadores) { %>
+                                    <% prestadores.forEach(prestador => { %>
+                                        <div class="cardPrestServico">
+
+                                            <!-- div da foto do prestador de serviço -->
+                                            <div class="imgPrestServ">
+                                                <img src="<%=prestador.foto%>" alt="...">
+                                            </div>
+
+                                            <!-- area que organiza os itens do texto do card -->
+                                            <div class="corpoCard">
+
+                                                <!-- div que contem o nome do prestador e os icones para fazer alteração -->
+                                                <div class="tituloAndTools">
+                                                    <div class="card-titulo"><%=prestador.nome%></div>
+                                                    <div class="toolsCardPrestServ">
+                                                        <a data-toggle="modal" data-target="#modalAlterarPrestador"><img src="./img/icon/edit.svg" alt=""></a>
+                                                        <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                                                    </div>
+                                                </div>
+                                                <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
+                                                linhas-->
+                                                <!-- <div class="card-text"> <b>Data de Nascimento:</b> 14/11/1983</div> -->
+                                                <div class="card-text">
+                                                    <b>RG:</b>
+                                                    <%=prestador.rg%></div>
+                                                <div class="card-text">
+                                                    <b>CPF:</b>
+                                                    <%=prestador.cpf%></div>
+                                                <div class="card-text">
+                                                    <b>Ocupação:</b><%=prestador.categoria%>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">Data nascimento</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+
+                                        <div
+                                            class="modal fade"
+                                            id="confirmarExclusao"
+                                            tabindex="-1"
+                                            role="dialog"
+                                            aria-labelledby="exampleModalCenterTitle"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                                <div class="modal-content">
+                                                    <form action="/excluirPrestador/<%=prestador.id%>?_method=DELETE" method="POST">
+                                                        <div class="modal-body">
+                                                            Tem certeza que deseja excluir?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                                            <button type="submit" class="btn btn-danger">Tenho certeza</button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">RG</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                                        <!-- modal para alterar dados do morador cadastrado -->
+
+                                        <div class="modal" id="modalAlterarPrestador" tabindex="-1" role="dialog">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title">Alterar dados Prestador de Serviço</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form
+                                                            action="/atualizarPrestador/<%=prestador.id%>?_method=PUT"
+                                                            method="POST"
+                                                            enctype="multipart/form-data">
+
+                                                            <div class="form-group">
+                                                                <label for="exampleFormControlTextarea1">Nome completo</label>
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    name="nome"
+                                                                    value="<%=prestador.nome%>"
+                                                                    id="exampleFormControlTextarea1"
+                                                                    rows="1"></input>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="exampleFormControlTextarea1">RG</label>
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    name="rg"
+                                                                    value="<%=prestador.rg%>"
+                                                                    id="exampleFormControlTextarea1"
+                                                                    rows="1"></input>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="exampleFormControlTextarea1">CPF</label>
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    name="cpf"
+                                                                    value="<%=prestador.cpf%>"
+                                                                    id="exampleFormControlTextarea1"
+                                                                    rows="1"></input>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="exampleFormControlTextarea1">Ocupação</label>
+                                                                <input
+                                                                    type="text"
+                                                                    class="form-control"
+                                                                    name="categoria"
+                                                                    value="<%=prestador.categoria%>"
+                                                                    id="exampleFormControlTextarea1"
+                                                                    rows="1"></input>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="exampleFormControlFile1">Foto</label>
+                                                                <input
+                                                                    type="file"
+                                                                    name="foto"
+                                                                    class="form-control-file"
+                                                                    id="exampleFormControlFile1">
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                                <button type="submit" class="btn btn-secondary">Salvar</button>
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlTextarea1">CPF</label>
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+
+                                            <% })%><% } %>
+
+                                            <!-- modal para cadastrar novo Prestador de serviço -->
+
+                                            <div class="modal" id="modalCadastroPrestador" tabindex="-1" role="dialog">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title">Adicionar Prestador de Serviço</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form action="/cadastroPrestador" method="POST" enctype="multipart/form-data">
+
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlTextarea1">Nome completo</label>
+                                                                    <input
+                                                                        type="text"
+                                                                        class="form-control"
+                                                                        name="nome"
+                                                                        id="exampleFormControlTextarea1"
+                                                                        rows="1"></input>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlTextarea1">RG</label>
+                                                                    <input
+                                                                        type="text"
+                                                                        class="form-control"
+                                                                        name="rg"
+                                                                        id="exampleFormControlTextarea1"
+                                                                        rows="1"></input>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlTextarea1">CPF</label>
+                                                                    <input
+                                                                        type="text"
+                                                                        class="form-control"
+                                                                        name="cpf"
+                                                                        id="exampleFormControlTextarea1"
+                                                                        rows="1"></input>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlTextarea1">Ocupação</label>
+                                                                    <input
+                                                                        type="text"
+                                                                        class="form-control"
+                                                                        name="categoria"
+                                                                        id="exampleFormControlTextarea1"
+                                                                        rows="1"></input>
+                                                                </div>
+
+                                                                <div class="form-group">
+                                                                    <label for="exampleFormControlFile1">Foto</label>
+                                                                    <input
+                                                                        type="file"
+                                                                        name="foto"
+                                                                        class="form-control-file"
+                                                                        id="exampleFormControlFile1">
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                                <button type="submit" class="btn btn-secondary">Salvar</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <%- include('./partials/footer') %>
+                                            </div>
+
                                         </div>
-                                        <div class="form-group">
-                                            <label for="exampleFormControlFile1">Foto</label>
-                                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-secondary">Salvar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- modal para confirmar exclusão do prestador de serviço , este modal surge
-                    centralizado na tela -->
-                    <div
-                        class="modal fade"
-                        id="confirmarExclusao"
-                        tabindex="-1"
-                        role="dialog"
-                        aria-labelledby="exampleModalCenterTitle"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
+                                        <!-- jQuery CDN - Slim version (=without AJAX) -->
+                                        <script
+                                            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                                            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                                            crossorigin="anonymous"></script>
+                                        <!-- Popper.JS -->
+                                        <script
+                                            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+                                            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+                                            crossorigin="anonymous"></script>
+                                        <!-- Bootstrap JS -->
+                                        <script
+                                            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+                                            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+                                            crossorigin="anonymous"></script>
+                                        <!-- jQuery Custom Scroller CDN -->
+                                        <script
+                                            src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-                                <div class="modal-body">
-                                    Tem certeza que deseja excluir?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-danger">Tenho certeza</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                        <script type="text/javascript">
+                                            $(document).ready(function () {
+                                                $("#sidebar").mCustomScrollbar({theme: "minimal"});
 
-                </div>
-                <%- include('./partials/footer') %>
-            </div>
+                                                $('#sidebarCollapse').on('click', function () {
+                                                    $('#sidebar, #content').toggleClass('active');
+                                                    $('.collapse.in').toggleClass('in');
+                                                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                                                });
+                                            });
+                                        </script>
+                                    </body>
 
-        </div>
-
-        <!-- jQuery CDN - Slim version (=without AJAX) -->
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <!-- Popper.JS -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-            crossorigin="anonymous"></script>
-        <!-- Bootstrap JS -->
-        <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-            crossorigin="anonymous"></script>
-        <!-- jQuery Custom Scroller CDN -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#sidebar").mCustomScrollbar({theme: "minimal"});
-
-                $('#sidebarCollapse').on('click', function () {
-                    $('#sidebar, #content').toggleClass('active');
-                    $('.collapse.in').toggleClass('in');
-                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-                });
-            });
-        </script>
-    </body>
-
-</html>
+                                </html>

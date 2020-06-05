@@ -15,13 +15,10 @@ module.exports = {
           allowNull: false,
         },
       
-        informacao: Sequelize.STRING,
-
+        informacao: Sequelize.TEXT,
         data: Sequelize.DATE,
-        
-        
-    createdAt: Sequelize.DATE,
-    updatedAt: Sequelize.DATE
+        createdAt: Sequelize.DATE,
+        updatedAt: Sequelize.DATE
 
       });
      

@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const userController = require("../controllers/userController");
+//const {check, validationResult, body} = require('express-validator')
 //const multer = require('multer');
 //const path = require('path');
  
@@ -18,7 +20,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-
+router.post('/registro', userController.store)
 //const userController = require("../controllers/userController")
 
 //router.post('/home', upload.any(), userController.store);

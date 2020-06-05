@@ -62,43 +62,113 @@
                 
                 <hr class="docSepLine">
 
+                <% if(usuario.admin) { %>
+                    <div class="areaBotaoCad">
+                        <div>
+                            <button
+                                type="button"
+                                id="botaoCadastro"
+                                class="btn btn-secondary btn-sm"
+                                data-toggle="modal"
+                                data-target="#modalCadastroDocumento">
+                                Adicionar Documento
+                            </button>
+                        </div>
+                    </div>
+                    <% } %>
+
                 <!-- area do centro da tela -->
                 <div class="centroTelaClassificados">
                     <!-- cards dos classificados -->
-                    <div class="card classificado">
-                        <img
-                            class="card-img-top card-img-Borda"
-                            src="./img/documentacao/estatuto.png"
-                            alt="Imagem de capa do card">
-                        <div class="card-corpo">
-                            <div class="card-titulo">Estatuto do Condomínio</div>
-                            <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
-                        </div>
-                    </div>
-                    <div class="card classificado">
-                        <img
-                            class="card-img-top card-img-Borda"
-                            src="./img/documentacao/planta_hidraulica_colunaAB.svg"
-                            alt="Imagem de capa do card"
-                        > 
+                  <% if (docs) { %>
 
-                        <div class="card-corpo">
-                            <div class="card-titulo">Planta hidráulica - Colunas A/B</div>
-                            <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
-                        </div>
-                    </div>
-                    <div class="card classificado">
+                    <% docs.forEach(documento => { %>
+                        
+                        <div class="card classificado">
+                        <a href="<%=documento.documento%>" target="_blank">
                         <img
                             class="card-img-top card-img-Borda"
                             src="./img/documentacao/planta_baixa_colunaAB.svg"
                             alt="Imagem de capa do card">
                         <div class="card-corpo">
-                            <div class="card-titulo">Planta baixa - Colunas A/B</div>
-                            <div class="descricaoCard">Lorem ipsum dolor sit amet consectetur</div>
+                            <div class="card-titulo"><%= documento.nomeDoc %></div>
+                            <div class="descricaoCard"><%= documento.descricao %></div>
+                            <% if(usuario.admin) { %>
+                            <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                            <% } %>
                         </div>
+                    </a>
                     </div>
+
+
+                    
+        
+                        <div
+                            class="modal fade"
+                            id="confirmarExclusao"
+                            tabindex="-1"
+                            role="dialog"
+                            aria-labelledby="exampleModalCenterTitle"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <form  action="/excluirDocumentacao/<%=documento.id%>?_method=DELETE" method="POST">  
+                                    <div class="modal-body">
+                                        Tem certeza de que deseja excluir este documento? A ação não poderá ser desfeita.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-danger">Tenho certeza</button>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+
+
+                   <% })%>
+
+
+                  <% } %>
+                   
+                    
             </div>
 
+            <div class="modal" id="modalCadastroDocumento" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Adicionar Documento</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form  action="/documentacoes" method="POST" enctype="multipart/form-data">  
+                               
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Nome Documento</label>
+                                    <input class="form-control" type="text" name="nomeDoc" id="exampleFormControlTextarea1" rows="1"></input>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">Descrição</label>
+                                    <input class="form-control" type="text" name="descricao" id="exampleFormControlTextarea1" rows="1"></input>
+                                </div>
+                                      <label for="documento">Selecione o arquivo</label>
+                                        <input type="file" name="documento" id="doc">
+                                        
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                    <button type="submit" class="btn btn-secondary">Salvar</button>
+                                </div>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
           
             <!-- footer -->
             <%- include('./partials/footer') %> 

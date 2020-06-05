@@ -12,18 +12,18 @@ module.exports = (sequelize, DataTypes) => {
           allowNull: false,
         },
       
-        informacao: DataTypes.STRING,
+        informacao: DataTypes.TEXT,
 
         data: DataTypes.DATE,
 
-         id_apartamentos: { 
-         type: DataTypes.INTEGER,
-         
-      
-    }},{
-      tableName:'comunicados'
-           
-      })
+        //  id_apartamentos: { 
+        //  type: DataTypes.INTEGER,
+        //  }
+        },
+        {
+          timestemp: true,  
+          tableName:'comunicados'
+        })
 
       
     //   Comunicado.associate  = (listaDeModelos) =>{

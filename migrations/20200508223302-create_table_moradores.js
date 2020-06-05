@@ -33,10 +33,16 @@ module.exports = {
     },
     foto: Sequelize.STRING(245),
     sobre: Sequelize.STRING(245),
+    interesses:  {
+      type: Sequelize.STRING,
+    },
     admin: {
       type: Sequelize.BOOLEAN,
     },
     dataNascimento: Sequelize.DATEONLY,
+    id_apartamento: {
+      type: Sequelize.INTEGER,
+    },
     createdAt: Sequelize.DATE,
     updatedAt: Sequelize.DATE
     });

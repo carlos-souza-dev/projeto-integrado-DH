@@ -67,34 +67,12 @@
                     <%- include('./partials/avatar') %>
                
                 </div>
-
+                
                 <!-- menu superior -->
-                <nav class="slidemenu">
+                
+                <%- include('./partials/menuSupVizinhanca') %>
 
-                    <!-- Item 1 -->
-                    <input
-                        type="radio"
-                        name="slideItem"
-                        id="slide-item-1"
-                        class="slide-toggle"
-                        checked="checked"/>
-                    <label for="slide-item-1">
-                        <a href="classificados.html">Classificados</a>
-                    </label>
-
-                    <!-- Item 2 -->
-                    <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
-                    <label for="slide-item-2">
-                        <a href="meusItens">Meus Itens</a>
-                    </label>
-
-                    <div class="clear"></div>
-
-                    <!-- Bar -->
-                    <div class="slider">
-                        <div class="bar"></div>
-                    </div>
-                </nav>
+               
 
                 <nav class="navbar navbar-light campo-pesquisa" id="areaFiltro">
 
@@ -103,67 +81,66 @@
                     </div>
                     <div class="areaCamposGrandes">
                         <div class="campoSearch" id="zero-filter">
-                            <form class="form-inline">
+                            <form action="/buscarClassificado" method="POST" class="form-inline">
                                 <input
                                     class="form-control"
                                     style="width: 100%;"
                                     type="search"
+                                    name="busca"
                                     placeholder="Palavra-Chave"
-                                    aria-label="Search">
-                            </form>
+                                    aria-label="Search"> </input>
+                                
+                            
                         </div>
-                        <div class="btn-group" id="first-filter">
-                            <button
-                                class="btn btn-secondary text-left btn-sm"
-                                id="btn-pesquisa"
-                                style="width: 100%;"
-                                type="button">
-                                Categoria
-                            </button>
-                            <button
-                                type="button"
-                                class="btn btn-secondary btn-sm dropdown-toggle dropdown-toggle-split"
-                                id="btn-pesquisa"
-                                style="width: 20%;"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Manutenção</a>
-                                <a class="dropdown-item" href="#">Festas</a>
-                                <a class="dropdown-item" href="#">Aulas</a>
-                            </div>
+                       
+
+                        <div class="form-group">
+                            
+                            <select class="form-control" type="text" name="tipo"  id="exampleFormControlTextarea1">
+                                <option disabled selected>Selecione o tipo</option>
+                                
+                                <option value="Serviço">Serviço</option>
+                                <option value="Produto">Produto</option>
+                                
+                            </select>
                         </div>
-                        <div class="btn-group" id="second-filter">
-                            <button
-                                class="btn btn-secondary text-left btn-sm"
-                                id="btn-pesquisa"
-                                style="width: 100%;"
-                                type="button">
-                                Tipo
-                            </button>
-                            <button
-                                type="button"
-                                class="btn btn-secondary btn-sm dropdown-toggle dropdown-toggle-split"
-                                id="btn-pesquisa"
-                                style="width:20%;"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Manutenção</a>
-                                <a class="dropdown-item" href="#">Festas</a>
-                                <a class="dropdown-item" href="#">Aulas</a>
-                            </div>
+
+                        <div class="form-group">
+                           
+                            <select class="form-control" type="text" name="categoria"  id="exampleFormControlTextarea1">
+                                <option disabled selected>Selecione a categoria</option>
+                                
+                                <option value="Alimentos e bebidas">Alimentos e bebidas</option>
+                                <option value="Animais">Animais</option>
+                                <option value="Beleza e cuidado pessoal">Beleza e cuidado pessoal</option>
+                                <option value="Calcados, roupas e bolsas">Calçados, roupas e bolsas</option>
+                                <option value="Celulares e telefonia">Celulares e telefonia</option>
+                                <option value="Educação">Educação</option>
+                                <option value="Eletrodomésticos">Eletrodomésticos</option>
+                                <option value="Eletrônicos">Eletrônicos</option>
+                                <option value="Esportes">Esportes</option>
+                                <option value="Ferramentas e construção">Ferramentas e construção</option>
+                                <option value="Festas">Festas</option>
+                                <option value="Games">Games</option>
+                                <option value="Informática">Informática</option>
+                                <option value="Instrumentos musicais">Instrumentos musicais</option>
+                                <option value="Jóias e acessórios">Jóias e acessórios</option>
+                                <option value="Livros e revistas">Livros e revistas</option>
+                                <option value="Saúde">Saúde</option>
+                                <option value="Outros">Outros</option>
+                                
+
+                            </select>
                         </div>
+
+                        
+
+                       
                     </div>
                     <div class="areaBotaoSearch">
                         <button class="btn  my-2 my-sm-0" id="botaoSearch" type="submit">Filtrar</button>
                     </div>
+                </form>
                 </nav>
 
                 <!-- area do centro da tela -->
@@ -171,114 +148,29 @@
 
                     <!-- cards dos classificados -->
                     <!-- estão dentro da tag <a> para abrir o modal que tá sendo referenciado -->
-                    <a data-toggle="modal" data-target="#exampleModal">
+                   
+                        <% if (classificados) { %>
+                            <% classificados.forEach(classificado => { %>
+                        <a data-toggle="modal" data-target="#<%=classificado.id%>">
                         <div class="card classificado">
                             <img
                                 class="card-img-top"
-                                src="./img/classificados/aulas violão.png"
+                                src="<%=classificado.foto%>"
                                 alt="Imagem de capa do card">
                             <div class="card-corpo">
-                                <div class="card-titulo">Aulas de Violão</div>
-                                <div class="card-subtitulo">Juliana B. (B-74)</div>
+                                <div class="card-titulo"><%=classificado.titulo%></div>
+                                <div class="card-subtitulo"></div>
 
                             </div>
                         </div>
 
                     </a>
 
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/assistência.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Assistência e reparos</div>
-                                <div class="card-subtitulo">Lucas M. (C-84)</div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/bolo"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Bolo sob encomenda</div>
-                                <div class="card-subtitulo">Maria B. (D-44)</div>
-                            </div>
-                        </div>
-
-                    </a>
-
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/aulas.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Aulas de Química</div>
-                                <div class="card-subtitulo">Paula M. (A-63)</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/baba.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Babá</div>
-                                <div class="card-subtitulo">Bárbara C. (A-33)</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/organizador.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Organizador de Eventos</div>
-                                <div class="card-subtitulo">João A. (D-91)</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/marmita.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Marmitas Saudáveis</div>
-                                <div class="card-subtitulo">Antônio O. (C-101)</div>
-                            </div>
-                        </div>
-                    </a>
-                    <a data-toggle="modal" data-target="#exampleModal">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="./img/classificados/dog.png"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo">Passeador de Cães</div>
-                                <div class="card-subtitulo">Daniel S. (B-74)</div>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id
+ <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id
                     -->
                     <div
                         class="modal fade"
-                        id="exampleModal"
+                        id="<%=classificado.id%>"
                         tabindex="-1"
                         role="dialog"
                         aria-labelledby="exampleModalLabel"
@@ -286,7 +178,7 @@
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Detalhes</h5>
+                                    <h4 class="modal-title" id="exampleModalLabel"><%=classificado.titulo%></h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -295,48 +187,44 @@
 
                                     <!-- dados do centro do modal (quando abre o anuncio) -->
                                     <div class="cardy mb-3" id="cardModal">
-                                        <h4 class="card-title">Passeador de Cães</h4>
+                                        <!-- <h4 class="card-title"><%=classificado.titulo%></h4> -->
                                         <div class="row no-gutters">
 
                                             <div class="col-md-4 text-left" id="fotoItem">
-                                                <img src="./img/detalhes/dog.jpg" class="card-img" alt="...">
+                                                <img src="<%=classificado.foto%>" class="card-img" alt="classificado">
                                                 <p>
-                                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem error
-                                                    necessitatibus veniam doloremque veritatis dolorum fuga, dignissimos commodi
-                                                    quia beatae cupiditate temporibus ducimus saepe facilis perspiciatis quasi
-                                                    soluta laudantium totam!</p>
+                                                    <%=classificado.descricao%></p>
                                             </div>
                                             <div class="linha-vertical"></div>
                                             <div class="col-md-8">
                                                 <div class="card-body">
                                                     <div class="dadosUser">
                                                         <div class="imagemUser">
-                                                            <img src="img/detalhes/user.jpg" id="user"/>
+                                                            <img src="<%=classificado.morador.foto%>" id="user"/>
                                                         </div>
                                                         <div class="nomeUser">
-                                                            <h4>Gustavo Nóbrega</h4>
-                                                            <p>Apartamento B-74
+                                                            <h4><%=classificado.morador.nome%></h4>
+                                                            <p>Apartamento: <%=classificado.morador.id_apartamento%>
                                                             </p>
-                                                            <p>Morador desde: Jan/2018
-                                                            </p>
+                                                            <p>Morador desde <%= ("0" + (classificado.morador.createdAt.getMonth() + 1)).slice(-2) + "/" + classificado.morador.createdAt.getFullYear() %></p>
                                                         </div>
 
                                                     </div>
-
-                                                    <div class="interesses">
-                                                        <h6>Interesses</h6>
-                                                        <button>Futebol</button>
+                                                    
+                                                    <h6 class="section-title">Interesses</h6>
+                                                        <div class="interesses">
+                                                        <% for(let interesse of JSON.parse(classificado.morador.interesses)){ %>
+                                                            <span class="interesse"><%= interesse %></span>
+                                                        <% } %>
+                                                        <!-- <button>Futebol</button>
                                                         <button>Música</button>
                                                         <button>Cozinha</button>
-                                                        <button>Cachorros</button>
+                                                        <button>Cachorros</button> -->
 
-                                                    </div>
+                                                        </div>
                                                     <div class="quemSou">
-                                                        <h6>Quem sou eu?</h6>
-                                                        <p class="card-text text-left">Lorem ipsum dolor sit amet consectetur,
-                                                            adipisicing elit. Voluptatem quaerat maxime autem iste debitis, totam
-                                                            temporibus, nisi voluptate inventore nemo unde enim expedita doloremque quo rem
-                                                            error tempore ad eveniet!</p>
+                                                        <h6 class="section-title">Quem sou eu?</h6>
+                                                        <p class="card-text text-left about-content"><%=classificado.morador.sobre%></p>
 
                                                     </div>
                                                     <div class="icones">
@@ -353,6 +241,18 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <% })%>
+                    <% } else {%>    
+                        <div class="emptyComunicados">
+                            Não há anuncios cadastrados
+                        </div>
+                        <% } %>
+                   
+
+                   
+               
                 </div>
 
                  <!-- footer -->

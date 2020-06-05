@@ -1,6 +1,6 @@
 module.exports = {
     host: "localhost",
-    dialect: "mariadb",
+    dialect: "mysql",
     username: "root",
     port: 3306,
     password: "10022018",

@@ -3,10 +3,11 @@ const config = require("../config/database");
 const bcrypt = require("bcrypt");
 
 const authController = {
-    create: (_req, res) => {
+    index: (_req, res) => {
         return res.render("login", {msg: ""});
     },
-    store: async (req, res) => {
+
+    logar: async (req, res) => {
         const {email, senha, logado} = req.body;
         const con = new Sequelize(config);
 
@@ -19,32 +20,31 @@ const authController = {
                 type: Sequelize.QueryTypes.SELECT
             }
         );
-        //
         if (!user || !bcrypt.compareSync(senha, user.senha)) {
             return res.render("login", {msg: "Email ou senha inválidos!"});
         }
 
-        
-        
-        usuario = {
-            id: user.id,
-            nome: user.nome,
-            email: user.email,
-            foto: user.foto,
-            admin: user.admin? true : false,
-        };
-
-        console.log(usuario);
-
-        if(logado == undefined){
-            res.cookie('logado', user.email, {maxAge: 600000})
-        }
-        
-        req.session.user = usuario;
-        
        
         
-        return res.render("home", {usuario});
+        // let usuario = {
+        //     id: user.id,
+        //     nome: user.nome,
+        //     email: user.email,
+        //     foto: user.foto,
+        //     sobre: user.sobre,
+        //     admin: user.admin? true : false,
+        //     dataNascimento: user.dataNascimento,
+        //     id_apartamento: user.id_apartamento,
+        // };
+
+        // if(logado == undefined){
+        //     res.cookie('logado', user.email, {maxAge: 600000})
+        // }
+        
+        // req.session.user = user;
+        
+        //         console.log(req.session.user)
+        return res.redirect("/home");
         
     },
 

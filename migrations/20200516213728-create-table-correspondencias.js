@@ -17,7 +17,7 @@ module.exports = {
       
         destinatario: Sequelize.STRING,
 
-        apartamento: Sequelize.STRING,
+        apartamento: Sequelize.INTEGER,
         
         
     createdAt: Sequelize.DATE,

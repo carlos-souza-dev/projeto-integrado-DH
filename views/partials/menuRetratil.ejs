@@ -7,7 +7,7 @@
     </div>
 
     <div class="sidebar-header">
-        <img src="./img/logo/logo-menu.png" class="logotipoMenu" alt="">
+        <img src="/img/logo/logo-menu.png" class="logotipoMenu" alt="">
     </div>
 
     <ul class="list-unstyled components">
@@ -17,13 +17,33 @@
                 Página Inicial</a>
         </li>
         <li>
-            <a
+            <% if(usuario.admin) { %>
+                <a
+                    href="#homeSubmenu"
+                    data-toggle="collapse"
+                    aria-expanded="false"
+                    class="dropdown-toggle">
+                    <i class="fas fa-heart"></i>
+                    Condomínio
+                </a>
+            <% } else { %>
+                <a
+                    href="#homeSubmenu"
+                    data-toggle="collapse"
+                    aria-expanded="false"
+                    class="dropdown-toggle">
+                    <i class="fas fa-heart"></i>
+                    Minha Casa
+                </a>
+            <% } %>
+            <!-- <a
                 href="#homeSubmenu"
                 data-toggle="collapse"
                 aria-expanded="false"
                 class="dropdown-toggle">
                 <i class="fas fa-heart"></i>
-                Minha Casa</a>
+                Minha Casa
+            </a> -->
             <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
                     <a href="/moradores">Moradores</a>
@@ -52,10 +72,11 @@
                 <li>
                     <a href="/classificados">Classificados</a>
                 </li>
+                <% if(!usuario.admin) { %>
                 <li>
                     <a href="/meusItens">Meus itens</a>
                 </li>
-
+                <% } %>
             </ul>
         </li>
         <li>

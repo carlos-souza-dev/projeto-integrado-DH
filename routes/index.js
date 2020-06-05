@@ -52,6 +52,10 @@ router.get('/', function (req, res, next) {
     res.render('index', {title: 'Portal do Condominio'});
 });
 
+router.get('/demonstration', function (req, res, next) {
+    res.render('demonstration', {title: 'Portal do Condominio'});
+});
+
 router.get('/login', authController.index);
 router.post('/logar', authController.logar);
 

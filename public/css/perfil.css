@@ -171,6 +171,10 @@
     opacity: 0;
 }
 
+#interessesControllerObject {
+    display: none;
+}
+
 input[type="checkbox"]:disabled + label{
     opacity: 0.5;
 }

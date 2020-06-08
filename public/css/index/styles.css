@@ -131,6 +131,9 @@ a:hover {
     align-items: stretch;
 }
 
+.container--demonstration  {
+    margin-top: 96px;
+}
 
 /* Header */
 
@@ -318,12 +321,6 @@ header {
     font-weight: 700;
     color: #fff;
     width: 100%;
-}
-
-#name,
-#email,
-#message {
-    border-radius: 24px;
 }
 
 #emailHelp {

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal do Condomínio</title>
+  <style>
+
+body .classificados-rows-two{
+    width: 94%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+body .classificados-rows-two .classificados-conteudo {
+    margin-bottom: 50px;
+    margin: 14px;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+body  .classificados-rows-two .classificados-conteudo .conteudo {
+    width: 350px;
+    min-height: 418px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+    border: 3px solid black; 
+}
+body .classificados-rows-two .classificados-conteudo .classificados-titulo {
+    width: 100%;
+    padding: 7.5px 0;
+    font-family: Roboto-Regular;
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+body .classificados-rows-two .classificados-conteudo .classificados-referencia {
+    width: 100%;
+    padding-bottom: 7.5px;
+    font-family: Roboto-Regular;
+    color: #000000;
+    font-size: 16px;
+}
+
+body .classificados-rows-two .classificados-conteudo .classificados-resumo {
+    width: 92%;
+    margin-left: 4%;
+    font-style: unset;
+    font-family: Roboto-Italic;
+    color: #000000;
+    font-size: 16px;
+}
+
+body .classificados-rows-two .classificados-conteudo p{
+    text-align: center;
+}
+
+body .classificados-rows-two .classificados-conteudo #texto {
+height: 70px;
+font-size: 18px;
+}
+
+body .classificados-rows-two img {
+    width: 100%;
+    height: 255px;
+    border-radius: 20px 20px 0 0;
+}
+
+  </style>
+</head>
+
+<body>
+  <div style="margin: 10px;"><p style="text-align: center; font-size: 2vw; color: green; font-weight: bold; font-family: sans-serif;"> adicionou um novo classificado.</p></div>
+  <section class="classificados-rows-two">
+    <div class="classificados-conteudo">
+      <div class="conteudo">
+        <div class="classificados-foto"><img src="/public/img/user/geraldo.png"></div>
+        <div class="classificados-titulo">
+          <p>Bolo sob encomenda</p>
+        </div>
+        <div class="classificados-referencia">
+          <p>Maria B. (D-44)</p>
+        </div>
+        <div class="classificados-resumo">
+          <p id="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus
+            felis dolor egestas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

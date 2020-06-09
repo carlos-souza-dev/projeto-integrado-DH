@@ -10,6 +10,12 @@ const cepDesconhecido = document.getElementById('unknownCep');
 
 containerEndereco.style.display = 'none';
 
+window.addEventListener('keydown', function(event) {
+    if(event.keyCode == 13) {
+        event.preventDefault();
+    }
+})
+
 cepform.addEventListener('blur', consultarCep);
 cepform.addEventListener('keydown', apagaEndereco);
 

@@ -27,7 +27,7 @@
         </header>
         <main>
             <div class="container container--demonstration">
-                <form method="POST" action="">
+                <form method="POST" action="/demonstration">
                     <div class="row">
                         <div class="form-group col-12">
                             <label for="name">Nome</label>
@@ -45,7 +45,7 @@
                     <div class="row">
                         <div class="form-group col-3">
                             <label for="CEP">CEP</label>
-                            <input type="text" class="form-control" name="CEP" id="cep" placeholder="Digite seu CEP" required>
+                            <input type="text" class="form-control" name="CEP" id="cep" placeholder="Digite seu CEP">
                         </div>
                         <button type="button" class="btn" id="unknownCep">Não sei meu CEP</button>
                     </div>
@@ -57,23 +57,23 @@
                             </div>
                             <div class="form-group col-2">
                                 <label for="numero">Número</label>
-                                <input type="number" class="form-control" name="numero" id="numero">
+                                <input type="text" class="form-control" name="numero" id="numero">
                             </div>
                             <div class="form-group col-4">
                                 <label for="complemento">Complemento</label>
                                 <input type="text" class="form-control" name="complemento" id="complemento">
                             </div>
                             <div class="form-group col-6">
-                                <label for="uf">Bairro</label>
-                                <input type="text" class="form-control" nome="bairro" id="bairro">
+                                <label for="bairro">Bairro</label>
+                                <input type="text" class="form-control" name="bairro" id="bairro">
                             </div>
                             <div class="form-group col-4">
                                 <label for="cidade">Cidade</label>
                                 <input type="text" class="form-control" name="cidade" id="cidade">
                             </div>
                             <div class="form-group col-2">
-                                <label for="uf">Estado</label>
-                                <input type="text" class="form-control" nome="estado" id="estado">
+                                <label for="estado">Estado</label>
+                                <input type="text" class="form-control" name="estado" id="estado">
                             </div>
                             <div class="form-group col-8">
                                 <label for="condominio">Nome do condomínio</label>
@@ -82,6 +82,7 @@
                             <div class="form-group col-4">
                                 <label for="tamanhoCondo">Número de moradores</label>
                                 <select class="form-control" name="porte" id="tamanhoCondo">
+                                    <option disabled selected>Selecione uma opção</option>
                                     <option value="1-50">1 a 50</option>
                                     <option value="51-100">51 a 100</option>
                                     <option value="101-250">101 a 250</option>

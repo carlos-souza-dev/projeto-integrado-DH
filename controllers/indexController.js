@@ -1,20 +1,47 @@
 const Sequelize = require("sequelize");
-const {Demonstrations} = require("../models");
+const {Visitas} = require("../models");
 
-const demonstrationController = {
+const indexController = {
     schedule: async (req, res) => {
-        const [files] = req.files;
-        const {nome, dataNascimento, rg, cpf} = req.body;
+        const {
+            name, 
+            email, 
+            phone,
+            CEP, 
+            logradouro,
+            numero, 
+            complemento, 
+            bairro, 
+            cidade, 
+            estado, 
+            condominio, 
+            porte
+        } = req.body;
 
-        const resultado = await Moradores.create(
-            {nome, dataNascimento, rg, cpf, foto: `/img/${files.filename}`}
+        const resultado = await Visitas.create(
+            {
+            name, 
+            email, 
+            phone, 
+            CEP, 
+            logradouro, 
+            numero, 
+            complemento, 
+            bairro, 
+            cidade, 
+            estado, 
+            condominio, 
+            porte
+            }
         )
 
-        return res.redirect("/moradores");
+        return res.redirect("/");
 
     },
 
     contact: async (req, res) => {
-        
+
     }
 }
+
+module.exports = indexController;

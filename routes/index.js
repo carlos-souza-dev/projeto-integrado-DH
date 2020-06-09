@@ -16,7 +16,8 @@ const correspondenciaController = require(
 const prestadoresController = require('../controllers/prestadoresController');
 const documentacaoController = require("../controllers/documentacaoController");
 const contatosUteisController = require("../controllers/contatosUteisController");
-const classificadosController = require("../controllers/classificadosController")
+const classificadosController = require("../controllers/classificadosController");
+const indexController = require('../controllers/indexController');
 
 
 
@@ -55,6 +56,8 @@ router.get('/', function (req, res, next) {
 router.get('/demonstration', function (req, res, next) {
     res.render('demonstration', {title: 'Portal do Condominio'});
 });
+
+router.post('/demonstration', indexController.schedule);
 
 router.get('/login', authController.index);
 router.post('/logar', authController.logar);

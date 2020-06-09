@@ -3,12 +3,7 @@ const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
 
 const homeController = {
-    // index: (req,res) => {
-        
-    //     res.render('home', {usuario: req.session.user});
-        
-    // },
-
+    
     exibir: async (req, res) => {
         // const id = req.session.user.id_apartamento;
         
@@ -78,7 +73,6 @@ const homeController = {
 
         return res.render('home', {qtdMorador, qtdPrestadores, qtdClassificados, anunciosViz, meusAnuncios, correspondencia, comunicados, solicitacoes, usuario: req.session.user })
     }
-
     
 }
 

@@ -15,7 +15,6 @@ store: async (req, res) => {
 
     },
 
-
 exibir: async (req, res) => {
     
     if (req.session.user.admin) {

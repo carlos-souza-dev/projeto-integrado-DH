@@ -36,7 +36,6 @@ const indexController = {
         )
 
         return res.redirect("/");
-
     },
 
     contact: async (req, res) => {

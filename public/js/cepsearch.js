@@ -7,6 +7,7 @@ const estado = document.getElementById('estado');
 const bairro = document.getElementById('bairro');
 const cepform = document.getElementById('cep');
 const cepDesconhecido = document.getElementById('unknownCep');
+const enviar = document.getElementById('enviar');
 
 containerEndereco.style.display = 'none';
 
@@ -14,7 +15,11 @@ window.addEventListener('keydown', function(event) {
     if(event.keyCode == 13) {
         event.preventDefault();
     }
-})
+});
+
+enviar.addEventListener('click', function() {
+    sessionStorage.setItem('modalSucesso', true);
+});
 
 cepform.addEventListener('blur', consultarCep);
 cepform.addEventListener('keydown', apagaEndereco);

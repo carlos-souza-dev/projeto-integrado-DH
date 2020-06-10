@@ -31,6 +31,12 @@ hr {
     border-top: 1px solid rgba(0,0,0,.2) !important;
 }
 
+.hr-contact {
+    width: 100%;
+    margin: 0px 20%;
+    border-top: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
 /* Removes link hovering bootstrap style */
 a:hover {
     color: inherit !important;
@@ -202,9 +208,9 @@ header {
     padding: 32px;
 }
 
-.box--contact {
+/* .box--contact {
     padding: 32px 32px 32px 0;
-}
+} */
 
 .box--landing {
     background-color: #ffffff;
@@ -349,16 +355,16 @@ header {
 .other-contact-title {
     
     color: #fff;
-    font-size: 28px;
-    margin-bottom: 40px;
-    text-align: center;
+    font-size: 24px;
+    margin-bottom: 24px;
+    /* text-align: center; */
 }
 
 .contact-channel {
     display: flex;
     align-items: center;
     width: 66%;
-    margin: 12px auto;
+    margin: 12px 0;
 }
 
 .contact-icon{

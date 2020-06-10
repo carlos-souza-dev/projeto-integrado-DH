@@ -82,10 +82,31 @@
                 <section id="contact" class="parallax__group parallax__group--contact">
                     <div class="parallax__layer parallax__layer--contact parallax__layer--base parallax__layer--base--contact">
                         <div class="custom-container custom-container--contact">
-                            <h2 class="title-contact">Como podemos ajudar?</h2>
+                            <hr class="hr-contact">
                             <div class="contact-subsection">
-                                <div class="box box--contact">
-                                    <form action="" method="POST">
+                                <div class="box">
+                                    <h3 class="other-contact-title">Assine nossa newsletter</h3>
+                                    <form action="/subscribe" method="POST">   
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="emailNews" id="emailNews" placeholder="Digite seu e-mail" required>
+                                            <small id="emailHelp" class="form-text text-muted">Nunca divulgaremos seu e-mail.</small>
+                                        </div>
+                                        <button class="enviar" type="submit">Inscrever-se</button>
+                                    </form>
+                                </div>
+                                <div class="box">
+                                    <h3 class="other-contact-title">Outras formas de falar com a gente</h3>
+                                    <div class="contact-channel">
+                                        <i class="material-icons-outlined contact-icon" style="font-size:32px;">mail_outline</i>
+                                        <span class="contact-email">portaldocondominio@email.com</span>
+                                    </div>
+                                    <div class="contact-channel">
+                                        <i class="material-icons-outlined contact-icon" style="font-size:32px;">phone</i>
+                                        <span class="contact-whatsapp">(xx) 99999-9999</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <form action="" method="POST">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="name" placeholder="Digite seu nome" required>
                                         </div>
@@ -103,20 +124,7 @@
                                             <textarea class="form-control" id="message" rows="4" placeholder="Escreva sua mensagem"></textarea>
                                         </div>
                                         <button class="enviar" type="submit">Enviar mensagem</button>
-                                    </form>
-                                </div>
-                                <div class="box">
-                                    <h3 class="other-contact-title">Outras formas de falar com a gente</h3>
-                                    <div class="contact-channel">
-                                        <i class="material-icons-outlined contact-icon" style="font-size:32px;">mail_outline</i>
-                                        <span class="contact-email">portaldocondominio@email.com</span>
-                                    </div>
-                                    <div class="contact-channel">
-                                        <i class="material-icons-outlined contact-icon" style="font-size:32px;">phone</i>
-                                        <span class="contact-whatsapp">(xx) 99999-9999</span>
-                                    </div>
-                                </div>
-                            </div>
+                                </form> -->
                         </div>
                     </div>
                 </section>

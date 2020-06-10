@@ -50,7 +50,10 @@ const uploadDoc = multer({storage: storageDoc});
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', {title: 'Portal do Condominio'});
+    res.render('index', {
+        title: 'Portal do Condominio',
+        emailSub: null
+    });
 });
 
 router.get('/demonstration', function (req, res, next) {
@@ -58,6 +61,7 @@ router.get('/demonstration', function (req, res, next) {
 });
 
 router.post('/demonstration', indexController.schedule);
+router.post('/subscribe', indexController.subscribe);
 
 router.get('/login', authController.index);
 router.post('/logar', authController.logar);

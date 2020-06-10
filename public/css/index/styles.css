@@ -402,9 +402,40 @@ footer {
     text-align: center;
 }
 
+.modal-body-news {
+    padding: 24px 24px 0px 24px !important;
+}
+
+.modal-footer-news {
+    padding: 0 !important;
+}
+
 .modal-span {
     font-size: 18px;
     margin: 32px auto;
+}
+
+.modal-span-news {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 24px;
+}
+
+.news-img {
+    content: "";
+    background-image: url('../../img/assets/undraw_newsletter_vovu.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 240px;
+    justify-content: center;
+    margin: 32px auto;
+}
+
+.input-news {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 /* Custom responsiveness */

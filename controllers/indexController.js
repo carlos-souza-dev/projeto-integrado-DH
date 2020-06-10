@@ -38,8 +38,13 @@ const indexController = {
         return res.redirect("/");
     },
 
-    contact: async (req, res) => {
+    subscribe: async (req, res) => {
+        
+        const {emailNews} = req.body
 
+        // const resultado = await Inscritos.create({email});
+
+        return res.render('index', {emailSub: emailNews})
     }
 }
 

@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize");
-const {Visitas} = require("../models");
+const {Visitas, Newsletter} = require("../models");
 
 const indexController = {
     schedule: async (req, res) => {
@@ -42,7 +42,7 @@ const indexController = {
         
         const {emailNews} = req.body
 
-        // const resultado = await Inscritos.create({email});
+        const resultado = await Newsletter.create({email: emailNews});
 
         return res.render('index', {emailSub: emailNews})
     }

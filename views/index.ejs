@@ -85,7 +85,7 @@
                             <h2 class="title-contact">Como podemos ajudar?</h2>
                             <div class="contact-subsection">
                                 <div class="box box--contact">
-                                    <form action="" method="GET">
+                                    <form action="" method="POST">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="name" placeholder="Digite seu nome" required>
                                         </div>
@@ -102,7 +102,7 @@
                                         <div class="form-group">
                                             <textarea class="form-control" id="message" rows="4" placeholder="Escreva sua mensagem"></textarea>
                                         </div>
-                                        <button type="submit">Enviar mensagem</button>
+                                        <button class="enviar" type="submit">Enviar mensagem</button>
                                     </form>
                                 </div>
                                 <div class="box">
@@ -122,6 +122,24 @@
                 </section>
             </div>
         </main>
+        <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Obrigado!</h2>
+                        <div class="modal-span">
+                            <span>Em breve, um membro de nossa equipe entrará em contato com você.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <footer class="custom-container custom-container--footer">
             <span class="footer__block">
                 Portal do Condomínio
@@ -137,5 +155,18 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script>
+
+        let mensagemSucesso = sessionStorage.getItem('modalSucesso');
+        
+            window.addEventListener('load', function () {
+                if(mensagemSucesso) {
+                $('#ModalCenter').modal('show');
+                }
+            })
+
+        sessionStorage.removeItem('modalSucesso');
+
+    </script>
     </body>
 </html>

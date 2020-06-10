@@ -30,6 +30,7 @@ const userController = {
             }
         )
    }else{
+       console.log(listaDeErrors)
      return res.render("auth/register",{errors:listaDeErrors.errors})
         }
     

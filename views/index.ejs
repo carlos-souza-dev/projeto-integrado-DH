@@ -140,6 +140,50 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="ModalCenterNewsLetter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Antes de ir embora...</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body modal-body-news">
+                    <h5>Gostaria de assinar nossa newsletter?<h5>
+                    <div class="news-img"></div>
+                    <div class="modal-span-news">Fique por dentro das últimas atualizações sobre o Portal do Condomínio e receba diversas dicas para cuidar de sua casa!</div>
+                    <form action="/subscribe" method="POST">
+                        <div class="form-group">
+                            <input type="email" class="form-control form-control-lg input-news" name="emailNews" id="emailNews" placeholder="Digite seu e-mail" required>
+                        </div>
+                    <div class="modal-footer modal-footer-news">
+                    <button type="submit" class="btn btn-primary enviar">Inscrever-se</button>
+                    </div>
+                    </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="subscribed" style="display:none"><%= emailSub %></div>
+        <div class="modal fade" id="ModalConfirmSubscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Obrigado!</h2>
+                        <div class="modal-span">
+                            <span>O email <strong><%= emailSub %></strong> acaba de ser inscrito em nossa newsletter!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <footer class="custom-container custom-container--footer">
             <span class="footer__block">
                 Portal do Condomínio
@@ -155,18 +199,6 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
-    <script>
-
-        let mensagemSucesso = sessionStorage.getItem('modalSucesso');
-        
-            window.addEventListener('load', function () {
-                if(mensagemSucesso) {
-                $('#ModalCenter').modal('show');
-                }
-            })
-
-        sessionStorage.removeItem('modalSucesso');
-
-    </script>
+    <script src="./js/indexscripts.js"></script>
     </body>
 </html>

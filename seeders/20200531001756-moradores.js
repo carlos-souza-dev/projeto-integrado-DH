@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-
+const interesses = ["Filmes","Esportes","Música"];
 'use strict';
 
 module.exports = {
@@ -14,6 +14,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: './img/user/fotoDefault.png',
       sobre: '',
+      interesses:"",
       admin: true,
       dataNascimento: 19800101,
       id_apartamento: 1,
@@ -28,6 +29,7 @@ module.exports = {
     senha: bcrypt.hashSync('123', 10),
     foto: '/img/1590884087357camila.jpg',
     sobre: 'Estudante',
+    interesses:JSON.stringify(interesses.values()),
     admin: false,
     dataNascimento: 19970422,
     id_apartamento: 2,
@@ -42,6 +44,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: '/img/1590887656454carlos.jpg',
       sobre: 'Estudante',
+      interesses:JSON.stringify(interesses.values()),
       admin: false,
       dataNascimento: 19961021,
       id_apartamento: 3,
@@ -56,6 +59,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: '/img/1589940566291daniel.jpg',
       sobre: 'Estudante',
+      interesses:JSON.stringify(interesses.values()),
       admin: false,
       dataNascimento: 19900611,
       id_apartamento: 4,
@@ -70,6 +74,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: '/img/1590888599045gustavo.jpg',
       sobre: 'Estudante',
+      interesses:JSON.stringify(interesses.values()),
       admin: false,
       dataNascimento: 19900611,
       id_apartamento: 5,
@@ -84,6 +89,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: '/img/1575687894345juliana.jpg',
       sobre: 'Estudante',
+      interesses:JSON.stringify(interesses.values()),
       admin: false,
       dataNascimento: 19860529,
       id_apartamento: 6,
@@ -98,6 +104,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: '/img/1590888745432alex.jpg',
       sobre: 'Estudante',
+      interesses:JSON.stringify(interesses.values()),
       admin: false,
       dataNascimento: 19890919,
       id_apartamento: 6,
@@ -112,6 +119,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: '/img/1590888745432alex.jpg',
       sobre: 'Estagiário',
+      interesses:JSON.stringify(interesses.values()),
       admin: false,
       dataNascimento: 20011208,
       id_apartamento: 2,
@@ -126,6 +134,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: '/img/1590888745432renan.jpg',
       sobre: 'Funcionário Público',
+      interesses: JSON.stringify(interesses.values()),
       admin: false,
       dataNascimento: 19930822,
       id_apartamento: 2,

@@ -74,6 +74,42 @@ module.exports = {
         id_morador: 7,
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        id: 7,
+        tipo: 'Autorização',
+        data: new Date(),
+        dataAlvo: 20200701,
+        status: 'Pendente',
+        descricao: "Liberação para entrada de convidados para festa de aniversário",
+        comentarios: "",
+        id_morador: 8,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 8,
+        tipo: 'Autorização',
+        data: new Date(),
+        dataAlvo: 20200613,
+        status: 'Pendente',
+        descricao: "Uso do elevador para mudança",
+        comentarios: "",
+        id_morador: 3,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        id: 9,
+        tipo: 'Reserva de área comum',
+        data: new Date(),
+        dataAlvo: 20200627,
+        status: 'Pendente',
+        descricao: "Reserva da churrasqueira",
+        comentarios: "",
+        id_morador: 5,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
       
     ], {});

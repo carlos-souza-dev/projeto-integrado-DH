@@ -18,12 +18,18 @@ const prestadoresController = {
 
     exibir: async (req, res) => {
 
+        if (req.session.user.admin) {
+            const prestadores = await Prestadores.findAll()
+            
+            return res.render('prestadoresDeServico', {prestadores, usuario: req.session.user});
+    } else {
         const prestadores = await Prestadores.findAll({
             where:{
                 id_apartamento: req.session.user.id_apartamento
             }
         })
         return res.render('prestadoresDeServico', {prestadores, usuario: req.session.user});
+    }
     },
 
     update: async (req, res) => {

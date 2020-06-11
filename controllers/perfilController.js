@@ -56,6 +56,8 @@ const perfilController = {
             }
         });
 
+       
+
         const usuario = req.session.user;
 
         usuario.foto = `/img/${files.filename}`;

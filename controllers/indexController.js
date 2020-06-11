@@ -42,6 +42,7 @@ const indexController = {
         
         const {emailNews} = req.body
 
+           
         const resultado = await Newsletter.create({email: emailNews});
 
         return res.render('index', {emailSub: emailNews})

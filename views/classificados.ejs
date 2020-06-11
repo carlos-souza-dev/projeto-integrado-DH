@@ -44,255 +44,273 @@
 
         <div class="wrapper">
             <!-- Menu Retrátil -->
-           
+
             <!-- botão para abrir e fechar o menu -->
             <%- include('./partials/menuRetratil') %>
 
-            <!-- Conteudo da página -->
+                <!-- Conteudo da página -->
 
-            <div id="content">
-                <!-- Header -->
-                <div class="mainHeader">
-                    <div class="titulo" id="tit">
-                        <div class="nomePag">
-                            <p>Vizinhança</p>
-
-                        </div>
-                        <div class="finalidPag">
-                            <p >O que acontece ao seu redor</p>
-                        </div>
-
-                    </div>
-                    <!-- inclui o logo mobile e o avatar em uma partial  -->
-                    <%- include('./partials/avatar') %>
-               
-                </div>
-                
-                <!-- menu superior -->
-                
-                <%- include('./partials/menuSupVizinhanca') %>
-
-               
-
-                <nav class="navbar navbar-light campo-pesquisa" id="areaFiltro">
-
-                    <div class="nomeCampoPesquisa">
-                        Filtrar Classificados
-                    </div>
-                    <div class="areaCamposGrandes">
-                        <div class="campoSearch" id="zero-filter">
-                            <form action="/buscarClassificado" method="POST" class="form-inline">
-                                <input
-                                    class="form-control"
-                                    style="width: 100%;"
-                                    type="search"
-                                    name="busca"
-                                    placeholder="Palavra-Chave"
-                                    aria-label="Search"> </input>
-                                
-                            
-                        </div>
-                       
-
-                        <div class="form-group">
-                            
-                            <select class="form-control" type="text" name="tipo"  id="exampleFormControlTextarea1">
-                                <option disabled selected>Selecione o tipo</option>
-                                
-                                <option value="Serviço">Serviço</option>
-                                <option value="Produto">Produto</option>
-                                
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                           
-                            <select class="form-control" type="text" name="categoria"  id="exampleFormControlTextarea1">
-                                <option disabled selected>Selecione a categoria</option>
-                                
-                                <option value="Alimentos e bebidas">Alimentos e bebidas</option>
-                                <option value="Animais">Animais</option>
-                                <option value="Beleza e cuidado pessoal">Beleza e cuidado pessoal</option>
-                                <option value="Calcados, roupas e bolsas">Calçados, roupas e bolsas</option>
-                                <option value="Celulares e telefonia">Celulares e telefonia</option>
-                                <option value="Educação">Educação</option>
-                                <option value="Eletrodomésticos">Eletrodomésticos</option>
-                                <option value="Eletrônicos">Eletrônicos</option>
-                                <option value="Esportes">Esportes</option>
-                                <option value="Ferramentas e construção">Ferramentas e construção</option>
-                                <option value="Festas">Festas</option>
-                                <option value="Games">Games</option>
-                                <option value="Informática">Informática</option>
-                                <option value="Instrumentos musicais">Instrumentos musicais</option>
-                                <option value="Jóias e acessórios">Jóias e acessórios</option>
-                                <option value="Livros e revistas">Livros e revistas</option>
-                                <option value="Saúde">Saúde</option>
-                                <option value="Outros">Outros</option>
-                                
-
-                            </select>
-                        </div>
-
-                        
-
-                       
-                    </div>
-                    <div class="areaBotaoSearch">
-                        <button class="btn  my-2 my-sm-0" id="botaoSearch" type="submit">Filtrar</button>
-                    </div>
-                </form>
-                </nav>
-
-                <!-- area do centro da tela -->
-                <div class="centroTelaClassificados">
-
-                    <!-- cards dos classificados -->
-                    <!-- estão dentro da tag <a> para abrir o modal que tá sendo referenciado -->
-                   
-                        <% if (classificados) { %>
-                            <% classificados.forEach(classificado => { %>
-                        <a data-toggle="modal" data-target="#<%=classificado.id%>">
-                        <div class="card classificado">
-                            <img
-                                class="card-img-top"
-                                src="<%=classificado.foto%>"
-                                alt="Imagem de capa do card">
-                            <div class="card-corpo">
-                                <div class="card-titulo"><%=classificado.titulo%></div>
-                                <div class="card-subtitulo"></div>
+                <div id="content">
+                    <!-- Header -->
+                    <div class="mainHeader">
+                        <div class="titulo" id="tit">
+                            <div class="nomePag">
+                                <p>Vizinhança</p>
 
                             </div>
+                            <div class="finalidPag">
+                                <p >O que acontece ao seu redor</p>
+                            </div>
+
+                        </div>
+                        <!-- inclui o logo mobile e o avatar em uma partial -->
+                        <%- include('./partials/avatar') %>
+
                         </div>
 
-                    </a>
+                        <!-- menu superior -->
 
- <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id
-                    -->
-                    <div
-                        class="modal fade"
-                        id="<%=classificado.id%>"
-                        tabindex="-1"
-                        role="dialog"
-                        aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h4 class="modal-title" id="exampleModalLabel"><%=classificado.titulo%></h4>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                        <%- include('./partials/menuSupVizinhanca') %>
+
+                            <nav class="navbar navbar-light campo-pesquisa" id="areaFiltro">
+
+                                <div class="nomeCampoPesquisa">
+                                    Filtrar Classificados
                                 </div>
-                                <div class="modal-body" id="corpo-modal">
+                                <div class="areaCamposGrandes">
+                                    <div class="campoSearch" id="zero-filter">
+                                        <form action="/buscarClassificado" method="POST" class="form-inline">
+                                            <input
+                                                class="form-control"
+                                                style="width: 100%;"
+                                                type="search"
+                                                name="busca"
+                                                placeholder="Palavra-Chave"
+                                                aria-label="Search"></input>
 
-                                    <!-- dados do centro do modal (quando abre o anuncio) -->
-                                    <div class="cardy mb-3" id="cardModal">
-                                        <!-- <h4 class="card-title"><%=classificado.titulo%></h4> -->
-                                        <div class="row no-gutters">
+                                        </div>
 
-                                            <div class="col-md-4 text-left" id="fotoItem">
-                                                <img src="<%=classificado.foto%>" class="card-img" alt="classificado">
-                                                <p>
-                                                    <%=classificado.descricao%></p>
-                                            </div>
-                                            <div class="linha-vertical"></div>
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <div class="dadosUser">
-                                                        <div class="imagemUser">
-                                                            <img src="<%=classificado.morador.foto%>" id="user"/>
-                                                        </div>
-                                                        <div class="nomeUser">
-                                                            <h4><%=classificado.morador.nome%></h4>
-                                                            <p>Apartamento: <%=classificado.morador.id_apartamento%>
-                                                            </p>
-                                                            <p>Morador desde <%= ("0" + (classificado.morador.createdAt.getMonth() + 1)).slice(-2) + "/" + classificado.morador.createdAt.getFullYear() %></p>
-                                                        </div>
+                                        <div class="form-group">
 
-                                                    </div>
-                                                    
-                                                    <h6 class="section-title">Interesses</h6>
-                                                        <div class="interesses">
-                                                        <% for(let interesse of JSON.parse(classificado.morador.interesses)){ %>
-                                                            <span class="interesse"><%= interesse %></span>
-                                                        <% } %>
-                                                        <!-- <button>Futebol</button>
-                                                        <button>Música</button>
-                                                        <button>Cozinha</button>
-                                                        <button>Cachorros</button> -->
+                                            <select
+                                                class="form-control"
+                                                type="text"
+                                                name="tipo"
+                                                id="exampleFormControlTextarea1">
+                                                <option disabled="disabled" selected="selected">Selecione o tipo</option>
 
-                                                        </div>
-                                                    <div class="quemSou">
-                                                        <h6 class="section-title">Quem sou eu?</h6>
-                                                        <p class="card-text text-left about-content"><%=classificado.morador.sobre%></p>
+                                                <option value="Serviço">Serviço</option>
+                                                <option value="Produto">Produto</option>
 
-                                                    </div>
-                                                    
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <select
+                                                class="form-control"
+                                                type="text"
+                                                name="categoria"
+                                                id="exampleFormControlTextarea1">
+                                                <option disabled="disabled" selected="selected">Selecione a categoria</option>
+
+                                                <option value="Alimentos e bebidas">Alimentos e bebidas</option>
+                                                <option value="Animais">Animais</option>
+                                                <option value="Beleza e cuidado pessoal">Beleza e cuidado pessoal</option>
+                                                <option value="Calcados, roupas e bolsas">Calçados, roupas e bolsas</option>
+                                                <option value="Celulares e telefonia">Celulares e telefonia</option>
+                                                <option value="Educação">Educação</option>
+                                                <option value="Eletrodomésticos">Eletrodomésticos</option>
+                                                <option value="Eletrônicos">Eletrônicos</option>
+                                                <option value="Esportes">Esportes</option>
+                                                <option value="Ferramentas e construção">Ferramentas e construção</option>
+                                                <option value="Festas">Festas</option>
+                                                <option value="Games">Games</option>
+                                                <option value="Informática">Informática</option>
+                                                <option value="Instrumentos musicais">Instrumentos musicais</option>
+                                                <option value="Jóias e acessórios">Jóias e acessórios</option>
+                                                <option value="Livros e revistas">Livros e revistas</option>
+                                                <option value="Saúde">Saúde</option>
+                                                <option value="Outros">Outros</option>
+
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                    <div class="areaBotaoSearch">
+                                        <button class="btn  my-2 my-sm-0" id="botaoSearch" type="submit">Filtrar</button>
+                                    </div>
+                                </form>
+                            </nav>
+
+                            <!-- area do centro da tela -->
+                            <div class="centroTelaClassificados">
+
+                                <!-- cards dos classificados -->
+                                <!-- estão dentro da tag <a> para abrir o modal que tá sendo referenciado -->
+
+                                <% if (classificados) { %>
+                                    <% classificados.forEach(classificado => { %>
+                                        <a data-toggle="modal" data-target="#<%=classificado.id%>">
+                                            <div class="card classificado">
+                                                <img
+                                                    class="card-img-top"
+                                                    src="<%=classificado.foto%>"
+                                                    alt="Imagem de capa do card">
+                                                <div class="card-corpo">
+                                                    <div class="card-titulo"><%=classificado.titulo%></div>
+                                                    <div class="card-subtitulo"></div>
+
                                                 </div>
-                                                
+
                                             </div>
-                                            <div class="icones col-12">
-                                                <a><img src="./img/icon/mail.svg" alt=""></a>
-                                                <a><img src="./img/icon/whatsApp.svg" alt=""></a>
+
+                                        </a>
+
+                                        <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id
+                                        -->
+                                        <div
+                                            class="modal fade"
+                                            id="<%=classificado.id%>"
+                                            tabindex="-1"
+                                            role="dialog"
+                                            aria-labelledby="exampleModalLabel"
+                                            aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title" id="exampleModalLabel"><%=classificado.titulo%></h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body" id="corpo-modal">
+
+                                                        <!-- dados do centro do modal (quando abre o anuncio) -->
+                                                        <div class="cardy mb-3" id="cardModal">
+                                                            <!-- <h4 class="card-title"><%=classificado.titulo%></h4> -->
+                                                            <div class="row no-gutters">
+
+                                                                <div class="col-md-4 text-left" id="fotoItem">
+                                                                    <img src="<%=classificado.foto%>" class="card-img" alt="classificado">
+                                                                    <p>
+                                                                        <%=classificado.descricao%></p>
+                                                                </div>
+                                                                <div class="linha-vertical"></div>
+                                                                <div class="col-md-8">
+                                                                    <div class="card-body">
+                                                                        <div class="dadosUser">
+                                                                            <div class="imagemUser">
+                                                                                <img src="<%=classificado.morador.foto%>" id="user"/>
+                                                                            </div>
+                                                                            <div class="nomeUser">
+                                                                                <h4><%=classificado.morador.nome%></h4>
+                                                                                <p>Apartamento:
+                                                                                    <%=classificado.morador.id_apartamento%>
+                                                                                </p>
+                                                                                <p>Morador desde
+                                                                                    <%= ("0" + (classificado.morador.createdAt.getMonth() + 1)).slice(-2) + "/" +
+                                                                                    classificado.morador.createdAt.getFullYear() %></p>
+                                                                            </div>
+
+                                                                        </div>
+
+                                                                        <h6 class="section-title">Interesses</h6>
+                                                                        <div class="interesses">
+                                                                            <% if (classificado.morador.interesses) { %>
+                                                                                <% for(let interesse of JSON.parse(classificado.morador.interesses)){ %>
+                                                                                    <span class="interesse"><%= interesse %></span>
+                                                                                <% } %>
+                                                                            <%}%>
+                                                                            <!-- <button>Futebol</button> <button>Música</button> <button>Cozinha</button>
+                                                                            <button>Cachorros</button> -->
+
+                                                                        </div>
+                                                                        <div class="quemSou">
+                                                                            <h6 class="section-title">Quem sou eu?</h6>
+                                                                            <p class="card-text text-left about-content"><%=classificado.morador.sobre%></p>
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+                                                                <div class="icones col-12">
+                                                                    <a><img src="./img/icon/mail.svg" alt=""></a>
+                                                                    <a><img src="./img/icon/whatsApp.svg" alt=""></a>
+
+                                                                </div>
+                                                                <% if(usuario.admin) { %>
+                                                                    <div class="botao col-12" id="botaoExcluir">
+                                                                        <form
+                                                                                action="/excluirClassificadoAdm/<%=classificado.id%>?_method=DELETE"
+                                                                                method="POST">
+                                                                        <button
+                                                                            data-toggle="modal"
+                                                                            class="btn btn-danger"
+                                                                            type="submit"
+                                                                            data-target="#confirmarExclusao">Excluir</button>
+                                                                        </form>
+                                                                    </div>
+                                                                <% } %>
+                                                                
+                                                                
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer"></div>
+                                                </div>
                                             </div>
                                         </div>
+
+                                        <% })%>
+                                        
+                                        <% } else {%>
+                                            <div class="emptyComunicados">
+                                                Não há anuncios cadastrados
+                                            </div>
+                                        <% } %>
+
                                     </div>
+
+                                    <!-- footer -->
+                                    <%- include('./partials/footer') %>
+
+                                    </div>
+
                                 </div>
-                                <div class="modal-footer"></div>
-                            </div>
-                        </div>
-                    </div>
 
+                                <!-- jQuery CDN - Slim version (=without AJAX) -->
+                                <script
+                                    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                                    crossorigin="anonymous"></script>
+                                <!-- Popper.JS -->
+                                <script
+                                    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+                                    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+                                    crossorigin="anonymous"></script>
+                                <!-- Bootstrap JS -->
+                                <script
+                                    src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+                                    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+                                    crossorigin="anonymous"></script>
+                                <!-- jQuery Custom Scroller CDN -->
+                                <script
+                                    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-                    <% })%>
-                    <% } else {%>    
-                        <div class="emptyComunicados">
-                            Não há anuncios cadastrados
-                        </div>
-                        <% } %>
-                   
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $("#sidebar").mCustomScrollbar({theme: "minimal"});
 
-                   
-               
-                </div>
+                                        $('#sidebarCollapse').on('click', function () {
+                                            $('#sidebar, #content').toggleClass('active');
+                                            $('.collapse.in').toggleClass('in');
+                                            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                                        });
+                                    });
+                                </script>
+                            </body>
 
-                 <!-- footer -->
-                 <%- include('./partials/footer') %>
-
-            </div>
-
-        </div>
-
-        <!-- jQuery CDN - Slim version (=without AJAX) -->
-        <script
-            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-        <!-- Popper.JS -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-            crossorigin="anonymous"></script>
-        <!-- Bootstrap JS -->
-        <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-            crossorigin="anonymous"></script>
-        <!-- jQuery Custom Scroller CDN -->
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $("#sidebar").mCustomScrollbar({theme: "minimal"});
-
-                $('#sidebarCollapse').on('click', function () {
-                    $('#sidebar, #content').toggleClass('active');
-                    $('.collapse.in').toggleClass('in');
-                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-                });
-            });
-        </script>
-    </body>
-
-</html>
+                        </html>

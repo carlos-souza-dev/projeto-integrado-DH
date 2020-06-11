@@ -107,6 +107,50 @@
                             <div class="receiver" id="last-child"><%= corresp.destinatario %></div>
                             <%})%>
                         </article>
+
+                        <% if(usuario.admin) { %>
+                        <article>
+                            <div class="correspondencia-title">Apartamento</div>
+                            <% correspondencia.forEach(corresp =>  { %>
+                            <div class="receiver" id="last-child"><%= corresp.apartamento %> 
+                                
+                            <a data-toggle="modal" data-target="#confirmarExclusao" id=botaoExcluir><img src="./img/icon/trash.svg" alt=""></a>
+                        
+                            </div>
+
+                            <div
+                            class="modal fade"
+                            id="confirmarExclusao"
+                            tabindex="-1"
+                            role="dialog"
+                            aria-labelledby="exampleModalCenterTitle"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <form  action="/excluirCorrespondencia/<%=corresp.id%>?_method=DELETE" method="POST">  
+                                    <div class="modal-body">
+                                        Tem certeza de que deseja excluir esta correspondência? A ação não poderá ser desfeita.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-danger">Tenho certeza</button>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+
+                            <%})%>
+                        </article>
+
+                        
+
+
+                        
+
+
+
+                        <% } %>
                         
 
                     </section>

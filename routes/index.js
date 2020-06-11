@@ -86,6 +86,7 @@ router.get('/meusItens', auth, classificadosController.exibirMeusItens);
 router.post('/criarClassificado', auth, upload.any(), classificadosController.store);
 router.put('/updateClassificado/:id', auth, upload.any(), classificadosController.update);
 router.delete('/excluirClassificado/:id', auth, classificadosController.destroy);
+router.delete('/excluirClassificadoAdm/:id', auth, classificadosController.destroyAdm);
 router.post('/buscarClassificado', auth, classificadosController.search);
 
 // Listar solicitações

@@ -101,6 +101,7 @@ a:hover {
     background-color: #3B3B3B;
     box-shadow: 0 -8px 8px rgba(0,0,0,0.25);
     margin-bottom: 48px;
+    padding-top: 0px;
 }
 
 /* Section custom containers */
@@ -206,6 +207,48 @@ header {
     flex-direction: column;
     width: 50%;
     padding: 32px;
+}
+
+.box-team {
+    width: 100%;
+    padding: 32px;
+}
+
+#members {
+    display: flex;
+    width: 100%;
+    padding: 16px;
+    justify-content: space-around;
+}
+
+.card-member {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* border: 1px solid #fff; */
+    width: 20%;
+    min-width: 196px;
+    height: 200px;
+    margin: 16px;
+}
+
+.member-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid #EFAE50;
+}
+
+.member-name,
+.member-github,
+.member-linkedin {
+    font-size: 18px;
+    color: #ebebeb
+}
+
+.member-name {
+    font-weight: bold;
 }
 
 /* .box--contact {
@@ -352,6 +395,23 @@ header {
     margin: 16px auto !important;
 }
 
+.cadastro-enter {
+    border: none !important;
+    background-color: #7aa355 !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    padding: 8px 16px !important;
+    border-radius: 48px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 18px !important;
+    margin: 16px auto !important;
+}
+
+.enviar-nlsection {
+    margin: 0 0 0 8px !important;
+    font-size: 16px !important;
+}
+
 .other-contact-title {
     
     color: #fff;
@@ -363,21 +423,30 @@ header {
 .contact-channel {
     display: flex;
     align-items: center;
-    width: 66%;
     margin: 12px 0;
 }
+
+.contact-channel-item {
+    display: flex;
+    align-items: center;
+}
+
+.contact-channel-item:first-of-type {
+    margin-right: 32px;
+}
+
 
 .contact-icon{
     display: flex;
     color: #fff;
-    margin-right: 16px;
+    margin-right: 8px;
 }
 
 .contact-email,
 .contact-whatsapp {
     display: flex;
     font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color: #fff;
 }
@@ -442,6 +511,14 @@ footer {
     width: 100%;
     max-width: 400px;
     margin: 0 auto;
+}
+
+#emailNews {
+    width: 320px !important;
+}
+
+.form-inline {
+    justify-content: space-between;
 }
 
 /* Custom responsiveness */

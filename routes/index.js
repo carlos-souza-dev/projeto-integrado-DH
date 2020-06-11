@@ -76,6 +76,7 @@ router.put('/atualizarMoradores/:id', upload.any(), moradoresController.update);
 
 router.get('/correspondencias', auth, correspondenciaController.exibir);
 router.post('/registroCorrespondencia', auth, correspondenciaController.store);
+router.delete('/excluirCorrespondencia/:id', correspondenciaController.destroy);
 
 
 

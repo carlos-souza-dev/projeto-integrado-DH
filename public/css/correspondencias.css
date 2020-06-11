@@ -29,6 +29,11 @@
     /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
 }
 
+
+#botaoExcluir{
+    padding-left: 5px;
+}
+
 @media(max-width:768px) {
     #botaoCadastro {
         background-color: #3B3B3B;
@@ -46,6 +51,7 @@
 
     .areaBotaoCad {
         width: 94%;
+        padding-top: 10px;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -62,7 +68,7 @@
 }
 .correspondencia-section{
     width: 94%;
-    height: 450px;
+    height: 800px;
     margin: 0 auto; 
     border-radius: 25px;
     display: flex;

@@ -34,7 +34,9 @@ module.exports = {
     foto: Sequelize.STRING(245),
     sobre: Sequelize.STRING(245),
     interesses:  {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING(245),
+      allowNull: true,
+      
     },
     admin: {
       type: Sequelize.BOOLEAN,

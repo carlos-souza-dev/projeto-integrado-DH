@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const interesses = ["Filmes","Esportes","Música"];
+
 'use strict';
 
 module.exports = {
@@ -29,7 +29,7 @@ module.exports = {
     senha: bcrypt.hashSync('123', 10),
     foto: '/img/1590884087357camila.jpg',
     sobre: 'Estudante',
-    interesses:``,
+    interesses:`["Filmes","Esportes","Música"]`,
     admin: false,
     dataNascimento: 19970422,
     id_apartamento: 2,
@@ -44,7 +44,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: '/img/1590887656454carlos.jpg',
       sobre: 'Estudante',
-      interesses:``,
+      interesses:`["Fotografia","Futebol","Motos","Viagens"]`,
       admin: false,
       dataNascimento: 19961021,
       id_apartamento: 3,
@@ -59,7 +59,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: '/img/1589940566291daniel.jpg',
       sobre: 'Estudante',
-      interesses:``,
+      interesses:`["Artes Marciais","Música","Esportes","Design & Tecnologia"]`,
       admin: false,
       dataNascimento: 19900611,
       id_apartamento: 4,
@@ -74,7 +74,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: '/img/1590888599045gustavo.jpg',
       sobre: 'Estudante',
-      interesses:``,
+      interesses:`["Filosofia","Ficção Científica","Arquitetura","Viagens","Filmes"]`,
       admin: false,
       dataNascimento: 19900611,
       id_apartamento: 5,
@@ -89,7 +89,7 @@ module.exports = {
       senha: bcrypt.hashSync('123', 10),
       foto: '/img/1575687894345juliana.jpg',
       sobre: 'Estudante',
-      interesses:``,
+      interesses:`["Aventura","Livros e Poesia","Viagens"]`,
       admin: false,
       dataNascimento: 19860529,
       id_apartamento: 6,

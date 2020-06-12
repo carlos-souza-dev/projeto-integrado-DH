@@ -1,115 +1,96 @@
-const members = document.getElementById('members');
+const team = [
+    {
+        gitUser: "Camilacslopes",
+        linkedin: "camila-lopes-a90511107/"
+    },
+    {
+        gitUser: "carlos-souza-02",
+        linkedin: "carlos-alberto-gomes-de-souza-117375192/"
+    },
+    {
+        gitUser: "daniel-santamaria",
+        linkedin: "danielsantamaria-/"
+    },
+    {
+        gitUser: "gustavonnobrega",
+        linkedin: "gustavonobrega/"
+    },
+    {
+        gitUser: "JulianaAraujo",
+        linkedin: "juliana-borges-da-silva-araujo-25915656/"
+    },
+];
 
-const card = document.createElement('div');
-card.setAttribute('class', 'card-member');
+// const options = {
+//     method: 'GET',
+//     mode: 'cors',
+//     cache: 'default'
+// };
 
-const memberAvatar = document.createElement('div');
-memberAvatar.setAttribute('class', 'member-avatar');
-memberAvatar.style.backgroundImage = "url('https://i.pinimg.com/originals/7c/c7/a6/7cc7a630624d20f7797cb4c8e93c09c1.png')"
-memberAvatar.style.backgroundRepeat= "no-repeat";
-memberAvatar.style.backgroundPosition = 'center';
-memberAvatar.style.backgroundSize = 'cover';
+team.forEach(function (item, index) {
 
-const memberName = document.createElement('div');
-memberName.setAttribute('class', 'member-name');
-memberName.innerText = "Daniel"
+fetch(`https://api.github.com/users/${team[index].gitUser}`)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (user) {
+        
+        let member = {
+            avatar_url: user.avatar_url, 
+            name: user.name? user.name.split(" ")[0] + " " + user.name.split(" ").slice(-1) : "Membro do time", 
+            bio: user.bio? user.bio.slice(0, 75) + "..." : "Desenvolvedorx Web Fullstack - Programa Santander Coders 2020", 
+            html_url: user.html_url, 
+            linkedin: "https://linkedin.com/in/" + team[index].linkedin,
+        }
+        cardGenerator(member);
+    })
+    .catch(function (erro) {
+        console.log(`Erro ao buscar usuário ${team[index].gitUser}`);
+    })
 
-const divProfiles = document.createElement('div');
-divProfiles.setAttribute('class', 'divProfiles');
+})
 
-const memberGithub = document.createElement('a');
-memberGithub.setAttribute('class', 'member-github');
-memberGithub.setAttribute('href', 'https://www.google.com');
-memberGithub.innerHTML = '<i class="fa fa-github" style="font-size:28px;color:#ebebeb;"></i>';
+function cardGenerator(member) {
 
-const memberLinkedin = document.createElement('a');
-memberLinkedin.setAttribute('class', 'member-linkedin');
-memberLinkedin.setAttribute('href', 'https://www.google.com');
-memberLinkedin.innerHTML = '<i class="fa fa-linkedin" style="font-size:28px;color:#ebebeb;"></i>';
+    const members = document.getElementById('members');
 
-members.appendChild(card);
-card.appendChild(memberAvatar);
-card.appendChild(memberName);
-card.appendChild(divProfiles);
-divProfiles.appendChild(memberGithub);
-divProfiles.appendChild(memberLinkedin);
+    const card = document.createElement('div');
+    card.setAttribute('class', 'card-member');
 
+    const memberAvatar = document.createElement('div');
+    memberAvatar.setAttribute('class', 'member-avatar');
+    memberAvatar.style.backgroundImage = `url('${member.avatar_url}')`
+    memberAvatar.style.backgroundRepeat= "no-repeat";
+    memberAvatar.style.backgroundPosition = 'center';
+    memberAvatar.style.backgroundSize = 'cover';
 
-// //Preenchimento dos cards dos membros do time do Portal do Condomínio com consulta à API do GitHub
+    const memberName = document.createElement('div');
+    memberName.setAttribute('class', 'member-name');
+    memberName.innerText = `${member.name}`;
 
-// const teamMembers = [
-//     {
-//         name: "Camila Lopes",
-//         user: "Camilacslopes",
-//         github,
-//         linkedin
-//     },
-//     {
-//         name: "Carlos Souza",
-//         user: "carlos-souza-02",
-//         github,
-//         linkedin
-//     },
-//     {
-//         name: "Daniel Santamaria",
-//         user: "daniel-santamaria",
-//         github,
-//         linkedin
-//     },
-//     {
-//         name: "Gustavo Nóbrega",
-//         user: "gustavonnobrega",
-//         github,
-//         linkedin
-//     },
-//     {
-//         name: "Juliana Araújo",
-//         user: "JulianaAraujo",
-//         github,
-//         linkedin
-//     },
-// ]
+    const memberBio = document.createElement('div');
+    memberBio.setAttribute('class', 'member-bio');
+    memberBio.innerText = `${member.bio}`;
 
-// for(let i = 0; i < 5;i++) {
-	
-// 	// fetch(`https://api.github.com/users/${teamMembers[member].user}`)
-// 	// 	.then(function (response) {
-// 	// 		return response.json();
-// 	// 	})
-// 	// 	.then(function (gituser) {
-//     const cardMember = document.createElement("div");
-//     cardMember.classList.add("card-member");
+    const divProfiles = document.createElement('div');
+    divProfiles.setAttribute('class', 'divProfiles');
 
-//     const memberName = document.createElement("div");
-//     memberName.classList.add("member-name");
+    const memberGithub = document.createElement('a');
+    memberGithub.setAttribute('class', 'member-github');
+    memberGithub.setAttribute('href', `${member.html_url}`);
+    memberGithub.innerHTML = '<i class="fa fa-github" style="font-size:28px;color:#ebebeb;"></i>';
 
-//     cardMember.appendChild(memberName);
-//     members.appendChild(cardMember);
-    
+    const memberLinkedin = document.createElement('a');
+    memberLinkedin.setAttribute('class', 'member-linkedin');
+    memberLinkedin.setAttribute('href', `${member.linkedin}`);
+    memberLinkedin.innerHTML = '<i class="fa fa-linkedin" style="font-size:28px;color:#ebebeb;"></i>';
 
+    members.appendChild(card);
+    card.appendChild(memberAvatar);
+    card.appendChild(memberName);
+    card.appendChild(memberBio);
+    card.appendChild(divProfiles);
+    divProfiles.appendChild(memberGithub);
+    divProfiles.appendChild(memberLinkedin);
 
-
-//             // memberAvatar.style.backgroundImg = `url(${gituser.avatar_url})` 
-
-//             // alert(gituser.name)
-            
-//             // logradouro.value = endereco.logradouro;
-// 			// logradouro.readOnly = true;
-
-// 			// cidade.value = endereco.localidade;
-// 			// cidade.readOnly = true;
-
-// 			// estado.value = endereco.uf;
-// 			// estado.readOnly = true;
-
-// 			// bairro.value  = endereco.bairro;
-// 			// bairro.readOnly = true;
-// 		// })
-// 		// .catch(function (erro) {
-//         //     alert(erro)
-            
-//         //     // cepform.value = "";
-// 		// 	// alert('Erro ao consultar CEP');
-// 		// })
-		
-// }
+}

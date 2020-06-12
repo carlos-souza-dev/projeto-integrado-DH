@@ -202,60 +202,6 @@ header {
 
 /* Landing */
 
-.box {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    padding: 32px;
-}
-
-.box-team {
-    width: 100%;
-    padding: 32px;
-}
-
-#members {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-}
-
-.card-member {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #fff;
-    width: 20%;
-    min-width: 196px;
-    height: 200px;
-    margin: 16px;
-}
-
-.member-avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #EFAE50;
-}
-
-.divProfiles {
-    display: flex;
-    justify-content: center;
-}
-
-.member-github,
-.member-linkedin {
-    margin: 0px 12px;
-}
-
-.member-name {
-    font-weight: bold;
-    font-size: 18px;
-    color: #ebebeb;
-    margin: 16px 0px;
-}
-
 /* .box--contact {
     padding: 32px 32px 32px 0;
 } */
@@ -417,11 +363,20 @@ header {
     font-size: 16px !important;
 }
 
-.other-contact-title {
+.subscribe-title {
     
     color: #fff;
     font-size: 24px;
-    margin-bottom: 24px;
+    text-transform: uppercase;
+    /* margin-bottom: 24px; */
+    /* text-align: center; */
+}
+
+.team-title {
+    
+    color: #fff;
+    font-size: 24px;
+    /* margin-bottom: 24px; */
     /* text-align: center; */
 }
 
@@ -455,6 +410,76 @@ header {
     font-weight: 400;
     color: #fff;
 }
+
+.box {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 32px;
+}
+
+.box-team {
+    width: 100%;
+    padding: 32px;
+}
+
+.box-team-subscribe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+#members {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-member {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #fff;
+    width: 20%;
+    max-width: 172px;
+    margin: 16px;
+}
+
+.member-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #EFAE50;
+}
+
+.divProfiles {
+    display: flex;
+    justify-content: center;
+}
+
+.member-github,
+.member-linkedin {
+    margin: 0px 12px;
+}
+
+.member-name {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ebebeb;
+    margin: 16px 0 8px 0;
+    text-align: center;
+}
+
+.member-bio {
+    font-size: 14px;
+    color: #ebebeb;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
 footer {
     display: flex;
     width: 100%;
@@ -519,11 +544,11 @@ footer {
 }
 
 #emailNews {
-    width: 320px !important;
+    width: 420px !important;
 }
 
 .form-inline {
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 /* Custom responsiveness */

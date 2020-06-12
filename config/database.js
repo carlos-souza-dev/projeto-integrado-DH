@@ -3,7 +3,7 @@ module.exports = {
     dialect: "mysql",
     username: "root",
     port: 3306,
-    password: "192909",
+    password: "roadrunner",
     database: "portal-do-condominio",
   };
   

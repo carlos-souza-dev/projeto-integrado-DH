@@ -213,7 +213,7 @@
                                                     
                                                     <h6 class="section-title">Interesses</h6>
                                                         <div class="interesses">
-                                                            <% if (classificado.morador.interesses) { %>
+                                                            if (interesses) {
                                                         <% for(let interesse of JSON.parse(classificado.morador.interesses)){ %>
                                                             <span class="interesse"><%= interesse %></span>
                                                         <% } %>

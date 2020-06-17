@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       foto: DataTypes.STRING(245),
       sobre: DataTypes.STRING(245),
       interesses: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(245),
       },
       admin: {
         type: DataTypes.BOOLEAN,

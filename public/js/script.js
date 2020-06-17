@@ -32,3 +32,4 @@ formCadastro.addEventListener("mouseover", function (eve) {
             confirmarSenha.style.backgroundColor = "rgb(243, 198, 198, 1)";
     }
 });
+

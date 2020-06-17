@@ -3,7 +3,6 @@ const { QueryTypes } = require("sequelize");
 const config = require("../config/database");
 const bcrypt = require("bcrypt");
 const {Moradores} = require("../models");
-const {check, validationResult, body} = require('express-validator');
 
   
 
@@ -14,8 +13,8 @@ const userController = {
 
     store: async (req, res) => {
      
-        let listaDeErrors = validationResult(req);
-        if(listaDeErrors.isEmpty()){
+        
+       
         const {nome, cpf, email, senha, admin = 0, dataNascimento, id_apartamento} = req.body;
         const hashPassword = bcrypt.hashSync(senha, 10);
         const db = new Sequelize(config);
@@ -29,9 +28,7 @@ const userController = {
                 type: QueryTypes.SELECT
             }
         )
-   }else{
-     return res.render("auth/register",{errors:listaDeErrors.errors})
-        }
+   
     
 
         // Cadastra o novo usuário na base caso não encontre o CPF informado

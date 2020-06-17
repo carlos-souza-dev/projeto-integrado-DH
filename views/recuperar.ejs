@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Condomínio - Cadastro</title>
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index/styles.css">
+    <link rel="stylesheet" href="./css//bootstrap.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="custom-container custom-container--header header-signin">
+            <a href="#landing">
+                <img class="logo-full" src="./img/assets/logo-original.svg" alt="Portal do Condomínio">
+            </a>
+            <ul class="header__menu">
+                <li><a id="btn-cancelar" href="/login">Cancelar</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+           
+        <div class="container">
+            <% if(typeof(errors) != "undefined"){ %>
+                <p style="color:red">Erro</p>
+                <ul>
+                    <% errors.forEach((error)=> { %>
+                        <li><%= error.msg %> </li>
+                    <%})%> 
+                </ul>
+             <% } %>
+            <div class="form-newUser row" id="row-recuperar">
+                <h2> Recuperar sennha</h2>
+                <form class="row"  action="/recuperar" method="POST">
+                    <div class="cpfError col-12">
+                        <p>Error no e-mail</p>
+                    </div>
+                    
+                    <div class="form-group col-md-12">
+                        <label class="label-email">E-mail</label>
+                        <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Digite seu e-mail" aria-describedby="infoEmail" required>
+                        <small id="infoEmail" class="form-text text-muted">Seu e-mail nunca será compartilhado.</small>
+                    </div>
+                   
+                    <button class="btn-cadastro cadastro-enter" type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+     </main>
+    <script src="/js/script.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+</body>
+</html>

@@ -240,7 +240,11 @@ form #inputcpf {
   right: 40px;
 }
 
+/* página recuperar  */
 
+.container #row-recuperar {
+  display: block !important;
+}
 /* página sucesso */
 
 .text-center .sucess-section {

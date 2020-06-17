@@ -107,6 +107,16 @@ z-index: 2;
 
 .card-img {
     margin-bottom: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#botaoExcluir{
+    display: flex;
+    justify-content: flex-end;
+    
+    
 }
 
 /* fim stilo cards classificados */

@@ -117,7 +117,7 @@ module.exports = {
       cpf:'35960212278',
       email: 'biel@email.com',
       senha: bcrypt.hashSync('123', 10),
-      foto: '/img/1590888745432alex.jpg',
+      foto: '/img/1590888745432biel.jpg',
       sobre: 'Estagiário',
       interesses:``,
       admin: false,

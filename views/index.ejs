@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./css/index/styles.css">
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <header>
@@ -82,10 +83,76 @@
                 <section id="contact" class="parallax__group parallax__group--contact">
                     <div class="parallax__layer parallax__layer--contact parallax__layer--base parallax__layer--base--contact">
                         <div class="custom-container custom-container--contact">
-                            <h2 class="title-contact">Como podemos ajudar?</h2>
                             <div class="contact-subsection">
-                                <div class="box box--contact">
-                                    <form action="" method="POST">
+                                <div class="box-team box-team-subscribe">
+                                    <h3 class="subscribe-title">Assine nossa newsletter</h3> 
+                                    <form action="/subscribe" method="POST" class="form-inline form-inline-news">
+                                        
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="emailNews" id="emailNews" placeholder="Digite seu e-mail" required>
+                                        </div>
+                                        <button class="enviar enviar-nlsection" type="submit">Inscrever-se</button>
+                                    </form>
+                                </div>
+                                <!-- <div class="box">
+                                    <h3 class="other-contact-title">Outras formas de falar com a gente</h3>
+                                    <div class="contact-channel">
+                                        <div class="contact-channel-item">
+                                            <i class="material-icons-outlined contact-icon" style="font-size:28px;">mail_outline</i>
+                                            <span class="contact-email">portal@condominio.com</span>
+                                        </div>
+                                        <div  class="contact-channel-item">
+                                            <i class="material-icons-outlined contact-icon" style="font-size:28px;">phone</i>
+                                            <span class="contact-whatsapp">(xx) 99999-9999</span>
+                                        </div>
+                                    </div>
+                                    <div class="contact-channel">
+                                        <i class="material-icons-outlined contact-icon" style="font-size:28px;">phone</i>
+                                        <span class="contact-whatsapp">(xx) 99999-9999</span>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <hr class="hr-contact">
+                            <div class="contact-subsection">
+                                <div class="box-team">
+                                    <h3 class="team-title">O time do portal do condomínio</h3>
+                                    <div id="members">
+                                        
+                                        <!-- <div class="card-member">
+                                            <div class="member-avatar"></div>
+                                            <div class="member-name">Camila Lopes</div>
+                                            <div class="member-github">GitHub</div>
+                                            <div class="member-linkedin">LinkedIn</div>
+                                        </div>
+                                        <div class="card-member">
+                                            <div class="member-avatar"></div>
+                                            <div class="member-name">Carlos Souza</div>
+                                            <div class="member-github">GitHub</div>
+                                            <div class="member-linkedin">LinkedIn</div>
+                                        </div>
+                                        <div class="card-member">
+                                            <div class="member-avatar"></div>
+                                            <div class="member-name">Daniel Santamaria</div>
+                                            <div class="member-github">GitHub</div>
+                                            <div class="member-linkedin">LinkedIn</div>
+                                        </div>
+                                        <div class="card-member">
+                                            <div class="member-avatar"></div>
+                                            <div class="member-name">Gustavo Nóbrega</div>
+                                            <div class="member-github">GitHub</div>
+                                            <div class="member-linkedin">LinkedIn</div>
+                                        </div>
+                                        <div class="card-member">
+                                            <div class="member-avatar"></div>
+                                            <div class="member-name">Juliana Araújo</div>
+                                            <div class="member-github">GitHub</div>
+                                            <div class="member-linkedin">LinkedIn</div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <form action="" method="POST">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="name" placeholder="Digite seu nome" required>
                                         </div>
@@ -103,20 +170,7 @@
                                             <textarea class="form-control" id="message" rows="4" placeholder="Escreva sua mensagem"></textarea>
                                         </div>
                                         <button class="enviar" type="submit">Enviar mensagem</button>
-                                    </form>
-                                </div>
-                                <div class="box">
-                                    <h3 class="other-contact-title">Outras formas de falar com a gente</h3>
-                                    <div class="contact-channel">
-                                        <i class="material-icons-outlined contact-icon" style="font-size:32px;">mail_outline</i>
-                                        <span class="contact-email">portaldocondominio@email.com</span>
-                                    </div>
-                                    <div class="contact-channel">
-                                        <i class="material-icons-outlined contact-icon" style="font-size:32px;">phone</i>
-                                        <span class="contact-whatsapp">(xx) 99999-9999</span>
-                                    </div>
-                                </div>
-                            </div>
+                                </form> -->
                         </div>
                     </div>
                 </section>
@@ -200,5 +254,6 @@
     crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/indexscripts.js"></script>
+    <script src="./js/teamscript.js"></script>
     </body>
 </html>

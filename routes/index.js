@@ -54,6 +54,8 @@ router.get('/', function (req, res, next) {
 
 router.get('/login', authController.index);
 router.post('/logar', authController.logar);
+router.get('/recuperar', authController.recuperar);
+router.post('/recuperar', authController.enviar);
 
 router.get('/home',  homeController.exibir);
 

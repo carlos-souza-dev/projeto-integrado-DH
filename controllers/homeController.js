@@ -73,7 +73,6 @@ const homeController = {
 
         return res.render('home', {qtdMorador, qtdPrestadores, qtdClassificados, anunciosViz, meusAnuncios, correspondencia, comunicados, solicitacoes, usuario: req.session.user })
     }
-
     
 }
 

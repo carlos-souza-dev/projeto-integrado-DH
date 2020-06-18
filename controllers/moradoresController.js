@@ -15,10 +15,10 @@ store: async (req, res) => {
 
     },
 
-
 exibir: async (req, res) => {
     
     if (req.session.user.admin) {
+        
         let users = await Moradores.findAll()
 
         return res.render('moradores', {users, usuario: req.session.user});

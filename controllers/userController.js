@@ -5,8 +5,6 @@ const bcrypt = require("bcrypt");
 const {Moradores} = require("../models");
 //const {check, validationResult, body} = require('express-validator')
 
-  
-
 const userController = {
     create: (req, res) => {
         return res.render("auth/register", {msgCPF: ""})
@@ -29,10 +27,6 @@ const userController = {
                 type: QueryTypes.SELECT
             }
         )
-    //}else{
-      //  return res.render("auth/register",{errors:listaDeErrors.errors})
-        //}
-    
 
         // Cadastra o novo usuário na base caso não encontre o CPF informado
         if(!cpfValidacao) {
@@ -56,15 +50,6 @@ const userController = {
         res.render("login", {msg: "", usuario: req.session.user});
     },
 
-
-   
-
   }; 
-
-
-
-
-    
-
 
 module.exports = userController;

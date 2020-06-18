@@ -19,7 +19,6 @@ const solictacoesController = {
             }
           );
 
-       
           return res.redirect("/solicitacoes");
     },
 
@@ -50,9 +49,6 @@ const solictacoesController = {
                 })
                 return res.render('solicitacoes', {result, usuario: req.session.user});
             }
-        
-            // console.log(result);
-           
     },
 
     updateAp: async (req, res) => {

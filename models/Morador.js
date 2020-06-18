@@ -13,7 +13,18 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
-      senha: DataTypes.STRING(245),
+      senha: {
+        type: DataTypes.STRING(245),
+        select: false,
+      },
+      senhaTemporaria: {
+        type: DataTypes.STRING,
+        select: false,
+      },
+      senhaTemporariaExpira: {
+        type: DataTypes.DATE,
+        select: false,
+      },
       foto: DataTypes.STRING(245),
       sobre: DataTypes.STRING(245),
       interesses: {

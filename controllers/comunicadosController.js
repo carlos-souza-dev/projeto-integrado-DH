@@ -3,14 +3,12 @@ const {Comunicados} = require("../models");
 
 const comunicadosController = {
     
-    index: async (req, res) => {
-      
+    index: async (req, res) => {      
        
-        // console.log(titulo, informacao)
         return res.render('criarComunicado', {usuario: req.session.user} );
 
-
     },
+
     store: async (req, res) => {
         const {titulo,informacao} = req.body;
 
@@ -20,7 +18,6 @@ const comunicadosController = {
        
         // console.log(titulo, informacao)
         return res.redirect("/comunicados");
-
 
     },
 
@@ -33,7 +30,6 @@ const comunicadosController = {
         
         return res.render('comunicados', {comunicados, usuario: req.session.user})
     },
-
     
     destroy: async (req, res) => {
         const {id} = req.params;
@@ -44,9 +40,7 @@ const comunicadosController = {
         })
        
         res.redirect('/comunicados')
-    },
-    
-
+    }, 
 
     update: async (req, res) => {
         const {id} =  req.params;

@@ -1,6 +1,7 @@
 const {Classificados, Moradores} = require("../models");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
+const envarEmail = require('./email');
 
 const classificadosController = {
 
@@ -12,7 +13,9 @@ const classificadosController = {
             {titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/${files.filename}` }
         )
         
-        
+        // Função para enviar email
+        envarEmail(titulo, descricao, Moradores.nome);
+            
         return res.redirect("/meusItens");
 
     },

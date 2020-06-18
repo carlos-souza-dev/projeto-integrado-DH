@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="./css/index/styles.css">
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <header>
@@ -37,7 +38,7 @@
                             <div class="box box--landing">
                                 <h1 class="title-landing">O melhor do seu condomínio a um toque de distância</h1>
                                 <h2 class ="subtitle-landing">Explore diversas soluções que irão trazer facilidade para sua vida diária e experiências inesquecíveis com seus vizinhos</h2>
-                                <a class="call-to-action call-to-action--landing" href="#">Agende uma demonstração</a>
+                                <a class="call-to-action call-to-action--landing" href="/demonstration">Agende uma demonstração</a>
                             </div>
                         </div>
                     </div>
@@ -72,7 +73,7 @@
                             <p class="content--cta">
                                 Cuide da sua casa de onde estiver, em um computador no conforto do seu lar ou em seu smartphone
                             </p>
-                            <a class="call-to-action call-to-action--about" href="#">Agende uma demonstração</a>
+                            <a class="call-to-action call-to-action--about" href="/demonstration">Agende uma demonstração</a>
                         </div>
                     </div>
                 </section>
@@ -82,10 +83,76 @@
                 <section id="contact" class="parallax__group parallax__group--contact">
                     <div class="parallax__layer parallax__layer--contact parallax__layer--base parallax__layer--base--contact">
                         <div class="custom-container custom-container--contact">
-                            <h2 class="title-contact">Como podemos ajudar?</h2>
                             <div class="contact-subsection">
-                                <div class="box box--contact">
-                                    <form action="" method="GET">
+                                <div class="box-team box-team-subscribe">
+                                    <h3 class="subscribe-title">Assine nossa newsletter</h3> 
+                                    <form action="/subscribe" method="POST" class="form-inline form-inline-news">
+                                        
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" name="emailNews" id="emailNews" placeholder="Digite seu e-mail" required>
+                                        </div>
+                                        <button class="enviar enviar-nlsection" type="submit">Inscrever-se</button>
+                                    </form>
+                                </div>
+                                <!-- <div class="box">
+                                    <h3 class="other-contact-title">Outras formas de falar com a gente</h3>
+                                    <div class="contact-channel">
+                                        <div class="contact-channel-item">
+                                            <i class="material-icons-outlined contact-icon" style="font-size:28px;">mail_outline</i>
+                                            <span class="contact-email">portal@condominio.com</span>
+                                        </div>
+                                        <div  class="contact-channel-item">
+                                            <i class="material-icons-outlined contact-icon" style="font-size:28px;">phone</i>
+                                            <span class="contact-whatsapp">(xx) 99999-9999</span>
+                                        </div>
+                                    </div>
+                                    <div class="contact-channel">
+                                        <i class="material-icons-outlined contact-icon" style="font-size:28px;">phone</i>
+                                        <span class="contact-whatsapp">(xx) 99999-9999</span>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <hr class="hr-contact">
+                            <div class="contact-subsection">
+                                <div class="box-team">
+                                    <h3 class="team-title">O time do portal do condomínio</h3>
+                                    <div id="members">
+                                        
+                                        <!-- <div class="card-member">
+                                            <div class="member-avatar"></div>
+                                            <div class="member-name">Camila Lopes</div>
+                                            <div class="member-github">GitHub</div>
+                                            <div class="member-linkedin">LinkedIn</div>
+                                        </div>
+                                        <div class="card-member">
+                                            <div class="member-avatar"></div>
+                                            <div class="member-name">Carlos Souza</div>
+                                            <div class="member-github">GitHub</div>
+                                            <div class="member-linkedin">LinkedIn</div>
+                                        </div>
+                                        <div class="card-member">
+                                            <div class="member-avatar"></div>
+                                            <div class="member-name">Daniel Santamaria</div>
+                                            <div class="member-github">GitHub</div>
+                                            <div class="member-linkedin">LinkedIn</div>
+                                        </div>
+                                        <div class="card-member">
+                                            <div class="member-avatar"></div>
+                                            <div class="member-name">Gustavo Nóbrega</div>
+                                            <div class="member-github">GitHub</div>
+                                            <div class="member-linkedin">LinkedIn</div>
+                                        </div>
+                                        <div class="card-member">
+                                            <div class="member-avatar"></div>
+                                            <div class="member-name">Juliana Araújo</div>
+                                            <div class="member-github">GitHub</div>
+                                            <div class="member-linkedin">LinkedIn</div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <form action="" method="POST">
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="name" placeholder="Digite seu nome" required>
                                         </div>
@@ -102,26 +169,75 @@
                                         <div class="form-group">
                                             <textarea class="form-control" id="message" rows="4" placeholder="Escreva sua mensagem"></textarea>
                                         </div>
-                                        <button type="submit">Enviar mensagem</button>
-                                    </form>
-                                </div>
-                                <div class="box">
-                                    <h3 class="other-contact-title">Outras formas de falar com a gente</h3>
-                                    <div class="contact-channel">
-                                        <i class="material-icons-outlined contact-icon" style="font-size:32px;">mail_outline</i>
-                                        <span class="contact-email">portaldocondominio@email.com</span>
-                                    </div>
-                                    <div class="contact-channel">
-                                        <i class="material-icons-outlined contact-icon" style="font-size:32px;">phone</i>
-                                        <span class="contact-whatsapp">(xx) 99999-9999</span>
-                                    </div>
-                                </div>
-                            </div>
+                                        <button class="enviar" type="submit">Enviar mensagem</button>
+                                </form> -->
                         </div>
                     </div>
                 </section>
             </div>
         </main>
+        <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Obrigado!</h2>
+                        <div class="modal-span">
+                            <span>Em breve, um membro de nossa equipe entrará em contato com você.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="ModalCenterNewsLetter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Antes de ir embora...</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body modal-body-news">
+                    <h5>Gostaria de assinar nossa newsletter?<h5>
+                    <div class="news-img"></div>
+                    <div class="modal-span-news">Fique por dentro das últimas atualizações sobre o Portal do Condomínio e receba diversas dicas para cuidar de sua casa!</div>
+                    <form action="/subscribe" method="POST">
+                        <div class="form-group">
+                            <input type="email" class="form-control form-control-lg input-news" name="emailNews" id="emailNews" placeholder="Digite seu e-mail" required>
+                        </div>
+                    <div class="modal-footer modal-footer-news">
+                    <button type="submit" class="btn btn-primary enviar">Inscrever-se</button>
+                    </div>
+                    </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="subscribed" style="display:none"><%= emailSub %></div>
+        <div class="modal fade" id="ModalConfirmSubscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <!-- <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> -->
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Obrigado!</h2>
+                        <div class="modal-span">
+                            <span>O email <strong><%= emailSub %></strong> acaba de ser inscrito em nossa newsletter!</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <footer class="custom-container custom-container--footer">
             <span class="footer__block">
                 Portal do Condomínio
@@ -137,5 +253,7 @@
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/indexscripts.js"></script>
+    <script src="./js/teamscript.js"></script>
     </body>
 </html>

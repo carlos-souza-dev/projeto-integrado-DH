@@ -20,16 +20,39 @@ const correspondenciaController = {
     },
 
     exibir: async (req, res) => {
+        if (req.session.user.admin) {
+            const correspondencia = await Correspondencias.findAll({
+                order: [
+                    ['apartamento','ASC']
+                ]
+            })
+            return res.render('correspondencias', {correspondencia, usuario: req.session.user})
+
+        } else {
         const correspondencia = await Correspondencias.findAll({
             where:{
                 apartamento:{
                  [Op.eq] : req.session.user.id_apartamento
                 }  
              }
-        });
-        
+        })
         return res.render('correspondencias', {correspondencia, usuario: req.session.user})
+    }  
+        
+    },
+
+    destroy: async (req, res) => {
+        const {id} = req.params;
+        const resultado = await Correspondencias.destroy({
+            where: {
+                id: id
+            }
+        })
+
+        res.redirect('/correspondencias')
     }
+
+    
 
 };
 

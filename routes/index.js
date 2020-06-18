@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const multer = require("multer");
-const {check, validationResult, body} = require('express-validator')
 const authController = require("../controllers/authController");
 const userController = require("../controllers/userController");
 const homeController = require("../controllers/homeController");
@@ -16,7 +15,8 @@ const correspondenciaController = require(
 const prestadoresController = require('../controllers/prestadoresController');
 const documentacaoController = require("../controllers/documentacaoController");
 const contatosUteisController = require("../controllers/contatosUteisController");
-const classificadosController = require("../controllers/classificadosController")
+const classificadosController = require("../controllers/classificadosController");
+const indexController = require('../controllers/indexController');
 
 
 
@@ -49,8 +49,18 @@ const uploadDoc = multer({storage: storageDoc});
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', {title: 'Portal do Condominio'});
+    res.render('index', {
+        title: 'Portal do Condominio',
+        emailSub: null
+    });
 });
+
+router.get('/demonstration', function (req, res, next) {
+    res.render('demonstration', {title: 'Portal do Condominio'});
+});
+
+router.post('/demonstration', indexController.schedule);
+router.post('/subscribe', indexController.subscribe);
 
 router.get('/login', authController.index);
 router.post('/logar', authController.logar);
@@ -65,6 +75,7 @@ router.put('/atualizarMoradores/:id', upload.any(), moradoresController.update);
 
 router.get('/correspondencias', auth, correspondenciaController.exibir);
 router.post('/registroCorrespondencia', auth, correspondenciaController.store);
+router.delete('/excluirCorrespondencia/:id', correspondenciaController.destroy);
 
 
 
@@ -74,6 +85,7 @@ router.get('/meusItens', auth, classificadosController.exibirMeusItens);
 router.post('/criarClassificado', auth, upload.any(), classificadosController.store);
 router.put('/updateClassificado/:id', auth, upload.any(), classificadosController.update);
 router.delete('/excluirClassificado/:id', auth, classificadosController.destroy);
+router.delete('/excluirClassificadoAdm/:id', auth, classificadosController.destroyAdm);
 router.post('/buscarClassificado', auth, classificadosController.search);
 
 // Listar solicitações
@@ -103,12 +115,8 @@ router.get('/perfil', auth, perfilController.edit);
 router.put('/perfil', upload.any(), auth, perfilController.update);
 
 router.get("/registro", userController.create);
-//router.post("/registro",[
-//check("nome").isLength({min:3}).withMessage("O nome do usuario tem que conter no mínimo 3 caracteres"),
-//check("email").isEmail().withMessage("Email Inválido"),
-//check("senha").isLength({min:6}).withMessage("A senha do usuario tem que conter no mínimo 6 caracteres"),
-//], userController.store);
-router.post('/registro', userController.store)
+router.post("/registro",userController.store);
+
 
 
 router.post('/logoff', authController.destroy);

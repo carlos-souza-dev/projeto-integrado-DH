@@ -57,6 +57,17 @@ const classificadosController = {
         res.redirect('/meusItens')
     },
 
+    destroyAdm: async (req, res) => {
+        const {id} = req.params;
+        const resultado = await Classificados.destroy({
+            where: {
+                id: id
+            }
+        })
+
+        res.redirect('/classificados')
+    },
+
     
     update: async (req, res) => {
         const {id} = req.params;

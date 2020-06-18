@@ -107,6 +107,16 @@ z-index: 2;
 
 .card-img {
     margin-bottom: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#botaoExcluir{
+    display: flex;
+    justify-content: flex-end;
+    
+    
 }
 
 /* fim stilo cards classificados */
@@ -174,6 +184,7 @@ z-index: 2;
 #corpo-modal {
     display: flex;
     flex-direction: column;
+    padding-bottom: 0px;
 }
 
 .cardy {
@@ -211,6 +222,7 @@ z-index: 2;
 .card-body {
     display: flex;
     flex-direction: column;
+    padding: 20px 20px 0px 32px;
 }
 
 .card-body > div {
@@ -244,9 +256,9 @@ z-index: 2;
 
 .interesse {
     margin-right: 8px;
-    margin-bottom: 16px;
-    padding: 8px 12px;
-    font-size: 18px;
+    margin-bottom: 8px;
+    padding: 4px 12px;
+    font-size: 16px;
     border-radius: 24px;
     font-family: 'Roboto', sans-serif;
     color: black;
@@ -254,7 +266,7 @@ z-index: 2;
 }
 
 .about-content {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 #col-md-4-bloco2 > #classificados-descricao {
@@ -269,6 +281,13 @@ z-index: 2;
 .nomeUser > p, .quemSou > p {
     font-family: 'Roboto', sans-serif;
     font-weight: lighter;
+}
+
+.icones {
+    padding: 0px !important;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
 }
 
 @media(max-width: 767px) {
@@ -301,7 +320,7 @@ z-index: 2;
 
 @media (min-width: 576px){
 .modal-dialog {
-    max-width: 700px !important;
+    max-width: 768px !important;
 
 }
 }

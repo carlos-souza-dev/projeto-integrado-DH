@@ -12,8 +12,8 @@ let transporter = nodemailer.createTransport({
 const enviarEmail = function ( titulo, descricao, nome ) {
 
 transporter.sendMail({
-    From: "Portal do Condomínio <sindico.portal.do.condominio@gmail.com>",
-    to: "sindico.portal.do.condominio@gmail.com",
+    From: "Portal do Condomínio <carlos.beto71@gmail.com>",
+    to: "carlos.beto71@gmail.com",
     subject: "Novo cadastro",
     html: `<!DOCTYPE html>
     <html lang="pt-br">
@@ -73,39 +73,39 @@ transporter.sendMail({
 
 }
 
-const enviarEmailSenha = function (email, token) {
+// const enviarEmailSenha = function (email, token) {
 
-  transporter.sendMail({
-      From: "Portal do Condomínio <sindico.portal.do.condominio@gmail.com>",
-      to: "carlos.beto71@gmail.com",
-      subject: "Recuperação de Senha",
-      html: `
-      <div class="body" style="width: 80%; height: 40vh; margin: 0 auto; border-radius: 15px; -webkit-box-shadow: 0px 0px 30px -3px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 30px -3px rgba(0,0,0,0.75); box-shadow: 0px 0px 30px -3px rgba(0,0,0,0.75);">
-      <p class="titulo" style="text-align: center; color: green; margin: 5vh auto; padding: 3vh; font-size: 3vw;">Abaixo estão seus dados de login.</p>
-      <section style="font-family: sans-serif; width: 60%; height: 10vh; border-radius: 15px; padding: 2vw; background-color: #93c865; margin: 0 auto;">
-      <p class="text" style="font-size: 1.7vw;">E-mail:<b>${email}</b></p>
-      <p class="text" style="font-size: 1.7vw;">Senha:<b>${token}</b></p>
-      </section>
-      </div>
-      <div style="margin:20px 10px;">
-        <p style="font-family: sans-serif; margin: 10px 10px;">Att,</p>
-        <p style="font-family: sans-serif; margin: 10px 10px;">Portal do Condomínio</p>
-        <img src="cid:logo">
-      </div>
-      `, 
-      attachments: [
-        {
-          filename: "logo.png",
-          path: __dirname + "/../public/img/logo/logo.png",
-          cid: "logo"
-        }
-      ]
-  }).then( message => {
-      console.log(message);
-  }).catch(err => {
-      console.log(err);
-  });
+//   transporter.sendMail({
+//       From: "Portal do Condomínio <sindico.portal.do.condominio@gmail.com>",
+//       to: "carlos.beto71@gmail.com",
+//       subject: "Recuperação de Senha",
+//       html: `
+//       <div class="body" style="width: 80%; height: 40vh; margin: 0 auto; border-radius: 15px; -webkit-box-shadow: 0px 0px 30px -3px rgba(0,0,0,0.75); -moz-box-shadow: 0px 0px 30px -3px rgba(0,0,0,0.75); box-shadow: 0px 0px 30px -3px rgba(0,0,0,0.75);">
+//       <p class="titulo" style="text-align: center; color: green; margin: 5vh auto; padding: 3vh; font-size: 3vw;">Abaixo estão seus dados de login.</p>
+//       <section style="font-family: sans-serif; width: 60%; height: 10vh; border-radius: 15px; padding: 2vw; background-color: #93c865; margin: 0 auto;">
+//       <p class="text" style="font-size: 1.7vw;">E-mail:<b>${email}</b></p>
+//       <p class="text" style="font-size: 1.7vw;">Senha:<b>${token}</b></p>
+//       </section>
+//       </div>
+//       <div style="margin:20px 10px;">
+//         <p style="font-family: sans-serif; margin: 10px 10px;">Att,</p>
+//         <p style="font-family: sans-serif; margin: 10px 10px;">Portal do Condomínio</p>
+//         <img src="cid:logo">
+//       </div>
+//       `, 
+//       attachments: [
+//         {
+//           filename: "logo.png",
+//           path: __dirname + "/../public/img/logo/logo.png",
+//           cid: "logo"
+//         }
+//       ]
+//   }).then( message => {
+//       console.log(message);
+//   }).catch(err => {
+//       console.log(err);
+//   });
   
-  }
+// }
 
-module.exports = enviarEmail, enviarEmailSenha;
+module.exports = enviarEmail;

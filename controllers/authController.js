@@ -40,38 +40,54 @@ const authController = {
         
     },
 
-    recuperar: (req, res) => {
+    recuperar: (req, res) => {        
         return res.render("recuperar", {msg: ""});
     },
 
-    enviar: async (req, res) => {
+    forgot: async (req, res) => {
 
-            // const {email} = req.body;
-            const email = "carlos.beto71@gmail.com";
+            const {email} = req.body;
 
             try {
+                
             const user = await Moradores.findOne({where: {email:email}});
 
-            if(!user) 
+            if( user ) {
 
-                return res.status(400).send({alerta: "E-mail não cadastrado."});
+            // return res.status(400).send({alerta: "E-mail não cadastrado."});
             
-                const token = crypto.randomBytes(20).toString('hex');
+            const token = crypto.randomBytes(20).toString('hex');
+            
+            const now = new Date();
+            now.setHours(now.getHours() + 1);
+            
+            console.log("Token "+ user.id);
+            
+            // await Moradores.findByIdAndUpdate(user.id, {
+            //     "$set": {
+            //         senhaTemporaria: token,
+            //         senhaTemporariaExpira: now,
+            //     }
+            // });
 
-                const now = new Date();
-                now.setHours(now.getHours() + 1);
-
-                await Moradores.findByIdAndUpdate(user.id, {
-                    "$set": {
-                        senhaTemporaria: token,
-                        senhaTemporariaExpira: now,
-                    }
-                })
-                console.log(token, now);
-            enviarEmailSenha(email, token);
-            return res.render("login", {alerta: "Enviamos a senha para seu e-mail"});
-        } catch {
-
+            const salvar = await Moradores.update({
+                senhaTemporaria: token,
+                senhaTemporariaExpira: now,
+            }, 
+            {
+                where: {email: email}
+            },
+        )
+            
+            enviarEmailSenha(email, token, user.nome);
+            return res.render("sucesso", {email});
+            
+        } else {
+            
+            return res.render("recuperar", {error: "E-mail não encontrado."})
+            
+        }} catch {
+            
             res.status(400).send({error: "Erro, tente novamente."})
 
         }

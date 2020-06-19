@@ -26,28 +26,22 @@
     <main>
            
         <div class="container">
-            <% if(typeof(errors) != "undefined"){ %>
-                <p style="color:red">Erro</p>
-                <ul>
-                    <% errors.forEach((error)=> { %>
-                        <li><%= error.msg %> </li>
-                    <%})%> 
-                </ul>
-             <% } %>
             <div class="form-newUser row" id="row-recuperar">
                 <h2> Recuperar sennha</h2>
                 <form class="row"  action="/recuperar" method="POST">
-                    <div class="cpfError col-12">
-                        <p>Error no e-mail</p>
-                    </div>
                     
                     <div class="form-group col-md-12">
                         <label class="label-email">E-mail</label>
                         <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Digite seu e-mail" aria-describedby="infoEmail" required>
                         <small id="infoEmail" class="form-text text-muted">Seu e-mail nunca será compartilhado.</small>
                     </div>
-                   
+                    
                     <button class="btn-cadastro cadastro-enter" type="submit">Enviar</button>
+                        <div class="cpfError col-12">
+                            <% if(typeof(error) != "undefined"){ %>
+                                <span><%= error %> </span>
+                             <% } %>
+                        </div>
                 </form>
             </div>
         </div>

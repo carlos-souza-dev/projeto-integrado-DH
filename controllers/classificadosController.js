@@ -17,9 +17,6 @@ const classificadosController = {
         const nome = req.session.user.nome;
         const image = files.filename;
 
-        // Função para enviar email
-        
-        // console.log("Nome " + nome + "Imagem: "+fileContatoRota);
         enviarEmail(image, titulo, descricao, nome);
             
         return res.redirect("/meusItens");

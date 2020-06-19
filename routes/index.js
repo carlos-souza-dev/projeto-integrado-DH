@@ -10,9 +10,7 @@ const perfilController = require("../controllers/perfilController");
 const solicitacoesController = require("../controllers/solicitacoesController");
 const comunicadosController = require("../controllers/comunicadosController");
 const moradoresController = require("../controllers/moradoresController");
-const correspondenciaController = require(
-    "../controllers/correspondenciaController"
-);
+const correspondenciaController = require("../controllers/correspondenciaController");
 const prestadoresController = require('../controllers/prestadoresController');
 const documentacaoController = require("../controllers/documentacaoController");
 const contatosUteisController = require("../controllers/contatosUteisController");
@@ -55,7 +53,7 @@ router.get('/', function (req, res, next) {
 router.get('/login', authController.index);
 router.post('/logar', authController.logar);
 router.get('/recuperar', authController.recuperar);
-router.post('/recuperar', authController.enviar);
+router.post('/recuperar', authController.forgot);
 
 router.get('/home',  homeController.exibir);
 

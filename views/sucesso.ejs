@@ -2,33 +2,46 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portal do Condomínio</title>
-  <link href="/stylesheets/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Condomínio - Cadastro</title>
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index/styles.css">
+    <link rel="stylesheet" href="./css//bootstrap.min.css">
 </head>
 
 <body>
-  <main class="text-center" >
-    <div class="header-logo" >
-      <div class="logo"></div>
-      <h1 class="portal">Portal do </h1>
-      <h1 class="condominio">Condomínio</h1>
-    </div>
-    <section class="sucess-section">
-      <div id="sucess-main" >
-      <h1 class="login-title">Cadastro realizado com sucesso!</h1>
-      
-      <div class="sucess-text">
-          <p><b><% user.nome %> </b>, confirme seu cadastro acessando seu e-mail <b><% user.email %> </b>. </p>
-      </div>
-      <div class="button-sucess">
-        <a href="/login">Voltar</a>
-    </div>
-    </div>
-    </section>
-  </main>
-</body>
 
+    <header>
+        <div class="custom-container custom-container--header header-signin">
+            <a href="#landing">
+                <img class="logo-full" src="./img/assets/logo-original.svg" alt="Portal do Condomínio">
+            </a>
+            <ul class="header__menu">
+                <li><a id="btn-cancelar" href="/login">Cancelar</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+           
+        <div class="container">
+            <div class="form-newUser row" id="row-recuperar">
+                <h2>Token gerado com sucesso!</h2>
+                <form class="row"  action="/recuperar" method="POST">
+                    <div class="form-group col-md-12">
+                      <div class="sucess-text">
+                          <h4>Enviamos o token para o e-mail <b><%= email %></b>, verifique sua caixa de e-mail.</b>. </h4>
+                      </div>
+                      <small id="infoEmail" class="form-text text-muted">O token gerado expira em 1 hora.</small>
+                    </div>
+                   
+                    <a class="btn-voltar" href="/login">Voltar</a>
+                </form>
+            </div>
+        </div>
+     </main>
+    <script src="/js/script.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+</body>
 </html>

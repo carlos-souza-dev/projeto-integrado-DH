@@ -1,7 +1,8 @@
 const {Classificados, Moradores} = require("../models");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
-const envarEmail = require('./email');
+const enviarEmail = require('./email');
+const path = require('path');
 
 const classificadosController = {
 
@@ -10,11 +11,16 @@ const classificadosController = {
         const {titulo,descricao,categoria, tipo} = req.body;
 
         const classificado = await Classificados.create(
-            {titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/${files.filename}` }
+            {titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/classificados/${files.filename}` }
         )
         
+        const nome = req.session.user.nome;
+        const image = files.filename;
+
         // Função para enviar email
-        envarEmail(titulo, descricao, Moradores.nome);
+        
+        // console.log("Nome " + nome + "Imagem: "+fileContatoRota);
+        enviarEmail(image, titulo, descricao, nome);
             
         return res.redirect("/meusItens");
 

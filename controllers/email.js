@@ -5,11 +5,11 @@ let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: "carlos.beto71@gmail.com",
-        pass: "portal2018"
+        pass: "Talita10022018"
     }
 });
 
-const enviarEmail = function ( titulo, descricao, nome ) {
+const enviarEmail = function (imagem, titulo, descricao, nome ) {
 
 transporter.sendMail({
     From: "Portal do Condomínio <carlos.beto71@gmail.com>",
@@ -26,7 +26,8 @@ transporter.sendMail({
       
     </head>
     
-    <body>
+    <body">
+    <div  style="display: flex; justify-content: center;>
       <div style="margin: 10px;"><p style=" font-size: 2vw; color: green; font-weight: bold; font-family: sans-serif;">${nome} adicionou um novo classificado.</p></div>
     
       <section class="classificados-rows-two" style="width: 94%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: flex-start;">
@@ -45,6 +46,7 @@ transporter.sendMail({
           </div>
         </div>
       </section>
+      </div>
       <div style="margin:20px 10px;">
         <p style="font-family: sans-serif; margin: 10px 10px;">Att,</p>
         <p style="font-family: sans-serif; margin: 10px 10px;">Portal do Condomínio</p>
@@ -56,7 +58,7 @@ transporter.sendMail({
     attachments: [
       {
         filename: "imagem.jpg",
-        path: __dirname + "/../public/img/classificados/"+files,
+        path: __dirname + "/../public/img/classificados/"+imagem,
         cid: "imagem"
       },
       {

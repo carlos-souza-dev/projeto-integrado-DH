@@ -30,7 +30,7 @@ const authController = {
 
         req.session.user = {
             id: user.id,
-            name: user.name,
+            nome: user.nome,
             email: user.email,
             id_apartamento: user.id_apartamento,
             admin: user.admin,

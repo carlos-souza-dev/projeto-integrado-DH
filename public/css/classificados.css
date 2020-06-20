@@ -33,7 +33,7 @@ z-index: 2;
     padding-bottom: 40px;
     margin: 0 auto;
     flex-wrap: wrap;
-
+    justify-content: center;
 }
 
 .centroTelaClassificados--home {
@@ -50,8 +50,11 @@ z-index: 2;
 
 .card {
     /* margin: 15px; */
+    min-width: 12rem;
+    max-width: 15rem;
+    min-height: 16rem;
     padding: 5px;
-    width: 12rem;
+    height: 17rem;
     display: flex;
     border-radius: 5px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
@@ -86,6 +89,12 @@ z-index: 2;
     font-size: 14px;
 }
 
+.card-descricao {
+    font-weight: 300;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
 .card-titulo--home {
     display: flex;
     align-items: center;
@@ -102,7 +111,8 @@ z-index: 2;
 .card-subtitulo {
     font-weight: lighter;
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
+    color: black;
 }
 
 .card-img {

@@ -361,6 +361,10 @@ button {
     margin: 16px auto !important;
 }
 
+.token-enter:hover {
+    color: white !important;
+}
+
 .other-contact-title {
     
     color: #fff;

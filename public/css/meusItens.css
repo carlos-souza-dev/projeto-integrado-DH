@@ -68,7 +68,10 @@
 
 
 .card{
-    width: 12rem;
+    min-width: 12rem;
+    max-width: 15rem;
+    min-height: 16rem;
+    padding: 5px;
     margin: 1rem;
     display: flex;
     border-radius: 5px;
@@ -94,6 +97,10 @@
     justify-content: center;
 }
 
+
+.toolsCardAnuncio a{
+    margin: 10px 10px;
+}
 
 .toolsCardAnuncio a img{
     padding-left: 5px;

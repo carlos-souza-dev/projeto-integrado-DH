@@ -159,6 +159,8 @@
                                 alt="Imagem de capa do card">
                             <div class="card-corpo">
                                 <div class="card-titulo"><%=classificado.titulo%></div>
+                                <div class="card-subtitulo"><%=classificado.morador.nome%> <%=classificado.morador.id_apartamento%></div>
+                                <div class="card-descricao"><%= classificado.descricao.slice(0, 35)+"..."%></div>
                                 <div class="card-subtitulo"></div>
 
                             </div>
@@ -213,9 +215,7 @@
                                                     
                                                     <h6 class="section-title">Interesses</h6>
                                                         <div class="interesses">
-                                                        <% for(let interesse of JSON.parse(classificado.morador.interesses)){ %>
-                                                            <span class="interesse"><%= interesse %></span>
-                                                        <% } %>
+                                                        <!--  -->
                                                         <!-- <button>Futebol</button>
                                                         <button>Música</button>
                                                         <button>Cozinha</button>

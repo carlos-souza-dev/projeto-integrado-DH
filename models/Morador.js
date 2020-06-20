@@ -19,11 +19,9 @@ module.exports = (sequelize, DataTypes) => {
       },
       senhaTemporaria: {
         type: DataTypes.STRING,
-        select: false,
       },
       senhaTemporariaExpira: {
         type: DataTypes.DATE,
-        select: false,
       },
       foto: DataTypes.STRING(245),
       sobre: DataTypes.STRING(245),

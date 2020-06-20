@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal do Condomínio - Redefinir Senha</title>
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index/styles.css">
+    <link rel="stylesheet" href="./css//bootstrap.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="custom-container custom-container--header header-signin">
+            <a href="#landing" href="/">
+                <img class="logo-full" src="./img/assets/logo-original.svg" alt="Portal do Condomínio">
+            </a>
+            <ul class="header__menu">
+                <li><a id="btn-cancelar" href="/login">Cancelar</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+           
+        <div class="container">
+            <div class="form-newUser row" id="row-recuperar">
+                <h2> Redefinir senha</h2>
+                <form class="row" action="/usetoken" method="POST">
+                    <div class="cpfError col-12">
+                        <% if(typeof(error) != "undefined"){ %>
+                            <p><%= error %> </p>
+                            <% } %>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>E-mail</label>
+                        <input type="email" class="form-control" name="email" placeholder="Digite seu e-mail">
+                        <small id="infoEmail" class="form-text text-muted">Seu e-mail nunca será compartilhado.</small>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label class="label-email">Token</label>
+                        <input type="text" class="form-control" name="token" placeholder="Digite seu token">
+                    </div>                    
+                    <div class="form-group col-md-6">
+                        <label>Senha</label>
+                        <input type="password" class="form-control" name="senha" id="password" placeholder="Digite uma senha" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Confirmar Senha</label>
+                        <input type="password" class="form-control" name="confirmarSenha" id="confirmPassword" placeholder="Confirme a senha" required>
+                    </div>
+                    
+                    <button class="btn-cadastro cadastro-enter .token-enter" type="submit">Salvar</button>
+                
+                </form>
+            </div>
+        </div>
+     </main>
+    <script src="/js/script.js"></script>
+    <script src="/js/jquery-3.4.1.min.js"></script>
+</body>
+</html>

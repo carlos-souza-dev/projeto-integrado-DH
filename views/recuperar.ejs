@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal do Condomínio - Cadastro</title>
+    <title>Portal do Condomínio - Recuperar Senha</title>
     <link href="/stylesheets/style.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/index/styles.css">
     <link rel="stylesheet" href="./css//bootstrap.min.css">
@@ -27,7 +27,7 @@
            
         <div class="container">
             <div class="form-newUser row" id="row-recuperar">
-                <h2> Recuperar sennha</h2>
+                <h2> Recuperar senha</h2>
                 <form class="row"  action="/recuperar" method="POST">
                     
                     <div class="form-group col-md-12">
@@ -36,12 +36,13 @@
                         <small id="infoEmail" class="form-text text-muted">Seu e-mail nunca será compartilhado.</small>
                     </div>
                     
-                    <button class="btn-cadastro cadastro-enter" type="submit">Enviar</button>
-                        <div class="cpfError col-12">
-                            <% if(typeof(error) != "undefined"){ %>
-                                <span><%= error %> </span>
-                             <% } %>
-                        </div>
+                    <button class="btn-cadastro cadastro-enter" type="submit">Enviar token</button>
+                    <a class="btn-cadastro cadastro-enter token-enter" href="/token">Usar token</a>
+                    <div class="cpfError col-12">
+                        <% if(typeof(error) != "undefined"){ %>
+                            <span><%= error %> </span>
+                            <% } %>
+                    </div>
                 </form>
             </div>
         </div>

@@ -31,13 +31,12 @@
       <input type="password" name="senha" id="inputPassword" class="form-control" placeholder="Senha">
     </div>
     <div class="login-error">
-      <% if(msg != ""){ %>
-        <p><%=msg%></P>
-      <% } %>
+      <% if(typeof(msg) != "undefined"){ %>
+        <p><%= msg %> </p>
+        <% } %>
     </div>
     <div class="checkbox mb-3">
       <label>
-
         <input type="checkbox" name="logado" value="remember-me"> Manter sessão
       </label>
     </div>

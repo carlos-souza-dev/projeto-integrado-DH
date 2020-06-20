@@ -349,6 +349,18 @@ button {
     margin: 16px auto !important;
 }
 
+.token-enter {
+    background-color: #5586a3 !important;
+    border: none !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    padding: 8px 16px !important;
+    border-radius: 48px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 18px !important;
+    margin: 16px auto !important;
+}
+
 .other-contact-title {
     
     color: #fff;

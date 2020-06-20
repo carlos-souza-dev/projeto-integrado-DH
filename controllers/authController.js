@@ -54,22 +54,11 @@ const authController = {
 
             if( user ) {
 
-            // return res.status(400).send({alerta: "E-mail não cadastrado."});
-            
             const token = crypto.randomBytes(20).toString('hex');
             
             const now = new Date();
             now.setHours(now.getHours() + 1);
             
-            console.log("Token "+ user.id);
-            
-            // await Moradores.findByIdAndUpdate(user.id, {
-            //     "$set": {
-            //         senhaTemporaria: token,
-            //         senhaTemporariaExpira: now,
-            //     }
-            // });
-
             const salvar = await Moradores.update({
                 senhaTemporaria: token,
                 senhaTemporariaExpira: now,
@@ -79,7 +68,7 @@ const authController = {
             },
         )
             
-            enviarEmailSenha(email, token, user.nome);
+            // enviarEmailSenha(email, token, user.nome);
             return res.render("sucesso", {email});
             
         } else {
@@ -91,6 +80,49 @@ const authController = {
             res.status(400).send({error: "Erro, tente novamente."})
 
         }
+    },
+    
+    token: (req, res) => {
+        
+        return res.render("usartoken");
+    },
+    
+    storetoken: async (req, res) => {
+
+        const {email, token, senha} = req.body;
+
+        const user = await Moradores.findOne({where: {email: email}})
+        
+        if( token == user.senhaTemporaria) {
+            
+            const now = new Date();
+            
+            if( now < user.senhaTemporariaExpira) {
+                console.log("Agora " + now);
+                console.log("user " + user.senhaTemporariaExpira);
+
+                const hashPassword = bcrypt.hashSync(senha, 10);
+
+                const save = await Moradores.update({ 
+                    senha: hashPassword,
+                    senhaTemporaria: "",
+                    senhaTemporariaExpira:""},
+                    {
+                    where: {email: email}
+                })
+
+                res.render("login");
+
+            } else {
+
+                res.render("usartoken",{error: "Token expirado, gere um novo."})
+            }
+        } else {
+
+            res.render("usartoken",{error: "Token invalido."})
+
+        }
+
     },
 
     destroy: (req, res) => {

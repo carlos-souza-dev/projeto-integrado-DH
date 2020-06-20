@@ -16,8 +16,6 @@ const documentacaoController = require("../controllers/documentacaoController");
 const contatosUteisController = require("../controllers/contatosUteisController");
 const classificadosController = require("../controllers/classificadosController")
 
-
-
 const auth = require("../middlewares/auth");
 
 
@@ -54,6 +52,8 @@ router.get('/login', authController.index);
 router.post('/logar', authController.logar);
 router.get('/recuperar', authController.recuperar);
 router.post('/recuperar', authController.forgot);
+router.get('/token', authController.token);
+router.post('/usetoken', authController.storetoken);
 
 router.get('/home',  homeController.exibir);
 
@@ -97,8 +97,6 @@ router.get('/documentacao',  documentacaoController.exibir);
 router.post('/documentacoes', uploadDoc.any(), documentacaoController.store);
 router.delete('/excluirDocumentacao/:id', documentacaoController.destroy);
 
-
-
 router.get('/perfil',  perfilController.edit);
 router.put('/perfil', upload.any(),  perfilController.update);
 
@@ -109,7 +107,6 @@ router.get("/registro", userController.create);
 //check("senha").isLength({min:6}).withMessage("A senha do usuario tem que conter no mínimo 6 caracteres"),
 //], userController.store);
 router.post('/registro', userController.store)
-
 
 router.post('/logoff', authController.destroy);
 

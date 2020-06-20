@@ -68,7 +68,7 @@ const authController = {
             },
         )
             
-            // enviarEmailSenha(email, token, user.nome);
+            enviarEmailSenha(email, token, user.nome);
             return res.render("sucesso", {email});
             
         } else {

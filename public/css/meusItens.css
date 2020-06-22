@@ -160,3 +160,18 @@
     border-color: black;
 
 }
+
+.modal-body form #form-image {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body form .img-thumbnail{
+    width: 56%;
+    min-width: 230px;
+    height: 18vh;
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+    margin: 3vh auto;
+}

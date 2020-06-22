@@ -9,7 +9,7 @@ const prestadoresController = {
         const {nome, rg, cpf, categoria} = req.body;
 
         const conteudo = await Prestadores.create(
-            {nome, rg, cpf, categoria, foto: `/img/${files.filename}`, id_apartamento: req.session.user.id_apartamento}
+            {nome, rg, cpf, categoria, foto: `/img/classificados/${files.filename}`, id_apartamento: req.session.user.id_apartamento}
         )
 
         return res.redirect("/prestadoresDeServico");
@@ -50,13 +50,20 @@ const prestadoresController = {
                 rg,
                 cpf,
                 categoria,
-                foto: `/img/${files.filename}`
+                foto: `/img/classificados/${files.filename}`
             }, {
                 where: {
                     id: id
                 }
             })
-            return res.render('prestadoresDeServico', {prestador, usuario: req.session.user});
+
+            const prestadores = await Prestadores.findAll({
+                where:{
+                    id_apartamento: req.session.user.id_apartamento
+                }
+            })
+
+            return res.render('prestadoresDeServico', {prestadores: prestadores, usuario: req.session.user});
         }
         
 

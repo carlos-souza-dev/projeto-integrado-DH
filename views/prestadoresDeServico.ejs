@@ -9,11 +9,11 @@
         <title>Minha Casa</title>
 
         <!-- Bootstrap CSS CDN -->
-        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
         <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="./css/prestadoresDeServico.css">
+        <link rel="stylesheet" href="/css/prestadoresDeServico.css">
         <!-- css menu, header, menu superior e footer -->
-        <link rel="stylesheet" href="./css/headerMenuFooter.css">
+        <link rel="stylesheet" type="text/css" href="/css/headerMenuFooter.css">
 
         <script
             defer="defer"
@@ -97,8 +97,8 @@
                                                 <div class="tituloAndTools">
                                                     <div class="card-titulo"><%=prestador.nome%></div>
                                                     <div class="toolsCardPrestServ">
-                                                        <a data-toggle="modal" data-target="#modalAlterarPrestador"><img src="./img/icon/edit.svg" alt=""></a>
-                                                        <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                                                        <a data-toggle="modal" data-target="#modalAlterarPrestador"><img src="/img/icon/edit.svg" alt=""></a>
+                                                        <a data-toggle="modal" data-target="#confirmarExclusao"><img src="/img/icon/trash.svg" alt=""></a>
                                                     </div>
                                                 </div>
                                                 <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
@@ -140,7 +140,7 @@
                                         </div>
                                         <!-- modal para alterar dados do morador cadastrado -->
 
-                                        <div class="modal" id="modalAlterarPrestador" tabindex="-1" role="dialog">
+                                         <div class="modal" id="<%= prestador.id %>" tabindex="-1" role="dialog">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -198,11 +198,14 @@
                                                                     rows="1"></input>
                                                             </div>
 
-                                                            <div class="form-group">
-                                                                <label for="exampleFormControlFile1">Foto</label>
+                                                            <div class="form-group" id="form-image">
+                                                                <label for="exampleFormControlFile1">Foto</label> 
+                                                                <img src="" id="img-update" class="img-thumbnail" alt="">
                                                                 <input
                                                                     type="file"
                                                                     name="foto"
+                                                                    id="update"
+                                                                    onchange="previewImagemUpdate()"
                                                                     class="form-control-file"
                                                                     id="exampleFormControlFile1">
                                                             </div>
@@ -273,11 +276,14 @@
                                                                         rows="1"></input>
                                                                 </div>
 
-                                                                <div class="form-group">
+                                                                <div class="form-group" id="form-image">
                                                                     <label for="exampleFormControlFile1">Foto</label>
+                                                                    <img src="" id="img-upload" class="img-thumbnail" alt="">
                                                                     <input
                                                                         type="file"
                                                                         name="foto"
+                                                                        id="upload"
+                                                                        onchange="previewImagem()"
                                                                         class="form-control-file"
                                                                         id="exampleFormControlFile1">
                                                                 </div>
@@ -327,6 +333,7 @@
                                                 });
                                             });
                                         </script>
+                                        <script src="/js/preview.js"></script>
                                     </body>
 
                                 </html>

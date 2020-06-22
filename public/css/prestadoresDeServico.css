@@ -63,8 +63,6 @@
 
 /* stilo dos cards do morador */
 
-
-
 .centroTelaPrestServico{
     width: calc(94% + 1rem);
     margin: 0 auto;
@@ -74,8 +72,6 @@
     padding-bottom: 40px;
     
 } 
-
-
 
 .centroTelaPrestServico>div{
     margin: 1rem;
@@ -132,10 +128,27 @@ padding: 1rem;
     font-family: 'Roboto', sans-serif;
 }
 
-
-
 .toolsCardPrestServ>img{
     padding-left: 0.3rem;
+}
+
+.toolsCardPrestServ a {
+    margin: 10px;
+}
+
+.modal-body form #form-image {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body form .img-thumbnail{
+    width: 56%;
+    min-width: 230px;
+    height: 18vh;
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+    margin: 3vh auto;
 }
 
 @media (max-width: 450px){

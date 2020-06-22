@@ -80,7 +80,7 @@ const classificadosController = {
 
         } else {
             const classificado = await Classificados.update({
-                titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/${files.filename}` 
+                titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/classificados/${files.filename}` 
             }, {
                 where: {
                     id: id

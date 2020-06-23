@@ -94,8 +94,8 @@
                                                 </div>
                                                 <% if(usuario.admin) { %> 
                                                 <div class="toolsCardMorador">
-                                                    <a data-toggle="modal" data-target="#modalAlterarMorador"><img src="./img/icon/edit.svg" alt=""></a>
-                                                    <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                                                    <a data-toggle="modal" data-target="#modalAlterarMorador<%=user.id%>"><img src="./img/icon/edit.svg" alt=""></a>
+                                                    <a data-toggle="modal" data-target="#confirmarExclusao<%=user.id%>"><img src="./img/icon/trash.svg" alt=""></a>
                                                 </div>
                                                 <% } %>
                                             </div>
@@ -114,7 +114,7 @@
                                     tela -->
                                     <div
                                         class="modal fade"
-                                        id="confirmarExclusao"
+                                        id="confirmarExclusao<%=user.id%>"
                                         tabindex="-1"
                                         role="dialog"
                                         aria-labelledby="exampleModalCenterTitle"
@@ -136,7 +136,7 @@
 
 
                                     <!-- modal para alterar dados do morador cadastrado -->
-                                    <div class="modal" id="modalAlterarMorador" tabindex="-1" role="dialog">
+                                    <div class="modal" id="modalAlterarMorador<%=user.id%>" tabindex="-1" role="dialog">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">

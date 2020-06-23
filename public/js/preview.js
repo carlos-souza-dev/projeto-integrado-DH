@@ -1,5 +1,7 @@
 function previewImagem () {
+
     console.log("Entrei na fução")
+    
     var imagem = document.getElementById('upload').files[0];
     var preview = document.getElementById('img-upload');
 
@@ -20,8 +22,11 @@ function previewImagem () {
 
 
 function previewImagemUpdate () {
+    
     console.log("Entrei na fução")
-    var imagem = document.getElementById('update').files[0];
+
+    var imagem = document.querySelectorAll('#upload').files[0];
+    
     var preview = document.getElementById('img-update');
 
     var reader = new FileReader();

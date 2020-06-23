@@ -98,14 +98,14 @@
                         </div>
                         <div class="toolsCardAnuncio">
                             <a data-toggle="modal" data-target="#<%=classificado.id%>"><img src="./img/icon/edit.svg" alt=""></a>
-                            <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                            <a data-toggle="modal" data-target="#confirmarExclusao<%=classificado.id%>"><img src="./img/icon/trash.svg" alt=""></a>
                         </div>
                     </div>
-                     <!-- modal para confirmar exclusão do item , este modal surge centralizado na
-                tela -->
+
+                 <!-- modal para confirmar exclusão do item , este modal surge centralizado na tela -->
                 <div
                 class="modal fade"
-                id="confirmarExclusao"
+                id="confirmarExclusao<%=classificado.id%>"
                 tabindex="-1"
                 role="dialog"
                 aria-labelledby="exampleModalCenterTitle"

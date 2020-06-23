@@ -17,7 +17,7 @@ const classificadosController = {
         const nome = req.session.user.nome;
         const image = files.filename;
 
-        enviarEmail(image, titulo, descricao, nome);
+        // enviarEmail(image, titulo, descricao, nome);
             
         return res.redirect("/meusItens");
 

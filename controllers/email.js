@@ -122,4 +122,4 @@ const enviarEmailSenha = function (email, token, nome) {
   
 }
 
-module.exports = enviarEmailSenha;
+module.exports = enviarEmailSenha, enviarEmail;

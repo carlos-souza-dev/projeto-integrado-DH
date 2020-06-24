@@ -136,12 +136,12 @@ padding: 1rem;
     margin: 10px;
 }
 
-.modal-body form #form-image {
+.modal-body form #form-image-prestadores {
     display: flex;
     flex-direction: column;
 }
 
-.modal-body form .img-thumbnail{
+.modal-body form .img-thumbnail-prestadores {
     width: 56%;
     min-width: 230px;
     height: 18vh;
@@ -149,6 +149,12 @@ padding: 1rem;
     background-position: center;
     background-size: cover;
     margin: 3vh auto;
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
 }
 
 @media (max-width: 450px){

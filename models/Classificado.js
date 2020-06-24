@@ -16,16 +16,17 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
           },
           
-        },      
+        },
+        {
+        tableName:'classificados'
+        }) 
       
-    )
-  
-    Classificado.associate = (listaDeModelos) => {
-      Classificado.belongsTo(listaDeModelos.Moradores, {
-        foreignKey: 'id_morador',
-        as: 'morador'
-      })
-    }
+        Classificado.associate = (listaDeModelos) => {
+          Classificado.belongsTo(listaDeModelos.Moradores, {
+            foreignKey: 'id_morador',
+            as: 'morador'
+          })
+        }
   
       
     return Classificado;

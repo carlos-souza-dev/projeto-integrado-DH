@@ -20,7 +20,6 @@ const authController = {
                 type: Sequelize.QueryTypes.SELECT
             }
         );
-        //
         if (!user || !bcrypt.compareSync(senha, user.senha)) {
             return res.render("login", {msg: "Email ou senha inválidos!"});
         }
@@ -42,9 +41,9 @@ const authController = {
         //     res.cookie('logado', user.email, {maxAge: 600000})
         // }
         
-        req.session.user = user;
+        // req.session.user = user;
         
-                console.log(req.session.user)
+        //         console.log(req.session.user)
         return res.redirect("/home");
         
     },

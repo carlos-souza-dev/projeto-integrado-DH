@@ -230,7 +230,7 @@ a.article:hover {
     position: absolute;
     top: 0;
     right: 0;
-    
+    padding-bottom: 45px;
 }
 
 #content.active {

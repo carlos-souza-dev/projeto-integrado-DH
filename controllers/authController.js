@@ -3,7 +3,7 @@ const config = require("../config/database");
 const bcrypt = require("bcrypt");
 const {Moradores} = require("../models");
 const crypto = require("crypto");
-const enviarEmailSenha = require("./emailController");
+const enviarEmailSenha = require("./emailSenha");
 
 const authController = {
     index: (_req, res) => {

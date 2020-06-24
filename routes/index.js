@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const path = require("path");
 const multer = require("multer");
-const {check, validationResult, body} = require('express-validator')
 const authController = require("../controllers/authController");
 const userController = require("../controllers/userController");
 const homeController = require("../controllers/homeController");
@@ -116,8 +115,8 @@ router.get('/perfil', auth, perfilController.edit);
 router.put('/perfil', upload.any(), auth, perfilController.update);
 
 router.get("/registro", userController.create);
-router.post("/registro", userController.store);
-//router.post('/registro', userController.store)
+router.post("/registro",userController.store);
+
 
 
 router.post('/logoff', authController.destroy);

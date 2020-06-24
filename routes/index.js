@@ -30,6 +30,17 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage: storage});
 
+const storageUser = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, path.join("public/img", "user"));
+    },
+    filename: function (req, file, cb) {
+        cb(null, Date.now() + file.originalname);
+    }
+});
+
+const uploadUser = multer({storage: storageUser});
+
 
 const storageDoc = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -60,7 +71,7 @@ router.get('/home',  homeController.exibir);
 router.get('/moradores',  moradoresController.exibir);
 router.post('/moradores', uploadDoc.any(), moradoresController.store);
 router.delete('/excluirMoradores/:id', moradoresController.destroy);
-router.put('/atualizarMoradores/:id', upload.any(), moradoresController.update);
+router.put('/atualizarMoradores/:id', uploadUser.any(), moradoresController.update);
 
 
 router.get('/correspondencias',  correspondenciaController.exibir);
@@ -98,7 +109,7 @@ router.post('/documentacoes', uploadDoc.any(), documentacaoController.store);
 router.delete('/excluirDocumentacao/:id', documentacaoController.destroy);
 
 router.get('/perfil',  perfilController.edit);
-router.put('/perfil', upload.any(),  perfilController.update);
+router.put('/perfil', uploadUser.any(),  perfilController.update);
 
 router.get("/registro", userController.create);
 //router.post("/registro",[

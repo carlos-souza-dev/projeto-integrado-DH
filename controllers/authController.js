@@ -3,7 +3,7 @@ const config = require("../config/database");
 const bcrypt = require("bcrypt");
 const {Moradores} = require("../models");
 const crypto = require("crypto");
-const enviarEmailSenha = require("./email");
+const enviarEmailSenha = require("./emailController");
 
 const authController = {
     index: (_req, res) => {
@@ -60,15 +60,16 @@ const authController = {
             now.setHours(now.getHours() + 1);
             
             const salvar = await Moradores.update({
-                senhaTemporaria: token,
-                senhaTemporariaExpira: now,
-            }, 
-            {
-                where: {email: email}
-            },
-        )
+                    senhaTemporaria: token,
+                    senhaTemporariaExpira: now,
+                }, 
+                {
+                    where: {email: email}
+                },
+            )
             
             enviarEmailSenha(email, token, user.nome);
+
             return res.render("sucesso", {email});
             
         } else {

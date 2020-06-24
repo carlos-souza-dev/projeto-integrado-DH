@@ -1,6 +1,9 @@
 const {Moradores} = require("../models");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
+const fs = require('fs');
+// const deletarUser = require('./deletarController')
+
 const moradoresController = {
 
 store: async (req, res) => {
@@ -52,7 +55,7 @@ update: async (req, res) => {
             dataNascimento,
             rg,
             cpf,
-            foto: `/img/${files.filename}`
+            foto: `/img/user/${files.filename}`
         }, {
             where: {
                 id: id
@@ -66,7 +69,7 @@ update: async (req, res) => {
             dataNascimento,
             rg,
             cpf,
-            foto: `/img/${files.filename}`
+            foto: `/img/user/${files.filename}`
         }, {
             where: {
                 id: id
@@ -79,11 +82,26 @@ update: async (req, res) => {
 
 destroy: async (req, res) => {
     const {id} = req.params;
-    const resultado = await Moradores.destroy({
-        where: {
-            id: id
-        }
-    })
+
+    const morador = await Moradores.findAll({where: {id: id}});
+        console.log("Imagem do banco " + morador[0].foto);
+        
+        const rota = morador[0].foto;
+        const image = rota.slice(rota.lastIndexOf("/")+1);
+
+        fs.unlink("public/img/user/"+ image, (error) => {
+            if(error)
+                console.log(error)
+            else {
+                console.log("O arquivo "+image+" foi removido com sucesso.")
+            }
+        })
+
+        const resultado = await Moradores.destroy({
+            where: {
+                id: id
+            }
+        })
 
     return res.redirect('/moradores');
 

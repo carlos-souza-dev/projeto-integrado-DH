@@ -26,7 +26,7 @@ const perfilController = {
 
         if(files != undefined) {
             const resultado = await Moradores.update({
-                foto: `/img/${files.filename}`
+                foto: `/img/user/${files.filename}`
             }, {
                 where: {
                     id: id
@@ -58,7 +58,7 @@ const perfilController = {
 
         const usuario = req.session.user;
 
-        usuario.foto = `/img/${files.filename}`;
+        usuario.foto = `/img/user/${files.filename}`;
         usuario.nome = nome;
         usuario.email = email;
         usuario.sobre = sobre;

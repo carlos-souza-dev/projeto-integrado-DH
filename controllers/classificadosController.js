@@ -1,8 +1,9 @@
 const {Classificados, Moradores} = require("../models");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
-const enviarEmail = require('./email');
+const enviarEmail = require('./emailController');
 const path = require('path');
+const deletarClassificados = require("./deletarController");
 
 const classificadosController = {
 
@@ -17,7 +18,7 @@ const classificadosController = {
         const nome = req.session.user.nome;
         const image = files.filename;
 
-        // enviarEmail(image, titulo, descricao, nome);
+        enviarEmail(image, titulo, descricao, nome);
             
         return res.redirect("/meusItens");
 
@@ -37,7 +38,7 @@ const classificadosController = {
             }
         });
         
-        return res.render('meusItens', {classificados, usuario: req.session.user})
+        return res.render('meusItens', {classificados, usuario: req.session.user, msg:""})
     },
 
     exibirClassificados: async (req,res) => {
@@ -54,12 +55,21 @@ const classificadosController = {
     
     destroy: async (req, res) => {
         const {id} = req.params;
+
+        const classificado = await Classificados.findAll({where: {id: id}});
+        console.log("Imagem do banco " + classificado[0].foto);
+        
+        const rota = classificado[0].foto;
+        const image = rota.slice(rota.lastIndexOf("/")+1);
+
+        deletarClassificados(image);
+                    
         const resultado = await Classificados.destroy({
             where: {
                 id: id
             }
         })
-
+        
         res.redirect('/meusItens')
     },
 

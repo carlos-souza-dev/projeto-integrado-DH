@@ -83,17 +83,6 @@
                                                 <label for="senha">Repetir nova senha</label>
                                                 <input type="password" class="form-control" name="senharepeat" id="senharepeat" disabled>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h3 class="profileTitle">Perfil e Interesses</h3>
-                                            <div class="form-group">
-                                                <label for="photo">Selecione uma foto para seu perfil</label>
-                                                <input type="file" name="photo" id="photo">
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="sobre">Quem sou eu?</label>
-                                                <textarea class="form-control" name="sobre" id="sobre" rows="4" maxlength="250" placeholder="Conte para a sua vizinhança quem é você e como você pode contribuir para tornar este lugar ainda mais incrível (max. 250 caracteres)"><%=usuario.sobre%></textarea>
-                                            </div>
                                             <div class="form-group">
                                                 <label>Interesses</label>
                                                 <div class="form-check">
@@ -117,6 +106,28 @@
                                                     <label class="form-check-label" for="gridCheck1">Artesanato</label>
                                                 </div>
                                             </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h3 class="profileTitle">Perfil e Interesses</h3>
+                                            <div class="form-group">
+                                                <label for="photo">Selecione uma foto para seu perfil</label>
+                                                <div class="form-group" id="form-image">
+                                                    <img src="" id="img-update" class="img-thumbnail" alt="">
+                                                    <input
+                                                            type="file"
+                                                            name="photo"
+                                                            id="update"
+                                                            onchange="previewImagemUpdate()"
+                                                            class="form-control-file"
+                                                            id="exampleFormControlFile1">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="sobre">Quem sou eu?</label>
+                                                <textarea class="form-control" name="sobre" id="sobre" rows="4" maxlength="250" placeholder="Conte para a sua vizinhança quem é você e como você pode contribuir para tornar este lugar ainda mais incrível (max. 250 caracteres)"><%=usuario.sobre%></textarea>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                     <div class="row">
@@ -169,6 +180,7 @@
                     });
                 </script>
                 <script src="/js/profileScripts.js"></script>
+                <script src="/js/preview.js"></script>
             </body>
 
         </html>

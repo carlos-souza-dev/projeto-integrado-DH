@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
       dataNascimento: DataTypes.DATEONLY,
       id_apartamento: {
         type: DataTypes.INTEGER,
-      },
+      }
       // id_apartamento:{
       //   type: DataTypes.INTEGER,
       //   foreingKey: true,

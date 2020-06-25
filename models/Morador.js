@@ -31,9 +31,10 @@ module.exports = (sequelize, DataTypes) => {
       //   foreingKey: true,
       // } 
       
-    },
-    
-  )
+    },{
+      tableName:'moradores'
+      
+      })
 
   Morador.associate = (models) => {
     Morador.hasMany(models.Solicitacao, {

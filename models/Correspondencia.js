@@ -20,7 +20,10 @@ module.exports = (sequelize, DataTypes) => {
       updatedAt: DataTypes.DATE
    
       
-      })
+      },{
+        tableName:'correspondencias'
+        
+        })
 
 
   

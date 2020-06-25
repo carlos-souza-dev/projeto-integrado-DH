@@ -14,9 +14,16 @@ module.exports = (sequelize, DataTypes) => {
       
         informacao: DataTypes.TEXT,
 
-             
-      
-      })
+        data: DataTypes.DATE,
+
+        //  id_apartamentos: { 
+        //  type: DataTypes.INTEGER,
+        //  }
+        },
+        {
+          timestemp: true,  
+          tableName:'comunicados'
+        })
 
       
     //   Comunicado.associate  = (listaDeModelos) =>{

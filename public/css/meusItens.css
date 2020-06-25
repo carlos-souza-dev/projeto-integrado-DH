@@ -100,6 +100,9 @@
     padding-right: 5px;
 }
 
+.card-img-top {
+    height: 180px;
+}
 
 /* fim stilo cards classificados */
 

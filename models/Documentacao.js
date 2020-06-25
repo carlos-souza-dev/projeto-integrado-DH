@@ -15,8 +15,6 @@ module.exports = (sequelize, DataTypes) => {
        descricao: DataTypes.STRING,
        documento: DataTypes.STRING,
     },
-       
-
     )
       
     return Documentacao;

@@ -30,6 +30,13 @@ module.exports = {
     senha: {
       type: Sequelize.STRING(245),
       allowNull: false,
+      select: false,
+    },
+    senhaTemporaria: {
+      type: Sequelize.STRING,
+    },
+    senhaTemporariaExpira: {
+      type: Sequelize.DATE,
     },
     foto: Sequelize.STRING(245),
     sobre: Sequelize.STRING(245),

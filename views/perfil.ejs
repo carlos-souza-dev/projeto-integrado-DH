@@ -88,10 +88,18 @@
                                     </div>
                                     <div class="row">
                                         <h3 class="profileTitle col-12">Perfil</h3>
-                                            <div class="form-group col-md-6">
+                                            <div class="form-group col-md-6" id="form-image">
                                                 <label>Foto do perfil</label>
-                                                <label for="photo" class="photo">Clique para explorar ou solte a foto aqui</label>
-                                                <input type="file" name="photo" id="photo">
+                                                <img src="" id="img-update" class="img-thumbnail" alt="">
+                                                <input
+                                                        type="file"
+                                                        name="photo"
+                                                        id="update"
+                                                        onchange="previewImagemUpdate()"
+                                                        class="form-control-file"
+                                                        id="exampleFormControlFile1">
+                                                        
+                                                                                               
                                             </div>
                                             <div class="form-group col-md-6">
                                                 <label for="sobre">Quem sou eu?</label>
@@ -134,48 +142,32 @@
                                                 </ul>
                                             </div>
                                             <div id="testeArrayInteresse"></div>
+                                            
+                                        </div>
+                                        <!-- <div class="col-md-6">
+                                            <h3 class="profileTitle">Perfil e Interesses</h3>
+                                            <div class="form-group">
+                                                <label for="photo">Selecione uma foto para seu perfil</label>
+                                                <div class="form-group" id="form-image">
+                                                    <img src="" id="img-update" class="img-thumbnail" alt="">
+                                                    <input
+                                                            type="file"
+                                                            name="photo"
+                                                            id="update"
+                                                            onchange="previewImagemUpdate()"
+                                                            class="form-control-file"
+                                                            id="exampleFormControlFile1">
+                                                    
+                                                </div>
+                                            </div>                                            
+                                        </div> -->
                                     </div>
                                     <div class="row">
                                         <div class="options col-12">
                                             <button id="salvarAlteracoes" type="submit">Salvar Alterações</button>
                                         </div>
                                     </div>
-                                </form>                        
-                                
-                                <!-- <section class="card">
-                                    <h2>Atualizar Perfil</h2>
-                    
-                                    <form action="/perfil?_method=PUT" method="POST" enctype="multipart/form-data">
-                                        
-                                        <label for="photo">Selecione a foto</label>
-                                        <input type="file" name="photo" id="photo">
-                                                                                
-                                <form class="card p-3" method="POST" action="/perfil?_method=PUT" >
-                                    <div class="form-group">
-                                        <label for="nome">Nome</label>
-                                        <input type="text" class="form-control" id="nome" name="nome" value="<%= user.nome %>">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="text" class="form-control" id="email" name="email" value="<%= user.email %>">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Senha</label>
-                                        <input type="text" class="form-control" id="password" name="senha">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Sobre</label>
-                                        <input type="text" class="form-control" id="password" name="sobre"  value="<%= user.sobre %>">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="interesses">Interesses</label>
-                                        <input type="text" class="form-control" id="interesses" name="interesses">
-                                    </div>
-
-                                    <button class="btn btn-success" type="submit">Salvar Alterações</button>
-                                </form> -->
-
-                               
+                                </form>                                                    
                             </main>
 
 
@@ -220,6 +212,7 @@
                     });
                 </script>
                 <script src="/js/profileScripts.js"></script>
+                <script src="/js/preview.js"></script>
             </body>
 
         </html>

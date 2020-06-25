@@ -1,6 +1,10 @@
 const {Classificados, Moradores} = require("../models");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
+const enviarEmail = require('./emailClassificados');
+const path = require('path');
+const deletarClassificados = require("./deletarController");
+// console.log(" TESTE DO EMAIL: "+ enviarEmail);
 
 const classificadosController = {
 
@@ -8,11 +12,15 @@ const classificadosController = {
         const [files] = req.files;
         const {titulo,descricao,categoria, tipo} = req.body;
 
+        const nome = req.session.user.nome;
+        const image = files.filename;
+        
+        enviarEmail(image, titulo, descricao, nome);
+
         const classificado = await Classificados.create(
-            {titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/${files.filename}` }
+            {titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/classificados/${files.filename}` }
         )
-        
-        
+                    
         return res.redirect("/meusItens");
 
     },
@@ -31,29 +39,41 @@ const classificadosController = {
             }
         });
         
-        return res.render('meusItens', {classificados, usuario: req.session.user})
+        return res.render('meusItens', {classificados, usuario: req.session.user, msg:""})
     },
 
     exibirClassificados: async (req,res) => {
-        let classificados =  await Classificados.findAll({
+
+        const classificados =  await Classificados.findAll({
             include: {
                 model: Moradores,
                 as: 'morador',
                 required: true
             }
         });
+
+        console.log(req.session.user)
         
-        return res.render('classificados', {classificados, usuario: req.session.user})
+        return res.render('classificados', {classificados: classificados, usuario: req.session.user})
     },
     
     destroy: async (req, res) => {
         const {id} = req.params;
+
+        const classificado = await Classificados.findAll({where: {id: id}});
+        console.log("Imagem do banco " + classificado[0].foto);
+        
+        const rota = classificado[0].foto;
+        const image = rota.slice(rota.lastIndexOf("/")+1);
+
+        deletarClassificados(image);
+                    
         const resultado = await Classificados.destroy({
             where: {
                 id: id
             }
         })
-
+        
         res.redirect('/meusItens')
     },
 
@@ -85,7 +105,7 @@ const classificadosController = {
 
         } else {
             const classificado = await Classificados.update({
-                titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/${files.filename}` 
+                titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/classificados/${files.filename}` 
             }, {
                 where: {
                     id: id

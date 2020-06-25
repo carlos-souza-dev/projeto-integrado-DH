@@ -68,7 +68,33 @@
 
                         </div>
 
-                        <!-- menu superior -->
+                       
+                    </div>
+                    <div class="areaBotaoSearch">
+                        <button class="btn  my-2 my-sm-0" id="botaoSearch" type="submit">Filtrar</button>
+                    </div>
+                </form>
+                </nav>
+
+                <!-- area do centro da tela -->
+                <div class="centroTelaClassificados">
+
+                    <!-- cards dos classificados -->
+                    <!-- estão dentro da tag <a> para abrir o modal que tá sendo referenciado -->
+                   
+                        <% if (classificados) { %>
+                            <% classificados.forEach(classificado => { %>
+                        <a data-toggle="modal" data-target="#<%=classificado.id%>">
+                        <div class="card classificado">
+                            <img
+                                class="card-img-top"
+                                src="<%=classificado.foto%>"
+                                alt="Imagem de capa do card">
+                            <div class="card-corpo">
+                                <div class="card-titulo"><%=classificado.titulo%></div>
+                                <div class="card-subtitulo"><%=classificado.morador.nome%> - <%=classificado.morador.id_apartamento%></div>
+                                <div class="card-descricao"><%= classificado.descricao.slice(0, 35)+"..."%></div>
+                                <div class="card-subtitulo"></div>
 
                         <%- include('./partials/menuSupVizinhanca') %>
 
@@ -98,7 +124,6 @@
                                                 name="tipo"
                                                 id="exampleFormControlTextarea1">
                                                 <option disabled="disabled" selected="selected">Selecione o tipo</option>
-
                                                 <option value="Serviço">Serviço</option>
                                                 <option value="Produto">Produto</option>
 

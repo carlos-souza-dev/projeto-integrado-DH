@@ -68,7 +68,10 @@
 
 
 .card{
-    width: 12rem;
+    min-width: 12rem;
+    max-width: 15rem;
+    min-height: 16rem;
+    padding: 5px;
     margin: 1rem;
     display: flex;
     border-radius: 5px;
@@ -94,6 +97,10 @@
     justify-content: center;
 }
 
+
+.toolsCardAnuncio a{
+    margin: 10px 10px;
+}
 
 .toolsCardAnuncio a img{
     padding-left: 5px;
@@ -152,4 +159,25 @@
     border-width: 1px;
     border-color: black;
 
+}
+
+.modal-body form #form-image-meusitens {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body form .img-thumbnail-meusitens {
+    width: 56%;
+    min-width: 230px;
+    height: 18vh;
+    min-height: 200px;
+    background-position: center;
+    background-size: cover;
+    margin: 3vh auto;
+    padding: .25rem;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
 }

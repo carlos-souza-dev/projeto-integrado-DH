@@ -13,7 +13,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING(45),
         allowNull: false,
       },
-      senha: DataTypes.STRING(245),
+      senha: {
+        type: DataTypes.STRING(245),
+        select: false,
+      },
+      senhaTemporaria: {
+        type: DataTypes.STRING,
+      },
+      senhaTemporariaExpira: {
+        type: DataTypes.DATE,
+      },
       foto: DataTypes.STRING(245),
       sobre: DataTypes.STRING(245),
       interesses: {
@@ -31,9 +40,10 @@ module.exports = (sequelize, DataTypes) => {
       //   foreingKey: true,
       // } 
       
-    },
-    
-  )
+    },{
+      tableName:'moradores'
+      
+      })
 
   Morador.associate = (models) => {
     Morador.hasMany(models.Solicitacao, {

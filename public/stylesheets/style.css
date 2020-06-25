@@ -240,109 +240,26 @@ form #inputcpf {
   right: 40px;
 }
 
+/* página recuperar  */
+
+.container #row-recuperar {
+  display: block !important;
+}
 
 /* página sucesso */
 
-.text-center .sucess-section {
-  width: 100%;
-  min-width: 300px;
-  height: 86vh;
-  min-height: 200px;
-  display: flex;
-  align-items: center;
-}
-.text-center .sucess-section #sucess-main {
-  width: 80%;
-  min-width: 300px;
-  height: 15vh;
-  min-height: 200px;
-  padding: 0 15px;
-  margin: 12vh auto;
-  border-radius: 8px;
-  background-color: rgb(183, 221, 197);;
-  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+.sucess-text {
+  color: rgb(51, 114, 51);
 }
 
-.text-center .sucess-section #sucess-main .login-title {
-  height: 7vh;
-  font-family: 'Montserrat-Light', sans-serif;
-  font-size: 2vw;
-  line-height: 7vh;
-  color: rgb(2, 73, 29);
-}
-
-.text-center .sucess-section #sucess-main .sucess-text {
-  height: 5vh;
-  font-family: 'Roboto-Light'; 
-  font-size: 1.5vw;
-  line-height: 5vh;
-  color: rgb(2, 73, 29);
-}
-
-.text-center .sucess-section .button-sucess {
-  width: 100%;
-  height: 5vh;
-  min-height: 55px;
-  line-height: 55px;
-  text-align: center;
-}
-
-.text-center .sucess-section .button-sucess a {
-  padding: 12px 40px;
-  font-size: 16px;
-  border-radius: 25px;
-  color: #C4C4C4;
-  text-decoration: none;
-  font-family: 'Montserrat-Medium';
-  text-transform: uppercase;
-  background-color: rgb(59, 59, 59);
-}
-
-@media screen and (max-width: 768px){
-
-  .text-center #btn-cancelar {
-    width: 150px;
-    height: 40px;
-    font-size: 18px;
-    text-align: center;
-    line-height: 40px;
-    padding: 0;
-  }
-
-  .text-center .header-logo .logo {
-    width: 4vw;
-    height: 10vh;
-    margin-right: 1%;
-    background-image: url(/img/logo/logo_compact.png);
-    background-position: center;
-    background-size: 4vw 7vh;
-    background-repeat: no-repeat;
-}
-
-.text-center .header-logo .portal {
-  width: 19vw;
-  margin-right: 0.5%;
-  font-size: 4vw;
-  font-family: 'Montserrat-Light', sans-serif;
-}
-
-.text-center .header-logo .condominio {
-  width: 27vw;
-  font-size: 4vw;
-  font-family: 'Montserrat-Medium', sans-serif;
-}
-.text-center .header-logo {
-  position: relative;
-}
-
-.text-center #button-geral a {
-  position: absolute;
-  top: 33%;
-  right: 20px;
-}
-
-.text-center .container-fluid .col-sm-5 {
-  width: 80% !important;
-}
-
+.btn-voltar{
+    border: none !important;
+    background-color: #7aa355 !important;
+    color: #fff !important;
+    text-transform: uppercase !important;
+    padding: 8px 16px !important;
+    border-radius: 48px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 18px !important;
+    margin: 16px auto !important;
 }

@@ -16,9 +16,9 @@ module.exports = {
         },
       
         informacao: Sequelize.TEXT,
-
-    createdAt: Sequelize.DATE,
-    updatedAt: Sequelize.DATE
+        data: Sequelize.DATE,
+        createdAt: Sequelize.DATE,
+        updatedAt: Sequelize.DATE
 
       });
      

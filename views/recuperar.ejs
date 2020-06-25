@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal do Condomínio - Cadastro</title>
+    <title>Portal do Condomínio - Recuperar Senha</title>
     <link href="/stylesheets/style.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/index/styles.css">
     <link rel="stylesheet" href="./css//bootstrap.min.css">
@@ -27,16 +27,22 @@
            
         <div class="container">
             <div class="form-newUser row" id="row-recuperar">
-                <h2>Token gerado com sucesso!</h2>
+                <h2> Recuperar senha</h2>
                 <form class="row"  action="/recuperar" method="POST">
+                    
                     <div class="form-group col-md-12">
-                      <div class="sucess-text">
-                          <h4>Enviamos o token para o e-mail <b><%= email %></b>, verifique sua caixa de e-mail.</b>. </h4>
-                      </div>
-                      <small id="infoEmail" class="form-text text-muted">O token gerado expira em 1 hora.</small>
+                        <label class="label-email">E-mail</label>
+                        <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Digite seu e-mail" aria-describedby="infoEmail" required>
+                        <small id="infoEmail" class="form-text text-muted">Seu e-mail nunca será compartilhado.</small>
                     </div>
-                   
-                    <a class="btn-voltar" href="/login">Voltar</a>
+                    
+                    <button class="btn-cadastro cadastro-enter" type="submit">Enviar token</button>
+                    <a class="btn-cadastro cadastro-enter token-enter" href="/token">Usar token</a>
+                    <div class="cpfError col-12">
+                        <% if(typeof(error) != "undefined"){ %>
+                            <span><%= error %> </span>
+                            <% } %>
+                    </div>
                 </form>
             </div>
         </div>

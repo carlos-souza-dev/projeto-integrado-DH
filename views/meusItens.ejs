@@ -12,9 +12,9 @@
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="./css/bootstrap.min.css">
         <!-- css da parte interna da pagina -->
-        <link rel="stylesheet" href="./css/meusItens.css">
         <!-- css header, menu lateral, menu superior e footer -->
         <link rel="stylesheet" href="./css/headerMenuFooter.css">
+        <link rel="stylesheet" href="./css/meusItens.css">
 
         <script
             defer="defer"
@@ -93,19 +93,19 @@
                             alt="Imagem de capa do card">
                         <div class="card-corpo">
                             <div class="card-titulo"><%=classificado.titulo%></div>
-                            <div class="card-subtitulo"><%=classificado.morador.nome%> <%=classificado.morador.id_apartamento%></div>
+                            <div class="card-subtitulo"><%=classificado.morador.nome%> - <%=classificado.morador.id_apartamento%></div>
 
                         </div>
                         <div class="toolsCardAnuncio">
                             <a data-toggle="modal" data-target="#<%=classificado.id%>"><img src="./img/icon/edit.svg" alt=""></a>
-                            <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                            <a data-toggle="modal" data-target="#confirmarExclusao<%=classificado.id%>"><img src="./img/icon/trash.svg" alt=""></a>
                         </div>
                     </div>
-                     <!-- modal para confirmar exclusão do item , este modal surge centralizado na
-                tela -->
+
+                 <!-- modal para confirmar exclusão do item , este modal surge centralizado na tela -->
                 <div
                 class="modal fade"
-                id="confirmarExclusao"
+                id="confirmarExclusao<%=classificado.id%>"
                 tabindex="-1"
                 role="dialog"
                 aria-labelledby="exampleModalCenterTitle"
@@ -146,10 +146,6 @@
                                     <input class="form-control" name="descricao" value="<%=classificado.descricao%>" id="exampleFormControlTextarea1" rows="3"></input>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleFormControlFile1">Imagem</label>
-                                    <input type="file" name="foto" class="form-control-file" id="exampleFormControlFile1">
-                                </div>
-                                <div class="form-group">
                                     <label for="exampleFormControlTextarea1">Tipo</label>
                                     <select class="form-control" type="text" name="tipo"  id="exampleFormControlTextarea1">
                                         <option disabled selected><%= classificado.tipo %></option>
@@ -183,8 +179,20 @@
                                         <option value="Saúde">Saúde</option>
                                         <option value="Outros">Outros</option>
                                         
-        
+                                        
                                     </select>
+                                </div>
+                                <div class="form-group" id="form-image-meusitens">
+                                    <label for="exampleFormControlFile1">Imagem</label>
+                                    <img src="" id="img-update" class="img-thumbnail-meusitens" alt="">
+                                    <input
+                                            type="file"
+                                            name="foto"
+                                            id="update"
+                                            onchange="previewImagemUpdate()"
+                                            class="form-control-file"
+                                            id="exampleFormControlFile1">
+                                    
                                 </div>
                             
                         </div>
@@ -264,9 +272,9 @@
             
                                         </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label for="exampleFormControlFile1">Imagem</label>
-                                        <input type="file" name="foto" class="form-control-file" id="exampleFormControlFile1">
+                                    <div class="form-group" id="form-image-meusitens">                        
+                                        <img src="" id="img-upload" class="img-thumbnail-meusitens" alt="">
+                                        <input type="file" name="foto" onchange="previewImagem()" id="upload">
                                     </div>
                                 
                             </div>
@@ -276,6 +284,10 @@
                             </div>
                         </form>
                         </div>
+                        <script>
+                            
+                            
+                        </script>
                     </div>
                 </div>
 
@@ -319,6 +331,7 @@
                 });
             });
         </script>
+        <script src="/js/preview.js"></script>
     </body>
 
 </html>

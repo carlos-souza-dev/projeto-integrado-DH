@@ -94,7 +94,7 @@
                             <div class="card-titulo"><%= documento.nomeDoc %></div>
                             <div class="descricaoCard"><%= documento.descricao %></div>
                             <% if(usuario.admin) { %>
-                            <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                            <a data-toggle="modal" data-target="#confirmarExclusao<%=documento.id%>"><img src="./img/icon/trash.svg" alt=""></a>
                             <% } %>
                         </div>
                     </a>
@@ -105,7 +105,7 @@
         
                         <div
                             class="modal fade"
-                            id="confirmarExclusao"
+                            id="confirmarExclusao<%=documento.id%>"
                             tabindex="-1"
                             role="dialog"
                             aria-labelledby="exampleModalCenterTitle"

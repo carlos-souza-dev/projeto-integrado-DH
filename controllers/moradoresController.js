@@ -44,15 +44,15 @@ exibir: async (req, res) => {
 update: async (req, res) => {
     const {id} = req.params;
     const [files] = req.files;
-    const {nome,dataNascimento, rg, cpf } = req.body;
+    const {nome,dataNascimento, cpf, email, id_apartamento } = req.body;
 
     if ([files] == "") {
         const user = await Moradores.update({
             nome,
             dataNascimento,
-            rg,
             cpf,
-            foto: `/img/${files.filename}`
+            email,
+            id_apartamento,
         }, {
             where: {
                 id: id

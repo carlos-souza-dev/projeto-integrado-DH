@@ -94,8 +94,8 @@
                                                 </div>
                                                 <% if(usuario.admin) { %> 
                                                 <div class="toolsCardMorador">
-                                                    <a data-toggle="modal" data-target="#modalAlterarMorador"><img src="./img/icon/edit.svg" alt=""></a>
-                                                    <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                                                    <a data-toggle="modal" data-target="#modalAlterarMorador<%=user.id%>"><img src="./img/icon/edit.svg" alt=""></a>
+                                                    <a data-toggle="modal" data-target="#confirmarExclusao<%=user.id%>"><img src="./img/icon/trash.svg" alt=""></a>
                                                 </div>
                                                 <% } %>
                                             </div>
@@ -114,7 +114,7 @@
                                     tela -->
                                     <div
                                         class="modal fade"
-                                        id="confirmarExclusao"
+                                        id="confirmarExclusao<%=user.id%>"
                                         tabindex="-1"
                                         role="dialog"
                                         aria-labelledby="exampleModalCenterTitle"
@@ -136,7 +136,7 @@
 
 
                                     <!-- modal para alterar dados do morador cadastrado -->
-                                    <div class="modal" id="modalAlterarMorador" tabindex="-1" role="dialog">
+                                    <div class="modal" id="modalAlterarMorador<%=user.id%>" tabindex="-1" role="dialog">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -146,22 +146,27 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form  action="/atualizarMorador/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
+                                                    <form  action="/atualizarMoradores/<%=user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" >
                                                         <div class="form-group">
                                                             <label for="exampleFormControlTextarea1">Nome completo</label>
-                                                            <input class="form-control" value="<%=user.nome%>" id="exampleFormControlTextarea1" rows="1"></input>
+                                                            <input class="form-control" name="nome" value="<%=user.nome%>" id="exampleFormControlTextarea1" rows="1"></input>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleFormControlTextarea1">Data nascimento</label>
-                                                            <input class="form-control" value="<%=user.dataNascimento%>" id="exampleFormControlTextarea1" rows="1"></input>
+                                                            <input class="form-control" name="dataNascimento" value="<%=user.dataNascimento%>" id="exampleFormControlTextarea1" rows="1"></input>
                                                         </div>
-                                                        <div class="form-group">
-                                                            <label for="exampleFormControlTextarea1">RG</label>
-                                                            <input class="form-control" value="<%=user.rg%>" id="exampleFormControlTextarea1" rows="1"></input>
-                                                        </div>
+                                                        
                                                         <div class="form-group">
                                                             <label for="exampleFormControlTextarea1">CPF</label>
-                                                            <input class="form-control" value="<%=user.cpf%>" id="exampleFormControlTextarea1" rows="1"></input>
+                                                            <input class="form-control" name="cpf" value="<%=user.cpf%>" id="exampleFormControlTextarea1" rows="1"></input>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlTextarea1">Email</label>
+                                                            <input class="form-control" name="email" value="<%=user.email%>" id="exampleFormControlTextarea1" rows="1"></input>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleFormControlTextarea1">Apartamento</label>
+                                                            <input class="form-control" name="id_apartamento" value="<%=user.id_apartamento%>" id="exampleFormControlTextarea1" rows="1"></input>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="exampleFormControlFile1">Foto</label>
@@ -169,7 +174,7 @@
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                                                            <button type="button" class="btn btn-secondary">Salvar</button>
+                                                            <button type="submit" class="btn btn-secondary">Salvar</button>
                                                         </div>
                                                     </form>
                                                     </div>

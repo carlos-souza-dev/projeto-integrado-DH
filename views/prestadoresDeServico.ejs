@@ -98,7 +98,7 @@
                                                     <div class="card-titulo"><%=prestador.nome%></div>
                                                     <div class="toolsCardPrestServ">
                                                         <a data-toggle="modal" data-target="#<%=prestador.id%>"><img src="./img/icon/edit.svg" alt=""></a>
-                                                        <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                                                        <a data-toggle="modal" data-target="#confirmarExclusao<%=prestador.id%>"><img src="./img/icon/trash.svg" alt=""></a>
                                                     </div>
                                                 </div>
                                                 <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
@@ -119,7 +119,7 @@
 
                                         <div
                                             class="modal fade"
-                                            id="confirmarExclusao"
+                                            id="confirmarExclusao<%=prestador.id%>"
                                             tabindex="-1"
                                             role="dialog"
                                             aria-labelledby="exampleModalCenterTitle"

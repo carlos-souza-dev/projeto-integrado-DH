@@ -116,6 +116,8 @@ footer {
 
 
 .cardContato{
+    width: 30rem;
+    max-width: 520px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -125,6 +127,8 @@ footer {
 }
 
 .cardOutrosContatos{
+    width: 30rem;
+    max-width: 520px;
     display: flex;
     /* justify-content: space-evenly; */
     align-items: flex-start;

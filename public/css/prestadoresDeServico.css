@@ -95,6 +95,8 @@
 
 .cardPrestServico{
     /* width: 48%; */
+    width: 30rem;
+    max-width: 520px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;

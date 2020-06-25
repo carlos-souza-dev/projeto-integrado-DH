@@ -1,6 +1,5 @@
 const {ContatosUteis} = require("../models");
 const Sequelize = require("sequelize");
-console.log(" TABELA CONTATOS "+ContatosUteis)
 
 const contatosUteisController = {
 

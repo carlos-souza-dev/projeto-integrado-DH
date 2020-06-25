@@ -15,6 +15,7 @@ module.exports = {
     descricao: Sequelize.STRING,
     categoria: Sequelize.STRING,
     tipo: Sequelize.STRING,
+    aprovacao: Sequelize.INTEGER(1),
     id_morador: {
       type: Sequelize.DataTypes.INTEGER,
       

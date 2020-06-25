@@ -300,6 +300,18 @@ z-index: 2;
     margin-top: 16px;
 }
 
+.btn-aprovado {
+    color: #fff;
+    background-color: #7aa355;
+    border-color: #7aa355;
+    margin-right: 10px;
+}
+
+.btn-aprovado:hover {
+    background-color: #598137;
+    border-color: #598137;
+}
+
 @media(max-width: 767px) {
     .linha-vertical {
         display: none;

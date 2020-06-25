@@ -23,7 +23,7 @@
     </div>
     
     <div class="nameUser">
-        <p>Olá, <%= usuario.nome%></p>
+        <p>Olá, <%= usuario.nome.slice(0, usuario.nome.indexOf(" "))%></p>
     </div>
     <div class="dropleft">
         <a

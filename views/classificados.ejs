@@ -158,7 +158,7 @@
                                                     alt="Imagem de capa do card">
                                                 <div class="card-corpo">
                                                     <div class="card-titulo"><%=classificado.titulo%></div>
-                                                    <div class="card-subtitulo"><%=classificado.morador.nome%> <%=classificado.morador.id_apartamento%></div>
+                                                    <div class="card-subtitulo"><%=classificado.morador.nome.slice(0, classificado.morador.nome.indexOf(" "))%> - <%=classificado.morador.id_apartamento%></div>
                                                     <div class="card-descricao"><%= classificado.descricao.slice(0, 35)+"..."%></div>
                                                     <div class="card-subtitulo"></div>
                     
@@ -167,8 +167,7 @@
                     
                                         </a>
 
-                                        <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id
-                                        -->
+                                        <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id -->
                                         <div
                                             class="modal fade"
                                             id="<%=classificado.id%>"
@@ -245,11 +244,23 @@
                                                                         <form
                                                                                 action="/excluirClassificadoAdm/<%=classificado.id%>?_method=DELETE"
                                                                                 method="POST">
-                                                                        <button
+                                                                            <input type="number"  name="situacao" value="1" style="display: none;">
+
+                                                                            <button
                                                                             data-toggle="modal"
-                                                                            class="btn btn-danger"
+                                                                            class="btn btn-danger btn-aprovado"
                                                                             type="submit"
-                                                                            data-target="#confirmarExclusao">Excluir</button>
+                                                                            data-target="#confirmarAprovacao">Aprovar</button>
+                                                                        </form>
+                                                                        <form
+                                                                                action="/excluirClassificadoAdm/<%=classificado.id%>?_method=DELETE"
+                                                                                method="POST">
+                                                                            <input type="number" name="situacao" value="0" style="display: none;">
+                                                                            <button
+                                                                                data-toggle="modal"
+                                                                                class="btn btn-danger"
+                                                                                type="submit"
+                                                                                data-target="#confirmarExclusao">Excluir</button>
                                                                         </form>
                                                                     </div>
                                                                 <% } %>

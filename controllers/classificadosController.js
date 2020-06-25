@@ -4,6 +4,9 @@ const Op = Sequelize.Op;
 const enviarEmail = require('./emailClassificados');
 const path = require('path');
 const deletarClassificados = require("./deletarController");
+const { body } = require("express-validator");
+const { json } = require("sequelize");
+const { post } = require("../routes");
 // console.log(" TESTE DO EMAIL: "+ enviarEmail);
 
 const classificadosController = {
@@ -14,13 +17,14 @@ const classificadosController = {
 
         const nome = req.session.user.nome;
         const image = files.filename;
+        const aprovacao = 0;
         
-        enviarEmail(image, titulo, descricao, nome);
-
         const classificado = await Classificados.create(
-            {titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/classificados/${files.filename}` }
-        )
-                    
+            {titulo, descricao, categoria, tipo, aprovacao, id_morador:req.session.user.id, foto: `/img/classificados/${files.filename}` }
+            )
+            
+        enviarEmail(image, titulo, descricao, nome);
+        
         return res.redirect("/meusItens");
 
     },
@@ -44,17 +48,44 @@ const classificadosController = {
 
     exibirClassificados: async (req,res) => {
 
-        const classificados =  await Classificados.findAll({
+        const classificado =  await Classificados.findAll({
             include: {
                 model: Moradores,
                 as: 'morador',
                 required: true
             }
         });
+                    
+        const user = req.session.user.admin;
 
-        console.log(req.session.user)
+        const postagens = [];
         
-        return res.render('classificados', {classificados: classificados, usuario: req.session.user})
+        if(user == 1){
+            
+            classificado.forEach(posts => {            
+                if(posts.aprovacao == 0) {
+                    postagens.push(posts.toJSON());
+                    console.log(posts.toJSON());
+    
+                }
+            });
+            
+            return res.render('classificados', {classificados: postagens, usuario: req.session.user})
+        
+        } else {
+            
+            classificado.forEach(posts => {            
+                if(posts.aprovacao == 1) {
+                    postagens.push(posts.toJSON());
+                    console.log("Postagens para usuarios");
+                    // console.log(posts.toJSON());
+    
+                }
+            });
+            
+            return res.render('classificados', {classificados: postagens, usuario: req.session.user})
+        }
+        
     },
     
     destroy: async (req, res) => {
@@ -78,14 +109,32 @@ const classificadosController = {
     },
 
     destroyAdm: async (req, res) => {
-        const {id} = req.params;
-        const resultado = await Classificados.destroy({
-            where: {
-                id: id
-            }
-        })
 
-        res.redirect('/classificados')
+        const {id} = req.params;
+        const {situacao} = req.body;
+
+        if(situacao == 0) {
+
+            const resultado = await Classificados.destroy({
+                where: {
+                    id: id
+                }
+            })
+    
+            res.redirect('/classificados')
+            
+        } else {
+            
+            const classificado = await Classificados.update({
+                aprovacao: situacao
+            }, {
+                where: {
+                    id: id
+                }
+            })
+            
+            res.redirect('/classificados')
+        }
     },
 
     

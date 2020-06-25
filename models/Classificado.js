@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
           descricao: DataTypes.STRING,
           categoria: DataTypes.STRING,
           tipo: DataTypes.STRING,
+          aprovacao: DataTypes.INTEGER(1),
           id_morador: {
             type: DataTypes.INTEGER,
           },

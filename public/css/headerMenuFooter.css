@@ -363,7 +363,6 @@ a.article:hover {
     margin: 10px auto;
 }
 
-
 @media (max-width: 1024px) {
 
     .mainHeader {
@@ -586,6 +585,7 @@ a.article:hover {
 .slidemenu #slide-item-4:checked ~ .slider .bar {
     margin-left: 75%;
 }
+ 
 
 .btn-secondary {
     text-decoration: white;

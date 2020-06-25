@@ -14,8 +14,10 @@ module.exports = (sequelize, DataTypes) => {
       
        descricao: DataTypes.STRING,
        documento: DataTypes.STRING,
-    },
-    )
+    },{
+      tableName:'documentacoes'
+      
+      })
       
     return Documentacao;
   };

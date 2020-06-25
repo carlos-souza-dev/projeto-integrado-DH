@@ -13,8 +13,12 @@ module.exports = (sequelize, DataTypes) => {
         numero: DataTypes.STRING,
         email: DataTypes.STRING,
        
-    })
+    },{
+      tableName:'contatosUteis'
+      
+      })
       
     return Contato;
   };
+  
   

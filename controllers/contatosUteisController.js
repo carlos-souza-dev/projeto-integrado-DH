@@ -1,5 +1,6 @@
 const {ContatosUteis} = require("../models");
 const Sequelize = require("sequelize");
+console.log(" TABELA CONTATOS "+ContatosUteis)
 
 const contatosUteisController = {
 
@@ -11,7 +12,7 @@ const contatosUteisController = {
         
 
         const resultado = await ContatosUteis.create(
-            {foto: `/img/${files.filename}`, nome, descricao, numero, email}
+            {foto: `/img/user/${files.filename}`, nome, descricao, numero, email}
         );
 
         return res.redirect("/contatosUteis");
@@ -21,6 +22,7 @@ const contatosUteisController = {
     exibir: async (req, res) => {
         
         const contato = await ContatosUteis.findAll();
+        console.log(contato)
         return res.render('contatosUteis', {contato, usuario: req.session.user});
     },
 
@@ -31,7 +33,7 @@ const contatosUteisController = {
 
         if ([files] == "") {
             const contatos = await ContatosUteis.update({
-                foto: `/img/${files.filename}`,
+                foto: `/img/user/${files.filename}`,
                 nome,
                 descricao,
                 numero,
@@ -45,7 +47,7 @@ const contatosUteisController = {
         } else {
             const contatos = await ContatosUteis.update({
                 
-                foto: `/img/${files.filename}`,
+                foto: `/img/user/${files.filename}`,
                 nome,
                 descricao,
                 numero,

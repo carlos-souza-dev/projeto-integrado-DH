@@ -6,8 +6,10 @@ const prestadoresController = {
 
     store: async (req, res) => {
         const [files] = req.files;
-        const {nome, rg, cpf, categoria} = req.body;
+        const {nome, rg, inputcpf, categoria} = req.body;
+        let cpf = inputcpf.replace(/[^\d]+/g,"")
 
+        console.log (cpf)
         const conteudo = await Prestadores.create(
             {nome, rg, cpf, categoria, foto: `/img/${files.filename}`, id_apartamento: req.session.user.id_apartamento}
         )
@@ -20,7 +22,7 @@ const prestadoresController = {
 
         if (req.session.user.admin) {
             const prestadores = await Prestadores.findAll()
-            
+
             return res.render('prestadoresDeServico', {prestadores, usuario: req.session.user});
     } else {
         const prestadores = await Prestadores.findAll({
@@ -28,6 +30,8 @@ const prestadoresController = {
                 id_apartamento: req.session.user.id_apartamento
             }
         })
+
+        
         return res.render('prestadoresDeServico', {prestadores, usuario: req.session.user});
     }
     },

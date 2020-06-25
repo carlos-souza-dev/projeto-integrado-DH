@@ -139,7 +139,7 @@ const perfilController = {
                     id: id
                 }
             })
-            // console.log(resultado)
+            
             res.render('/perfil', {usuario: req.session.user})
     },
     
@@ -160,31 +160,6 @@ const perfilController = {
    
 
 
-    // aplicar essa função para criar usuarios automatico
-    bulkCreate: async (req, res) => {
-        const listaDeUsuarios = [
-            {
-                nome: "Teste 1",
-                email: 'teste1@email.com',
-                senha: '123456'
-            }, {
-                nome: "Teste 2",
-                email: 'teste2@email.com',
-                senha: '223456'
-            }, {
-                nome: "Teste 3",
-                email: 'teste3@email.com',
-                senha: '223456'
-            }, {
-                nome: "Teste 4",
-                email: 'teste4@email.com',
-                senha: '123456'
-            }
-        ]
-        const resultado = await Usuario.bulkCreate(listaDeUsuarios);
-        // console.log(resultado)
-        res.send("Criados")
-    }
 }
 
 module.exports = perfilController;

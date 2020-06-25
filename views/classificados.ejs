@@ -160,13 +160,9 @@
                                                 <div class="card-corpo">
                                                     <div class="card-titulo"><%=classificado.titulo%></div>
                                                     <div class="card-subtitulo"></div>
-
                                                 </div>
-
                                             </div>
-
                                         </a>
-
                                         <!-- estrutura da modal, o <a> dos cards apontam direto para o modal usando o id
                                         -->
                                         <div
@@ -184,26 +180,76 @@
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                     </div>
-                                                    
-                                                    <h6 class="section-title">Interesses</h6>
-                                                        <div class="interesses">
-                                                            if (interesses) {
-                                                        <% for(let interesse of JSON.parse(classificado.morador.interesses)){ %>
-                                                            <span class="interesse"><%= interesse %></span>
-                                                        <% } %>
-                                                            <%}%>
-                                                        <!-- <button>Futebol</button>
-                                                        <button>Música</button>
-                                                        <button>Cozinha</button>
-                                                        <button>Cachorros</button> -->
-
+                                                    <div class="modal-body" id="corpo-modal">
+                                                        <!-- dados do centro do modal (quando abre o anuncio) -->
+                                                        <div class="cardy mb-3" id="cardModal">
+                                                            <!-- <h4 class="card-title"><%=classificado.titulo%></h4> -->
+                                                            <div class="row no-gutters">
+                                                                <div class="col-md-4 text-left" id="fotoItem">
+                                                                    <img src="<%=classificado.foto%>" class="card-img" alt="classificado">
+                                                                    <p>
+                                                                        <%=classificado.descricao%></p>
+                                                                </div>
+                                                                <div class="linha-vertical"></div>
+                                                                <div class="col-md-8">
+                                                                    <div class="card-body">
+                                                                        <div class="dadosUser">
+                                                                            <div class="imagemUser">
+                                                                                <img src="<%=classificado.morador.foto%>" id="user"/>
+                                                                            </div>
+                                                                            <div class="nomeUser">
+                                                                                <h4><%=classificado.morador.nome%></h4>
+                                                                                <p>Apartamento:
+                                                                                    <%=classificado.morador.id_apartamento%>
+                                                                                </p>
+                                                                                <p>Morador desde
+                                                                                    <%= ("0" + (classificado.morador.createdAt.getMonth() + 1)).slice(-2) + "/" +
+                                                                                    classificado.morador.createdAt.getFullYear() %></p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <h6 class="section-title">Interesses</h6>
+                                                                        <div class="interesses">
+                                                                            <% if (classificado.morador.interesses) { %>
+                                                                                <% for(let interesse of JSON.parse(classificado.morador.interesses)){ %>
+                                                                                    <span class="interesse"><%= interesse %></span>
+                                                                                <% } %>
+                                                                            <%}%>
+                                                                            <!-- <button>Futebol</button> <button>Música</button> <button>Cozinha</button>
+                                                                            <button>Cachorros</button> -->
+                                                                        </div>
+                                                                        <div class="quemSou">
+                                                                            <h6 class="section-title">Quem sou eu?</h6>
+                                                                            <p class="card-text text-left about-content"><%=classificado.morador.sobre%></p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="icones col-12">
+                                                                    <a><img src="./img/icon/mail.svg" alt=""></a>
+                                                                    <a><img src="./img/icon/whatsApp.svg" alt=""></a>
+                                                                </div>
+                                                                <% if(usuario.admin) { %>
+                                                                    <div class="botao col-12" id="botaoExcluir">
+                                                                        <form
+                                                                                action="/excluirClassificadoAdm/<%=classificado.id%>?_method=DELETE"
+                                                                                method="POST">
+                                                                        <button
+                                                                            data-toggle="modal"
+                                                                            class="btn btn-danger"
+                                                                            type="submit"
+                                                                            data-target="#confirmarExclusao">Excluir</button>
+                                                                        </form>
+                                                                    </div>
+                                                                <% } %>
+                                                                
+                                                                
+                                                            </div>
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer"></div>
                                                 </div>
                                             </div>
                                         </div>
-
                                         <% })%>
                                         
                                         <% } else {%>
@@ -211,16 +257,11 @@
                                                 Não há anuncios cadastrados
                                             </div>
                                         <% } %>
-
                                     </div>
-
                                     <!-- footer -->
                                     <%- include('./partials/footer') %>
-
                                     </div>
-
                                 </div>
-
                                 <!-- jQuery CDN - Slim version (=without AJAX) -->
                                 <script
                                     src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -239,11 +280,9 @@
                                 <!-- jQuery Custom Scroller CDN -->
                                 <script
                                     src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
                                 <script type="text/javascript">
                                     $(document).ready(function () {
                                         $("#sidebar").mCustomScrollbar({theme: "minimal"});
-
                                         $('#sidebarCollapse').on('click', function () {
                                             $('#sidebar, #content').toggleClass('active');
                                             $('.collapse.in').toggleClass('in');
@@ -252,5 +291,4 @@
                                     });
                                 </script>
                             </body>
-
                         </html>

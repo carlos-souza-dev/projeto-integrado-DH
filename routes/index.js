@@ -77,9 +77,9 @@ router.post('/recuperar', authController.forgot);
 router.get('/token', authController.token);
 router.post('/usetoken', authController.storetoken);
 
-router.get('/home',  homeController.exibir);
+router.get('/home', auth, homeController.exibir);
 
-router.get('/moradores',  moradoresController.exibir);
+router.get('/moradores', auth, moradoresController.exibir);
 router.post('/moradores', uploadDoc.any(), moradoresController.store);
 router.delete('/excluirMoradores/:id', moradoresController.destroy);
 router.put('/atualizarMoradores/:id', uploadUser.any(), moradoresController.update);
@@ -89,7 +89,7 @@ router.get('/correspondencias', auth, correspondenciaController.exibir);
 router.post('/registroCorrespondencia', auth, correspondenciaController.store);
 router.delete('/excluirCorrespondencia/:id', correspondenciaController.destroy);
 
-router.get('/classificados',  classificadosController.exibirClassificados);
+router.get('/classificados', auth, classificadosController.exibirClassificados);
 
 router.get('/meusItens', auth, classificadosController.exibirMeusItens);
 router.post('/criarClassificado', auth, upload.any(), classificadosController.store);
@@ -99,28 +99,26 @@ router.delete('/excluirClassificadoAdm/:id', auth, classificadosController.destr
 router.post('/buscarClassificado', auth, classificadosController.search);
 
 // Listar solicitações
-router.get('/solicitacoes',  solicitacoesController.solicitacoes);
+router.get('/solicitacoes', auth, solicitacoesController.solicitacoes);
 router.post('/solicitacoes', solicitacoesController.store);
 router.put('/updateSolicitacoesAp/:id', solicitacoesController.updateAp);
 router.put('/updateSolicitacoesRep/:id', solicitacoesController.updateRep);
 router.delete('/solicitacoes/:id', solicitacoesController.destroy);
 
-router.get('/criarComunicado',  comunicadosController.index )
-router.get('/comunicados',  comunicadosController.exibir);
-router.put('/alterarComunicado/:id',  comunicadosController.update);
-router.get('/updateComunicado/:id',  comunicadosController.exibirUpdate);
+router.get('/criarComunicado', auth, comunicadosController.index )
+router.get('/comunicados', auth, comunicadosController.exibir);
+router.put('/alterarComunicado/:id', auth, comunicadosController.update);
+router.get('/updateComunicado/:id', auth, comunicadosController.exibirUpdate);
 
-router.post('/criarComunicados',  comunicadosController.store);
-router.delete('/excluirComunicado/:id',  comunicadosController.destroy);
+router.post('/criarComunicados', auth, comunicadosController.store);
+router.delete('/excluirComunicado/:id', auth, comunicadosController.destroy);
 
-
-
-router.get('/documentacao',  documentacaoController.exibir);
+router.get('/documentacao', auth, documentacaoController.exibir);
 router.post('/documentacoes', uploadDoc.any(), documentacaoController.store);
 router.delete('/excluirDocumentacao/:id', documentacaoController.destroy);
 
-router.get('/perfil',  perfilController.edit);
-router.put('/perfil', uploadUser.any(),  perfilController.update);
+router.get('/perfil', auth, perfilController.edit);
+router.put('/perfil', uploadUser.any(), auth, perfilController.update);
 
 router.get("/registro", userController.create);
 router.post("/registro", userController.store);
@@ -128,14 +126,14 @@ router.post("/registro", userController.store);
 
 router.post('/logoff', authController.destroy);
 
-router.get('/prestadoresDeServico',  prestadoresController.exibir);
+router.get('/prestadoresDeServico', auth, prestadoresController.exibir);
 router.post('/cadastroPrestador',upload.any(), prestadoresController.store);
 router.delete('/excluirPrestador/:id', prestadoresController.destroy);
 router.put('/atualizarPrestador/:id', upload.any(), prestadoresController.update);
 
-router.get('/contatosUteis',  contatosUteisController.exibir);
-router.post('/contatosUteis',  upload.any(), contatosUteisController.store);
-router.delete('/excluirContatos/:id',  contatosUteisController.destroy);
-router.put('/atualizarContatos/:id',  upload.any(), contatosUteisController.update);
+router.get('/contatosUteis', auth, contatosUteisController.exibir);
+router.post('/contatosUteis', auth, upload.any(), contatosUteisController.store);
+router.delete('/excluirContatos/:id', auth, contatosUteisController.destroy);
+router.put('/atualizarContatos/:id', auth, upload.any(), contatosUteisController.update);
 
 module.exports = router;

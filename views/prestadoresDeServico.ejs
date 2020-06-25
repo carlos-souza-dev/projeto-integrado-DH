@@ -97,13 +97,13 @@
                                                 <div class="tituloAndTools">
                                                     <div class="card-titulo"><%=prestador.nome%></div>
                                                     <div class="toolsCardPrestServ">
-                                                        <a data-toggle="modal" data-target="#modalAlterarPrestador"><img src="./img/icon/edit.svg" alt=""></a>
+                                                        <a data-toggle="modal" data-target="#<%=prestador.id%>"><img src="./img/icon/edit.svg" alt=""></a>
                                                         <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
                                                     </div>
                                                 </div>
                                                 <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
                                                 linhas-->
-                                                <!-- <div class="card-text"> <b>Data de Nascimento:</b> 14/11/1983</div> -->
+                                                
                                                 <div class="card-text">
                                                     <b>RG:</b>
                                                     <%=prestador.rg%></div>
@@ -138,9 +138,11 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        
+                                        
                                         <!-- modal para alterar dados do morador cadastrado -->
 
-                                        <div class="modal" id="modalAlterarPrestador" tabindex="-1" role="dialog">
+                                        <div class="modal" id="<%=prestador.id%>" tabindex="-1" role="dialog">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -218,8 +220,10 @@
 
                                             </div>
                                         </div>
+                            
 
-                                            <% })%><% } %>
+                                            <% })%>
+                                            <% } %>
 
                                             <!-- modal para cadastrar novo Prestador de serviço -->
 

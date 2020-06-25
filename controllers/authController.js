@@ -44,7 +44,7 @@ const authController = {
         
         req.session.user = user;
         
-                console.log(req.session.user)
+                // console.log(req.session.user)
         return res.redirect("/home");
         
     },

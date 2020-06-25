@@ -119,6 +119,10 @@ z-index: 2;
     
 }
 
+.card-img-top {
+    height: 180px;
+}
+
 /* fim stilo cards classificados */
 
 /* Inicio stilo area para filtrar conteudo */

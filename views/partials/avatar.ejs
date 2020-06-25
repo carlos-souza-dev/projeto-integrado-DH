@@ -1,0 +1,47 @@
+ <!-- logo para versção mobile -->
+ <div class="dropleft logo-mobile">
+    <a
+            class="dropdown-toggle"
+            role="button"
+            id="dropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">
+    <img src="./img/logo/logo-simples.png" alt="">
+    </a>
+    
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="/perfil">Perfil</a>
+        <a class="dropdown-item" href="/">Sair</a>
+
+    </div>
+</div>
+
+<div class="avatar" id="avat">
+    <div class="sininho">
+        <img src="./img/icon/Vector.svg">
+    </div>
+    
+    <div class="nameUser">
+        <p>Olá, <%=usuario.nome.split(' ')[0]%></p>
+    </div>
+    <div class="dropleft">
+        <a
+            class="dropdown-toggle"
+            role="button"
+            id="dropdownMenuLink"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">
+            <img class="avatarUser" src="<%=usuario.foto%>">
+        </a>
+    
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="/perfil">Perfil</a>
+            <form action="/logoff" method="POST">
+                <input class="dropdown-item" type="submit" value="Sair" />
+            </form>
+        </div>
+    </div>
+   
+</div>

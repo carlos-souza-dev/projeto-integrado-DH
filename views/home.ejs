@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Bem Vindo</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <!-- css da parte interna da pagina -->
+        <link rel="stylesheet" href="./css/index.css">
+        <!-- css header, menu lateral, menu superior e footer -->
+        <link rel="stylesheet" href="./css/headerMenuFooter.css">
+        <link rel="stylesheet" href="./css/classificados.css">
+        <link rel="stylesheet" href="./css/correspondencias.css">
+        <link rel="stylesheet" href="./css/solicitacoes.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined">
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+
+        <link
+            rel="shortcut icon"
+            href="./img/logo/logo-simples.png"
+            type="image/x-icon"/>
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+            <!-- Menu Retrátil -->
+            <%- include('./partials/menuRetratil') %>
+
+            <!-- Conteudo da página -->
+
+            <div id="content">
+                <!-- Header -->
+                <div class="mainHeader">
+                    <div class="titulo" id="tit">
+                        <div class="nomePag">
+                            <p>Seja bem vindo</p>
+
+                        </div>
+                        <div class="finalidPag">
+                            <!-- <p >Tudo sobre sua residência</p> -->
+                        </div>
+
+                    </div>
+                   
+                     <!-- inclui o logo mobile e o avatar em uma partial  -->
+                     <%- include('./partials/avatar') %>
+
+                </div>
+
+                <hr class="docSepLine">
+                
+                <!-- area do centro da tela -->
+                <div class="centroTelaMoradores">
+
+                    <!-- cards dos moradores -->
+
+                   
+                    <aside class="mainAside">
+                        <main class="main-morador" id="moradores">
+                            <section class="resumo-section">
+                                <div class="resumo-box">
+                                    <a class="resumo-section__info" href="/moradores">
+                                        <div class="resumo-icon-box">
+                                            <i class="material-icons-outlined resumo-icon" style="font-size:48px;">favorite_border</i>
+                                        </div>
+                                        <div class="resumo-section__info-content">
+                                            <h2 class="resumo-section__info-title">Moradores</h2>
+                                            <span class="resumo-section__info-subtitle"><%= qtdMorador %></span>
+                                        </div>
+                                    </a>
+                                    <a class="resumo-section__info" href="/prestadoresDeServico">
+                                        <div class="resumo-icon-box">
+                                            <i class="material-icons-outlined resumo-icon" style="font-size:48px;">assignment_ind</i>
+                                        </div>
+                                        <div class="resumo-section__info-content">
+                                            <h2 class="resumo-section__info-title">Prestadores de Serviço</h2>
+                                            <span class="resumo-section__info-subtitle"><%= qtdPrestadores %></span>
+                                        </div>
+                                    </a>
+                                    <a class="resumo-section__info" href="/meusItens">
+                                        <div class="resumo-icon-box">
+                                            <i class="material-icons-outlined resumo-icon" style="font-size:48px;">storefront</i>
+                                        </div>
+                                        <div class="resumo-section__info-content">
+                                            <h2 class="resumo-section__info-title">Meus Anúncios</h2>
+                                            <span class="resumo-section__info-subtitle"><%=qtdClassificados%></span>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="resumo-box">
+                                    <div class="resumo-section__classificados" href="classificados.html">
+                                        <h2 class="resumo-section__classificados-title">Classificados</h2>
+                                        <h3 class="resumo-section__classificados-subtitle">Últimos anúncios dos seus vizinhos</h3>
+                                       
+                                        <div class="centroTelaClassificados--home">
+                                            
+                                            
+                                           
+                                            <% if (anunciosViz) { %>
+                                                <% anunciosViz.forEach(anuncio => { %>
+                                            <div>
+                                                <div class="card card--home classificado">
+                                                    <img
+                                                        class="card-img-top"
+                                                        src="<%= anuncio.foto%>"
+                                                        alt="Imagem de capa do card">
+                                                    <div class="card-corpo">
+                                                        <div class="card-titulo card-titulo--home"><%= anuncio.titulo%></div>
+                                                        <div class="card-subtitulo"><%= anuncio.morador.nome%> ( <%=anuncio.morador.id_apartamento %>)</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <% })%>
+                                        <% }%>
+
+                                            <a href="/classificados">
+                                                <div class="card card--home classificado">
+                                                    <div class="card-corpo card-more">
+                                                        <i class="material-icons-outlined resumo-icon icon-seemore" style="font-size:48px;">add_circle_outline</i>
+                                                        <div class="card-titulo card-titulo--home">Ver mais</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+
+                                        
+                                        <h3 class="resumo-section__classificados-subtitle">Seus últimos anúncios</h3>
+                                        <div class="centroTelaClassificados--home">
+                                            
+                                            <% if (meusAnuncios) { %>
+                                                <% meusAnuncios.forEach(meuanuncio => { %>
+                                            <div>
+                                                <div class="card card--home classificado">
+                                                    <img
+                                                        class="card-img-top"
+                                                        src="<%= meuanuncio.foto%>"
+                                                        alt="Imagem de capa do card">
+                                                    <div class="card-corpo">
+                                                        <div class="card-titulo card-titulo--home"><%= meuanuncio.titulo%></div>
+                                                        <div class="card-subtitulo"><%= meuanuncio.morador.nome%> (<%= meuanuncio.morador.id_apartamento%>)</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% })%>
+                                            <% }%>
+
+                                            <a href="/meusItens">
+                                                <div class="card card--home classificado">
+                                                    <div class="card-corpo card-more">
+                                                        <i class="material-icons-outlined resumo-icon icon-seemore" style="font-size:48px;">add_circle_outline</i>
+                                                        <div class="card-titulo card-titulo--home"> Ver mais</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="resumo-section__others">
+                                        <a class="resumo-section__others--sub" href="/correspondencias">
+                                            <h2 class="resumo-section__others-title">Últimas correspondências</h2>
+                                                <table class="tabela-correspondencia">
+                                                    <tr class="tabela-correspondencia-title">
+                                                        <th class="th-title">Tipo</th>
+                                                        <th class="th-title">Destinatário</th>
+                                                        <th class="th-title">Recebido em</th>
+                                                    </tr>
+                                                    
+                                                    <% if (correspondencia) { %>
+                                                        <% correspondencia.forEach(corresp => { %>
+                                                    <tr class="tabela-correspondencia-content">
+                                                        <th><%= corresp.tipo%></th>
+                                                        <th><%= corresp.destinatario%></th>
+                                                        <th><%= ("0" + corresp.createdAt.getDate()).slice(-2) + "/" + ("0"+(corresp.createdAt.getMonth()+1)).slice(-2) + "/" + corresp.createdAt.getFullYear() %></th>
+                                                    </tr>
+                                                    <% })%>
+                                                    <% } else {%> 
+                                                        <h3 class="resumo-section__others-nocontent">Sem novas correspondencias</h3>
+                                                        <% }%>
+                                                </table>
+                                        </a>
+                                       
+                                        <a class="resumo-section__others--sub" href="/comunicados">
+                                            <h2 class="resumo-section__others-title">Últimos Comunicados</h2>
+                                                <table class="tabela-correspondencia">
+                                                    <tr class="tabela-correspondencia-title">
+                                                        <th class="th-title">Título</th>
+                                                        <th class="th-title">Data</th>
+                                                        
+                                                    </tr>
+                                                    
+                                                    <% if (comunicados) { %>
+                                                        <% comunicados.forEach(comunicado => { %>
+                                                    <tr class="tabela-correspondencia-content">
+                                                        <th><%= comunicado.titulo%></th>
+                                                        
+                                                        <th><%= ("0" + comunicado.createdAt.getDate()).slice(-2) + "/" + ("0"+(comunicado.createdAt.getMonth()+1)).slice(-2) + "/" + comunicado.createdAt.getFullYear() %></th>
+                                                    </tr>
+                                                    <% })%>
+                                                    <% } else {%> 
+                                                        <h3 class="resumo-section__others-nocontent">Sem novos comunicados</h3>
+                                                        <% }%>
+                                                </table>
+                                        </a>
+                                        
+                                        <a class="resumo-section__others--sub" href="solicitacoes">
+                                            <h2 class="resumo-section__others-title">Status das Solicitações</h2>
+                                            <table class="tabela-solicitacao">
+                                                <tr class="tabela-solicitacao-title">
+                                                    <th class="th-title">Tipo</th>
+                                                    <th class="th-title">Status</th>
+                                                </tr>
+                                                <% if (solicitacoes) { %>
+                                                    <% solicitacoes.forEach(solicitacao => { %>
+                                                <tr class="tabela-solicitacao-content">
+                                                    <th><%= solicitacao.tipo%></th>
+                                                    <th class="solicitacao-status"><%= solicitacao.status%></th>
+                                                </tr>
+                                                <% })%>
+                                                <% } else {%> 
+                                                    <h3 class="resumo-section__others-nocontent">Sem solicitações</h3>
+                                                    <% }%>
+                                                </table>
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </section>
+                        </main>
+                    </aside> 
+                    
+                    
+                   <!-- footer -->
+                   <%- include('./partials/footer') %>
+
+                </div>
+
+                  
+            
+            </div>
+             
+
+
+        </div>
+       
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({theme: "minimal"});
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+            });
+        </script>
+    </body>
+      
+</html>

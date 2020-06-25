@@ -1,0 +1,143 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 400px;
+  /* height:500px ; */
+  padding: 15px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  position: relative;
+  box-shadow:1px 5px 30px rgb(195, 195, 195);
+}
+
+.login-error {
+  color: red;
+  font-size: 18px;
+}
+
+.signin-title {
+  color: #3b3b3b;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  font-size: 16px;
+  width: 250px;
+  display: inline-block;
+  margin-bottom: -1px;
+  border: none;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  font-size: 16px;
+  width: 250px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.form-signin input[type="remember-me"]{
+  font-size: small;
+}
+
+.btn-secondary {
+  border-radius: 20px;
+  height:40px;
+  width:200px;
+}
+
+.border-botton {
+  padding: 1px 0;
+  margin: 0 25px;
+  border-bottom: 1px solid black !important;
+}
+
+.border-botton i {
+  margin-right: 10px;
+}
+
+.form-signin input[type="email"] {
+  border-radius: 5px;
+}
+
+.form-signin input[type="password"] {
+  border-radius: 5px;
+}
+
+.border-botton-2 {
+  height: 32px;
+  padding: 1px 0;
+  margin: 10px 25px 10px 25px;
+  border-bottom: 1px solid black !important;
+}
+
+.border-botton-2 i {
+  margin-right: 10px;
+}
+
+#inputEmail {
+  width: 88%;
+  height: 30px;
+}
+
+#inputPassword {
+  width: 88%;
+  height: 30px;
+}
+
+#login-button {
+  background-color: #7aa355 !important;
+  border-color: 1px solid #7aa355 !important;
+}
+
+#login-button:hover {
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.12);
+}
+
+.text-center #register-button {
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+  font-family: sans-serif !important;
+  margin: 40px auto;
+  padding: 0;
+  color: #3b3b3b;
+  background-color: white;
+  border-bottom: 1px solid #3b3b3b !important;
+}
+
+#register-button:hover {
+  background-color: #3b3b3b;
+  color: white;
+}

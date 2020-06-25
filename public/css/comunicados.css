@@ -1,0 +1,45 @@
+
+.centroTelaComunicados{
+    width: 94%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.table{
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
+
+.data{
+    text-align: right;
+}
+
+.emptyComunicados {
+    padding: 8px 40px;
+    margin-top: 48px;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+}
+
+#botaoComunicado{
+    display: flex;
+    justify-content: flex-end;
+    
+    
+}
+
+
+#botaoCancelar{
+    margin-left: 10px;
+    
+    
+}
+
+#botaoComunicado form{
+    padding-right: 10px;
+}

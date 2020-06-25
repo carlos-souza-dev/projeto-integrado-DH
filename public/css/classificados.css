@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,700&display=swap');
+
+
+p {
+    margin-bottom: 0 !important;
+
+}
+
+#homeSubmenu, #pageSubmenu {
+    width: 215px;
+    margin-top: 0;
+    margin-left: 65px;
+    font-size: 16px;
+}
+
+/* estilo do menu lateral para ipad */
+
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+    margin: 0 20px 0 10px;
+}
+
+.botaoAbrireFechar {
+z-index: 2;
+}
+
+/* stilo dos cards classificados*/
+
+.centroTelaClassificados {
+    width: calc(94% + 1rem);
+    display: flex;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+}
+
+.centroTelaClassificados--home {
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    padding-bottom: 16px;
+}
+
+.centroTelaClassificados > a {
+    /* margin: px; */
+    margin: 1rem;
+}
+
+.card {
+    /* margin: 15px; */
+    padding: 5px;
+    width: 12rem;
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
+
+.card--home {
+    /* margin: 15px; */
+    width: 8rem;
+    height: 100%;
+    margin-right: 8px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.24);
+}
+
+.card-more {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-corpo {
+    text-align: center;
+    padding: 2px;
+}
+
+.card-corpo div {
+    margin: 5px 0;
+}
+
+.card-titulo {
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.card-titulo--home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+}
+
+.icon-seemore {
+    display: flex;
+    width: 100%;
+    padding: 38px 0;
+}
+
+.card-subtitulo {
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
+
+.card-img {
+    margin-bottom: 16px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#botaoExcluir{
+    display: flex;
+    justify-content: flex-end;
+    
+    
+}
+
+/* fim stilo cards classificados */
+
+/* Inicio stilo area para filtrar conteudo */
+
+#areaFiltro {
+    width: 94%;
+    margin: 40px auto !important;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+    margin: 10px;
+  /*  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);*/
+}
+.areaCamposGrandes {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.areaCamposGrandes #zero-filter, 
+#first-filter, 
+#second-filter {
+    width: 30%;
+}
+
+.areaBotaoSearch {
+    width: 100%;
+    height: 7vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nomeCampoPesquisa {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#botaoSearch {
+    background-color: #3B3B3B;
+    width: 150px;
+    height: 44px;
+    border-radius: 22px;
+    text-transform: uppercase;
+    font-size: 16px;
+    align-items: center;
+    color: white;
+}
+
+#btn-pesquisa {
+    color: #3B3B3B;
+    background-color: white;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 0 !important;
+
+}
+
+/* estilo modal card detalhes */
+
+#corpo-modal {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0px;
+}
+
+.cardy {
+    width: 100%;
+}
+
+.linha-vertical {
+    height: 80% ;
+    /*Altura da linha*/
+    border-left: 2px solid;
+    /* Adiciona borda esquerda na div como ser fosse uma linha.*/
+    left: 35%;
+    /* top: 16%; */
+    /* bottom: 80%; */
+    color: rgb(172, 164, 164);
+    position: absolute;
+}
+
+#user {
+   
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 60px;
+    height: 60px;
+    border: 4px solid #878787;
+}
+
+#fotoItem {
+    padding-left: 15px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 0px 32px;
+}
+
+.card-body > div {
+    padding-bottom: 20px;
+} 
+
+.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+.dadosUser {
+    display: flex;
+}
+
+.imagemUser{
+    align-self: center;
+    padding-right: 10px;
+}
+
+.interesses {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.section-title {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.interesse {
+    margin-right: 8px;
+    margin-bottom: 8px;
+    padding: 4px 12px;
+    font-size: 16px;
+    border-radius: 24px;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    background-color: rgba(155, 158, 163, 0.5);
+}
+
+.about-content {
+    font-size: 16px;
+}
+
+#col-md-4-bloco2 > #classificados-descricao {
+    padding: 5% !important;
+}
+.nomeUser > h4 {
+    border-bottom: 2px solid #878787;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.nomeUser > p, .quemSou > p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+}
+
+.icones {
+    padding: 0px !important;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+@media(max-width: 767px) {
+    .linha-vertical {
+        display: none;
+    }
+    .listaClassificados{
+        justify-content: center;
+    }
+    
+    #botaoSearch {
+        margin: auto;
+    }
+
+    .areaCamposGrandes {
+        height: 150px;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .areaCamposGrandes #zero-filter, #first-filter, #second-filter {
+        width: 80%;
+    }
+
+    .areaCamposGrandes #zero-filter {
+        border: 1px solid #000000;;
+    }
+}
+
+@media (min-width: 576px){
+.modal-dialog {
+    max-width: 768px !important;
+
+}
+}

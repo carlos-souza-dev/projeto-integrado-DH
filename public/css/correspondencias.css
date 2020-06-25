@@ -1,0 +1,177 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,700&display=swap');
+
+
+/* Aplicação de exceções para a página rerrespondências */
+
+.areaBotaoCad {
+    display: flex;
+    justify-content: flex-end;
+    height: 10vh;
+    align-items: center;
+    width: 94%;
+    margin: 0 auto;
+}
+
+#botaoCadastro {
+    background-color: #3B3B3B;
+    width: 226px;
+    height: 44px;
+    border-radius: 22px;
+    text-transform: uppercase;
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+}
+
+
+#botaoExcluir{
+    padding-left: 5px;
+}
+
+@media(max-width:768px) {
+    #botaoCadastro {
+        background-color: #3B3B3B;
+        width: 226px;
+        height: 44px;
+        border-radius: 22px;
+        text-transform: uppercase;
+        font-size: 16px;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+            /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+    }
+
+    .areaBotaoCad {
+        width: 94%;
+        padding-top: 10px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+        align-items: center;
+    }   
+        /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+} 
+
+.centroTelaCorrespondencias{
+    width: 100%;
+    margin: 50px 0;
+    padding-bottom: 45px;
+}
+.correspondencia-section{
+    width: 94%;
+    height: 800px;
+    margin: 0 auto; 
+    border-radius: 25px;
+    display: flex;
+    border-radius: 25px;  
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
+
+.tabela-correspondencia {
+    width: 100%;
+    color: #3b3b3b;
+    text-align: center;
+}
+
+th {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.th-title {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+    line-height: 36px;
+}
+
+.tabela-correspondencia-content {
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+.correspondencia-section--menu{
+    margin: 8px 16px;
+    text-align: center;
+}
+
+.tabela-correspondencia-title {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.correspondencia-section article{
+    width: 100%;
+}
+
+.correspondencia-section article .correspondencia-title {
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+    border-bottom: 1px solid #878787;
+}
+.correspondencia-section article .date,
+.correspondencia-section article .type,
+.correspondencia-section article .sender,
+.correspondencia-section article .data,
+.correspondencia-section article .receiver,
+.correspondencia-section article .note {
+    width: 100%;
+    height: 64px;
+    border-bottom: 1px solid #C4C4C4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: lighter;
+    font-size: 18px;
+    color: #000000;
+}
+
+.correspondencia-section article #last-child {
+    border-bottom: none;
+}
+
+@media(max-width: 1024px){
+    
+.centroTelaCorrespondencias .correspondencia-section .remetente,
+.centroTelaCorrespondencias .correspondencia-section .observacao{
+    display: none;
+}
+
+.centroTelaCorrespondencias .correspondencia-section {
+    width: 94%;
+    min-width: 300px;
+    height: 450px;
+    margin: 50px auto 0;
+} 
+
+@media(max-width: 500px){
+    .correspondencia-section article .date,
+    .correspondencia-section article .correspondencia-title,
+    .correspondencia-section article .type,
+    .correspondencia-section article .sender,
+    .correspondencia-section article .data,
+    .correspondencia-section article .receiver,
+    .correspondencia-section article .note {
+        font-size: 18px;
+
+}
+
+}}

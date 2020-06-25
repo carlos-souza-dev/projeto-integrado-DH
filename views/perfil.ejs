@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Meu Perfil</title>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <!-- css da parte interna da pagina -->
+        <link rel="stylesheet" href="./css/perfil.css">
+        <!-- css header, menu lateral, menu superior e footer -->
+        <link rel="stylesheet" href="./css/headerMenuFooter.css">
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+
+        <link
+            rel="shortcut icon"
+            href="./img/logo/logo-simples.png"
+            type="image/x-icon"/>
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+            <!-- Menu Retrátil -->
+            <%- include('./partials/menuRetratil') %>
+
+                <!-- Conteudo da página -->
+
+                <div id="content">
+                    <!-- Header -->
+                    <div class="mainHeader">
+                        <div class="titulo" id="tit">
+                            <div class="nomePag">
+                                <p>Meu Perfil</p>
+
+                            </div>
+                            <div class="finalidPag">
+                                <p ></p>
+                            </div>
+
+                        </div>
+
+                        <!-- inclui o logo mobile e o avatar em uma partial -->
+                        <%- include('./partials/avatar') %>
+                        </div>
+
+                        <hr class="docSepLine">
+
+                        <!-- area do centro da tela -->
+                        <div class="centroOpcoesPerfil">
+
+                            <main class="container content">
+                                <form action="/perfil?_method=PUT" method="POST" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <h3 class="profileTitle col-12">Dados cadastrais</h3>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="nameInput">Nome Completo</label>
+                                                    <input type="text" class="form-control" name="nome" id="nameInput" value="<%= usuario.nome %>">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">E-mail</label>
+                                                    <input type="email" class="form-control" name="email" id="email" value="<%= usuario.email %>">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="password">Nova senha</label>
+                                                    <input type="password" class="form-control" name="senha" id="senha">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="senha">Repetir nova senha</label>
+                                                    <input type="password" class="form-control" name="senharepeat" id="senharepeat" disabled>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                        <h3 class="profileTitle col-12">Perfil</h3>
+                                        
+                                            <div class="form-group col-md-6" id="alterarFoto">
+                                                <!-- <label>Foto do perfil</label> -->
+                                                <img class="photoPerfil" src="<%=usuario.foto%>">
+                                                <label for="photo"  class="photo">Alterar Foto</label>
+                                                <input type="file" name="photo" id="photo">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label for="sobre">Quem sou eu?</label>
+                                                <textarea class="form-control" name="sobre" id="sobre" maxlength="250" placeholder="Conte para a sua vizinhança quem é você e como você pode contribuir para tornar este lugar ainda mais incrível (max. 250 caracteres)"><%=usuario.sobre%></textarea>
+                                            </div>
+                                    </div>
+                                    <div class="row">
+                                        <h3 class="profileTitle col-12">Interesses</h3>
+                                        <div id="interessesControllerObject"><%= usuario.interesses %></div>
+                                        <label class="col-12">Selecione até <span id="limit"></span> interesses <span class="total-score">(seleções restantes: <span class="interessesRestantes"></span>)</span></label>
+                                            <div class="form-group col-12">
+                                                <ul class="tagsInteresse">
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse1" value="Filmes"><label for="interesse1">Filmes</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse2" value="Fotografia"><label for="interesse2">Fotografia</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse3" value="Animais e Natureza"><label for="interesse3">Animais e Natureza</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse4" value="Aventura"><label for="interesse4">Aventura</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse5" value="Artesanato"><label for="interesse5">Artesanato</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse6" value="Livros e Poesia"><label for="interesse6">Livros e Poesia</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse7" value="Beleza e Cuidados Pessoais"><label for="interesse7">Beleza e Cuidados Pessoais</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse8" value="Saúde e Fitness"><label for="interesse8">Saúde e Fitness</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse9" value="Futebol"><label for="interesse9">Futebol</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse10" value="Esportes"><label for="interesse10">Esportes</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse11" value="Artes Marciais"><label for="interesse11">Artes Marciais</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse12" value="Astrologia"><label for="interesse12">Astrologia</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse13" value="Jardinagem"><label for="interesse13">Jardinagem</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse14" value="Design & Tecnologia"><label for="interesse14">Design & Tecnologia</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse15" value="Música"><label for="interesse15">Música</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse16" value="Games"><label for="interesse16">Games</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse17" value="Moda"><label for="interesse17">Moda</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse18" value="Carros"><label for="interesse18">Carros</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse19" value="Motos"><label for="interesse19">Motos</label></li>                                                    
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse21" value="Arquitetura"><label for="interesse21">Arquitetura</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse22" value="Viagens"><label for="interesse22">Viagens</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse23" value="Cozinha"><label for="interesse23">Cozinha</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse24" value="Veganismo"><label for="interesse24">Veganismo</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse25" value="Mercado Financeiro"><label for="interesse25">Mercado Financeiro</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse26" value="Ficção Científica"><label for="interesse26">Ficção Científica</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse28" value="Filosofia"><label for="interesse28">Filosofia</label></li>
+                                                    <li><input type="checkbox" class="interesse" name="interesses" id="interesse29" value="Faça Você Mesmo (DIY)"><label for="interesse29">Faça Você Mesmo (DIY)</label></li>
+                                                </ul>
+                                            </div>
+                                            <div id="testeArrayInteresse"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="options col-12">
+                                            <button id="salvarAlteracoes" type="submit">Salvar Alterações</button>
+                                        </div>
+                                    </div>
+                                </form>                        
+                                
+                                <!-- <section class="card">
+                                    <h2>Atualizar Perfil</h2>
+                    
+                                    <form action="/perfil?_method=PUT" method="POST" enctype="multipart/form-data">
+                                        
+                                        <label for="photo">Selecione a foto</label>
+                                        <input type="file" name="photo" id="photo">
+                                                                                
+                                <form class="card p-3" method="POST" action="/perfil?_method=PUT" >
+                                    <div class="form-group">
+                                        <label for="nome">Nome</label>
+                                        <input type="text" class="form-control" id="nome" name="nome" value="<%= user.nome %>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" name="email" value="<%= user.email %>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Senha</label>
+                                        <input type="text" class="form-control" id="password" name="senha">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Sobre</label>
+                                        <input type="text" class="form-control" id="password" name="sobre"  value="<%= user.sobre %>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="interesses">Interesses</label>
+                                        <input type="text" class="form-control" id="interesses" name="interesses">
+                                    </div>
+
+                                    <button class="btn btn-success" type="submit">Salvar Alterações</button>
+                                </form> -->
+
+                               
+                            </main>
+
+
+                        </div>
+                    </div>
+
+                    <!-- footer -->
+                    <%- include('./partials/footer') %>
+
+                    </div>
+
+                </div>
+
+                <!-- jQuery CDN - Slim version (=without AJAX) -->
+                <script
+                    src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                    crossorigin="anonymous"></script>
+                <!-- Popper.JS -->
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+                    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+                    crossorigin="anonymous"></script>
+                <!-- Bootstrap JS -->
+                <script
+                    src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+                    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+                    crossorigin="anonymous"></script>
+                <!-- jQuery Custom Scroller CDN -->
+                <script
+                    src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $("#sidebar").mCustomScrollbar({theme: "minimal"});
+
+                        $('#sidebarCollapse').on('click', function () {
+                            $('#sidebar, #content').toggleClass('active');
+                            $('.collapse.in').toggleClass('in');
+                            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                        });
+                    });
+                </script>
+                <script src="/js/profileScripts.js"></script>
+            </body>
+
+        </html>

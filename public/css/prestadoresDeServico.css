@@ -1,0 +1,147 @@
+
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+
+
+/* stilo botão */
+
+.areaBotaoCad {
+    width: 94%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    height: 10vh;
+    align-items: center;
+}
+
+#botaoCadastro {
+    background-color: #3B3B3B;
+    width: 226px;
+    height: 44px;
+    border-radius: 22px;
+    text-transform: uppercase;
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+
+}
+
+@media(max-width:768px) {
+    #botaoCadastro {
+        background-color: #3B3B3B;
+        width: 226px;
+        height: 44px;
+        border-radius: 22px;
+        text-transform: uppercase;
+        font-size: 16px;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+            /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+    }
+
+    .areaBotaoCad {
+        width: 94%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+        align-items: center;
+    }    
+}
+
+/* fim stilo botao */
+
+
+/* stilo dos cards do morador */
+
+
+
+.centroTelaPrestServico{
+    width: calc(94% + 1rem);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap;
+    padding-bottom: 40px;
+    
+} 
+
+
+
+.centroTelaPrestServico>div{
+    margin: 1rem;
+    flex-grow: 1;
+}
+
+.imgPrestServ>img{
+    
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 130px;
+    height: 130px;
+    border: 4px solid #878787;
+}
+
+
+.cardPrestServico{
+    /* width: 48%; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
+
+
+.cardPrestServico>div{
+padding: 1rem;
+}
+
+
+.corpoCard{
+    width: 60%;
+}
+
+.card-titulo{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.tituloAndTools{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    margin-bottom: 5px;
+}
+
+
+
+.card-text{
+    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.toolsCardPrestServ>img{
+    padding-left: 0.3rem;
+}
+
+@media (max-width: 450px){
+    .imgPrestServ>img{
+        width: 6rem;
+    height: 6rem;
+
+    }
+}

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Minha Casa</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <!-- css da parte interna da pagina -->
+        <link rel="stylesheet" href="./css/contatosUteis.css">
+        <!-- css header, menu lateral, menu superior e footer -->
+        <link rel="stylesheet" href="./css/headerMenuFooter.css">
+
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+
+        <link
+            rel="shortcut icon"
+            href="./img/logo/logo-simples.png"
+            type="image/x-icon"/>
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+            <!-- Menu Retrátil -->
+            <%- include('./partials/menuRetratil') %>
+
+            <!-- Conteudo da página -->
+
+            <div id="content">
+               
+                <div class="mainHeader">
+                    <div class="titulo" id="tit">
+                        <div class="nomePag">
+                            <p>Minha Casa</p>
+
+                        </div>
+                        <div class="finalidPag">
+                            <p >Tudo sobre sua residência</p>
+                        </div>
+
+                    </div>
+                  <!-- inclui o logo mobile e o avatar em uma partial  -->
+                  <%- include('./partials/avatar') %>
+                  
+                </div>
+
+               <!-- menu superior -->
+               <%- include('./partials/menuSupMinhaCasa') %>
+               
+               <% if(usuario.admin) { %>
+               <div class="areaBotaoCad">
+                    <div>
+                        <button
+                            type="button"
+                            id="botaoCadastro"
+                            class="btn btn-secondary btn-sm"
+                            data-toggle="modal"
+                            data-target="#modalCadastroContato">
+                            Novo Contato
+                        </button>
+                    </div>
+                </div>
+                <% } %>
+
+
+                <!-- area do centro da tela -->
+                <div class="centroTelaContatosUteis">
+                 <!-- card do contato -->
+                 <% if (contato) { %>
+
+                <% contato.forEach(contatos => { %>
+
+                    <div class="cardContato ">
+
+                        <!-- div da foto do morador -->
+                        <div class="imgContato">
+                            <img src="<%=contatos.foto%>" alt="...">
+                        </div>
+
+                        <!-- area que organiza os itens do texto do card -->
+                        <div class="corpoCard">
+
+                            <!-- div que contem o nome do morador e os icones para fazer alteração -->
+
+                            <div class="card-titulo">
+                                <b><%= contatos.nome %></b>
+                            </div>
+                            <div class="card-text"><b><%= contatos.descricao %></b></div>
+                            <!-- divs com o texto dentro do card, eram <p> mas ficava muito espaço entre as
+                            linhas-->
+
+                            <div class="card-text">
+                                <%= contatos.numero %>
+                            </div>
+                            <div class="card-text"><%= contatos.email %></div>
+                        </div>
+                        <div class="iconesContato">
+                            <img src="./img/icon/phone_in_talk.svg" alt="">
+                            <img src="./img/icon/mail.svg" alt="">
+                            <img src="./img/icon/whatsApp.svg" alt="">
+                    
+                            
+                        </div>
+                        <% if(usuario.admin) { %>
+                        <a data-toggle="modal" data-target="#modalAlterarContato"><img src="./img/icon/edit.svg" alt=""></a>
+                        <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                        <% } %>
+                        </div>
+
+
+
+                    <div
+                    class="modal fade"
+                    id="confirmarExclusao"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <form  action="/excluirContatos/<%=contatos.id%>?_method=DELETE" method="POST">  
+                            <div class="modal-body">
+                                Tem certeza que deseja excluir?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-danger">Tenho certeza</button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+               
+                            
+               
+                </div>
+ 
+                <!-- modal para alterar dados do contato cadastrado -->
+
+                    
+                <div class="modal" id="modalAlterarContato" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Editar Contato</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                    <div class="modal-body">
+                                        <form  action="/atualizarContatos/<%=contatos.id%>?_method=PUT" method="POST" enctype="multipart/form-data"> 
+                                              
+                                            <div class="form-group">
+                                                <label for="exampleFormControlFile1">Foto</label>
+                                                <input
+                                                    type="file"
+                                                    name="foto"
+                                                    class="form-control-file"
+                                                    id="exampleFormControlFile1">
+                                            </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Nome Completo</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        value="<%=contatos.nome%>"
+                                                        name="nome"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Descrição</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="descricao"
+                                                        value="<%=contatos.descricao%>"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Numero</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="numero"
+                                                        value="<%=contatos.numero%>"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Email</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="email"
+                                                        value="<%=contatos.email%>"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                               
+            
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                <button type="submit" class="btn btn-secondary">Salvar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                         
+                    
+                            <% })%>
+
+                            <% } %>
+                        
+                    <!-- modal para cadastrar novo Contato -->
+
+                    <div class="modal" id="modalCadastroContato" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Cadastrar Contato</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                    <div class="modal-body">
+                                        <form  action="/contatosUteis" method="POST" enctype="multipart/form-data"> 
+                                              
+                                            <div class="form-group">
+                                                <label for="exampleFormControlFile1">Foto</label>
+                                                <input
+                                                    type="file"
+                                                    name="foto"
+                                                    class="form-control-file"
+                                                    id="exampleFormControlFile1">
+                                            </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Nome Completo</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="nome"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Descrição</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="descricao"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Numero</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="numero"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlTextarea1">Email</label>
+                                                    <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        name="email"
+                                                        id="exampleFormControlTextarea1"
+                                                        rows="1"></input>
+                                                </div>
+                                               
+            
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                <button type="submit" class="btn btn-secondary">Salvar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                        </div>         
+                    </div>     
+                    
+            <!-- footer -->
+            <%- include('./partials/footer') %>
+           </div>
+       
+       
+        </div>
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({theme: "minimal"});
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+            });
+        </script>
+    </body>
+
+</html>

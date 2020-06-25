@@ -1,0 +1,203 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.areaBotaoCad {
+    display: flex;
+    justify-content: flex-end;
+    height: 10vh;
+    align-items: center;
+    width: 94%;
+    margin: 0 auto;
+}
+
+#botaoCadastro {
+    background-color: #3B3B3B;
+    width: 226px;
+    height: 44px;
+    border-radius: 22px;
+    text-transform: uppercase;
+    font-size: 16px;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+}
+
+@media(max-width:768px) {
+    #botaoCadastro {
+        background-color: #3B3B3B;
+        width: 226px;
+        height: 44px;
+        border-radius: 22px;
+        text-transform: uppercase;
+        font-size: 16px;
+        align-items: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+            /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+    }
+
+    .areaBotaoCad {
+        width: 94%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+        align-items: center;
+    }   
+        /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+} 
+
+/* stilo dos cards do morador */
+
+
+
+.centroTelaContatosUteis{
+    width: calc(94% + 1rem) ;
+    height: 50vh;
+    margin: 40px auto;
+    display: flex;
+    justify-content: space-evenly; 
+    flex-wrap: wrap;
+    align-items: center;
+} 
+
+.centroTelaContatosUteis > div{
+    width: 30rem;
+    max-width: 860px;
+    min-width: 600px;
+    min-height: 190px;
+    margin:1rem;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.imgContato > img{
+    
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 130px;
+    height: 130px;
+    border: 4px solid #878787;
+}
+
+
+.cardContato{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
+
+.cardOutrosContatos{
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: flex-start;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
+
+.corpoCardOutrosContatos {
+    padding: 0 40px;
+}
+
+.cardContato > div{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+
+.corpoCard{
+    flex-direction: row;
+    text-align: center;
+    
+}
+
+.card-titulo{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+
+.card-tituloOC{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+
+} 
+
+.card-text{
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+.toolsCardPrestServ>img{
+    padding-left: 0.3rem;
+}
+
+@media (max-width: 768px){
+    .centroTelaContatosUteis > div {
+        min-width: 327px;
+    }
+
+    .cardContato > div {
+        margin: 0;
+    }
+
+    .cardContato .imgContato > img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .cardContato .iconesContato {
+        width: 30px;
+    }
+}
+
+@media (max-width: 450px){
+    .imgPrestServ>img{
+        width: 6rem;
+        height: 6rem;
+
+    }
+}

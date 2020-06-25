@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Minha Casa</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <!-- css da parte interna da pagina -->
+        <link rel="stylesheet" href="./css/correspondencias.css">
+        <!-- <link rel="stylesheet" href="./css/resposividade.css"> -->
+        <!-- css header, menu lateral, menu superior e footer -->
+        <link rel="stylesheet" href="./css/headerMenuFooter.css">
+
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+        <script
+            defer="defer"
+            src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
+
+        <link
+            rel="shortcut icon"
+            href="./img/logo/logo-simples.png"
+            type="image/x-icon"/>
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+            <!-- Menu Retrátil -->
+            <%- include('./partials/menuRetratil') %>
+
+            <!-- Conteudo da página -->
+            <!-- area dentro da tela, estão na mesma div do menu para empurrar tudo para a
+            direita -->
+            <div id="content">
+                <!-- Header -->
+                <div class="mainHeader">
+                    <div class="titulo" id="tit">
+                        <div class="nomePag">
+                            <p>Minha Casa</p>
+
+                        </div>
+                        <div class="finalidPag">
+                            <p >Tudo sobre sua residência</p>
+                        </div>
+
+                    </div>
+                  <!-- inclui o logo mobile e o avatar em uma partial  -->
+                  <%- include('./partials/avatar') %>
+                  
+                </div>
+
+               <!-- menu superior -->
+               <%- include('./partials/menuSupMinhaCasa') %>
+
+               <div class="areaBotaoCad">
+                    <div>
+                        <% if(usuario.admin) { %>
+                        <button
+                            type="button"
+                            id="botaoCadastro"
+                            class="btn btn-secondary btn-sm"
+                            data-toggle="modal"
+                            data-target="#modalCadastroCorresp">
+                            Novo Registro
+                        </button>
+                        <% } %>
+                    </div>
+                </div>
+
+                <!-- area do centro da tela -->
+                <div class="centroTelaCorrespondencias">
+                    <% if (correspondencia) { %>
+                    <section class="correspondencia-section">
+
+                        
+                        <article>
+                            <div class="correspondencia-title">Recebido em</div>
+
+                            <% correspondencia.forEach(corresp =>  { %>
+                            
+                            <div class="date" id="last-child"> <%= ("0" + corresp.createdAt.getDate()).slice(-2) + "/" + ("0"+(corresp.createdAt.getMonth()+1)).slice(-2) + "/" + corresp.createdAt.getFullYear() %> %></div>
+                             <%})%>
+
+                        </article>
+                        <article>
+                            <div class="correspondencia-title">Tipo</div>
+                            <% correspondencia.forEach(corresp =>  { %>
+                           
+                            <div class="type" id="last-child"><%= corresp.tipo %></div>
+                            <%})%>
+                        </article>
+                        
+                        <article>
+                            <div class="correspondencia-title">Destinatário</div>
+                            <% correspondencia.forEach(corresp =>  { %>
+                            <div class="receiver" id="last-child"><%= corresp.destinatario %></div>
+                            <%})%>
+                        </article>
+
+                        <% if(usuario.admin) { %>
+                        <article>
+                            <div class="correspondencia-title">Apartamento</div>
+                            <% correspondencia.forEach(corresp =>  { %>
+                            <div class="receiver" id="last-child"><%= corresp.apartamento %> 
+                                
+                            <a data-toggle="modal" data-target="#confirmarExclusao" id=botaoExcluir><img src="./img/icon/trash.svg" alt=""></a>
+                        
+                            </div>
+
+                            <div
+                            class="modal fade"
+                            id="confirmarExclusao"
+                            tabindex="-1"
+                            role="dialog"
+                            aria-labelledby="exampleModalCenterTitle"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <form  action="/excluirCorrespondencia/<%=corresp.id%>?_method=DELETE" method="POST">  
+                                    <div class="modal-body">
+                                        Tem certeza de que deseja excluir esta correspondência? A ação não poderá ser desfeita.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-danger">Tenho certeza</button>
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+
+                            <%})%>
+                        </article>
+
+                        
+
+
+                        
+
+
+
+                        <% } %>
+                        
+
+                    </section>
+                    <%} else {%> 
+                        <div class="emptyComunicados">
+                            Não há Correspondencias
+                        </div>
+                        <% } %>
+                </div>
+
+
+                <div class="modal" id="modalCadastroCorresp" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Adicionar Correspondencia</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form  action="/registroCorrespondencia" method="POST" >  
+                                   
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Tipo</label>
+                                        <input class="form-control" type="text" name="tipo" id="exampleFormControlTextarea1" rows="1" placeholder="Digite o Tipo da Correspondência"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Destinatário</label>
+                                        <input class="form-control" type="text" name="destinatario" id="exampleFormControlTextarea1" rows="1" placeholder="Nome do destinatário"></input>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleFormControlTextarea1">Apartamento</label>
+                                        <input class="form-control" type="text" name="apartamento" id="exampleFormControlTextarea1" rows="1" placeholder="Numero do apartamento"></input>
+                                    </div>
+                                         
+    
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                        <button type="submit" class="btn btn-secondary">Salvar</button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- footer -->
+                 <%- include('./partials/footer') %>
+
+            </div>
+
+        </div>
+
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <!-- Popper.JS -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+            integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+            crossorigin="anonymous"></script>
+        <!-- Bootstrap JS -->
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+            integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+            crossorigin="anonymous"></script>
+        <!-- jQuery Custom Scroller CDN -->
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#sidebar").mCustomScrollbar({theme: "minimal"});
+
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar, #content').toggleClass('active');
+                    $('.collapse.in').toggleClass('in');
+                    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+                });
+            });
+        </script>
+    </body>
+
+</html>

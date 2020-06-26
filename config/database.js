@@ -1,9 +1,11 @@
+require('dotenv').config();
+
 module.exports = {
-    host: "localhost",
-    dialect: "mysql",
-    username: "root",
-    port: 3306,
-    password: "roadrunner",
-    database: "portal-do-condominio",
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_DIALECT,
+    username: process.env.DB_USERNAME,
+    port: process.env.DB_PORT,
+    password: process.env.DB_PASS,
+    database: process.env.DB_DATABASE,
   };
   

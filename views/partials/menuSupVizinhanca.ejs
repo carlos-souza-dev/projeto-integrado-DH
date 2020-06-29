@@ -5,19 +5,29 @@
         <!-- checked="checked" -->
     
     
+        <% if(usuario.admin) { %>
+            <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"/>
+            <label for="slide-item-2">
+                <a href="/aprovarClassificados">Aprovar Classificados</a>
+            </label>
+            <% } %>
+
         <!-- Item 1 -->
-        <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"/>
+        <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
         <label for="slide-item-1">
             <a href="/classificados">Classificados</a>
         </label>
     
         <!-- Item 2 -->
         <% if(!usuario.admin) { %>
-        <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
+        <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle"/>
         <label for="slide-item-2">
             <a href="/meusItens">Meus Itens</a>
         </label>
         <% } %>
+
+        
+
         <div class="clear"></div>
     
         <!-- Bar -->

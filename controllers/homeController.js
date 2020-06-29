@@ -11,7 +11,7 @@ const homeController = {
             id_apartamento: req.session.user.id_apartamento
            }
         })
-        console.log("Morador"+qtdMorador)
+        // console.log("Morador"+qtdMorador)
 
         const qtdPrestadores = await Prestadores.count({
             where:{
@@ -69,7 +69,7 @@ const homeController = {
              }
         });
         
-        console.log(solicitacoes)
+        // console.log(solicitacoes)
 
         return res.render('home', {qtdMorador, qtdPrestadores, qtdClassificados, anunciosViz, meusAnuncios, correspondencia, comunicados, solicitacoes, usuario: req.session.user })
     }

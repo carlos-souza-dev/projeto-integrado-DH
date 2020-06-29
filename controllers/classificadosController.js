@@ -58,6 +58,8 @@ const classificadosController = {
                     
         const user = req.session.user.admin;
 
+        console.log(user)
+
         const postagens = [];
         
         if(user == 1){

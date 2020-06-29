@@ -122,7 +122,8 @@
                                                         alt="Imagem de capa do card">
                                                     <div class="card-corpo">
                                                         <div class="card-titulo card-titulo--home"><%= anuncio.titulo%></div>
-                                                        <div class="card-subtitulo"><%= anuncio.morador.nome%> ( <%=anuncio.morador.id_apartamento %>)</div>
+                                                        <div class="card-subtitulo"><%= anuncio.morador.nome.slice(0, anuncio.morador.nome.indexOf(" "))%> ( <%=anuncio.morador.id_apartamento %>)</div>
+                                                        <div class="card-descricao"><%= anuncio.descricao.slice(0, 35)+"..."%></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -154,7 +155,8 @@
                                                         alt="Imagem de capa do card">
                                                     <div class="card-corpo">
                                                         <div class="card-titulo card-titulo--home"><%= meuanuncio.titulo%></div>
-                                                        <div class="card-subtitulo"><%= meuanuncio.morador.nome%> (<%= meuanuncio.morador.id_apartamento%>)</div>
+                                                        <div class="card-subtitulo"><%= meuanuncio.morador.nome.slice(0, meuanuncio.morador.nome.indexOf(" "))%> ( <%=meuanuncio.morador.id_apartamento %>)</div>
+                                                        <div class="card-descricao"><%= meuanuncio.descricao.slice(0, 35)+"..."%></div>
                                                     </div>
                                                 </div>
                                             </div>

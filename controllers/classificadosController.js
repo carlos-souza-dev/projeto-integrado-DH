@@ -65,7 +65,6 @@ const classificadosController = {
             classificado.forEach(posts => {            
                 if(posts.aprovacao == 0) {
                     postagens.push(posts.toJSON());
-                    console.log(posts.toJSON());
     
                 }
             });
@@ -76,10 +75,7 @@ const classificadosController = {
             
             classificado.forEach(posts => {            
                 if(posts.aprovacao == 1) {
-                    postagens.push(posts.toJSON());
-                    console.log("Postagens para usuarios");
-                    // console.log(posts.toJSON());
-    
+                    postagens.push(posts.toJSON());    
                 }
             });
             

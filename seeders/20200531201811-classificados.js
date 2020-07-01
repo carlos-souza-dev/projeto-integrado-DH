@@ -10,6 +10,7 @@ module.exports = {
         descricao: 'Aulas particulares de violão',
         categoria: 'Instrumentos musicais',
         tipo: 'Serviço',
+        aprovacao: 1,
         id_morador: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -21,6 +22,7 @@ module.exports = {
         descricao: 'Aulas particulares de matemática',
         categoria: 'Educação',
         tipo: 'Serviço',
+        aprovacao: 1,
         id_morador: 4,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -32,6 +34,7 @@ module.exports = {
         descricao: 'Cuida-se de crianças',
         categoria: 'Outros',
         tipo: 'Serviço',
+        aprovacao: 0,
         id_morador: 6,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -43,6 +46,7 @@ module.exports = {
         descricao: 'Marmitas de baixa calorias para te ajudar a ter uma vida mais saudável',
         categoria: 'Alimentos e bebidas',
         tipo: 'Produto',
+        aprovacao: 0,
         id_morador: 3,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -54,6 +58,7 @@ module.exports = {
         descricao: 'Levo seu pet para passear',
         categoria: 'Animais',
         tipo: 'Serviço',
+        aprovacao: 0,
         id_morador: 7,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -65,6 +70,7 @@ module.exports = {
         descricao: 'Organizo eventos como aniversários, casamentos, entre outros',
         categoria: 'Festas',
         tipo: 'Serviço',
+        aprovacao: 1,
         id_morador: 5,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -76,6 +82,7 @@ module.exports = {
         descricao: 'Aceito encomendas de bolos',
         categoria: 'Alimentos e bebidas',
         tipo: 'Serviço',
+        aprovacao: 1,
         id_morador: 3,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -87,6 +94,7 @@ module.exports = {
         descricao: 'Realizo pinturas em geral',
         categoria: 'Ferramentas e construção',
         tipo: 'Serviço',
+        aprovacao: 1,
         id_morador: 4,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -98,6 +106,7 @@ module.exports = {
         descricao: 'Vendo vasos decorativos',
         categoria: 'Outros',
         tipo: 'Produto',
+        aprovacao: 1,
         id_morador: 6,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -109,6 +118,7 @@ module.exports = {
         descricao: 'Presto serviços de funilaria para seu auto',
         categoria: 'Outros',
         tipo: 'Serviço',
+        aprovacao: 1,
         id_morador: 7,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -120,6 +130,7 @@ module.exports = {
         descricao: 'Aulas de reforço para seus pequenos',
         categoria: 'Educação',
         tipo: 'Serviço',
+        aprovacao: 1,
         id_morador: 5,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -131,6 +142,7 @@ module.exports = {
         descricao: 'Conserto computadores desktops e notebooks',
         categoria: 'Informática',
         tipo: 'Serviço',
+        aprovacao: 0,
         id_morador: 3,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -142,6 +154,7 @@ module.exports = {
         descricao: 'Vendo máscaras de pano',
         categoria: 'Outros',
         tipo: 'Produto',
+        aprovacao: 1,
         id_morador: 2,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -153,6 +166,7 @@ module.exports = {
         descricao: 'Presto serviços de personal trainer',
         categoria: 'Saúde',
         tipo: 'Serviço',
+        aprovacao: 0,
         id_morador: 4,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -164,6 +178,7 @@ module.exports = {
         descricao: 'Vendo lanches para seu café da manhã ou da tarde',
         categoria: 'Alimentos',
         tipo: 'Produto',
+        aprovacao: 1,
         id_morador: 6,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -175,6 +190,7 @@ module.exports = {
         descricao: 'Todo tipo de música para cada ocasião. Vamos animar sua Festa!',
         categoria: 'Festas',
         tipo: 'Serviço',
+        aprovacao: 1,
         id_morador: 8,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -186,6 +202,7 @@ module.exports = {
         descricao: 'Cortes, Penteados, Tratamento Capilar e mais.',
         categoria: 'Outros',
         tipo: 'Serviço',
+        aprovacao: 0,
         id_morador: 9,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -197,6 +214,7 @@ module.exports = {
         descricao: 'Bolos deliciosos de inúmeros sabores',
         categoria: 'Alimentos e Bebidas',
         tipo: 'Produto',
+        aprovacao: 1,
         id_morador: 7,
         createdAt: new Date(),
         updatedAt: new Date()

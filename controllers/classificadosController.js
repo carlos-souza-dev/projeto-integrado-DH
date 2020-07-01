@@ -46,7 +46,7 @@ const classificadosController = {
         return res.render('meusItens', {classificados, usuario: req.session.user, msg:""})
     },
 
-    exibirClassificados: async (req,res) => {
+    aprovarClassificados: async (req,res) => {
 
         const classificado =  await Classificados.findAll({
             include: {
@@ -60,8 +60,7 @@ const classificadosController = {
 
         const postagens = [];
         
-        if(user == 1){
-            
+                    
             classificado.forEach(posts => {            
                 if(posts.aprovacao == 0) {
                     postagens.push(posts.toJSON());
@@ -69,21 +68,42 @@ const classificadosController = {
                 }
             });
             
-            return res.render('classificados', {classificados: postagens, usuario: req.session.user})
+            return res.render('aprovarClassificados', {classificados: postagens, usuario: req.session.user})
         
-        } else {
-            
-            classificado.forEach(posts => {            
-                if(posts.aprovacao == 1) {
-                    postagens.push(posts.toJSON());    
-                }
-            });
-            
-            return res.render('classificados', {classificados: postagens, usuario: req.session.user})
-        }
-        
+               
     },
     
+    exibirClassificados: async (req,res) => {
+
+        
+        const classificado =  await Classificados.findAll({
+            include: {
+                model: Moradores,
+                as: 'morador',
+                required: true
+            }
+        });
+
+        const postagens = [];
+
+        
+        classificado.forEach(posts => {            
+            if(posts.aprovacao == 1) {
+                postagens.push(posts.toJSON());
+                console.log("Postagens para usuarios");
+                // console.log(posts.toJSON());
+
+            }
+        });
+        
+        const user = req.session.user.admin;
+
+        return res.render('classificados', {classificados: postagens, usuario: req.session.user})
+
+        
+    },
+
+
     destroy: async (req, res) => {
         const {id} = req.params;
 

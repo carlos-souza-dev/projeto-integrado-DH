@@ -511,7 +511,7 @@ a.article:hover {
     padding-top: 20px;
 }
 
-.slidemenu label {
+.slidemenu a {
     width: 25%;
     text-align: center;
     display: block;
@@ -521,18 +521,18 @@ a.article:hover {
 
 }
 
-.slidemenu label:hover {
+.slidemenu a:hover {
     cursor: pointer;
     color: #3B3B3B;
 }
 
-.slidemenu label span {
+.slidemenu a span {
     display: block;
     padding: 5px;
     /* font-size: 20px;   */
 }
 
-.slidemenu label .icon {
+.slidemenu a .icon {
     border: solid 2px #3B3B3B;
     text-align: center;
     height: 50px;
@@ -560,7 +560,7 @@ a.article:hover {
 }
 
 /*Animations*/
-.slidemenu label,
+.slidemenu a,
 .slider .bar {
     transition: all 500ms ease-in-out;
     -webkit-transition: all 500ms ease-in-out;
@@ -569,7 +569,7 @@ a.article:hover {
 
 /*Toggle*/
 
-.slidemenu .slide-toggle:checked + label {
+.slidemenu .slide-toggle:checked + a {
     opacity: 1;
 }
 

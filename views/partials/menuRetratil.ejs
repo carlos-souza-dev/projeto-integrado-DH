@@ -69,6 +69,11 @@
                 <i class="fas fa-user-friends"></i>
                 Vizinhança</a>
             <ul class="collapse list-unstyled" id="pageSubmenu">
+                <% if(usuario.admin) { %>
+                    <li>
+                        <a href="/aprovarClassificados">Aprovar Classificados</a>
+                    </li>
+                    <% } %>
                 <li>
                     <a href="/classificados">Classificados</a>
                 </li>

@@ -72,77 +72,7 @@
 
                         <%- include('./partials/menuSupVizinhanca') %>
 
-                            <nav class="navbar navbar-light campo-pesquisa" id="areaFiltro">
-
-                                <div class="nomeCampoPesquisa">
-                                    Filtrar Classificados
-                                </div>
-                                <div class="areaCamposGrandes">
-                                    <div class="campoSearch" id="zero-filter">
-                                        <form action="/buscarClassificado" method="POST" class="form-inline">
-                                            <input
-                                                class="form-control"
-                                                style="width: 100%;"
-                                                type="search"
-                                                name="busca"
-                                                placeholder="Palavra-Chave"
-                                                aria-label="Search"></input>
-
-                                        </div>
-
-                                        <div class="form-group">
-
-                                            <select
-                                                class="form-control"
-                                                type="text"
-                                                name="tipo"
-                                                id="exampleFormControlTextarea1">
-                                                <option disabled="disabled" selected="selected">Selecione o tipo</option>
-
-                                                <option value="Serviço">Serviço</option>
-                                                <option value="Produto">Produto</option>
-
-                                            </select>
-                                        </div>
-
-                                        <div class="form-group">
-
-                                            <select
-                                                class="form-control"
-                                                type="text"
-                                                name="categoria"
-                                                id="exampleFormControlTextarea1">
-                                                <option disabled="disabled" selected="selected">Selecione a categoria</option>
-
-                                                <option value="Alimentos e bebidas">Alimentos e bebidas</option>
-                                                <option value="Animais">Animais</option>
-                                                <option value="Beleza e cuidado pessoal">Beleza e cuidado pessoal</option>
-                                                <option value="Calcados, roupas e bolsas">Calçados, roupas e bolsas</option>
-                                                <option value="Celulares e telefonia">Celulares e telefonia</option>
-                                                <option value="Educação">Educação</option>
-                                                <option value="Eletrodomésticos">Eletrodomésticos</option>
-                                                <option value="Eletrônicos">Eletrônicos</option>
-                                                <option value="Esportes">Esportes</option>
-                                                <option value="Ferramentas e construção">Ferramentas e construção</option>
-                                                <option value="Festas">Festas</option>
-                                                <option value="Games">Games</option>
-                                                <option value="Informática">Informática</option>
-                                                <option value="Instrumentos musicais">Instrumentos musicais</option>
-                                                <option value="Jóias e acessórios">Jóias e acessórios</option>
-                                                <option value="Livros e revistas">Livros e revistas</option>
-                                                <option value="Saúde">Saúde</option>
-                                                <option value="Outros">Outros</option>
-
-                                            </select>
-                                        </div>
-
-                                    </div>
-                                    <div class="areaBotaoSearch">
-                                        <button class="btn  my-2 my-sm-0" id="botaoSearch" type="submit">Filtrar</button>
-                                    </div>
-                                </form>
-                            </nav>
-
+                           
                             <!-- area do centro da tela -->
                             <div class="centroTelaClassificados">
 
@@ -239,7 +169,17 @@
                                                                 </div>
                                                                 <% if(usuario.admin) { %>
                                                                     <div class="botao col-12" id="botaoExcluir">
-                                                                       
+                                                                        <form
+                                                                                action="/excluirClassificadoAdm/<%=classificado.id%>?_method=DELETE"
+                                                                                method="POST">
+                                                                            <input type="number"  name="situacao" value="1" style="display: none;">
+
+                                                                            <button
+                                                                            data-toggle="modal"
+                                                                            class="btn btn-danger btn-aprovado"
+                                                                            type="submit"
+                                                                            data-target="#confirmarAprovacao">Aprovar</button>
+                                                                        </form>
                                                                         <form
                                                                                 action="/excluirClassificadoAdm/<%=classificado.id%>?_method=DELETE"
                                                                                 method="POST">

@@ -306,6 +306,32 @@ z-index: 2;
     border-color: #598137;
 }
 
+.slidemenu #classificados {
+    min-width: 25%;
+    text-align: center;
+    display: block;
+    font-weight: 500;
+    float: left;
+    color: #000000;
+}
+
+.slidemenu #meus-itens {
+    min-width: 25%;
+    text-align: center;
+    display: block;
+    float: left;
+    color: #838383;
+}
+
+
+.slider {
+    background: linear-gradient(to right,
+            rgba(156, 156, 156, 0.5) 0%,
+            rgba(32, 30, 30, 0.9)0%,
+            rgba(32, 30, 30, 0.9)25%,
+            rgba(156, 156, 156, 0.5) 25%)
+}
+
 @media(max-width: 767px) {
     .linha-vertical {
         display: none;

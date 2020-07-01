@@ -29,6 +29,26 @@
     /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
 }
 
+.slidemenu #correspondencias {
+    padding: 0px 24px;
+    text-align: center;
+    display: block;
+    font-weight: 500;
+    float: left;
+    color: #000000;
+    border-bottom: 8px solid rgb(0, 0, 0);
+}
+
+.slidemenu #contatos-uteis,
+.slidemenu #moradores,
+.slidemenu #prestadores-servico  {
+    padding: 0 24px;
+    text-align: center;
+    display: block;
+    float: left;
+    color: #838383;
+}
+
 
 #botaoExcluir{
     padding-left: 5px;
@@ -68,7 +88,7 @@
 }
 .correspondencia-section{
     width: 94%;
-    height: 800px;
+    min-height: 22vh;
     margin: 0 auto; 
     border-radius: 25px;
     display: flex;

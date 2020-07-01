@@ -80,9 +80,25 @@ footer {
         /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
 } 
 
-/* stilo dos cards do morador */
+.slidemenu #contatos-uteis {
+    padding: 0px 24px;
+    text-align: center;
+    display: block;
+    font-weight: 500;
+    float: left;
+    color: #000000;
+    border-bottom: 8px solid rgb(0, 0, 0);
+}
 
-
+.slidemenu #moradores,
+.slidemenu #correspondencias,
+.slidemenu #prestadores-servico  {
+    padding: 0 24px;
+    text-align: center;
+    display: block;
+    float: left;
+    color: #838383;
+}
 
 .centroTelaContatosUteis{
     width: calc(94% + 1rem) ;

@@ -201,6 +201,16 @@
     float: left;
     font-weight: 500;
     color: #000000;
+    border-bottom: 8px solid #3B3B3B;    
+}
+
+.slidemenu #meus-itens:hover {
+    background-color: #d4d4d4;
+}
+
+.slidemenu #classificados:hover {
+    background-color: #d4d4d4;
+    border-bottom: 8px solid #aaaaaa;
 }
 
 .slidemenu #classificados {
@@ -209,19 +219,4 @@
     display: block;
     float: left;
     color: #838383;
-    
 }
-
-.slider {
-    background: linear-gradient(to right,
-            rgba(156, 156, 156, 0.5) 25%,
-            rgba(32, 30, 30, 0.9)25%,
-            rgba(32, 30, 30, 0.9)50%,
-            rgba(156, 156, 156, 0.5) 50%)
-}
-
-/* .slider {
-    background: linear-gradient(to right,
-            rgba(182, 182, 182, 0.5) 25%,
-            rgba(182, 182, 182, 0.5) 0%)
-} */

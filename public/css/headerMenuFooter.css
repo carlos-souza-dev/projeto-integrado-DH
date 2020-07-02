@@ -509,6 +509,7 @@ a.article:hover {
     overflow: hidden;
     font-size: 25px;
     padding-top: 20px;
+    border-bottom: 2px solid #b8b8b8;
 }
 
 /* .slidemenu a {

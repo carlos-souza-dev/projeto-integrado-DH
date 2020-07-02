@@ -49,6 +49,12 @@
     color: #838383;
 }
 
+.slidemenu #contatos-uteis:hover,
+.slidemenu #moradores:hover,
+.slidemenu #prestadores-servico:hover  {
+    background-color: #d4d4d4;
+    border-bottom: 8px solid #aaaaaa;
+}
 
 #botaoExcluir{
     padding-left: 5px;

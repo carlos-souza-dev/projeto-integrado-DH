@@ -2,6 +2,7 @@ const {Moradores} = require("../models");
 const Sequelize = require("sequelize");
 const bcrypt = require("bcrypt");
 const session = require("express-session");
+const fs = require("fs");
 
 const Op = Sequelize.Op;
 
@@ -23,6 +24,24 @@ const perfilController = {
         const id = req.session.user.id;
         const [files] = req.files;
         const {nome, email, senha, sobre, interesses} = req.body;
+
+        if(files != undefined){
+
+            const morador = await Moradores.findAll({where: {id: id}});
+            console.log("Imagem do banco " + morador[0].foto);
+            
+            const rota = morador[0].foto;
+            const image = rota.slice(rota.lastIndexOf("/")+1);
+            console.log("Imagem tratada " + image);
+
+            fs.unlink("public/img/user/"+ image, (error) => {
+                if(error)
+                    console.log(error)
+                else {
+                    console.log("O arquivo "+image+" foi removido com sucesso.")
+                }
+            })
+        }
 
         if(files != undefined) {
             const resultado = await Moradores.update({
@@ -57,10 +76,11 @@ const perfilController = {
         });
 
        
-
+        const morador = await Moradores.findAll({where: {id: id}});
+        
         const usuario = req.session.user;
 
-        usuario.foto = `/img/user/${files.filename}`;
+        usuario.foto = morador[0].foto;
         usuario.nome = nome;
         usuario.email = email;
         usuario.sobre = sobre;

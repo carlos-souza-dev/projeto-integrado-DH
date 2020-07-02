@@ -159,6 +159,7 @@ const classificadosController = {
         const [files] = req.files;
         const {titulo,descricao,categoria, tipo} = req.body;
 
+        
         if ([files] == "") {
             const classificado = await Classificados.update({
                 titulo, descricao, categoria, tipo, id_morador:req.session.user.id
@@ -169,6 +170,15 @@ const classificadosController = {
             })
 
         } else {
+
+            const fotoClassificado = await Classificados.findAll({where: {id: id}});
+            console.log("Imagem do banco " + fotoClassificado[0].foto);
+            
+            const rota = fotoClassificado[0].foto;
+            const image = rota.slice(rota.lastIndexOf("/")+1);
+
+            deletarClassificados(image);
+
             const classificado = await Classificados.update({
                 titulo, descricao, categoria, tipo, id_morador:req.session.user.id,foto: `/img/classificados/${files.filename}` 
             }, {

@@ -53,6 +53,12 @@
     color: #838383;
 }
 
+.slidemenu #contatos-uteis:hover,
+.slidemenu #correspondencias:hover,
+.slidemenu #prestadores-servico:hover  {
+    background-color: #d4d4d4;
+    border-bottom: 8px solid #aaaaaa;
+}
 
 @media(max-width:768px) {
     #botaoCadastro {

@@ -6,30 +6,19 @@
     
     
         <% if(usuario.admin) { %>
-            <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"/>
             <a id="aprovar-classificados" for="slide-item-1"
                  href="/aprovarClassificados"> Aprovar Classificados
             </a>
             <% } %>
 
         <!-- Item 1 -->
-        <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
         <a for="slide-item-2" id="classificados" href="/classificados">
             Classificados
         </a>
     
         <!-- Item 2 -->
         <% if(!usuario.admin) { %>
-        <input type="radio" name="slideItem" id="slide-item-3" class="slide-toggle"/>
         <a id="meus-itens" href="/meusItens">Meus Itens</a>
-        </label>
         <% } %>
         
-
-        <div class="clear"></div>
-    
-        <!-- Bar -->
-        <div class="slider">
-            <div class="bar"></div>
-        </div>
     </nav>

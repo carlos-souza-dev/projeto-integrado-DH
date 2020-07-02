@@ -560,13 +560,26 @@ a.article:hover {
 } */
 
 
-.slidemenu #aprovar-classificados {
+/* .slidemenu #aprovar-classificados {
     min-width: 25%;
+    padding: 0 24px;
     text-align: center;
     display: block;
     font-weight: 500;
     float: left;
     color: #000000;
+    border-bottom: 8px solid #3B3B3B;
+}
+
+.slidemenu #classificados:hover {
+    background-color: #d4d4d4;
+    border-bottom: 8px solid #aaaaaa;
+}
+
+.slidemenu #aprovar-classificados:hover {
+
+    background-color: #ffffff;
+    border-bottom: 8px solid #3B3B3B;
 }
 
 .slidemenu #classificados{
@@ -575,7 +588,8 @@ a.article:hover {
     display: block;
     float: left;
     color: #838383;
-}
+    border-bottom: 0px;
+} */
 
 .slider {
     background: linear-gradient(to right,

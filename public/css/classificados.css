@@ -325,6 +325,10 @@ z-index: 2;
     background-color: #d4d4d4;
 }
 
+.slidemenu #aprovar-classificados:hover {
+    background-color: #d4d4d4;
+    border-bottom: 8px solid #aaaaaa;
+}
 
 .slidemenu #meus-itens {
     min-width: 25%;

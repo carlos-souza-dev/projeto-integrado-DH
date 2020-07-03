@@ -85,15 +85,17 @@ footer {
     text-align: center;
     display: block;
     font-weight: 500;
+    font-size: 16px;
     float: left;
     color: #000000;
-    border-bottom: 8px solid rgb(0, 0, 0);
+    border-bottom: 5px solid rgb(0, 0, 0);
 }
 
 .slidemenu #moradores,
 .slidemenu #correspondencias,
 .slidemenu #prestadores-servico  {
     padding: 0 24px;
+    font-size: 16px;
     text-align: center;
     display: block;
     float: left;
@@ -104,7 +106,7 @@ footer {
 .slidemenu #correspondencias:hover,
 .slidemenu #prestadores-servico:hover  {
     background-color: #d4d4d4;
-    border-bottom: 8px solid #aaaaaa;
+    border-bottom: 5px solid #aaaaaa;
 }
 
 .centroTelaContatosUteis{

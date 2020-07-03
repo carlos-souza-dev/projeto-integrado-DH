@@ -195,13 +195,14 @@
 }
 
 .slidemenu #meus-itens {
-    min-width: 25%;
+    padding: 0px 24px;
     text-align: center;
     display: block;
-    float: left;
     font-weight: 500;
+    font-size: 16px;
+    float: left;
     color: #000000;
-    border-bottom: 8px solid #3B3B3B;    
+    border-bottom: 5px solid rgb(0, 0, 0);
 }
 
 .slidemenu #meus-itens:hover {
@@ -210,13 +211,16 @@
 
 .slidemenu #classificados:hover {
     background-color: #d4d4d4;
-    border-bottom: 8px solid #aaaaaa;
+    border-bottom: 5px solid #aaaaaa;
 }
 
 .slidemenu #classificados {
-    min-width: 25%;
+    padding: 0 24px;
+    font-size: 16px;
     text-align: center;
     display: block;
     float: left;
     color: #838383;
 }
+
+

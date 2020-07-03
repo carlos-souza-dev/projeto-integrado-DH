@@ -1,0 +1,26 @@
+.slidemenu #aprovar-classificados {
+    padding: 0px 24px;
+    text-align: center;
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    float: left;
+    color: #000000;
+    border-bottom: 5px solid rgb(0, 0, 0);
+}
+
+.slidemenu #classificados:hover,
+.slidemenu #aprovar-classificados:hover {
+    background-color: #d4d4d4;
+    border-bottom: 5px solid #aaaaaa;
+}
+
+.slidemenu #classificados {
+    padding: 0 24px;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    float: left;
+    color: #838383;
+    border: 0;
+}

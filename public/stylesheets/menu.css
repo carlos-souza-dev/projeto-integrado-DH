@@ -28,10 +28,12 @@
     /* background-image: url("/images/logo/logo-menu.png"); */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     text-align: center;
     width: 100%;
+    min-width: 248px;
     height: 16vh;
+    min-height: 68px;
     max-height: 125px;    
 }
 
@@ -84,12 +86,12 @@
 }
 
 .menu .menu-dois .principal-menu .second-menu {
-    padding: 5% 0 2% 10px;
+    padding: 5% 0 2% 16px;
 
 }
 
 .menu .menu-dois .principal-menu  ul{
-    min-width: 224px;
+    min-width: 240px;
     max-width: 320px;
     width: 15%;
     padding: 0 0 0px 5%;
@@ -145,3 +147,8 @@
     position: absolute;
     border-radius: 50%;
 }
+
+.mainMain .menu .logo-tipo .img-mobile {
+    display: none;
+}
+

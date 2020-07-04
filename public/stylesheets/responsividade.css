@@ -4,7 +4,7 @@
     .menu {
         position: fixed;
         width: 320px;
-        height: 96.5vh;
+        height: 96vh;
         left: -322px;
         padding: 5px 25px 5px 25px;
         background-color: #3B3B3B;
@@ -111,25 +111,42 @@
         margin-top: 0px;
         border-bottom: 1px solid #C4C4C4;
     }
-    .menu div .img{
-        background-image: url("/images/logo/user.png");
+    .mainMain .menu .logo-tipo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .mainMain .menu .logo-tipo .img{
+        display: none;
+    }
+
+    .mainMain .menu .logo-tipo .img-mobile{
+        width: 75px;
+        height: 75px;
+        margin-right: 10px;
+        border-radius: 50%;
+    }
+
+    .mainMain .menu .logo-tipo .img-mobile img{
+        width: 75px;
+        height: 75px;
         background-repeat: no-repeat;
         background-size: cover;
-        border-radius: 50%;        
-        border: 3px solid #C4C4C4;
-        text-align: center;
-        width: 26%;
-        height: 70px;
-        margin: auto 0 auto 0;
+        background-position: center;
+        border-radius: 50%;
+        border: 2px #C4C4C4 solid;
     }
 
     .menu div .user-name {
         width: 70%;
         margin: auto 0 auto 0;
         font-family: Lato-Regular;
-        font-size: 16px;
-        display: inline-flex;
         color: #C4C4C4;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .menu .menu-dois .menu-dois-ul {
@@ -187,7 +204,8 @@
         right: 8px;
     }
 
-    .menu-function {
+
+    .menu .div-function {
         position: absolute;
         right: 5%;
         bottom: 5%;
@@ -195,16 +213,53 @@
         height: 6vh;
     }
 
-    .menu-function .menu-function-image {
-        position: absolute;
+    .menu .menu-function {
+        display: flex;
+        justify-content: end;
+    }
+
+    .menu .menu-function .menu-function-image {
         width: 100%;
         height: 6vh;
-        background-image: url("/images/icon/configuracoes2.svg");
+        background-image: url("/img/icon/configuracoes2.svg");
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
     }
 
+    body .footer {
+        height: 4vh !important;
+        display: block;
+    }
+
+    .py-2 #footerText {
+        line-height: 4vh;
+        font-size: 16px;
+        padding-left: 0;
+    }
+
+    #areaFiltro {
+        height: 314px;
+    }
+
+    .areaCamposGrandes {
+        height: 200px;
+    }
+
+    .areaBotaoSearch {
+        width: 100%;
+        height: 6vh;
+    }
+
+    /* .centroTelaCorrespondencias .correspondencia-section {
+        width: 94%;
+        min-height: 16vh;
+        margin: 0 auto;
+        border-radius: 25px;
+        display: flex;
+        border-radius: 25px;
+        box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+    } */
 
     @media screen and (max-width: 416px){
         

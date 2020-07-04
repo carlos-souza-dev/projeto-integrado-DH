@@ -96,7 +96,7 @@
 }
 .correspondencia-section{
     width: 94%;
-    min-height: 22vh;
+    min-height: 10vh;
     margin: 0 auto; 
     border-radius: 25px;
     display: flex;
@@ -186,7 +186,7 @@ th {
 .centroTelaCorrespondencias .correspondencia-section {
     width: 94%;
     min-width: 300px;
-    height: 450px;
+    height: 10vh;
     margin: 50px auto 0;
 } 
 

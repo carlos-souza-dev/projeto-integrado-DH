@@ -22,6 +22,7 @@
     width: 94%;
     margin: 0 auto;
     height: calc(16vh - 1rem);
+    min-height: calc(124px - 1rem);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -280,10 +281,6 @@
 
     .areaBotaoCad {
         justify-content: center;
-    }
-
-    .docSepLine{
-        display: none;
     }
 
     .aside-main-solicitacoes .mc-solicitacoes-buttom {

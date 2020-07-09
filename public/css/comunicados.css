@@ -1,7 +1,7 @@
 
 .centroTelaComunicados{
     width: 94%;
-    margin: 8vh auto 20px auto;
+    margin: 1rem auto 20px auto;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -81,6 +81,15 @@
     justify-content: flex-end;
 }
 
+.areaBotaoCad {
+    width: 94%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    height: calc(8vh - 1rem);
+    min-height: calc(32px - 1rem);
+    align-items: center;
+}   
 
 #botaoCancelar{
     margin-left: 10px;

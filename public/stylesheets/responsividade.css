@@ -1,3 +1,10 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap');
+
 /* ipad */
 @media screen and (max-width: 780px){
         
@@ -141,7 +148,7 @@
     .menu div .user-name {
         width: 70%;
         margin: auto 0 auto 0;
-        font-family: Lato-Regular;
+        font-family: Lato;
         color: #C4C4C4;
         font-size: 16px;
         display: flex;
@@ -151,12 +158,13 @@
 
     .menu .menu-dois .menu-dois-ul {
         padding: 120px 0 0 0;
+        font-family: Montserrat;
     }
 
     .menu .menu-dois .principal-menu a,
     .menu .menu-dois .principal-menu
     {
-        font-family: Montserrat-Light;
+        font-family: Montserrat;
         text-transform: uppercase;
         font-size: 16px;
         color: #C4C4C4;
@@ -239,11 +247,11 @@
     }
 
     #areaFiltro {
-        height: 314px;
+        height: 216px;
     }
 
     .areaCamposGrandes {
-        height: 200px;
+        height: 64px;
     }
 
     .areaBotaoSearch {
@@ -366,7 +374,7 @@
         .menu div .user-name {
             width: 70%;
             margin: auto 0 auto 0;
-            font-family: Lato-Regular;
+            font-family: Lato;
             font-size: 16px;
             display: inline-flex;
             color: #C4C4C4;
@@ -379,7 +387,7 @@
         .menu .menu-dois .principal-menu a,
         .menu .menu-dois .principal-menu
         {
-            font-family: Montserrat-Light;
+            font-family: Montserrat;
             text-transform: uppercase;
             font-size: 16px;
             color: #C4C4C4;

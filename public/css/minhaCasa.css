@@ -13,6 +13,7 @@
     display: flex;
     justify-content: flex-end;
     height: calc(8vh - 1rem);
+    min-height: 32px;
     align-items: center;
     width: 94%;
     margin: 0 auto;
@@ -82,7 +83,8 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        height: 8vh;
+        height: calc(8vh - 1rem);
+        min-height: 32px;
         align-items: center;
     }   
         /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */

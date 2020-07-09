@@ -21,12 +21,10 @@
 .areaBotaoCad {
     width: 94%;
     margin: 0 auto;
+    height: calc(16vh - 1rem);
     display: flex;
     justify-content: flex-end;
-    height: 10vh;
     align-items: center;
-    padding-top: 50px;
-   
 }
 
 #botaoCadastro {

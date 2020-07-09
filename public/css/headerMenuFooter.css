@@ -262,7 +262,7 @@ a.article:hover {
 
 .mainHeader {
     width: 94%;
-    min-height: 80px;
+    min-height: 84px;
     height: 10vh;
     margin: 0 auto 1rem auto;
     display: flex;

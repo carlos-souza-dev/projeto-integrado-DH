@@ -43,23 +43,21 @@
             <!-- Conteudo da página -->
 
             <div id="content">
-                <!-- Header -->
                 <div class="mainHeader">
                     <div class="titulo" id="tit">
                         <div class="nomePag">
-                            <p>Solicitações</p>
-
+                            <p class="mainHeader-title">Solicitações</p>
                         </div>
                         <div class="finalidPag">
-                            <p >Solicite serviços e reserve espaços por aqui</p>
+                            <p class="mainHeader-subtitle" >Solicite serviços e reservas de espaços</p>
                         </div>
 
                     </div>
-                    <!-- inclui o logo mobile e o avatar em uma partial  -->
+                        <!-- inclui o logo mobile e o avatar em uma partial -->
                     <%- include('./partials/avatar') %>
-                </div>
-                <hr class="docSepLine">
 
+               </div>
+               <hr class="docSepLine">
                
                 <!-- botao para adicionar cadastro -->
                 <% if(!usuario.admin) { %>
@@ -125,15 +123,15 @@
                                    
                                 </article>
                                 <article class="remetente">
-                                    <div class="solicitacoes-title">Criada em</div>
+                                    <div class="solicitacoes-title">Publicado</div>
                                     <% for(let resultado of result) { %>
-                                    <div class="date"><%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)).slice(-2) + "/" + resultado.data.getFullYear() + "   " + ("0" + resultado.data.getHours()).slice(-2) + ":" + ("0" + resultado.data.getMinutes()).slice(-2) %></div>
+                                    <div class="date"><%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)).slice(-2) + "/" + resultado.data.getFullYear()%></div>
                                     <% } %> 
                                     
                                 </article>
 
                                 <article class="remetente">
-                                    <div class="solicitacoes-title">Data pretendida</div>
+                                    <div class="solicitacoes-title">Reserva</div>
                                     <% for(let resultado of result) { %>
                                     <div class="date"><%= resultado.dataAlvo.split("-")[2] + "/" + resultado.dataAlvo.split("-")[1] + "/" + resultado.dataAlvo.split("-")[0] %></div>
                                     <% } %> 
@@ -149,7 +147,7 @@
                                 </article>
 
                                 <article class="destinatario">
-                                    <div class="solicitacoes-title"></div>
+                                    <div class="solicitacoes-title"><span></span></div>
                                     <% for(let resultado of result) { %>
                                     <div class="status">
                                         <button

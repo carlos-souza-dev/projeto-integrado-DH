@@ -52,22 +52,22 @@
                 <!-- Conteudo da página -->
 
                 <div id="content">
-                    <!-- Header -->
-                    <div class="mainHeader">
-                        <div class="titulo" id="tit">
-                            <div class="nomePag">
-                                <p>Vizinhança</p>
-
-                            </div>
-                            <div class="finalidPag">
-                                <p >O que acontece ao seu redor</p>
-                            </div>
+                <div class="mainHeader">
+                    <div class="titulo" id="tit">
+                        <div class="nomePag">
+                            <p class="mainHeader-title">Vizinhança</p>
 
                         </div>
-                        <!-- inclui o logo mobile e o avatar em uma partial -->
-                        <%- include('./partials/avatar') %>
-
+                        <div class="finalidPag">
+                            <p class="mainHeader-subtitle" >O que acontece ao seu redor</p>
                         </div>
+
+                    </div>
+                    <!-- inclui o logo mobile e o avatar em uma partial -->
+                    <%- include('./partials/avatar') %>
+
+                </div>
+                <hr class="docSepLine">
 
                         <!-- menu superior -->
 
@@ -89,7 +89,11 @@
                                                     src="<%=classificado.foto%>"
                                                     alt="Imagem de capa do card">
                                                 <div class="card-corpo">
-                                                    <div class="card-titulo"><%=classificado.titulo%></div>
+                                                    <% if( classificado.titulo.length > 21) { %> 
+                                                        <div class="card-titulo"><%= classificado.titulo.slice(0, 18)+"..." %></div>
+                                                    <% } else { %>
+                                                        <div class="card-titulo"><%= classificado.titulo %></div>
+                                                    <% } %> 
                                                     <div class="card-subtitulo"><%=classificado.morador.nome.slice(0, classificado.morador.nome.indexOf(" "))%> - <%=classificado.morador.id_apartamento%></div>
                                                     <div class="card-descricao"><%= classificado.descricao.slice(0, 35)+"..."%></div>
                                                     <div class="card-subtitulo"></div>
@@ -177,7 +181,7 @@
 
                                                                             <button
                                                                             data-toggle="modal"
-                                                                            class="btn btn-danger btn-aprovado"
+                                                                            class="btn btn-aprovado"
                                                                             type="submit"
                                                                             data-target="#confirmarAprovacao">Aprovar</button>
                                                                         </form>

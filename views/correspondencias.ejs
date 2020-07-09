@@ -47,19 +47,19 @@
                 <div class="mainHeader">
                     <div class="titulo" id="tit">
                         <div class="nomePag">
-                            <p>Minha Casa</p>
+                            <p class="mainHeader-title">Minha Casa</p>
 
                         </div>
                         <div class="finalidPag">
-                            <p >Tudo sobre sua residência</p>
+                            <p class="mainHeader-subtitle" >Tudo sobre sua residência</p>
                         </div>
 
                     </div>
-                  <!-- inclui o logo mobile e o avatar em uma partial  -->
-                  <%- include('./partials/avatar') %>
-                  
-                </div>
+                    <!-- inclui o logo mobile e o avatar em uma partial -->
+                    <%- include('./partials/avatar') %>
 
+                </div>
+                <hr class="docSepLine">
                <!-- menu superior -->
                <%- include('./partials/menuSupMinhaCasa') %>
 
@@ -112,10 +112,11 @@
                         <article>
                             <div class="correspondencia-title">Apartamento</div>
                             <% correspondencia.forEach(corresp =>  { %>
-                            <div class="receiver" id="last-child"><%= corresp.apartamento %> 
-                                
-                            <a data-toggle="modal" data-target="#confirmarExclusao" id=botaoExcluir><img src="./img/icon/trash.svg" alt=""></a>
-                        
+                            <div class="receiver" id="last-child">
+                            <p><%= corresp.apartamento %></p>
+                            <a data-toggle="modal" data-target="#confirmarExclusao" id=botaoExcluir>
+                                <!-- <img style="padding: 0;" src="./img/icon/trash.svg" alt="">           -->
+                            </a>
                             </div>
 
                             <div

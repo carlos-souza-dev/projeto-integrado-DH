@@ -106,6 +106,7 @@
     width: 100%;
     min-width: 300px;
     margin: 40px 0; 
+    padding: 0 10px;
     border-radius: 25px;
     display: flex;
     border-radius: 16px;  
@@ -126,7 +127,15 @@
     font-size: 18px;
     color: #000000;
     font-weight: bold;
-  
+}
+
+.aside-main-solicitacoes .solicitacoes-section article .solicitacoes-title span {
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/icon/search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .aside-main-solicitacoes .solicitacoes-section article .codigo,

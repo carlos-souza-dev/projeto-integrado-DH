@@ -1,7 +1,7 @@
 
 .centroTelaComunicados{
     width: 94%;
-    margin: 20px auto;
+    margin: 58px auto 20px auto;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -26,20 +26,80 @@
     border-radius: 8px;
 }
 
+.mainHeader {
+    width: 94%;
+    min-height: 80px;
+    height: 10vh;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#content hr {
+    margin: 0;
+}
+
+#content .slidemenu {
+    max-width: 100%;
+    overflow: hidden;
+    height: 51px;
+    font-size: 25px;
+    padding-top: 20px;
+    border-bottom: 2px solid #b8b8b8;
+}
+
+.slidemenu #comunicados {
+    padding: 0px 24px;
+    text-align: center;
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    float: left;
+    color: #000000;
+    color: #000000;
+    border-bottom: 5px solid rgb(0, 0, 0);
+}
+
+.slidemenu #criar-comunicados {
+    padding: 0 24px;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+    float: left;
+    color: #838383;
+}
+
+.slidemenu #criar-comunicados:hover {
+    background-color: #d4d4d4;
+    border-bottom: 5px solid #aaaaaa;
+}
+
 #botaoComunicado{
     display: flex;
     justify-content: flex-end;
-    
-    
 }
 
 
 #botaoCancelar{
     margin-left: 10px;
-    
-    
 }
 
 #botaoComunicado form{
-    padding-right: 10px;
+    height: 0px;
+    margin-right: 8px;
 }
+
+.table tbody {
+    width: 40px;
+}
+
+.table tbody tr {
+    width: 40px;
+}
+
+.table tbody tr td{
+    line-height: 40px;
+}
+

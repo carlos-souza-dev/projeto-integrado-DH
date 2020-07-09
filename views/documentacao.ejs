@@ -42,26 +42,22 @@
             <!-- Conteudo da página -->
 
             <div id="content">
-                <!-- Header -->
                 <div class="mainHeader">
                     <div class="titulo" id="tit">
                         <div class="nomePag">
-                            <p>Documentação</p>
+                            <p class="mainHeader-title">Documentação</p>
 
                         </div>
                         <div class="finalidPag">
-                            <p >Documentos, plantas e muito mais</p>
+                            <p class="mainHeader-subtitle" >Documentos, plantas e muito mais</p>
                         </div>
 
                     </div>
-                    
-                    <!-- inclui o logo mobile e o avatar em uma partial  -->
+                    <!-- inclui o logo mobile e o avatar em uma partial -->
                     <%- include('./partials/avatar') %>
-                </div>
-                
-                
-                <hr class="docSepLine">
 
+                </div>
+                <hr class="docSepLine">
                 <% if(usuario.admin) { %>
                     <div class="areaBotaoCad">
                         <div>

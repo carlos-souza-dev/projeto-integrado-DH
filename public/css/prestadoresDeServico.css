@@ -12,9 +12,9 @@
 .areaBotaoCad {
     width: 94%;
     margin: 0 auto;
+    height: 25vh;
     display: flex;
     justify-content: flex-end;
-    height: 15vh;
     align-items: center;
 }
 
@@ -133,7 +133,7 @@ padding: 1rem;
 }
 
 .toolsCardPrestServ a {
-    margin: 10px;
+    margin: 8px;
 }
 
 .modal-body form #form-image-prestadores {

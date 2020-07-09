@@ -11,7 +11,7 @@
 .areaBotaoCad {
     display: flex;
     justify-content: flex-end;
-    height: 10vh;
+    height: 24vh;
     align-items: center;
     width: 94%;
     margin: 0 auto;
@@ -29,6 +29,10 @@
     align-items: center;
     justify-content: center;
     /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+}
+
+#content hr {
+    margin: 0;
 }
 
 @media(max-width:768px) {

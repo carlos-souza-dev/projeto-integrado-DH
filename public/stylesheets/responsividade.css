@@ -63,6 +63,7 @@
         #check-menu[type="checkbox"]:checked ~ .menu {
             transform: translateX(320px);
             transition: all 0.7s;
+            z-index: 2;
         }
 
         #check-menu:checked + .menu-label {
@@ -273,6 +274,12 @@
             background-position: center;
         }
 
+
+
+        .areaBotaoCad div {
+            margin: 0 auto;
+        }
+
         body .footer {
             height: 4vh !important;
             display: block;
@@ -301,6 +308,17 @@
             height: 58px;
         }
 
+        .destinatario .status #botaoDetalhe {
+            padding: 8px;
+            width: auto;
+        }
+
+        .aside-main-solicitacoes .solicitacoes-section .destinatario #Aprovada,
+        .aside-main-solicitacoes .solicitacoes-section .destinatario #Reprovada,
+        .aside-main-solicitacoes .solicitacoes-section .destinatario #Pendente {
+            width: 32px;
+            font-size: 0;
+        }
         /* .centroTelaCorrespondencias .correspondencia-section {
             width: 94%;
             min-height: 16vh;
@@ -551,6 +569,57 @@
                 display: none;
             }
 
+            .tabela-correspondencia-content {
+                font-size: 14px;
+            }
+
+            /* .mainAside .main-morador .resumo-section .resumo-box  {
+                
+            } */
+
+            .centroTelaContatosUteis > div {
+                flex-direction: column;
+            }
+
+            .centroTelaContatosUteis .cardContato div {
+                margin: 1rem 0;
+            }
+
+            .centroTelaContatosUteis .cardContato .corpoCard div {
+                margin: 0;
+            }
+
+            .centroTelaContatosUteis .cardContato .contatosUteis-icon {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-direction: initial;
+            }
+
+            .cardContato .iconesContato {
+                margin: 1rem 0;
+                width: 30px;
+                display: flex;
+                justify-content: center;
+                flex-direction: row;
+            }
+
+            .aside-main-solicitacoes .solicitacoes-section .destinatario #Aprovada,
+            .aside-main-solicitacoes .solicitacoes-section .destinatario #Reprovada,
+            .aside-main-solicitacoes .solicitacoes-section .destinatario #Pendente {
+                width: 16px;
+                height: 16px;
+                font-size: 0;
+            }
+
+            .aside-main-solicitacoes .solicitacoes-section article .solicitacoes-title {
+                font-size: 14px;              
+            }
+
+            .aside-main-solicitacoes .solicitacoes-section #remove-mobile {
+                display: none;
+            }
+
             body .footer {
                 display: none;
             }
@@ -559,6 +628,36 @@
                 position: absolute;
                 right: 10px;
                 bottom: 40px;
+            }
+
+            #content .centroTelaCorrespondencias .correspondencia-section article {
+                font-size: 8px;
+            }
+
+            #botaoComunicado form .btn-secondary article{
+                width: 36px;
+                height: 36px;
+                font-size: 0;
+                border-radius: 0;
+                border: 0;
+                background-image: url("/img/icon/trash.svg");
+                background-size: 16px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-color: white;
+            }
+
+            #botaoComunicado .btn-danger {
+                width: 36px;
+                height: 36px;
+                font-size: 0;
+                border-radius: 0;
+                border: 0;
+                background-image: url("/img/icon/edit.svg");
+                background-size: 16px;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-color: rgb(255, 255, 255);
             }
         }
     }

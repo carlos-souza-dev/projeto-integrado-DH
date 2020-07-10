@@ -8,7 +8,7 @@
 
 /* stilo dos cards classificados*/
 
-.areaBotaoCad {
+/* .areaBotaoCad {
     display: flex;
     justify-content: flex-end;
     height: calc(8vh - 1rem);
@@ -16,7 +16,7 @@
     align-items: center;
     width: 94%;
     margin: 0 auto;
-}
+} */
 
 #botaoCadastro {
     background-color: #3B3B3B;
@@ -51,7 +51,7 @@
             /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
     }
 
-    .areaBotaoCad {
+    /* .areaBotaoCad {
         width: 94%;
         margin: 0 auto;
         display: flex;
@@ -59,7 +59,7 @@
         height: calc(8vh - 1rem);
         min-height: calc(32px - 1rem);
         align-items: center;
-    }   
+    }    */
         /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
 } 
 

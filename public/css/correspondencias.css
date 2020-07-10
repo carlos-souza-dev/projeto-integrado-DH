@@ -6,16 +6,16 @@
 
 /* Aplicação de exceções para a página rerrespondências */
 
-.areaBotaoCad {
+/* .areaBotaoCad {
     display: flex;
     justify-content: flex-end;
     height: calc(124px - 1rem);
     align-items: center;
     width: 94%;
     margin: 0 auto;
-}
+} */
 
-#botaoCadastro {
+/* #botaoCadastro {
     background-color: #3B3B3B;
     width: 226px;
     height: 44px;
@@ -26,8 +26,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+} */
     /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
-}
 
 .slidemenu #correspondencias {
     padding: 0px 24px;
@@ -86,7 +86,7 @@
             /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
     }
 
-    .areaBotaoCad {
+    /* .areaBotaoCad {
         width: 94%;
         padding-top: 10px;
         margin: 0 auto;
@@ -95,8 +95,8 @@
         height: calc(8vh - 1rem);
         min-height: 32px;
         align-items: center;
-    }   
-        /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+    }    */
+    /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
 } 
 
 .centroTelaCorrespondencias{
@@ -109,7 +109,6 @@
 .correspondencia-section{
     width: 100%;
     min-width: 300px;
-    margin: 40px 0; 
     padding: 0 10px;
     border-radius: 25px;
     display: flex;
@@ -206,7 +205,7 @@ th {
 .centroTelaCorrespondencias .correspondencia-section{
     width: 100%;
     min-width: 300px;
-    margin: 40px 0; 
+    margin: 0; 
     padding: 0 10px;
     border-radius: 25px;
     display: flex;
@@ -214,16 +213,17 @@ th {
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
-@media(max-width: 500px){
-    .correspondencia-section article .date,
-    .correspondencia-section article .correspondencia-title,
-    .correspondencia-section article .type,
-    .correspondencia-section article .sender,
-    .correspondencia-section article .data,
-    .correspondencia-section article .receiver,
-    .correspondencia-section article .note {
-        font-size: 18px;
+    @media(max-width: 500px){
+        .correspondencia-section article .date,
+        .correspondencia-section article .correspondencia-title,
+        .correspondencia-section article .type,
+        .correspondencia-section article .sender,
+        .correspondencia-section article .data,
+        .correspondencia-section article .receiver,
+        .correspondencia-section article .note {
+            font-size: 14px;
+            border-bottom: 0;
 
+        }
+    }
 }
-
-}}

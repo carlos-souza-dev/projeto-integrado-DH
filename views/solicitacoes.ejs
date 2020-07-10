@@ -85,7 +85,7 @@
                             <% if(result.length > 0) { %>
                             <section class="solicitacoes-section">
                              
-                                <article class="recebido">
+                                <article class="recebido" id="remove-mobile">
                                     <div class="solicitacoes-title">Código</div>
                                     <% for(let resultado of result) { %>
                                         <div class="codigo"><%= ("00000" + resultado.id).slice(-5) %></div>
@@ -98,14 +98,14 @@
                                 <article class="recebido">
                                     <div class="solicitacoes-title">Morador</div>
                                     <% for(let resultado of result) { %>
-                                        <div class="codigo"><%= resultado.morador.nome %></div>
+                                        <div class="codigo"><%= resultado.morador.nome.slice(0,resultado.morador.nome.indexOf(" "))%></div>
                                         
                                   <%  };%>
                                                                     
                                 </article>
 
                                 <article class="recebido">
-                                    <div class="solicitacoes-title">Apartamento</div>
+                                    <div class="solicitacoes-title">Apto</div>
                                     <% for(let resultado of result) { %>
                                         <div class="codigo"><%= resultado.morador.id_apartamento %></div>
                                         
@@ -117,20 +117,24 @@
 
                                 <article class="tipo">
                                     <div class="solicitacoes-title">Tipo</div>
-                                    <% for(let resultado of result) { %>
-                                    <div class="type"><%= resultado.tipo %></div>
+                                    <% for(let resultado of result) { %> 
+                                        <% if(resultado.tipo.indexOf(" ") <= 0) { %>
+                                            <div class="type"><%= resultado.tipo %></div>
+                                        <% } else { %>  
+                                            <div class="type"><%= resultado.tipo.slice(0, resultado.tipo.indexOf(" ")) %></div>
+                                        <% } %>
                                     <% } %> 
                                    
                                 </article>
-                                <article class="remetente">
+                                <article class="remetente" id="remove-mobile">
                                     <div class="solicitacoes-title">Publicado</div>
                                     <% for(let resultado of result) { %>
-                                    <div class="date"><%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)).slice(-2) + "/" + resultado.data.getFullYear()%></div>
+                                    <div class="date"><%= ("0" + resultado.data.getDate()).slice(-2) + "/" + ("0"+(resultado.data.getMonth()+1)) + "/" + resultado.data.getFullYear()%></div>
                                     <% } %> 
                                     
                                 </article>
 
-                                <article class="remetente">
+                                <article class="remetente" id="remove-mobile">
                                     <div class="solicitacoes-title">Reserva</div>
                                     <% for(let resultado of result) { %>
                                     <div class="date"><%= resultado.dataAlvo.split("-")[2] + "/" + resultado.dataAlvo.split("-")[1] + "/" + resultado.dataAlvo.split("-")[0] %></div>

@@ -9,7 +9,7 @@
 
 /* stilo botão */
 
-.areaBotaoCad {
+/* .areaBotaoCad {
     width: 94%;
     margin: 0 auto;
     min-height: 124px;
@@ -18,7 +18,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-}
+} */
 
 #botaoCadastro {
     background-color: #3B3B3B;
@@ -50,7 +50,7 @@
             /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
     }
 
-    .areaBotaoCad {
+    /* .areaBotaoCad {
         width: 94%;
         margin: 0 auto;
         display: flex;
@@ -58,7 +58,7 @@
         height: 8vh;
         min-height: 124px;
         align-items: center;
-    }    
+    }     */
 }
 
 /* fim stilo botao */

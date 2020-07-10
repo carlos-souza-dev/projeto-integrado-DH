@@ -1,7 +1,7 @@
 
 .centroTelaComunicados{
     width: 94%;
-    margin: 1rem auto 20px auto;
+    margin: 0 auto 20px auto;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -14,7 +14,7 @@
 }
 
 .data{
-    text-align: right;
+    text-align: center;
 }
 
 .emptyComunicados {
@@ -77,11 +77,12 @@
 }
 
 #botaoComunicado{
+    width: 100%;
     display: flex;
     justify-content: flex-end;
 }
 
-.areaBotaoCad {
+/* .areaBotaoCad {
     width: 94%;
     margin: 0 auto;
     display: flex;
@@ -89,7 +90,11 @@
     height: calc(8vh - 1rem);
     min-height: calc(32px - 1rem);
     align-items: center;
-}   
+}    */
+
+.centroTelaComunicados form {
+    width: 100%;
+}
 
 #botaoCancelar{
     margin-left: 10px;
@@ -110,6 +115,10 @@
 
 .table tbody tr td{
     line-height: 40px;
+}
+
+.table tr .comunicados-td {
+    max-width: 208px;
 }
 
 @media (max-width: 415px) {

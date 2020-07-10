@@ -30,8 +30,8 @@ z-index: 2;
 .centroTelaClassificados {
     width: calc(94% + 1rem);
     display: flex;
-    padding: 0 10px;
-    margin: calc(10vh - 1rem) auto;
+    padding: 5vh 10px;
+    margin: 0 auto;
     flex-wrap: wrap;
 
 }
@@ -126,7 +126,7 @@ z-index: 2;
 
 #areaFiltro {
     width: 94%;
-    margin: 8vh auto !important;
+    margin: 5vh auto !important;
     display: flex;
     flex-direction: row;
     border-radius: 5px;

@@ -49,13 +49,22 @@
                             <div class="finalidPag">
                                 <p class="mainHeader-subtitle" >Fique por dentro das novidades!</p>
                             </div>
-    
+                            
                         </div>
-                            <!-- inclui o logo mobile e o avatar em uma partial -->
+                        <!-- inclui o logo mobile e o avatar em uma partial -->
                         <%- include('./partials/avatar') %>
-    
-                   </div>
-                   <hr class="docSepLine">
+                        
+                    </div>
+                    <hr class="docSepLine">
+                    <% if(usuario.admin) { %>
+                    <nav class="slidemenu">
+                         <a href="/comunicados" id="comunicados">Comunicados</a>
+ 
+                         <a href="/criarComunicado" id="criar-comunicados">Criar Comunicados</a>
+                            
+                    </nav>
+ 
+                    <% } %>
                    <div class="areaBotaoCad">
                     <div>
                         <% if(usuario.admin) { %>
@@ -71,15 +80,6 @@
                         </div>
                     </div>
 
-                        <% if(usuario.admin) { %>
-                        <nav class="slidemenu">
-                             <a href="/comunicados" id="comunicados">Comunicados</a>
-
-                             <a href="/criarComunicado" id="criar-comunicados">Criar Comunicados</a>
-                                
-                            </nav>
-
-                        <% } %>
 
                         <div class="centroTelaComunicados">
 
@@ -102,7 +102,7 @@
                                                     comunicado.createdAt.getFullYear() %></p> 
                                                     
                                                 </td>
-                                                <td>
+                                                <td class="comunicados-td">
                                                     <div id="botaoComunicado">
                                                         <% if(usuario.admin) { %>
                                                             <form  action="/updateComunicado/<%=comunicado.id%>" method="GET">

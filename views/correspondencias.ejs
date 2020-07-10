@@ -84,7 +84,7 @@
                     <section class="correspondencia-section">
 
                         
-                        <article>
+                        <article class="correspondencia-article">
                             <div class="correspondencia-title">Recebido em</div>
 
                             <% correspondencia.forEach(corresp =>  { %>
@@ -93,7 +93,7 @@
                              <%})%>
 
                         </article>
-                        <article>
+                        <article class="correspondencia-article">
                             <div class="correspondencia-title">Tipo</div>
                             <% correspondencia.forEach(corresp =>  { %>
                            
@@ -101,7 +101,7 @@
                             <%})%>
                         </article>
                         
-                        <article>
+                        <article class="correspondencia-article">
                             <div class="correspondencia-title">Destinatário</div>
                             <% correspondencia.forEach(corresp =>  { %>
                             <div class="receiver" id="last-child"><%= corresp.destinatario %></div>
@@ -109,7 +109,7 @@
                         </article>
 
                         <% if(usuario.admin) { %>
-                        <article>
+                        <article class="correspondencia-article">
                             <div class="correspondencia-title">Apartamento</div>
                             <% correspondencia.forEach(corresp =>  { %>
                             <div class="receiver" id="last-child">

@@ -87,6 +87,19 @@
         min-height: 32px;
         align-items: center;
     }   
+
+    @media screen and (max-width: 675px) {
+        
+        .slidemenu a {
+            padding: 0 8px !important;
+        }
+        
+        @media (max-width: 550px) {
+            .slidemenu  {
+                display: none !important;
+            }
+        }
+    }
         /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
     
 }

@@ -120,11 +120,6 @@ z-index: 2;
     
     
 }
-
-.card-img-top {
-    height: 180px;
-}
-
 /* fim stilo cards classificados */
 
 /* Inicio stilo area para filtrar conteudo */
@@ -375,11 +370,16 @@ z-index: 2;
     .areaCamposGrandes #zero-filter {
         border: 1px solid #000000;;
     }
+
+    @media screen and (max-width: 480px) {
+        
+             
+        .card {
+            margin: 0 auto;
+            height: 45vh;
+            padding: 5px;
+            width: 82%;
+        }
+    }
 }
 
-@media (min-width: 576px){
-.modal-dialog {
-    max-width: 768px !important;
-
-}
-}

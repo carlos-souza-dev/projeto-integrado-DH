@@ -9,8 +9,7 @@
 .areaBotaoCad {
     display: flex;
     justify-content: flex-end;
-    height: calc(8vh - 1rem);
-    min-height: 32px;
+    height: calc(124px - 1rem);
     align-items: center;
     width: 94%;
     margin: 0 auto;
@@ -101,17 +100,20 @@
 } 
 
 .centroTelaCorrespondencias{
-    width: 100%;
-    margin: 1rem 0;
-    padding-bottom: 45px;
-}
-.correspondencia-section{
+    display: flex;
     width: 94%;
-    min-height: 10vh;
-    margin: 0 auto; 
+    margin: 1rem auto;
+    justify-content: center;
+}
+
+.correspondencia-section{
+    width: 100%;
+    min-width: 300px;
+    margin: 40px 0; 
+    padding: 0 10px;
     border-radius: 25px;
     display: flex;
-    border-radius: 25px;  
+    border-radius: 16px;  
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
@@ -149,9 +151,16 @@ th {
     font-weight: 700;
 }
 
-.correspondencia-section article{
+.correspondencia-section .correspondencia-article{
     width: 100%;
 }
+
+/* .correspondencia-section .correspondencia-article div {
+    width: 100%;
+    background-color: yellow;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+} */
+
 
 .correspondencia-section article .correspondencia-title {
     width: 100%;
@@ -194,12 +203,16 @@ th {
     display: none;
 }
 
-.centroTelaCorrespondencias .correspondencia-section {
-    width: 94%;
+.centroTelaCorrespondencias .correspondencia-section{
+    width: 100%;
     min-width: 300px;
-    height: 10vh;
-    margin: 1rem auto 0;
-} 
+    margin: 40px 0; 
+    padding: 0 10px;
+    border-radius: 25px;
+    display: flex;
+    border-radius: 16px;  
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+}
 
 @media(max-width: 500px){
     .correspondencia-section article .date,

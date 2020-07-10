@@ -114,10 +114,16 @@
 }
 
 @media (max-width: 430px){
+
     .card{
-        max-width: 350px;
-        min-height: 484px;
+        max-width: 82%;
+        min-height: 50vh;
         flex-grow: 1;
-       }
+        margin: 1rem auto;
+    }
+
+    .card-img-top {
+        height: 14rem !important;
+    }
 }
 

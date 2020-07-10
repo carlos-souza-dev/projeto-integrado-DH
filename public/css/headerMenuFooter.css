@@ -435,6 +435,21 @@ body #content hr {
 
 }
 
+@media (min-width: 769px) {
+    #sidebarCollapse {
+        display: none;
+    }
+
+    #sidebar.active {
+        margin-left: 0px;
+    }
+
+    #content.active {
+        width: calc(100% - 280px);
+    }    
+
+}
+
 @media (max-width: 768px) {
     #sidebar {
         margin-left: -280px;
@@ -500,19 +515,8 @@ body #content hr {
     }
 }
 
-@media (min-width: 769px) {
-    #sidebarCollapse {
-        display: none;
-    }
-
-    #sidebar.active {
-        margin-left: 0px;
-    }
-
-    #content.active {
-        width: calc(100% - 280px);
-    }    
-
+.areaBotaoCad div {
+    margin: 0 auto;
 }
 
 @media only screen and (max-width: 500px) {
@@ -679,6 +683,23 @@ body #content hr {
 @media(max-width: 774px) {
     .slidemenu > label {
         font-size: 10px;
+    }
+
+    @media screen and (max-width: 675px) {
+        
+        .slidemenu a {
+            padding: 0 8px !important;
+        }
+        
+        @media (max-width: 550px) {
+            .slidemenu  {
+                display: none !important;
+            }
+
+            body .footer {
+                display: none !important;
+            }
+        }
     }
 }
 

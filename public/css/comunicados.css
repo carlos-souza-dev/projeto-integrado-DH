@@ -112,3 +112,20 @@
     line-height: 40px;
 }
 
+@media (max-width: 415px) {
+    
+    .table tbody tr td b{
+        font-weight: 500;
+    }
+
+    .table tbody tr td {
+        height: 0px;
+        line-height: 24px;
+    }
+
+    .table tbody tr td p {
+        font-weight: 200;
+        height: 46px;
+        line-height: 46px;
+    }
+}

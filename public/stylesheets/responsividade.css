@@ -274,7 +274,10 @@
             background-position: center;
         }
 
-
+        .token-enter,
+        .cadastro-enter {
+            border: 0 !important;
+        }
 
         .areaBotaoCad div {
             margin: 0 auto;
@@ -567,6 +570,12 @@
 
             .slidemenu {
                 display: none;
+            }
+
+
+            .token-enter,
+            .cadastro-enter {
+                border: 0 !important;
             }
 
             .tabela-correspondencia-content {

@@ -7,7 +7,6 @@ const deletarClassificados = require("./deletarController");
 const { body } = require("express-validator");
 const { json } = require("sequelize");
 const { post } = require("../routes");
-// console.log(" TESTE DO EMAIL: "+ enviarEmail);
 
 const classificadosController = {
 
@@ -90,8 +89,6 @@ const classificadosController = {
         classificado.forEach(posts => {            
             if(posts.aprovacao == 1) {
                 postagens.push(posts.toJSON());
-                console.log("Postagens para usuarios");
-                // console.log(posts.toJSON());
 
             }
         });
@@ -108,7 +105,6 @@ const classificadosController = {
         const {id} = req.params;
 
         const classificado = await Classificados.findAll({where: {id: id}});
-        console.log("Imagem do banco " + classificado[0].foto);
         
         const rota = classificado[0].foto;
         const image = rota.slice(rota.lastIndexOf("/")+1);
@@ -172,7 +168,6 @@ const classificadosController = {
         } else {
 
             const fotoClassificado = await Classificados.findAll({where: {id: id}});
-            console.log("Imagem do banco " + fotoClassificado[0].foto);
             
             const rota = fotoClassificado[0].foto;
             const image = rota.slice(rota.lastIndexOf("/")+1);

@@ -14,7 +14,6 @@ const correspondenciaController = {
             {tipo,destinatario,apartamento}
         )
        
-        // console.log(titulo, informacao)
         return res.redirect("/correspondencias");
 
     },

@@ -100,8 +100,6 @@ const authController = {
             const now = new Date();
             
             if( now < user.senhaTemporariaExpira) {
-                console.log("Agora " + now);
-                console.log("user " + user.senhaTemporariaExpira);
 
                 const hashPassword = bcrypt.hashSync(senha, 10);
 

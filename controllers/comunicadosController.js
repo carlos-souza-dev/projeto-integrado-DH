@@ -16,7 +16,6 @@ const comunicadosController = {
             {titulo, informacao}
         )
        
-        // console.log(titulo, informacao)
         return res.redirect("/comunicados");
 
     },
@@ -66,7 +65,6 @@ const comunicadosController = {
                 id:id
             }
         });
-        console.log(comunicados)
         
             res.render('updateComunicado', {comunicados,usuario: req.session.user})
     },

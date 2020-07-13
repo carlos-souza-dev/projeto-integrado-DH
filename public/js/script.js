@@ -15,7 +15,6 @@ formCadastro.addEventListener("mouseover", function (eve) {
 
         if(senhaUm !== senhaDois) {
           
-            console.log(senha)
             senha.style.border = "2px solid red";
             confirmarSenha.style.border = "2px solid red";
             btnCadastro.style.opacity = "0.5"
@@ -27,7 +26,6 @@ formCadastro.addEventListener("mouseover", function (eve) {
             confirmarSenha.style.backgroundColor = "white";
         }
     } else {
-            console.log("Digite uma senha.");
             senha.style.backgroundColor = "rgb(243, 198, 198, 1)";
             confirmarSenha.style.backgroundColor = "rgb(243, 198, 198, 1)";
     }

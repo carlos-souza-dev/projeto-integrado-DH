@@ -11,7 +11,6 @@ const perfilController = {
     //função para retornar todos os moradores
     index: async (req, res) => {
         let users = await Moradores.findAll();
-        // console.log(users);
 
         return res.render('perfil', {users});
     },
@@ -28,11 +27,9 @@ const perfilController = {
         if(files != undefined){
 
             const morador = await Moradores.findAll({where: {id: id}});
-            console.log("Imagem do banco " + morador[0].foto);
             
             const rota = morador[0].foto;
             const image = rota.slice(rota.lastIndexOf("/")+1);
-            console.log("Imagem tratada " + image);
 
             fs.unlink("public/img/user/"+ image, (error) => {
                 if(error)
@@ -106,7 +103,6 @@ const perfilController = {
                     id: id
                 }
             })
-            // console.log(resultado)
             res.render('/perfil', {usuario: req.session.user})
     },
     
@@ -149,7 +145,6 @@ const perfilController = {
             }
         ]
         const resultado = await Usuario.bulkCreate(listaDeUsuarios);
-        // console.log(resultado)
         res.send("Criados")
     }
 }

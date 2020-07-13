@@ -21,7 +21,6 @@ const contatosUteisController = {
     exibir: async (req, res) => {
         
         const contato = await ContatosUteis.findAll();
-        console.log(contato)
         return res.render('contatosUteis', {contato, usuario: req.session.user});
     },
 

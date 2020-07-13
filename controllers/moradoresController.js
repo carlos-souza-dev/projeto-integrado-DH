@@ -38,11 +38,6 @@ exibir: async (req, res) => {
     return res.render('moradores', {users, usuario: req.session.user});
 }
     
-        // console.log(req.session.user.id_apartamento)
-    
-   
-    // console.log(users);
-    
 },
 update: async (req, res) => {
     const {id} = req.params;
@@ -84,7 +79,6 @@ destroy: async (req, res) => {
     const {id} = req.params;
 
     const morador = await Moradores.findAll({where: {id: id}});
-        console.log("Imagem do banco " + morador[0].foto);
         
         const rota = morador[0].foto;
         const image = rota.slice(rota.lastIndexOf("/")+1);

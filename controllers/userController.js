@@ -16,7 +16,6 @@ const userController = {
         const {nome, cpf, email, senha, admin = 0, dataNascimento, id_apartamento} = req.body;
         const hashPassword = bcrypt.hashSync(senha, 10);
         const db = new Sequelize(config);
-       
         // Busca na base de moradores os registros com o mesmo CPF digitado no cadastro
 
         const [cpfValidacao] = await db.query (
@@ -36,7 +35,7 @@ const userController = {
                 senha: hashPassword, 
                 foto: './img/user/fotoDefault.png',
                 admin,
-                dataNascimento,
+                // dataNascimento,
                 id_apartamento,
                 
         }) 

@@ -11,20 +11,15 @@ const userController = {
 
     store: async (req, res) => {
      
-        
-       
         const {nome, cpf, email, senha, admin = 0, dataNascimento, id_apartamento} = req.body;
+        
         const hashPassword = bcrypt.hashSync(senha, 10);
-        const db = new Sequelize(config);
+        // const db = new Sequelize(config);
+
+       try{           
         // Busca na base de moradores os registros com o mesmo CPF digitado no cadastro
 
-        const [cpfValidacao] = await db.query (
-            "SELECT * FROM moradores where cpf = :cpf limit 1",
-            {
-                replacements: {cpf: cpf},
-                type: QueryTypes.SELECT
-            }
-        )
+        const [cpfValidacao] = await Moradores.findOne({where: {email:email}});
 
         // Cadastra o novo usuário na base caso não encontre o CPF informado
         if(!cpfValidacao) {
@@ -35,7 +30,7 @@ const userController = {
                 senha: hashPassword, 
                 foto: './img/user/fotoDefault.png',
                 admin,
-                // dataNascimento,
+                dataNascimento,
                 id_apartamento,
                 
         }) 
@@ -45,6 +40,10 @@ const userController = {
         }
 
         res.render("login", {msg: "", usuario: req.session.user});
+
+    }catch (err){
+        console.log(err, email);
+    }
     },
 
   }; 

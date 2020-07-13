@@ -48,7 +48,7 @@ module.exports = {
     admin: {
       type: Sequelize.BOOLEAN,
     },
-    dataNascimento: Sequelize.DATEONLY,
+    dataNascimento: Sequelize.DATE,
     id_apartamento: {
       type: Sequelize.INTEGER,
     },

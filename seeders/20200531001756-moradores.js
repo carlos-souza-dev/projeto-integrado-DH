@@ -16,7 +16,7 @@ module.exports = {
       sobre: '',
       interesses: ``,
       admin: true,
-      dataNascimento: 1980-01-01,
+      dataNascimento: '1980-01-01',
       id_apartamento: 1,
       createdAt: new Date(),
       updatedAt: new Date()

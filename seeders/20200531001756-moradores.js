@@ -31,7 +31,7 @@ module.exports = {
     sobre: 'Estudante',
     interesses:`["Filmes","Esportes","Música"]`,
     admin: false,
-    dataNascimento: 1997-04-22,
+    dataNascimento: '1997-04-22',
     id_apartamento: 2,
     createdAt: new Date(),
     updatedAt: new Date()
@@ -46,7 +46,7 @@ module.exports = {
       sobre: 'Estudante',
       interesses:`["Fotografia","Futebol","Motos","Viagens"]`,
       admin: false,
-      dataNascimento: 1996-10-21,
+      dataNascimento: '1996-10-21',
       id_apartamento: 3,
       createdAt: new Date(),
       updatedAt: new Date() 
@@ -61,7 +61,7 @@ module.exports = {
       sobre: 'Estudante',
       interesses:`["Artes Marciais","Música","Esportes","Design & Tecnologia"]`,
       admin: false,
-      dataNascimento: 1990-06-11,
+      dataNascimento: '1990-06-11',
       id_apartamento: 4,
       createdAt: new Date(),
       updatedAt: new Date() 
@@ -76,7 +76,7 @@ module.exports = {
       sobre: 'Estudante',
       interesses:`["Filosofia","Ficção Científica","Arquitetura","Viagens","Filmes"]`,
       admin: false,
-      dataNascimento: 1990-06-11,
+      dataNascimento: '1990-06-11',
       id_apartamento: 5,
       createdAt: new Date(),
       updatedAt: new Date() 
@@ -91,7 +91,7 @@ module.exports = {
       sobre: 'Estudante',
       interesses:`["Aventura","Livros e Poesia","Viagens"]`,
       admin: false,
-      dataNascimento: 1986-05-29,
+      dataNascimento: '1986-05-29',
       id_apartamento: 6,
       createdAt: new Date(),
       updatedAt: new Date() 
@@ -106,7 +106,7 @@ module.exports = {
       sobre: 'Estudante',
       interesses:``,
       admin: false,
-      dataNascimento: 1989-09-19,
+      dataNascimento: '1989-09-19',
       id_apartamento: 6,
       createdAt: new Date(),
       updatedAt: new Date() 
@@ -121,7 +121,7 @@ module.exports = {
       sobre: 'Estagiário',
       interesses:``,
       admin: false,
-      dataNascimento: 2001-12-08,
+      dataNascimento: '2001-12-08',
       id_apartamento: 2,
       createdAt: new Date(),
       updatedAt: new Date() 
@@ -136,7 +136,7 @@ module.exports = {
       sobre: 'Funcionário Público',
       interesses: ``,
       admin: false,
-      dataNascimento: 1993-08-22,
+      dataNascimento: '1993-08-22',
       id_apartamento: 2,
       createdAt: new Date(),
       updatedAt: new Date() 

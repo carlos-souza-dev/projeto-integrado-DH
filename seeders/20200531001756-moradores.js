@@ -136,7 +136,7 @@ module.exports = {
       sobre: 'Funcionário Público',
       interesses: ``,
       admin: false,
-      dataNascimento: -1993-08-22,
+      dataNascimento: 1993-08-22,
       id_apartamento: 2,
       createdAt: new Date(),
       updatedAt: new Date() 

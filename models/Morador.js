@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       admin: {
         type: DataTypes.BOOLEAN,
       },
-      dataNascimento: DataTypes.DATE,
+      dataNascimento: DataTypes.DATEONLY,
       id_apartamento: {
         type: DataTypes.INTEGER,
       }

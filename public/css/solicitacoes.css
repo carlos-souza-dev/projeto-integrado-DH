@@ -18,16 +18,15 @@
     margin-top: 80px;
 }
 
-.areaBotaoCad {
+/* .areaBotaoCad {
     width: 94%;
     margin: 0 auto;
+    height: calc(16vh - 1rem);
+    min-height: calc(124px - 1rem);
     display: flex;
     justify-content: flex-end;
-    height: 10vh;
     align-items: center;
-    padding-top: 50px;
-   
-}
+} */
 
 #botaoCadastro {
     background-color: #3B3B3B;
@@ -44,7 +43,7 @@
 }
 
 #botaoDetalhe {
-    height: 40px;
+    height: 32px;
     border-radius: 20px;
     text-transform: uppercase;
     font-size: 14px;
@@ -53,6 +52,7 @@
     align-items: center;
     color: #3b3b3b;
     background-color: white;
+    padding: 0;
     /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
 }
 
@@ -106,6 +106,7 @@
     width: 100%;
     min-width: 300px;
     margin: 40px 0; 
+    padding: 0 10px;
     border-radius: 25px;
     display: flex;
     border-radius: 16px;  
@@ -126,7 +127,15 @@
     font-size: 18px;
     color: #000000;
     font-weight: bold;
-  
+}
+
+.aside-main-solicitacoes .solicitacoes-section article .solicitacoes-title span {
+    width: 20px;
+    height: 20px;
+    background-image: url("../img/icon/search.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .aside-main-solicitacoes .solicitacoes-section article .codigo,
@@ -176,6 +185,7 @@
 #Pendente {
     background-color: rgba(0, 0, 0, 0.25);
     color: #3B3B3B;
+    max-width: 90px;
 }
 
 #Reprovada {
@@ -273,10 +283,6 @@
 
     .areaBotaoCad {
         justify-content: center;
-    }
-
-    .docSepLine{
-        display: none;
     }
 
     .aside-main-solicitacoes .mc-solicitacoes-buttom {

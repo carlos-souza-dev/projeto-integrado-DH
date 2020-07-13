@@ -4,7 +4,7 @@ const team = [
         linkedin: "camila-lopes-a90511107/"
     },
     {
-        gitUser: "carlos-souza-02",
+        gitUser: "carlos-souza-dev",
         linkedin: "carlos-alberto-gomes-de-souza-117375192/"
     },
     {
@@ -38,7 +38,7 @@ fetch(`https://api.github.com/users/${team[index].gitUser}`)
         let member = {
             avatar_url: user.avatar_url, 
             name: user.name? user.name.split(" ")[0] + " " + user.name.split(" ").slice(-1) : "Membro do time", 
-            bio: user.bio? user.bio.slice(0, 75) + "..." : "Desenvolvedorx Web Fullstack - Programa Santander Coders 2020", 
+            bio: user.bio? user.bio.slice(0, 50) + "..." : "Desenvolvedor Web Full Stack - Programa Santander Coders 2020", 
             html_url: user.html_url, 
             linkedin: "https://linkedin.com/in/" + team[index].linkedin,
         }

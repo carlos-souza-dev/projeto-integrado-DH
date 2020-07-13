@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
 
-   return queryInterface.createTable('Prestadores', {
+   return queryInterface.createTable('prestadores', {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
@@ -21,13 +21,12 @@ module.exports = {
      type: Sequelize.STRING(11),
      allowNull: false,
    },
-   categoria: Sequelize.STRING,
-   foto: Sequelize.STRING,
-   id_apartamento: Sequelize.INTEGER,
-
-
-   
-    });
+    categoria: Sequelize.STRING,
+    foto: Sequelize.STRING,
+    id_apartamento: Sequelize.INTEGER,
+    createdAt: Sequelize.DATE,
+    updatedAt: Sequelize.DATE   
+  });
     
   },
 

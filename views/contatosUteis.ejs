@@ -36,7 +36,7 @@
 
         <div class="wrapper">
             <!-- Menu Retrátil -->
-            <%- include('./partials/menuRetratil') %>
+            <%- include('./partials/menu') %>
 
             <!-- Conteudo da página -->
 
@@ -45,25 +45,26 @@
                 <div class="mainHeader">
                     <div class="titulo" id="tit">
                         <div class="nomePag">
-                            <p>Minha Casa</p>
+                            <p class="mainHeader-title">Minha Casa</p>
 
                         </div>
                         <div class="finalidPag">
-                            <p >Tudo sobre sua residência</p>
+                            <p class="mainHeader-subtitle" >Tudo sobre sua residência</p>
                         </div>
 
                     </div>
-                  <!-- inclui o logo mobile e o avatar em uma partial  -->
-                  <%- include('./partials/avatar') %>
-                  
+                    <!-- inclui o logo mobile e o avatar em uma partial -->
+                    <%- include('./partials/avatar') %>
+
                 </div>
+                <hr class="docSepLine">
 
                <!-- menu superior -->
                <%- include('./partials/menuSupMinhaCasa') %>
                
-               <% if(usuario.admin) { %>
                <div class="areaBotaoCad">
-                    <div>
+                   <div>
+                    <% if(usuario.admin) { %>
                         <button
                             type="button"
                             id="botaoCadastro"
@@ -72,9 +73,9 @@
                             data-target="#modalCadastroContato">
                             Novo Contato
                         </button>
+                    <% } %>
                     </div>
                 </div>
-                <% } %>
 
 
                 <!-- area do centro da tela -->
@@ -115,11 +116,13 @@
                     
                             
                         </div>
-                        <% if(usuario.admin) { %>
-                        <a data-toggle="modal" data-target="#modalAlterarContato"><img src="./img/icon/edit.svg" alt=""></a>
-                        <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
-                        <% } %>
+                        <div class="contatosUteis-icon">
+                            <% if(usuario.admin) { %>
+                            <a data-toggle="modal" data-target="#modalAlterarContato"><img src="./img/icon/edit.svg" alt=""></a>
+                            <a data-toggle="modal" data-target="#confirmarExclusao"><img src="./img/icon/trash.svg" alt=""></a>
+                            <% } %>
                         </div>
+                    </div>
 
 
 

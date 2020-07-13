@@ -30,7 +30,7 @@ z-index: 2;
 .centroTelaClassificados {
     width: calc(94% + 1rem);
     display: flex;
-    padding: 40px 10px;
+    padding: 5vh 10px;
     margin: 0 auto;
     flex-wrap: wrap;
 
@@ -49,7 +49,7 @@ z-index: 2;
 }
 
 .card {
-    /* margin: 15px; */
+    min-height: 284px;
     padding: 5px;
     width: 12rem;
     display: flex;
@@ -60,7 +60,9 @@ z-index: 2;
 .card--home {
     /* margin: 15px; */
     width: 13rem;
+    min-width: 150px;
     height: 100%;
+    min-height: 300px;
     margin-right: 8px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.24);
@@ -118,23 +120,17 @@ z-index: 2;
     
     
 }
-
-.card-img-top {
-    height: 180px;
-}
-
 /* fim stilo cards classificados */
 
 /* Inicio stilo area para filtrar conteudo */
 
 #areaFiltro {
     width: 94%;
-    margin: 30px auto 0 !important;
+    margin: 5vh auto !important;
     display: flex;
     flex-direction: row;
     border-radius: 5px;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
-    margin: 10px;
   /*  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);*/
 }
 .areaCamposGrandes {
@@ -152,13 +148,14 @@ z-index: 2;
 
 .areaBotaoSearch {
     width: 100%;
-    height: 7vh;
+    height: 8vh;
     display: flex;
     align-items: center;
     justify-content: flex-end;
 }
 
 .nomeCampoPesquisa {
+    height: 40px;
     font-size: 16px;
     font-weight: bold;
 }
@@ -295,6 +292,9 @@ z-index: 2;
 }
 
 .btn-aprovado {
+    border-radius: 20px;
+    height: 35px;
+    width: 140px;
     color: #fff;
     background-color: #7aa355;
     border-color: #7aa355;
@@ -375,11 +375,16 @@ z-index: 2;
     .areaCamposGrandes #zero-filter {
         border: 1px solid #000000;;
     }
+
+    @media screen and (max-width: 480px) {
+        
+             
+        .card {
+            margin: 0 auto;
+            height: 45vh;
+            padding: 5px;
+            width: 82%;
+        }
+    }
 }
 
-@media (min-width: 576px){
-.modal-dialog {
-    max-width: 768px !important;
-
-}
-}

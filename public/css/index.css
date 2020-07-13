@@ -11,7 +11,7 @@
     position: relative;
     width: 100%;
     height: 15%;
-    margin: 40px auto;
+    margin: calc(8vh - 1rem) auto;
 }
 
 .resumo-section {
@@ -50,7 +50,7 @@
     border-radius: 8px;
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(0, 0, 0, 0.08);
-    margin: 16px 0;
+    margin: 1rem 0;
 }
 
 .resumo-icon-box {

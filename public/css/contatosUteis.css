@@ -30,15 +30,16 @@ footer {
     flex-direction: column;
 
 }
-
+/* 
 .areaBotaoCad {
     display: flex;
     justify-content: flex-end;
-    height: 10vh;
+    height: calc(8vh - 1rem);
+    min-height: 32px;
     align-items: center;
     width: 94%;
     margin: 0 auto;
-}
+} */
 
 #botaoCadastro {
     background-color: #3B3B3B;
@@ -69,14 +70,15 @@ footer {
             /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
     }
 
-    .areaBotaoCad {
+    /* .areaBotaoCad {
         width: 94%;
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        height: 10vh;
+        min-height: 32px;
+        height: calc(8vh - 1rem);
         align-items: center;
-    }   
+    }    */
         /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
 } 
 
@@ -110,9 +112,8 @@ footer {
 }
 
 .centroTelaContatosUteis{
-    width: calc(94% + 1rem) ;
-    height: 50vh;
-    margin: 40px auto;
+    width: calc(94% + 1rem);
+    margin: 0 auto;
     display: flex;
     justify-content: space-evenly; 
     flex-wrap: wrap;

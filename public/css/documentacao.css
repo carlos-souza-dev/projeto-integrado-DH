@@ -8,14 +8,15 @@
 
 /* stilo dos cards classificados*/
 
-.areaBotaoCad {
+/* .areaBotaoCad {
     display: flex;
     justify-content: flex-end;
-    height: 10vh;
+    height: calc(8vh - 1rem);
+    min-height: calc(32px - 1rem);
     align-items: center;
     width: 94%;
     margin: 0 auto;
-}
+} */
 
 #botaoCadastro {
     background-color: #3B3B3B;
@@ -29,6 +30,10 @@
     align-items: center;
     justify-content: center;
     /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+}
+
+#content hr {
+    margin: 0;
 }
 
 @media(max-width:768px) {
@@ -46,14 +51,15 @@
             /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
     }
 
-    .areaBotaoCad {
+    /* .areaBotaoCad {
         width: 94%;
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        height: 10vh;
+        height: calc(8vh - 1rem);
+        min-height: calc(32px - 1rem);
         align-items: center;
-    }   
+    }    */
         /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
 } 
 
@@ -108,10 +114,16 @@
 }
 
 @media (max-width: 430px){
+
     .card{
-        max-width: 350px;
-        min-height: 484px;
+        max-width: 82%;
+        min-height: 50vh;
         flex-grow: 1;
-       }
+        margin: 1rem auto;
+    }
+
+    .card-img-top {
+        height: 14rem !important;
+    }
 }
 

@@ -9,16 +9,16 @@
 
 /* stilo botão */
 
-.areaBotaoCad {
+/* .areaBotaoCad {
     width: 94%;
     margin: 0 auto;
     display: flex;
     justify-content: flex-end;
-    height: 14vh;
+    height: 16vh;
+    min-height: 124px;
     align-items: center;
+} 
     /* padding-bottom: 10px; */
-
-}
 
 #botaoCadastro {
     background-color: #3B3B3B;
@@ -46,9 +46,30 @@
         /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
     }
 
+    /* .areaBotaoCad {
+        height: 8vh;
+        min-height: 124px;
+    } */
+
     .areaBotaoCad div {
        margin: 0 auto;
     }
+
+    @media screen and (max-width: 480px) {
+        
+             
+        .card {
+            width: 82% !important;
+            margin: 0 auto;
+            height: 50vh;
+            padding: 5px;
+        }
+
+        .card-img-top {
+            height: 13rem;
+        }
+    }
+
 }
 
 /* fim stilo botao */
@@ -66,10 +87,9 @@
     flex-wrap: wrap;
 }
 
-
 .card{
     min-width: 12rem;
-    max-width: 15rem;
+    width: 12rem;
     min-height: 16rem;
     padding: 5px;
     margin: 1rem;

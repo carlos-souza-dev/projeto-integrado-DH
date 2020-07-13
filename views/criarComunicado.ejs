@@ -15,6 +15,8 @@
         <!-- css header, menu lateral, menu superior e footer -->
         <link rel="stylesheet" href="./css/headerMenuFooter.css">
 
+        <link rel="stylesheet" href="/css/criarComunicados.css">
+
         <script src="https://cdn.tiny.cloud/1/84yrrn5tn87elagyenl503iodydqywj36knqm0zmtmrrxra2/tinymce/5/tinymce.min.js" referrerpolicy="origin"/></script>
         
 
@@ -41,66 +43,39 @@
 
         <div class="wrapper">
             <!-- Menu Retrátil -->
-            <%- include('./partials/menuRetratil') %>
+            <%- include('./partials/menu') %>
 
                 <!-- Conteudo da página -->
 
                 <div id="content">
-                    <!-- Header -->
-                    <div class="mainHeader">
-                        <div class="titulo" id="tit">
-                            <div class="nomePag">
-                                <p>Comunicados</p>
-
+                        <div class="mainHeader">
+                            <div class="titulo" id="tit">
+                                <div class="nomePag">
+                                    <p class="mainHeader-title">Comunicados</p>
+                                </div>
+                                <div class="finalidPag">
+                                    <p class="mainHeader-subtitle" >Fique por dentro das novidades!</p>
+                                </div>
+        
                             </div>
-                            <div class="finalidPag">
-                                <p >Fique por dentro dos eventos e novidades!</p>
-                            </div>
-
-                        </div>
-                        <!-- inclui o logo mobile e o avatar em uma partial -->
-                        <%- include('./partials/avatar') %>
-                        </div>
-
-                        <hr 0="0" class="docSepLine" margin:="margin:">
+                                <!-- inclui o logo mobile e o avatar em uma partial -->
+                            <%- include('./partials/avatar') %>
+        
+                       </div>
+                       <hr class="docSepLine">
 
                         <nav class="slidemenu">
-
-
-                            <!-- isso faz ficar marcado ao clicar, precisa ver como mudar sozinho -->
-                                <!-- checked="checked" -->
-                            
-                            
-                                <!-- Item 1 -->
-                                <input type="radio" name="slideItem" id="slide-item-1" class="slide-toggle"/>
-                                <label for="slide-item-1">
-                                    <a href="/comunicados">Comunicados</a>
-                                </label>
-                            
-                                <!-- Item 2 -->
-                                <input type="radio" name="slideItem" id="slide-item-2" class="slide-toggle"/>
-                                <label for="slide-item-2">
-                                    <a href="/criarComunicado">Criar Comunicados</a>
-                                </label>
-                            
+                            <a href="/comunicados" id="comunicados">Comunicados</a>
                                 
-                            
-                                <div class="clear"></div>
-                            
-                                <!-- Bar -->
-                                <div class="slider">
-                                    <div class="bar"></div>
-                                </div>
-                            </nav>
-
-
+                            <a href="/criarComunicado" id="criar-comunicados">Criar Comunicados</a>
+                        </nav>
 
 
                         <div class="centroTelaComunicados">
 
                             <form  action="/criarComunicados" method="POST" >  
-                                <div id="botaoComunicado">
-                                    <button type="submit"  class="btn btn-secondary">Salvar</button>
+                                <div id="botaoComunicado" class="areaBotaoCad">
+                                    <button type="submit" id="botaoCadastro" class="btn btn-secondary">Salvar</button>
                                 </div>
                                 
                             <div class="form-group">

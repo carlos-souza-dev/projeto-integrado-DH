@@ -1,7 +1,8 @@
 const nodemailer = require('nodemailer');
 const path = require("path");
-
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+const { Console } = require('console');
+const { EMAIL_ADM, EMAIL_PASS } = process.env;
+console.log(EMAIL_PASS + " " + EMAIL_ADM)
 
 let transporter = nodemailer.createTransport({
   service: 'Gmail',
@@ -9,15 +10,15 @@ let transporter = nodemailer.createTransport({
   port:587,
   secure: false,
     auth: {
-        user: "sindico.portal.do.condominio@gmail.com",
-        pass: "portal2018"
+        user: EMAIL_ADM,
+        pass: EMAIL_PASS
     }
 });
 
 const enviarEmailSenha = function (email, token, nome) {
 
   transporter.sendMail({
-      From: "Portal do Condomínio <sindico.portal.do.condominio@gmail.com>",
+      From: "Portal do Condomínio <EMAIL_ADM>",
       to: email,
       subject: "Recuperação de Senha",
       html: 

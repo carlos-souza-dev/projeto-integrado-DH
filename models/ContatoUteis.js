@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         email: DataTypes.STRING,
        
     },{
-      tableName:'contatosUteis'
+      tableName:'contatosUteis',
       
       })
       

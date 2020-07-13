@@ -13,24 +13,18 @@ module.exports = (sequelize, DataTypes) => {
         },
       
         rg: DataTypes.INTEGER,
-
         cpf: DataTypes.INTEGER,
-
         categoria:DataTypes.STRING,
-
         foto: DataTypes.STRING,
-
         id_apartamento: DataTypes.INTEGER,
-   
+        createdAt: DataTypes.DATE,
+        updatedAt: DataTypes.DATE
       
-      },
-      {
-        timestamps: false
-      })
+      },{
+          tableName:'prestadores',
+          timestamps: false
+      });
 
-
-  
-      
     return Prestador;
   };
   

@@ -6,16 +6,16 @@
 
 /* Aplicação de exceções para a página rerrespondências */
 
-.areaBotaoCad {
+/* .areaBotaoCad {
     display: flex;
     justify-content: flex-end;
-    height: 10vh;
+    height: calc(124px - 1rem);
     align-items: center;
     width: 94%;
     margin: 0 auto;
-}
+} */
 
-#botaoCadastro {
+/* #botaoCadastro {
     background-color: #3B3B3B;
     width: 226px;
     height: 44px;
@@ -26,8 +26,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+} */
     /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
-}
 
 .slidemenu #correspondencias {
     padding: 0px 24px;
@@ -59,7 +59,16 @@
 }
 
 #botaoExcluir{
-    padding-left: 5px;
+    width: 14px;
+    height: 14px;
+    margin: 0 8px;
+    background-image: url("/img/icon/trash.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.receiver p {
+    margin: 0 8px;
 }
 
 @media(max-width:768px) {
@@ -77,30 +86,33 @@
             /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
     }
 
-    .areaBotaoCad {
+    /* .areaBotaoCad {
         width: 94%;
         padding-top: 10px;
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        height: 10vh;
+        height: calc(8vh - 1rem);
+        min-height: 32px;
         align-items: center;
-    }   
-        /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
+    }    */
+    /* depois que inlcui o href no botão o texto subiu, coloquei esse padding para o texto ficar no meio */
 } 
 
 .centroTelaCorrespondencias{
-    width: 100%;
-    margin: 50px 0;
-    padding-bottom: 45px;
-}
-.correspondencia-section{
+    display: flex;
     width: 94%;
-    min-height: 22vh;
-    margin: 0 auto; 
+    margin: 1rem auto;
+    justify-content: center;
+}
+
+.correspondencia-section{
+    width: 100%;
+    min-width: 300px;
+    padding: 0 10px;
     border-radius: 25px;
     display: flex;
-    border-radius: 25px;  
+    border-radius: 16px;  
     box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
@@ -138,9 +150,16 @@ th {
     font-weight: 700;
 }
 
-.correspondencia-section article{
+.correspondencia-section .correspondencia-article{
     width: 100%;
 }
+
+/* .correspondencia-section .correspondencia-article div {
+    width: 100%;
+    background-color: yellow;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
+} */
+
 
 .correspondencia-section article .correspondencia-title {
     width: 100%;
@@ -161,7 +180,7 @@ th {
 .correspondencia-section article .receiver,
 .correspondencia-section article .note {
     width: 100%;
-    height: 64px;
+    height: 44px;
     border-bottom: 1px solid #C4C4C4;
     display: flex;
     justify-content: center;
@@ -183,23 +202,28 @@ th {
     display: none;
 }
 
-.centroTelaCorrespondencias .correspondencia-section {
-    width: 94%;
+.centroTelaCorrespondencias .correspondencia-section{
+    width: 100%;
     min-width: 300px;
-    height: 450px;
-    margin: 50px auto 0;
-} 
-
-@media(max-width: 500px){
-    .correspondencia-section article .date,
-    .correspondencia-section article .correspondencia-title,
-    .correspondencia-section article .type,
-    .correspondencia-section article .sender,
-    .correspondencia-section article .data,
-    .correspondencia-section article .receiver,
-    .correspondencia-section article .note {
-        font-size: 18px;
-
+    margin: 0; 
+    padding: 0 10px;
+    border-radius: 25px;
+    display: flex;
+    border-radius: 16px;  
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.12), -6px -6px 8px rgba(0, 0, 0, 0.12);
 }
 
-}}
+    @media(max-width: 500px){
+        .correspondencia-section article .date,
+        .correspondencia-section article .correspondencia-title,
+        .correspondencia-section article .type,
+        .correspondencia-section article .sender,
+        .correspondencia-section article .data,
+        .correspondencia-section article .receiver,
+        .correspondencia-section article .note {
+            font-size: 14px;
+            border-bottom: 0;
+
+        }
+    }
+}

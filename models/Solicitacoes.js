@@ -28,7 +28,10 @@ module.exports = (sequelize, DataTypes) => {
       id_morador: {
         type: DataTypes.INTEGER,
       },
-  })
+  },{
+    tableName:'solicitacoes'
+    
+    })
 
   Solicitacao.associate = (models) => {
     Solicitacao.belongsTo(models.Moradores, {

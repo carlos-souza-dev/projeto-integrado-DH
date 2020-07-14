@@ -95,7 +95,11 @@
                                                         <div class="card-titulo"><%= classificado.titulo %></div>
                                                     <% } %> 
                                                     <div class="card-subtitulo"><%=classificado.morador.nome.slice(0, classificado.morador.nome.indexOf(" "))%> - <%=classificado.morador.id_apartamento%></div>
-                                                    <div class="card-descricao"><%= classificado.descricao.slice(0, 35)+"..."%></div>
+                                                    <% if( classificado.descricao.length > 35) { %> 
+                                                        <div class="card-descricao"><%= classificado.descricao.slice(0, 35)+"..."%></div>
+                                                    <% } else { %>
+                                                        <div class="card-descricao"><%= classificado.descricao %></div>
+                                                    <% } %> 
                                                     <div class="card-subtitulo"></div>
 
                                                 </div>

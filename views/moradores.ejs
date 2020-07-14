@@ -167,15 +167,16 @@
                                                             <input class="form-control" value="<%=user.cpf%>" id="exampleFormControlTextarea1" rows="1"></input>
                                                         </div>
                                                         <div class="form-group" id="form-image">
-                                                            <label for="exampleFormControlFile1">Foto</label> 
                                                             <img src="" id="img-update" class="img-thumbnail" alt="">
+                                                            <label for="exampleFormControlFile1" class="prestadores-button-save-image">Escolha uma imagem</label> 
                                                             <input
                                                                 type="file"
                                                                 name="foto"
                                                                 id="update"
                                                                 onchange="previewImagemUpdate()"
                                                                 class="form-control-file"
-                                                                id="exampleFormControlFile1">
+                                                                id="exampleFormControlFile1"
+                                                                style="display: none;">
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
@@ -220,15 +221,16 @@
                                                             <input class="form-control" id="exampleFormControlTextarea1" rows="1"></input>
                                                         </div>
                                                         <div class="form-group" id="form-image">
-                                                            <label for="exampleFormControlFile1">Foto</label>
                                                             <img src="" id="img-upload" class="img-thumbnail" alt="">
+                                                            <label for="exampleFormControlFile1" class="prestadores-button-save-image">Escolha uma imagem</label>
                                                             <input
                                                                 type="file"
                                                                 name="foto"
                                                                 id="upload"
                                                                 onchange="previewImagem()"
                                                                 class="form-control-file"
-                                                                id="exampleFormControlFile1">
+                                                                id="exampleFormControlFile1"
+                                                                style="display: none;">
                                                         </div>
 
                                                         <div class="modal-footer">

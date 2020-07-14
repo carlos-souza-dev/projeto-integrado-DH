@@ -11,16 +11,16 @@ const userController = {
 
     store: async (req, res) => {
      
+        // const db = new Sequelize(config);
         const {nome, cpf, email, senha, admin = 0, dataNascimento, id_apartamento} = req.body;
         
         const hashPassword = bcrypt.hashSync(senha, 10);
-        // const db = new Sequelize(config);
 
        try{           
         // Busca na base de moradores os registros com o mesmo CPF digitado no cadastro
 
-        const [cpfValidacao] = await Moradores.findOne({where: {email:email}});
-
+        const cpfValidacao = await Moradores.findOne({where: {cpf: cpf}});
+        console.log(cpfValidacao)
         // Cadastra o novo usuário na base caso não encontre o CPF informado
         if(!cpfValidacao) {
             const user = await Moradores.create({
